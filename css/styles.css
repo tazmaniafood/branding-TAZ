@@ -379,19 +379,21 @@ a {
   padding: var(--space-sm) 0 var(--space-xs);
 }
 
-/* Pestañas: calcomanías sólidas sobre la baldosa */
+/* Pestañas: letreros corozo con borde de neón mango; la activa se
+   enciende entera en mango. */
 .menu__tab {
   display: block;
   padding: 0.35rem 0.95rem;
   color: var(--crema);
-  background: var(--noche);
+  background: var(--corozo);
   font-family: var(--font-display);
   font-size: 0.98rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   text-decoration: none;
-  border: 2px solid rgb(255 241 220 / 0.55);
+  border: 2px solid var(--mango);
   border-radius: var(--radius-pill);
+  box-shadow: 0 0 6px rgb(246 196 49 / 0.45), inset 0 0 6px rgb(246 196 49 / 0.2);
   transition:
     background var(--dur-fast) var(--ease-out),
     border-color var(--dur-fast) var(--ease-out),
@@ -400,13 +402,16 @@ a {
     box-shadow var(--dur-fast) var(--ease-out);
 }
 
-.menu__tab:hover { border-color: var(--crema); }
+.menu__tab:hover {
+  background: #A3263F;
+  box-shadow: var(--neon-mango);
+}
 
 .menu__tab[aria-selected="true"] {
   color: var(--noche);
   background: var(--mango);
-  border: var(--contorno-tinta);
-  box-shadow: 3px 3px 0 var(--noche), var(--neon-mango);
+  border: 2px solid #FFF4C2;
+  box-shadow: var(--neon-mango);
   transform: translateY(-2px);
 }
 
@@ -986,8 +991,8 @@ main {
   font-family: var(--font-display);
   text-transform: uppercase;
   color: var(--crema);
-  background: var(--noche);
-  border: 2px solid rgb(255 241 220 / 0.55);
+  background: var(--corozo);
+  border: 2px solid var(--mango);
   border-radius: var(--radius-pill);
 }
 
