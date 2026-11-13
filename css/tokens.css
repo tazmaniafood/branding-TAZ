@@ -1,0 +1,64 @@
+/* ==========================================================
+   TAZ (nombre provisional) · Tokens de marca v0.1
+   Paleta y tipografías PROVISIONALES: se ajustan cuando
+   cerremos nombre, logo e identidad visual definitiva.
+   Usar estas variables en cualquier página de la marca.
+   ========================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;800&display=swap");
+
+:root {
+  /* ---- Colores principales (Caribe, picó y carnaval) ---- */
+  --color-sol: #FFC72C;          /* Amarillo sol costeño: energía, abundancia */
+  --color-picante: #E8412C;      /* Rojo picante: antojo, fuego, salsa */
+  --color-caribe: #00A6A6;       /* Turquesa Caribe: el mar, frescura */
+  --color-picó: #FF2E88;         /* Fucsia neón de picó: fiesta, mamadera de gallo */
+  --color-corozo: #6A1B4D;       /* Morado corozo: fruta costeña, acento profundo */
+
+  /* ---- Neutros ---- */
+  --color-arena: #FFF4DE;        /* Fondo cálido, como arena de playa */
+  --color-arena-oscura: #F5E3BE;
+  --color-tinta: #1E1A2B;        /* Texto principal */
+  --color-tinta-suave: #4A4458;
+  --color-blanco: #FFFFFF;
+
+  /* ---- Usos semánticos ---- */
+  --bg: var(--color-arena);
+  --text: var(--color-tinta);
+  --text-muted: var(--color-tinta-suave);
+  --accent: var(--color-picante);
+  --accent-2: var(--color-caribe);
+  --highlight: var(--color-sol);
+
+  /* ---- Tipografía ---- */
+  --font-display: "Lilita One", "Arial Rounded MT Bold", system-ui, sans-serif; /* Letras infladas estilo picó */
+  --font-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --fs-xs: 0.8rem;
+  --fs-sm: 0.95rem;
+  --fs-md: 1.1rem;
+  --fs-lg: 1.5rem;
+  --fs-xl: 2.2rem;
+  --fs-xxl: clamp(2.6rem, 6vw, 4.5rem);
+
+  /* ---- Formas: redondeadas y "rebosadas", nada rígido ---- */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+
+  /* ---- Sombras duras tipo cartel pintado a mano ---- */
+  --shadow-cartel: 4px 4px 0 var(--color-tinta);
+  --shadow-cartel-lg: 7px 7px 0 var(--color-tinta);
+  --border-cartel: 3px solid var(--color-tinta);
+
+  /* ---- Espaciado ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --space-6: 4rem;
+
+  --max-width: 1100px;
+}
