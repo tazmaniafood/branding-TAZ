@@ -78,7 +78,7 @@ a {
    PIEZAS DEL CARTEL
    ========================================================== */
 
-/* Letra picotera: relleno + contorno crema + sombra corozo */
+/* Letra picotera: relleno + contorno crema + sombra uva */
 .picotera {
   display: inline-block;
   font-family: var(--font-display);
@@ -163,12 +163,12 @@ a {
 
 .btn:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 5px 5px 0 var(--corozo);
+  box-shadow: 5px 5px 0 var(--uva);
 }
 
 .btn:active {
   transform: translate(3px, 3px);
-  box-shadow: 0 0 0 var(--corozo);
+  box-shadow: 0 0 0 var(--uva);
 }
 
 /* ==========================================================
@@ -386,57 +386,40 @@ a {
   padding: var(--space-sm) 0 var(--space-xs);
 }
 
-/* Pestañas: letreros de neón, cada uno de un color de la paleta.
-   Fondo noche translúcido para que se lean sobre los azulejos; la
-   activa se enciende entera en su color. */
+/* Pestañas: tranquilas para no competir con el titular. Letra crema,
+   borde crema tenue; solo la activa se enciende en neón mango. */
 .menu__tab {
-  --n: var(--mango);
   display: block;
   padding: 0.35rem 0.95rem;
   color: var(--crema);
-  background: rgb(12 10 18 / 0.85);
+  background: rgb(13 9 25 / 0.8);
   font-family: var(--font-display);
   font-size: 0.98rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   text-decoration: none;
-  border: 2px solid var(--n);
+  border: 2px solid rgb(255 241 220 / 0.3);
   border-radius: var(--radius-pill);
-  box-shadow:
-    0 0 6px color-mix(in srgb, var(--n) 70%, transparent),
-    inset 0 0 6px color-mix(in srgb, var(--n) 35%, transparent);
   transition:
     background var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
     color var(--dur-fast) var(--ease-out),
-    transform var(--dur-fast) var(--ease-pop),
     box-shadow var(--dur-fast) var(--ease-out);
 }
 
-.menu__tab:nth-child(5n + 1) { --n: var(--mango); }
-.menu__tab:nth-child(5n + 2) { --n: var(--tomate); }
-.menu__tab:nth-child(5n + 3) { --n: var(--loro); }
-.menu__tab:nth-child(5n + 4) { --n: var(--menta); }
-.menu__tab:nth-child(5n + 5) { --n: #6E9BF5; }
-
 .menu__tab:hover {
-  box-shadow:
-    0 0 10px var(--n),
-    0 0 22px color-mix(in srgb, var(--n) 55%, transparent),
-    inset 0 0 8px color-mix(in srgb, var(--n) 45%, transparent);
+  border-color: var(--mango);
+  color: var(--mango);
 }
 
 .menu__tab[aria-selected="true"] {
   color: var(--noche);
-  background: var(--n);
-  border-color: color-mix(in srgb, var(--n) 40%, #FFFFFF);
-  box-shadow: 0 0 10px var(--n), 0 0 24px color-mix(in srgb, var(--n) 60%, transparent);
-  transform: translateY(-2px);
+  background: var(--mango);
+  border-color: #FFF0B8;
+  box-shadow: var(--neon-mango);
 }
 
-.menu__tab:active {
-  transform: translateY(1px);
-  box-shadow: 0 0 0 var(--noche);
-}
+.menu__tab:active { transform: translateY(1px); }
 
 @media (max-width: 600px) {
   .menu__list { gap: 6px; }
@@ -504,7 +487,7 @@ main {
   color: var(--text-secondary);
 }
 
-/* Avisos: calcomanías oscuras con contorno crema y sombra corozo */
+/* Avisos: calcomanías oscuras con contorno crema y sombra uva */
 .tablero {
   display: grid;
   gap: var(--space-lg);
@@ -806,7 +789,7 @@ main {
   align-items: center;
   gap: var(--space-sm);
   padding: var(--space-xs) var(--space-md);
-  background: var(--loro);
+  background: var(--lima);
   color: var(--noche);
 }
 
@@ -901,9 +884,9 @@ main {
 
 .chip:nth-child(5n + 1) { background: var(--mango); }
 .chip:nth-child(5n + 2) { background: var(--tomate); }
-.chip:nth-child(5n + 3) { background: var(--loro); }
-.chip:nth-child(5n + 4) { background: var(--loro); }
-.chip:nth-child(5n + 5) { background: var(--menta); }
+.chip:nth-child(5n + 3) { background: var(--lima); }
+.chip:nth-child(5n + 4) { background: var(--lima); }
+.chip:nth-child(5n + 5) { background: var(--cian); }
 
 .chip.chip--no {
   background: none;
@@ -980,7 +963,7 @@ main {
   box-shadow: inset 0 0 0 2px var(--linea-suave);
 }
 
-/* La paleta en su proporción: mucha noche, buen corozo, poquito frío */
+/* La paleta en su proporción: mucha noche, buen uva y neones */
 .regla__demo--paleta {
   display: flex;
   gap: 0;
@@ -988,12 +971,13 @@ main {
 
 .regla__demo--paleta span { height: 100%; }
 .p-noche { flex: 6; background: var(--panel-2); }
-.p-corozo { flex: 3; background: var(--corozo); }
+.p-uva { flex: 3; background: var(--uva); }
 .p-mango { flex: 2; background: var(--mango); }
-.p-tomate { flex: 1.5; background: var(--tomate); }
-.p-loro { flex: 1; background: var(--loro); }
-.p-azulejo { flex: 1; background: var(--azulejo); }
-.p-menta { flex: 0.6; background: var(--menta); }
+.p-tomate { flex: 1.2; background: var(--tomate); }
+.p-naranja { flex: 0.8; background: var(--naranja); }
+.p-lima { flex: 0.6; background: var(--lima); }
+.p-morado { flex: 1; background: var(--morado); }
+.p-cian { flex: 1; background: var(--cian); }
 
 /* La carpa en miniatura */
 .regla__demo--carpa {
@@ -1009,7 +993,7 @@ main {
   font-family: var(--font-display);
   text-transform: uppercase;
   color: var(--crema);
-  background: var(--corozo);
+  background: var(--uva);
   border: 2px solid var(--mango);
   border-radius: var(--radius-pill);
 }
@@ -1107,7 +1091,7 @@ main {
 }
 
 .swatch[data-state="copied"] {
-  border-color: var(--loro);
+  border-color: var(--lima);
 }
 
 .swatch__chip {
@@ -1261,7 +1245,7 @@ main {
 
 .listing__tag {
   font-weight: 900;
-  color: var(--corozo);
+  color: var(--uva);
 }
 
 .listing__desc {
@@ -1332,7 +1316,7 @@ main {
 }
 
 .todo li[data-state="done"]::before {
-  background: var(--loro);
+  background: var(--lima);
 }
 
 .todo li[data-state="review"]::before {
@@ -1446,7 +1430,7 @@ main {
   bottom: calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
   z-index: 70;
   padding: var(--space-xs) var(--space-lg);
-  background: var(--loro);
+  background: var(--lima);
   color: var(--noche);
   font-weight: 900;
   border: 2px solid var(--crema);

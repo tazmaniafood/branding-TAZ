@@ -14,20 +14,20 @@ Abre `index.html` en el navegador (con internet, para que carguen las fuentes).
 | `css/styles.css` | Estilos de la guía, mobile-first, con tipografía y espacios fluidos (`clamp()`). |
 | `js/main.js` | Interacciones con delegación de eventos (`data-action`), estado en `data-state` / `aria-*` y código defensivo. |
 
-## Identidad v3.5 · "La carpa"
+## Identidad v5.0 · "Noche de Carnaval"
 
-Una sola idea: **la noche de fiesta en una casa costeña**, con el carrito de comida en la puerta, el cartel de picó y los colores planos del fast food. Los colores salen de las escaleras pintadas de los barrios, la Marimonda del Carnaval y la baldosa de la casa: planos y vivos, de fast food. Seis reglas:
+Una sola idea: **la noche de Carnaval en la Costa, con letreros de neón vivos**. Arriba y abajo, la carpa del carrito de comida con su faldón de neón y sus azulejos costeños; los títulos son de cartel de picó; lo demás va pegado como calcomanía. Seis reglas:
 
-1. **La noche:** casi todo va sobre negro `#0C0A12`.
-2. **La paleta:** mango `#F6C431`, tomate `#E8472E` y loro `#3DAA52` para títulos y botones (mostaza, ketchup y lechuga); azulejo `#2F62C8` y menta `#7DD3B8` para detalles; corozo en la baldosa; corozo `#8A1F37` en todas las sombras. Texto y contorno en crema `#FFF1DC`.
-3. **Letra picotera:** Lilita One en mayúsculas, relleno de color, contorno crema y sombra corozo. Clase `.picotera`, con `--c` (relleno) y `--s` (sombra).
-4. **La calcomanía:** todo objeto (tarjeta, botón, pestaña, chip, muestra) se dibuja como la letra: relleno plano, contorno (`--contorno`, o `--contorno-tinta` sobre claro) y sombra dura corozo (`--sombra`, `--sombra-chica`).
+1. **La noche:** todo va sobre noche morada `#0D0919`.
+2. **Neones de Carnaval:** mango `#FFC93C`, tomate `#FF4A5A` y cian `#2EC8FF` para títulos y botones; naranja `#FF8A2B`, morado `#B455FF` y lima `#7CFF6B` para figuras y detalles (lima también para confirmar y WhatsApp); uva `#5B1F94` en todas las sombras; texto en crema `#FFF1DC`.
+3. **Letra picotera:** Lilita One en mayúsculas, relleno de color, contorno crema y sombra uva. Clase `.picotera`, con `--c` (relleno) y `--s` (sombra).
+4. **La calcomanía:** todo objeto (tarjeta, botón, pestaña, chip, muestra) se dibuja como la letra: relleno plano, contorno (`--contorno`, o `--contorno-tinta` sobre claro) y sombra dura uva (`--sombra`, `--sombra-chica`).
 5. **La explosión mango:** ahí va lo más importante. Clase `.explosion`.
-6. **La carpa:** como el toldo de un carrito de comida. Fondo de azulejos costeños (`img/azulejos-costenos.svg`: sombrero vueltiao, acordeón, palma, mar y sol, arepa de huevo, cayena, maracas y kanas wayuu, solo con colores de la paleta) con un velo negro (`--velo`) y un faldón de ondas entre punta y punta, trazado en neón mango (`--falda-img`). Va en el menú y, volteado, en el pie; la cenefa bajo cada título es un pedacito de azulejos (`.cenefa`).
+6. **La carpa:** el toldo de un carrito de comida. Fondo de azulejos costeños de neón (`img/azulejos-costenos.svg`: sombrero vueltiao, acordeón, palma, mar y sol, arepa de huevo, cayena, maracas y kanas wayuu) con un velo suave, y un faldón de ondas en neón mango (`--falda-*`). Va en el menú y, volteado, en el pie; la cenefa de cada título es un pedacito.
 
 **Portada.** Texto a la izquierda (titular, cenefa, bajada, datos y botón) y, a la derecha, un carrusel de figuras de neón que se turnan cada 4 s (`.cartel__escena.carrusel`: sombrero vueltiao y Marimonda por ahora). Para agregar una figura, otro `<img class="carrusel__item">`. En celular las figuras van arriba.
 
-**Pestañas.** Letreros con borde de neón, cada uno de un color de la paleta (mango, tomate, loro, menta y azul), sobre fondo noche translúcido; la activa se enciende entera en su color.
+**Pestañas.** Tranquilas, para no competir con el titular: letra crema y borde crema tenue sobre noche translúcida; solo la activa se enciende en neón mango.
 
 Las ilustraciones y adornos llegan después y deben seguir la regla 4.
 
@@ -51,7 +51,7 @@ Para leer: Nunito. Movimiento: el cartel "se pega" línea por línea al cargar; 
 ## Estado
 
 - [x] Alma, valores, personalidad, voz, públicos y redes
-- [ ] Validar identidad visual v4.5
+- [ ] Validar identidad visual v5.0
 - [ ] Nombre definitivo
 - [ ] Historia de origen
 - [ ] Plato costeño insignia
