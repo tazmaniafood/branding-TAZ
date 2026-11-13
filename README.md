@@ -23,7 +23,7 @@ Una sola idea: **la noche de fiesta en una casa costeña**, con el carrito de co
 3. **Letra picotera:** Lilita One en mayúsculas, relleno de color, contorno crema y sombra corozo. Clase `.picotera`, con `--c` (relleno) y `--s` (sombra).
 4. **La calcomanía:** todo objeto (tarjeta, botón, pestaña, chip, muestra) se dibuja como la letra: relleno plano, contorno (`--contorno`, o `--contorno-tinta` sobre claro) y sombra dura corozo (`--sombra`, `--sombra-chica`).
 5. **La explosión mango:** ahí va lo más importante. Clase `.explosion`.
-6. **La carpa:** como el toldo de un carrito de comida. Fondo de azulejos costeños (`img/azulejos-costenos.svg`: sombrero vueltiao, acordeón, palma, mar y sol, arepa de huevo, cayena, maracas y kanas wayuu, solo con colores de la paleta) con un velo negro (`--velo`) y un faldón oscuro con costuras verticales y ondas entre punta y punta, trazado en neón mango (`--falda-img`). Va en el menú y, volteado, en el pie; la cenefa bajo cada título es un pedacito de azulejos (`.cenefa`).
+6. **La carpa:** como el toldo de un carrito de comida. Fondo de azulejos costeños (`img/azulejos-costenos.svg`: sombrero vueltiao, acordeón, palma, mar y sol, arepa de huevo, cayena, maracas y kanas wayuu, solo con colores de la paleta) con un velo negro (`--velo`) y un faldón de ondas entre punta y punta, trazado en neón mango (`--falda-img`). Va en el menú y, volteado, en el pie; la cenefa bajo cada título es un pedacito de azulejos (`.cenefa`).
 
 **Neones del titular.** El titular de la portada lleva un letrero de neón a cada lado (`.cartel__titular`, `.neon`). Por ahora: `img/sombrero-vueltiao-neon.svg` a la izquierda y el mismo volteado a la derecha, mientras llega el segundo.
 

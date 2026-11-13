@@ -331,7 +331,7 @@ a {
 
 /* La carpa es UNA sola pieza de baldosa (::before) que cubre el menú
    y baja hasta las ondas, recortada con --falda-forma. Así la baldosa
-   no se parte ni se mueve. Encima, las costuras y ondas en neón
+   no se parte ni se mueve. Encima, las ondas en neón
    (::after, --falda-lineas). */
 .menu::before,
 .menu::after,
