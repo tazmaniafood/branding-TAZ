@@ -1,5 +1,5 @@
 /* ==========================================================
-   Tokens de marca · v0.8 "Carnaval de noche"
+   Tokens de marca · v0.9 "Carnaval de noche"
    TAZ es un nombre provisional.
 
    El ALMA viene de la web de pedidos: caricatura de fast food,
@@ -17,7 +17,7 @@
    tinta/fucsia 6.1 · crema/azul 4.8 · tinta/crema 18.3.
    ========================================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=Anton&family=Nunito:wght@500;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@500;700;800;900&display=swap");
 
 :root {
   color-scheme: dark;
@@ -79,7 +79,7 @@
     radial-gradient(#ffffff12 2px, transparent 2.5px) 0 0 / 22px 22px;
 
   /* ---- Tipografía ---- */
-  --font-display: "Anton", "Impact", "Arial Narrow", sans-serif;
+  --font-display: "Lilita One", "Arial Rounded MT Bold", system-ui, sans-serif;
   --font-body: "Nunito", "Segoe UI", system-ui, sans-serif;
 
   --step--1: clamp(0.86rem, 0.82rem + 0.15vw, 0.94rem);
@@ -88,7 +88,7 @@
   --step-2: clamp(1.6rem, 1.35rem + 1.1vw, 2.2rem);
   --step-3: clamp(2.1rem, 1.6rem + 2.2vw, 3.3rem);
   --step-4: clamp(2.6rem, 1.8rem + 3.6vw, 4.6rem);
-  --step-hero: clamp(3.4rem, 1.6rem + 7.4vw, 8rem);
+  --step-hero: clamp(3.2rem, 1.6rem + 5.6vw, 6.4rem);
 
   /* ---- Espacio ---- */
   --space-2xs: 0.25rem;

@@ -1,5 +1,5 @@
 // ==========================================================
-// Guía de marca v0.6 · interacciones
+// Guía de marca v0.9 · interacciones
 // Patrones: delegación de eventos con data-action, estado
 // visual en data-state / aria-*, código defensivo (todo se
 // verifica antes de usarse) y sin variables globales.
@@ -131,7 +131,7 @@
     var target = event.target.closest("[data-action]");
     if (!target) return;
     var handler = ACTIONS[target.getAttribute("data-action")];
-    if (handler) handler(target);
+    if (handler) handler(target, event);
   });
 
   // Flechas del teclado en las pestañas de tono (patrón tablist)
@@ -153,27 +153,80 @@
     }
   });
 
-  // ---------- Índice: marcar el capítulo visible ----------
-  var links = $all(".index__list a");
-  if (links.length && "IntersectionObserver" in window) {
-    var byId = {};
-    links.forEach(function (link) {
-      var id = (link.getAttribute("href") || "").slice(1);
-      if (id) byId[id] = link;
-    });
+  // ---------- Menú de secciones: se abre una a la vez ----------
+  var DEFAULT_SECTION = "alma";
 
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        links.forEach(function (link) { link.removeAttribute("aria-current"); });
-        var active = byId[entry.target.id];
-        if (active) active.setAttribute("aria-current", "true");
-      });
-    }, { rootMargin: "-35% 0px -60% 0px" });
-
-    Object.keys(byId).forEach(function (id) {
-      var section = document.getElementById(id);
-      if (section) observer.observe(section);
-    });
+  function sectionTabs() {
+    return $all('.menu__tab[data-action="show-section"]');
   }
+
+  function showSection(id, options) {
+    var opts = options || {};
+    var panel = id ? document.getElementById(id) : null;
+    if (!panel || panel.getAttribute("role") !== "tabpanel") return;
+
+    $all('.chapter[role="tabpanel"]').forEach(function (section) {
+      var active = section === panel;
+      section.hidden = !active;
+      section.classList.remove("is-entering");
+    });
+
+    sectionTabs().forEach(function (tab) {
+      var selected = tab.getAttribute("data-target") === id;
+      tab.setAttribute("aria-selected", String(selected));
+      tab.setAttribute("tabindex", selected ? "0" : "-1");
+      if (selected && opts.focusTab) tab.focus();
+    });
+
+    // Reiniciar la animación de entrada
+    void panel.offsetWidth;
+    panel.classList.add("is-entering");
+
+    if (opts.updateHash !== false && window.history && history.replaceState) {
+      history.replaceState(null, "", "#" + id);
+    }
+
+    if (opts.scroll) {
+      var menu = $(".menu");
+      if (menu) {
+        var top = menu.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top: top, behavior: "smooth" });
+      }
+    }
+  }
+
+  ACTIONS["show-section"] = function (el, event) {
+    if (event) event.preventDefault();
+    var fromHero = !el.classList.contains("menu__tab");
+    showSection(el.getAttribute("data-target"), { scroll: true, fromHero: fromHero });
+  };
+
+  // Flechas del teclado en el menú (patrón tablist)
+  document.addEventListener("keydown", function (event) {
+    var tab = event.target.closest(".menu__tab");
+    if (!tab) return;
+    var tabs = sectionTabs();
+    var index = tabs.indexOf(tab);
+    var next = null;
+
+    if (event.key === "ArrowRight") next = tabs[(index + 1) % tabs.length];
+    if (event.key === "ArrowLeft") next = tabs[(index - 1 + tabs.length) % tabs.length];
+    if (event.key === "Home") next = tabs[0];
+    if (event.key === "End") next = tabs[tabs.length - 1];
+
+    if (next) {
+      event.preventDefault();
+      showSection(next.getAttribute("data-target"), { focusTab: true });
+    }
+  });
+
+  // Al cargar: abrir la sección del enlace (#valores) o la primera
+  var initial = (window.location.hash || "").slice(1);
+  if (!document.getElementById(initial)) initial = DEFAULT_SECTION;
+  showSection(initial, { updateHash: false });
+
+  window.addEventListener("hashchange", function () {
+    var id = (window.location.hash || "").slice(1);
+    if (document.getElementById(id)) showSection(id, { updateHash: false, scroll: true });
+  });
 })();

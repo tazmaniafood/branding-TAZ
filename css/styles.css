@@ -1,5 +1,5 @@
 /* ==========================================================
-   Guía de marca · v0.8 "Carnaval de noche"
+   Guía de marca · v0.9 "Carnaval de noche"
    Estilo caricatura de fast food (el mismo de la web de pedidos).
    Regla de oro: TODO lleva contorno tinta y sombra dura.
    Mobile-first. Depende de tokens.css.
@@ -262,9 +262,6 @@ a {
 .hero__inner {
   position: relative;
   z-index: 1;
-  display: grid;
-  gap: var(--space-xl);
-  align-items: center;
   width: min(100%, var(--layout-max));
   margin-inline: auto;
 }
@@ -277,8 +274,9 @@ a {
   -webkit-text-stroke: var(--stroke-title);
   paint-order: stroke fill;
   text-shadow: 6px 8px 0 var(--brand-tinta);
-  transform: rotate(-2.5deg);
+  transform: rotate(-2deg);
   transform-origin: left center;
+  max-width: 14ch;
 }
 
 .hero__lead {
@@ -303,67 +301,72 @@ a {
   color: var(--text-secondary);
 }
 
-.scene {
+/* Fiesta de la portada: confeti y banderines sueltos (en lugar de logo) */
+.hero__copy {
   position: relative;
-  width: min(100%, 520px);
-  aspect-ratio: 1;
-  margin-inline: auto;
-}
-
-.scene__logo {
-  position: absolute;
-  inset: 20%;
   z-index: 1;
-  border-radius: 50%;
-  box-shadow: 0 0 0 6px var(--brand-crema), 0 0 0 10px var(--brand-tinta), 8px 10px 0 10px var(--brand-tinta);
 }
-
-.scene__logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 50%;
-}
-
-.medallon {
-  position: absolute;
-  z-index: 2;
-  display: grid;
-  place-items: center;
-  width: 19%;
-  aspect-ratio: 1;
-  background: var(--brand-crema);
-  border: var(--line);
-  border-radius: 50%;
-  box-shadow: 4px 5px 0 var(--brand-tinta);
-}
-
-.medallon svg {
-  width: 68%;
-  height: 68%;
-}
-
-.medallon--a { left: 15.8%; top: 6.5%; }
-.medallon--b { left: 65.2%; top: 6.5%; }
-.medallon--e { left: 80.4%; top: 53.5%; }
-.medallon--c { left: 40.5%; top: 82.5%; }
-.medallon--d { left: 0.6%; top: 53.5%; }
-
-.chispa {
-  position: absolute;
-  z-index: 3;
-  font-size: clamp(1.6rem, 5vw, 2.8rem);
-  line-height: 1;
-  color: var(--brand-amarillo);
-  text-shadow: 3px 3px 0 var(--brand-tinta);
-}
-
-.chispa--1 { left: 3%; top: 30%; }
-.chispa--2 { right: 4%; top: 32%; }
 
 @media (min-width: 900px) {
-  .hero__inner {
-    grid-template-columns: 1.1fr 1fr;
+  .hero__copy {
+    max-width: 60%;
+  }
+}
+
+.hero__fiesta {
+  position: absolute;
+  inset: 52px 0 0 auto;
+  width: min(36%, 520px);
+  pointer-events: none;
+}
+
+.papel {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  border: var(--line);
+  box-shadow: 4px 4px 0 var(--brand-tinta);
+  scale: var(--s);
+}
+
+.papel--bolita {
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
+}
+
+.papel--banderin {
+  width: 4.4rem;
+  height: 4.4rem;
+  border: 0;
+  box-shadow: none;
+  background: var(--brand-tinta);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.papel--banderin::after {
+  content: "";
+  position: absolute;
+  inset: 5px 8px 11px;
+  background: var(--papel-color);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.papel--rojo { background-color: var(--brand-rojo); --papel-color: var(--brand-rojo); }
+.papel--amarillo { background-color: var(--brand-amarillo); --papel-color: var(--brand-amarillo); }
+.papel--verde { background-color: var(--brand-verde); --papel-color: var(--brand-verde); }
+.papel--fucsia { background-color: var(--brand-fucsia); --papel-color: var(--brand-fucsia); }
+.papel--azul { background-color: var(--brand-azul); --papel-color: var(--brand-azul); }
+.papel--banderin.papel--rojo,
+.papel--banderin.papel--amarillo,
+.papel--banderin.papel--verde,
+.papel--banderin.papel--fucsia,
+.papel--banderin.papel--azul { background-color: var(--brand-tinta); }
+
+@media (max-width: 899px) {
+  .hero__fiesta {
+    width: 100%;
+    opacity: 0.35;
   }
 }
 
@@ -392,9 +395,9 @@ a {
 }
 
 /* ==========================================================
-   NAVEGACIÓN
+   MENÚ DE SECCIONES (pestañas: se abre una a la vez)
    ========================================================== */
-.index {
+.menu {
   position: sticky;
   top: 0;
   z-index: 30;
@@ -403,42 +406,42 @@ a {
   border-block: 4px solid var(--brand-tinta);
 }
 
-.index__list {
+.menu__list {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-xs);
   width: min(100% - 2 * var(--space-md), var(--layout-max));
   margin-inline: auto;
-  padding: var(--space-xs) 0;
-  overflow-x: auto;
-  list-style: none;
-  scrollbar-width: none;
+  padding: var(--space-sm) 0;
 }
 
-.index__list::-webkit-scrollbar {
-  display: none;
-}
-
-.index__list a {
+.menu__tab {
   display: block;
-  padding: 0.35rem 0.9rem;
-  white-space: nowrap;
+  padding: 0.4rem 1rem;
   color: var(--brand-crema);
-  font-weight: 800;
-  font-size: var(--step--1);
+  font-family: var(--font-display);
+  font-size: var(--step-0);
+  letter-spacing: 0.02em;
   text-decoration: none;
   border: 3px solid transparent;
   border-radius: var(--radius-pill);
-  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-pop);
 }
 
-.index__list a:hover {
+.menu__tab:hover {
   background: var(--bg-raised-2);
 }
 
-.index__list a[aria-current="true"] {
+.menu__tab[aria-selected="true"] {
   background: var(--brand-amarillo);
   color: var(--brand-tinta);
   border-color: var(--brand-tinta);
+  box-shadow: 0 4px 0 var(--brand-tinta);
+  transform: rotate(-2deg);
 }
 
 /* ==========================================================
@@ -451,7 +454,42 @@ main {
 }
 
 .chapter {
-  padding-top: var(--space-2xl);
+  padding-top: var(--space-xl);
+  outline: none;
+}
+
+.chapter[hidden] {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .chapter.is-entering {
+    animation: entrar 0.45s var(--ease-pop) both;
+  }
+
+  .chapter.is-entering .card,
+  .chapter.is-entering .swatch,
+  .chapter.is-entering .chip {
+    animation: entrar-tarjeta 0.5s var(--ease-pop) both;
+  }
+
+  .chapter.is-entering .cards > :nth-child(2),
+  .chapter.is-entering .values > :nth-child(2) { animation-delay: 0.06s; }
+  .chapter.is-entering .cards > :nth-child(3),
+  .chapter.is-entering .values > :nth-child(3) { animation-delay: 0.12s; }
+  .chapter.is-entering .cards > :nth-child(4),
+  .chapter.is-entering .values > :nth-child(4) { animation-delay: 0.18s; }
+  .chapter.is-entering .values > :nth-child(5) { animation-delay: 0.24s; }
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes entrar-tarjeta {
+  from { opacity: 0; translate: 0 18px; scale: 0.94; }
+  to { opacity: 1; translate: 0 0; scale: 1; }
 }
 
 .chapter__title {
@@ -730,11 +768,15 @@ main {
 }
 
 .chat__avatar {
+  display: grid;
+  place-items: center;
   width: 2.6rem;
   height: 2.6rem;
   border-radius: 50%;
-  object-fit: contain;
-  background: var(--brand-crema);
+  background: var(--brand-amarillo);
+  color: var(--brand-tinta);
+  font-family: var(--font-display);
+  font-size: var(--step-1);
   border: var(--line-thin);
 }
 
@@ -1146,12 +1188,16 @@ main {
   border-bottom: var(--line);
 }
 
-.listing__cover img {
+.listing__cover-title {
   position: relative;
   z-index: 1;
-  width: 42%;
-  border-radius: 50%;
-  box-shadow: 0 0 0 5px var(--brand-crema), 0 0 0 9px var(--brand-tinta);
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 1.6rem + 2.4vw, 3rem);
+  color: var(--brand-crema);
+  -webkit-text-stroke: 7px var(--brand-tinta);
+  paint-order: stroke fill;
+  text-shadow: 4px 5px 0 var(--brand-tinta);
+  transform: rotate(-4deg);
 }
 
 .burst--small {
@@ -1398,18 +1444,8 @@ main {
     animation: mecer 3s ease-in-out infinite alternate;
   }
 
-  .scene .burst { animation: girar 90s linear infinite; }
-  .scene .burst::after { animation: girar 60s linear infinite reverse; }
-  .scene__logo { animation: respirar 2.4s ease-in-out infinite alternate; }
 
-  .medallon { animation: flotar 2.6s ease-in-out infinite alternate; }
-  .medallon--b { animation-delay: -0.5s; }
-  .medallon--e { animation-delay: -1s; }
-  .medallon--c { animation-delay: -1.5s; }
-  .medallon--d { animation-delay: -2s; }
 
-  .chispa { animation: titilar 1.6s ease-in-out infinite alternate; }
-  .chispa--2 { animation-delay: -0.8s; }
 
   .cinta__track { animation: correr 28s linear infinite; }
 
@@ -1417,6 +1453,8 @@ main {
   .listing .burst { animation: girar 30s linear infinite; }
 
   .ig-post__medallon { animation: flotar 2.4s ease-in-out infinite alternate; }
+
+  .papel { animation: flotar 3.2s ease-in-out var(--d) infinite alternate; }
 
   .bubble--out.is-new { animation: llegar var(--dur-base) var(--ease-pop); }
 }
