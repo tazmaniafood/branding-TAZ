@@ -1,5 +1,5 @@
 /* ==========================================================
-   Guía de marca v0.3 · estilos "Noche costeña"
+   Guía de marca v0.4 · estilos "Noche costeña"
    Depende de tokens.css
    ========================================================== */
 
@@ -109,32 +109,61 @@ a {
 .hero {
   position: relative;
   overflow: hidden;
-  padding: var(--space-6) 0 calc(var(--space-5) + 14px);
+  padding: calc(var(--space-6) + 30px) 0 calc(var(--space-5) + 22px);
   background: var(--color-noche);
 }
 
 .hero::before {
+  /* Banderines de fiesta colgados arriba */
   content: "";
   position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 82% 24%, var(--color-fucsia) 0 6px, transparent 7px),
-    radial-gradient(circle at 90% 60%, var(--color-amarillo) 0 4px, transparent 5px),
-    radial-gradient(circle at 74% 78%, var(--color-verde) 0 5px, transparent 6px),
-    radial-gradient(circle at 95% 15%, var(--color-azul) 0 4px, transparent 5px),
-    radial-gradient(circle at 68% 40%, var(--color-rojo) 0 3px, transparent 4px);
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 46px;
+  background: var(--banderines) repeat-x;
   pointer-events: none;
 }
 
 .hero::after {
+  /* Franja de hamaca abajo */
   content: "";
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 14px;
-  background: var(--confeti);
+  height: 22px;
+  background: var(--hamaca);
 }
+
+.hero__bafle {
+  /* Bafle de picó: anillos de neón */
+  position: absolute;
+  right: -90px;
+  top: 50%;
+  width: 420px;
+  height: 420px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, var(--color-noche) 0 46px, transparent 47px),
+    repeating-radial-gradient(circle, transparent 0 22px, var(--neon-fucsia) 22px 25px, transparent 25px 34px, var(--neon-cian) 34px 36px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.destello {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: var(--destello) no-repeat center / contain;
+  pointer-events: none;
+}
+
+.destello--1 { top: 22%; right: 34%; }
+.destello--2 { top: 64%; right: 26%; width: 18px; height: 18px; }
+.destello--3 { top: 36%; right: 8%; width: 34px; height: 34px; }
+.destello--4 { bottom: 18%; left: 58%; width: 16px; height: 16px; }
 
 .hero .container {
   position: relative;
@@ -186,9 +215,9 @@ a {
   left: 50%;
   transform: translateX(-50%);
   width: min(100% - 2rem, var(--max-width));
-  height: 6px;
+  height: 8px;
   border-radius: var(--radius-pill);
-  background: var(--confeti);
+  background: var(--hamaca);
 }
 
 .section__kicker {
@@ -684,8 +713,8 @@ a {
   top: 0;
   left: 0;
   right: 0;
-  height: 10px;
-  background: var(--confeti);
+  height: 14px;
+  background: var(--hamaca);
 }
 
 .footer strong {
@@ -731,4 +760,126 @@ a {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .swatch, .btn, .toast { transition: none; }
+}
+
+/* ---------- Neón ---------- */
+.neon {
+  font-family: var(--font-display);
+  color: #FFFFFF;
+}
+
+.neon--fucsia { text-shadow: var(--brillo-fucsia); }
+.neon--cian { text-shadow: var(--brillo-cian); }
+.neon--verde { text-shadow: var(--brillo-verde); }
+.neon--amarillo { text-shadow: var(--brillo-amarillo); }
+
+.neon-box {
+  border: 3px solid var(--neon-cian);
+  border-radius: var(--radius-md);
+  box-shadow: 0 0 8px var(--neon-cian), inset 0 0 8px var(--neon-cian);
+  padding: var(--space-3) var(--space-4);
+  display: inline-block;
+}
+
+.hero__neon {
+  display: block;
+  width: max-content;
+  font-size: var(--fs-lg);
+  margin-bottom: var(--space-2);
+  transform: rotate(-3deg);
+}
+
+/* ---------- Formas y patrones (muestras) ---------- */
+.patterns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-4);
+}
+
+.pattern {
+  background: var(--color-noche-2);
+  border: 2px solid var(--color-noche-3);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.pattern__sample {
+  position: relative;
+  height: 140px;
+  background: var(--color-noche);
+  overflow: hidden;
+}
+
+.pattern__info {
+  padding: var(--space-3);
+  font-size: var(--fs-sm);
+  color: var(--color-gris-claro);
+}
+
+.pattern__info strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--fs-md);
+  color: var(--neon-amarillo);
+  margin-bottom: var(--space-1);
+}
+
+.sample--hamaca { background: var(--hamaca); }
+
+.sample--banderines {
+  background: var(--banderines) repeat-x 0 20px, var(--color-noche);
+}
+
+.sample--bafle {
+  display: grid;
+  place-items: center;
+}
+
+.sample--bafle::before {
+  content: "";
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, var(--neon-amarillo) 0 14px, var(--color-noche) 15px 20px, transparent 21px),
+    repeating-radial-gradient(circle, transparent 0 12px, var(--neon-fucsia) 12px 15px, transparent 15px 20px, var(--neon-cian) 20px 22px);
+}
+
+.sample--destellos {
+  background:
+    var(--destello) no-repeat 20% 30% / 34px,
+    var(--destello) no-repeat 55% 70% / 22px,
+    var(--destello) no-repeat 80% 25% / 28px,
+    var(--destello) no-repeat 38% 80% / 14px,
+    var(--color-noche);
+}
+
+.sample--neon {
+  display: grid;
+  place-items: center;
+}
+
+.sample--confeti {
+  background:
+    radial-gradient(circle at 12% 30%, var(--neon-fucsia) 0 6px, transparent 7px),
+    radial-gradient(circle at 30% 70%, var(--neon-amarillo) 0 5px, transparent 6px),
+    radial-gradient(circle at 48% 25%, var(--neon-cian) 0 7px, transparent 8px),
+    radial-gradient(circle at 62% 65%, var(--neon-verde) 0 5px, transparent 6px),
+    radial-gradient(circle at 80% 35%, var(--neon-naranja) 0 6px, transparent 7px),
+    radial-gradient(circle at 90% 75%, var(--vivo-morado) 0 7px, transparent 8px),
+    var(--color-noche);
+}
+
+.swatch__color--neon {
+  box-shadow: inset 0 0 0 6px rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 640px) {
+  .hero__bafle {
+    width: 260px;
+    height: 260px;
+    right: -120px;
+    opacity: 0.35;
+  }
 }
