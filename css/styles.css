@@ -322,7 +322,7 @@ a {
 
 .menu::after {
   height: 21px;
-  background: var(--azulejo);
+  background: var(--azulejo-noche);
   -webkit-mask-image: radial-gradient(32px 21px at 50% 0, #000 97%, transparent);
   mask-image: radial-gradient(32px 21px at 50% 0, #000 97%, transparent);
 }
@@ -1300,7 +1300,7 @@ main {
 
 .footer::after {
   height: 21px;
-  background: var(--azulejo);
+  background: var(--azulejo-noche);
   -webkit-mask-image: radial-gradient(32px 21px at 50% 100%, #000 97%, transparent);
   mask-image: radial-gradient(32px 21px at 50% 100%, #000 97%, transparent);
 }
@@ -1359,7 +1359,7 @@ main {
   width: min(18rem, 70%);
   height: 30px;
   margin: var(--space-md) auto 0;
-  background: var(--escalon-tomate) 0 0 / 120px 30px, var(--tomate);
+  background: var(--escalon-tomate) 0 0 / 120px 30px, var(--panel-2);
   border: 2px solid var(--crema);
   border-radius: var(--radius-pill);
   box-shadow: var(--sombra-chica);
