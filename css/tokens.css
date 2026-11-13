@@ -1,20 +1,22 @@
 /* ==========================================================
-   Tokens de marca · v0.9 "Carnaval de noche"
+   Tokens de marca · v1.0 "Cartel de picó"
    TAZ es un nombre provisional.
 
-   El ALMA viene de la web de pedidos: caricatura de fast food,
-   contorno negro en todo, sombra dura, tarjetas chuecas,
-   medallones de comida y todo en movimiento.
+   La identidad sale de los carteles de fiesta de picó de la
+   Costa (Barranquilla y Cartagena). Su gramática es fija y por
+   eso todo queda coherente:
 
-   Los COLORES vienen de la Costa:
-   - Rojo, amarillo y verde: las banderas de Barranquilla y
-     Cartagena, los colores del Carnaval.
-   - Fucsia y azul: los disfraces de marimonda y congo.
-   - Todo sobre la noche de carnaval.
+   1. Fondo negro: la noche de la verbena.
+   2. Colores fluorescentes: amarillo, rosado, verde y naranja.
+   3. Letra picotera: relleno de color + primera capa blanca
+      (contorno) + sombra en bloque de otro color.
+   4. La explosión amarilla: ahí va lo más importante.
+   5. Eje vertical: composición centrada, jerarquía clara.
+   6. Estrellas como marco. Nada de confeti suelto.
 
-   Contrastes (WCAG): crema/noche 16.5 · amarillo/noche 11.1 ·
-   tinta/amarillo 12.3 · tinta/rojo 5.1 · tinta/verde 6.2 ·
-   tinta/fucsia 6.1 · crema/azul 4.8 · tinta/crema 18.3.
+   Contrastes (WCAG) sobre noche: crema 18.5 · amarillo 15.4 ·
+   verde 14.6 · naranja 8.3 · rosado 5.7 · gris 9.9.
+   Noche sobre cualquier fluorescente: mínimo 5.7.
    ========================================================== */
 
 @import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@500;700;800;900&display=swap");
@@ -22,61 +24,36 @@
 :root {
   color-scheme: dark;
 
-  /* ---- La noche ---- */
-  --brand-noche: #1A1035;        /* Fondo: cielo de noche de carnaval */
-  --brand-tinta: #0B0618;        /* Contornos y sombras de caricatura */
+  /* ---- El cartón negro ---- */
+  --noche: #0C0A12;
+  --panel: #17131F;
+  --panel-2: #221C2E;
+  --linea-suave: #2E2640;
 
-  /* ---- Banderas de la Costa (los principales) ---- */
-  --brand-rojo: #F03A2E;
-  --brand-amarillo: #FFC21A;
-  --brand-verde: #13A54F;
+  /* ---- Los fluorescentes del pintor de picó ---- */
+  --amarillo: #FFE500;
+  --rosado: #FF2E93;
+  --verde: #3CFF4F;
+  --naranja: #FF8A00;
 
-  /* ---- Disfraces del Carnaval (acentos) ---- */
-  --brand-fucsia: #FF3E9A;       /* Marimonda */
-  --brand-azul: #2D5BFF;         /* Congo */
-
-  /* ---- Para leer ---- */
-  --brand-crema: #FFF4E0;
-
-  /* ---- Bloques de color (tarjetas) ---- */
-  --block-rojo: var(--brand-rojo);
-  --block-amarillo: var(--brand-amarillo);
-  --block-verde: var(--brand-verde);
-  --block-fucsia: var(--brand-fucsia);
-  --block-azul: var(--brand-azul);
-  --block-crema: var(--brand-crema);
+  /* ---- La primera capa y el texto ---- */
+  --blanco: #FFFFFF;
+  --crema: #FFF7EA;
+  --gris: #BDB4CC;
 
   /* ---- Semánticos ---- */
-  --bg-surface: var(--brand-noche);
-  --bg-raised: #2A1C52;
-  --bg-raised-2: #3A2870;
-  --bg-deep: #120A26;
-  --text-primary: var(--brand-crema);
-  --text-secondary: #CFC3EA;
-  --text-on-block: var(--brand-tinta);
-  --text-on-block-soft: #2B1E45;
-  --text-red-on-light: #A8200A;
-  --accent: var(--brand-amarillo);
-  --accent-hover: var(--brand-crema);
-  --on-accent: var(--brand-tinta);
-  --title: var(--brand-amarillo);
+  --bg-surface: var(--noche);
+  --bg-raised: var(--panel);
+  --bg-raised-2: var(--panel-2);
+  --text-primary: var(--crema);
+  --text-secondary: var(--gris);
+  --accent: var(--amarillo);
+  --on-accent: var(--noche);
+  --focus-ring: 0 0 0 3px var(--noche), 0 0 0 6px var(--verde);
 
-  /* ---- El estilo de caricatura (lo que unifica todo) ---- */
-  --line: 4px solid var(--brand-tinta);
-  --line-thin: 3px solid var(--brand-tinta);
-  --shadow: 6px 6px 0 var(--brand-tinta);
-  --shadow-sm: 4px 4px 0 var(--brand-tinta);
-  --shadow-lg: 9px 10px 0 var(--brand-tinta);
-  --stroke-title: 8px var(--brand-tinta);
-  --focus-ring: 0 0 0 3px var(--brand-tinta), 0 0 0 6px var(--brand-amarillo);
-
-  /* Fondo de noche: puntitos de cómic + confeti de carnaval */
-  --cielo:
-    radial-gradient(circle at 12% 18%, var(--brand-amarillo) 0 3px, transparent 3.5px) 0 0 / 260px 260px,
-    radial-gradient(circle at 70% 40%, var(--brand-fucsia) 0 3px, transparent 3.5px) 0 0 / 260px 260px,
-    radial-gradient(circle at 38% 78%, var(--brand-verde) 0 3px, transparent 3.5px) 0 0 / 260px 260px,
-    radial-gradient(circle at 88% 86%, var(--brand-rojo) 0 3px, transparent 3.5px) 0 0 / 260px 260px,
-    radial-gradient(#ffffff12 2px, transparent 2.5px) 0 0 / 22px 22px;
+  /* Color de cada sección (lo cambia cada cartel) */
+  --c: var(--amarillo);     /* relleno */
+  --s: var(--rosado);       /* sombra en bloque */
 
   /* ---- Tipografía ---- */
   --font-display: "Lilita One", "Arial Rounded MT Bold", system-ui, sans-serif;
@@ -84,11 +61,15 @@
 
   --step--1: clamp(0.86rem, 0.82rem + 0.15vw, 0.94rem);
   --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.12rem);
-  --step-1: clamp(1.25rem, 1.12rem + 0.55vw, 1.5rem);
-  --step-2: clamp(1.6rem, 1.35rem + 1.1vw, 2.2rem);
-  --step-3: clamp(2.1rem, 1.6rem + 2.2vw, 3.3rem);
-  --step-4: clamp(2.6rem, 1.8rem + 3.6vw, 4.6rem);
-  --step-hero: clamp(3.2rem, 1.6rem + 5.6vw, 6.4rem);
+  --step-1: clamp(1.2rem, 1.08rem + 0.5vw, 1.45rem);
+  --step-2: clamp(1.55rem, 1.3rem + 1.1vw, 2.15rem);
+  --step-3: clamp(2rem, 1.5rem + 2.2vw, 3.2rem);
+  --step-4: clamp(2.6rem, 1.7rem + 4vw, 5rem);
+  --step-5: clamp(2.5rem, 0.6rem + 8.4vw, 7.6rem);
+
+  /* ---- Letra picotera: contorno blanco + sombra en bloque ---- */
+  --picotera-contorno: 0.09em;
+  --picotera-sombra: 0.07em;
 
   /* ---- Espacio ---- */
   --space-2xs: 0.25rem;
@@ -99,11 +80,12 @@
   --space-xl: clamp(2.5rem, 1.8rem + 3vw, 4.5rem);
   --space-2xl: clamp(3.5rem, 2.6rem + 4vw, 6.5rem);
 
-  /* ---- Radios ---- */
-  --radius-sm: 12px;
-  --radius-md: 20px;
+  /* ---- Formas ---- */
+  --radius-sm: 10px;
+  --radius-md: 18px;
   --radius-lg: 26px;
   --radius-pill: 999px;
+  --borde: 3px solid var(--blanco);
 
   /* ---- Movimiento ---- */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -111,8 +93,11 @@
   --dur-fast: 0.16s;
   --dur-base: 0.3s;
 
-  /* ---- Banderines de carnaval (con contorno) ---- */
-  --adorno-banderines: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='52'%3E%3Cpath d='M0 5 Q150 14 300 5' stroke='%230B0618' stroke-width='4' fill='none'/%3E%3Cg stroke='%230B0618' stroke-width='3.5' stroke-linejoin='round'%3E%3Cpolygon points='6,6 54,9 30,44' fill='%23F03A2E'/%3E%3Cpolygon points='66,9 114,10 90,46' fill='%23FFC21A'/%3E%3Cpolygon points='126,10 174,10 150,47' fill='%2313A54F'/%3E%3Cpolygon points='186,10 234,9 210,46' fill='%23FF3E9A'/%3E%3Cpolygon points='246,9 294,6 270,44' fill='%232D5BFF'/%3E%3C/g%3E%3C/svg%3E");
+  /* ---- La explosión (forma de los carteles de Barranquilla) ---- */
+  --explosion: polygon(50% 0%, 57% 12%, 69% 4%, 71% 18%, 85% 13%, 82% 27%, 97% 29%, 88% 41%, 100% 50%, 88% 59%, 97% 71%, 82% 73%, 85% 87%, 71% 82%, 69% 96%, 57% 88%, 50% 100%, 43% 88%, 31% 96%, 29% 82%, 15% 87%, 18% 73%, 3% 71%, 12% 59%, 0% 50%, 12% 41%, 3% 29%, 18% 27%, 15% 13%, 29% 18%, 31% 4%, 43% 12%);
 
-  --layout-max: 1180px;
+  /* ---- Estrella de cuatro puntas (marco de los carteles) ---- */
+  --estrella: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
+
+  --layout-max: 1120px;
 }

@@ -3,53 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Carnaval de noche · Guía de marca TAZ (borrador 0.9)</title>
-  <meta name="description" content="Guía de identidad de la comida rápida costeña en San José, California. Nombre provisional: TAZ.">
-  <meta name="theme-color" content="#1A1035">
-  <link rel="stylesheet" href="css/tokens.css?v=0.9">
-  <link rel="stylesheet" href="css/styles.css?v=0.9">
+  <title>Cartel de picó · Guía de marca TAZ (borrador 1.0)</title>
+  <meta name="description" content="Guía de identidad de la comida rápida costeña en San José, California, inspirada en los carteles de fiesta de picó. Nombre provisional: TAZ.">
+  <meta name="theme-color" content="#0C0A12">
+  <link rel="stylesheet" href="css/tokens.css?v=1.0">
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-  <!-- ===================== PORTADA ===================== -->
-  <header class="hero">
-    <div class="banderines" aria-hidden="true"></div>
+  <!-- ===================== PORTADA: el cartel ===================== -->
+  <header class="cartel">
+    <span class="estrella estrella--1" aria-hidden="true"></span>
+    <span class="estrella estrella--2" aria-hidden="true"></span>
+    <span class="estrella estrella--3" aria-hidden="true"></span>
+    <span class="estrella estrella--4" aria-hidden="true"></span>
 
-    <div class="hero__fiesta" aria-hidden="true">
-      <span class="papel papel--bolita papel--rojo" style="--x: 8%; --y: 14%; --s: 1.1; --d: 0s;"></span>
-      <span class="papel papel--banderin papel--amarillo" style="--x: 30%; --y: 6%; --s: 1.3; --d: -1.2s;"></span>
-      <span class="papel papel--bolita papel--verde" style="--x: 64%; --y: 20%; --s: 0.8; --d: -0.6s;"></span>
-      <span class="papel papel--banderin papel--fucsia" style="--x: 80%; --y: 40%; --s: 1; --d: -2s;"></span>
-      <span class="papel papel--bolita papel--amarillo" style="--x: 18%; --y: 58%; --s: 1.5; --d: -1.6s;"></span>
-      <span class="papel papel--banderin papel--verde" style="--x: 44%; --y: 70%; --s: 1.1; --d: -0.3s;"></span>
-      <span class="papel papel--bolita papel--azul" style="--x: 72%; --y: 82%; --s: 1; --d: -2.4s;"></span>
-      <span class="papel papel--banderin papel--rojo" style="--x: 6%; --y: 86%; --s: 0.9; --d: -0.9s;"></span>
-      <span class="papel papel--bolita papel--fucsia" style="--x: 52%; --y: 44%; --s: 0.7; --d: -1.9s;"></span>
+    <div class="explosion cartel__explosion">
+      <p class="explosion__texto">¡Hoy y todos los días!</p>
     </div>
-    <div class="hero__inner">
-      <div class="hero__copy">
-        <p class="sticker sticker--rojo">¡Costeño de pura cepa!</p>
-        <h1 class="hero__title">Rebosao, mamagallista y de pura cepa</h1>
-        <p class="hero__lead">La guía de marca de nuestra comida rápida costeña en San José: cómo somos, cómo hablamos y cómo nos vemos.</p>
-        <div class="hero__actions">
-          <a class="btn" href="#valores" data-action="show-section" data-target="valores">Ver los valores</a>
-          <a class="btn btn--crema" href="#identidad" data-action="show-section" data-target="identidad">Ver la identidad</a>
-        </div>
-        <p class="hero__note">TAZ es un nombre provisional. Borrador 0.9.</p>
+
+    <p class="cartel__gancho">La Costa presenta</p>
+
+    <h1 class="cartel__titulo">
+      <span class="picotera cartel__linea cartel__linea--1" style="--c: var(--amarillo); --s: var(--rosado);">Rebosao,</span>
+      <span class="picotera cartel__linea cartel__linea--2" style="--c: var(--rosado); --s: var(--amarillo);">mamagallista</span>
+      <span class="picotera cartel__linea cartel__linea--3" style="--c: var(--verde); --s: var(--rosado);">y de pura cepa</span>
+    </h1>
+
+    <p class="cartel__bajada">La guía de marca de nuestra comida rápida costeña: cómo somos, cómo hablamos y cómo nos vemos.</p>
+
+    <div class="cartel__datos">
+      <div class="calendario">
+        <span class="calendario__arriba">Comida rápida</span>
+        <span class="calendario__centro">costeña</span>
       </div>
-
+      <div class="cartel__lugar">
+        <p>San José, California</p>
+        <p class="cartel__nota">TAZ es un nombre provisional. Borrador 1.0.</p>
+      </div>
     </div>
+
+    <a class="btn" href="#valores" data-action="show-section" data-target="valores">Ver los valores</a>
   </header>
 
   <div class="cinta" aria-hidden="true">
     <div class="cinta__track">
-      <span>¡Eaaah! ✦ Rebosao ✦ Mamadera de gallo ✦ De pura cepa ✦ Más complaciente que na' ✦ De buen pecho ✦ ¡Coma que hay más! ✦ </span>
-      <span>¡Eaaah! ✦ Rebosao ✦ Mamadera de gallo ✦ De pura cepa ✦ Más complaciente que na' ✦ De buen pecho ✦ ¡Coma que hay más! ✦ </span>
+      <span>¡Eaaah! ★ Rebosao ★ Mamadera de gallo ★ De pura cepa ★ Más complaciente que na' ★ De buen pecho ★ ¡Coma que hay más! ★ </span>
+      <span>¡Eaaah! ★ Rebosao ★ Mamadera de gallo ★ De pura cepa ★ Más complaciente que na' ★ De buen pecho ★ ¡Coma que hay más! ★ </span>
     </div>
   </div>
 
-  <!-- ===================== NAVEGACIÓN ===================== -->
+  <!-- ===================== MENÚ ===================== -->
   <nav class="menu" aria-label="Secciones de la guía">
     <div class="menu__list" role="tablist" aria-label="Secciones de la guía">
       <a class="menu__tab" href="#alma" role="tab" id="tab-alma" aria-controls="alma" aria-selected="true" tabindex="0" data-action="show-section" data-target="alma">El alma</a>
@@ -67,111 +72,130 @@
   <main id="contenido" tabindex="-1">
 
     <!-- ===================== EL ALMA ===================== -->
-    <section class="chapter" id="alma" role="tabpanel" aria-labelledby="tab-alma" tabindex="-1">
-      <h2 class="chapter__title" id="alma-titulo">El alma</h2>
-      <p class="chapter__intro">Todo lo que hacemos (el nombre, el menú, los colores, las redes, la forma de atender) pasa por una pregunta: <strong>¿esto se siente costeño?</strong></p>
+    <section class="chapter" id="alma" role="tabpanel" aria-labelledby="tab-alma" tabindex="-1" style="--c: var(--amarillo); --s: var(--rosado);">
+      <header class="chapter__head">
+        <p class="chapter__gancho">Lo que nos mueve</p>
+        <h2 class="picotera chapter__title">El alma</h2>
+        <p class="chapter__intro">Todo lo que hacemos pasa por una pregunta: <strong>¿esto se siente costeño?</strong></p>
+      </header>
 
-      <div class="globo">
-        <p>Que nadie se sienta lejos de casa a la hora de comer.</p>
+      <div class="explosion explosion--grande">
+        <p class="explosion__texto">Que nadie se sienta lejos de casa a la hora de comer</p>
       </div>
 
-      <div class="cards cards--3">
-        <article class="card card--crema">
+      <div class="tablero tablero--3">
+        <article class="aviso">
           <h3>Quiénes somos</h3>
           <p>Costeños de la Costa Caribe colombiana que se mudaron a Estados Unidos y que siempre cocinaron y se destacaron allá. Traemos la comida rápida costeña a San José como se hace en casa.</p>
         </article>
-        <article class="card card--amarillo">
+        <article class="aviso">
           <h3>Para quién y por qué</h3>
           <p>Para latinos y curiosos que extrañan o quieren descubrir la comida de verdad. Todo rebosao, con salsas hechas en casa, porque en la Costa nadie se queda con hambre.</p>
         </article>
-        <article class="card card--fucsia">
+        <article class="aviso">
           <h3>El cambio de mirada</h3>
           <p>No somos fast food barato. Somos comida de calle costeña, y en la Costa eso es cultura y orgullo. Lo rápido es solo la forma de servirla.</p>
         </article>
       </div>
     </section>
 
-    <!-- ===================== VALORES ===================== -->
-    <section class="chapter" id="valores" role="tabpanel" aria-labelledby="tab-valores" tabindex="-1">
-      <h2 class="chapter__title" id="valores-titulo">Valores</h2>
-      <p class="chapter__intro">Cinco valores con nombre costeño. Toca cada uno para ver cómo se nota y qué no es.</p>
+    <!-- ===================== VALORES: el line-up ===================== -->
+    <section class="chapter" id="valores" role="tabpanel" aria-labelledby="tab-valores" tabindex="-1" style="--c: var(--rosado); --s: var(--amarillo);">
+      <header class="chapter__head">
+        <p class="chapter__gancho">Esta noche se presentan</p>
+        <h2 class="picotera chapter__title">Los valores</h2>
+        <p class="chapter__intro">Como en el cartel de picó, cada uno con su nombre en grande. Toca uno para ver cómo se nota y qué no es.</p>
+      </header>
 
-      <ul class="values">
-        <li class="value card card--rojo" data-state="closed">
-          <span class="value__emoji" aria-hidden="true">🍟</span>
-          <h3 class="value__name">Rebosao</h3>
-          <p class="value__idea">Abundancia</p>
-          <p class="value__line">En la Costa nadie se queda con hambre. Servir de más es respeto por el que llega.</p>
-          <button class="value__toggle" type="button" data-action="toggle-value" aria-expanded="false" aria-controls="valor-1">Cómo se nota</button>
-          <dl class="value__body" id="valor-1" hidden>
-            <dt>Se nota en</dt><dd>Porciones generosas, harta salsa, nunca "lo justo".</dd>
-            <dt>No es</dt><dd>Barato ni desperdicio: la abundancia se mide y se costea, pero se siente.</dd>
-          </dl>
+      <ul class="lineup">
+        <li class="value" data-state="closed" style="--c: var(--amarillo); --s: var(--rosado);">
+          <button class="value__head" type="button" data-action="toggle-value" aria-expanded="false" aria-controls="valor-1">
+            <span class="picotera value__name">Rebosao</span>
+            <span class="value__idea">Abundancia</span>
+          </button>
+          <div class="value__body" id="valor-1" hidden>
+            <p class="value__line">En la Costa nadie se queda con hambre. Servir de más es respeto por el que llega.</p>
+            <dl>
+              <dt>Se nota en</dt><dd>Porciones generosas, harta salsa, nunca "lo justo".</dd>
+              <dt>No es</dt><dd>Barato ni desperdicio: la abundancia se mide y se costea, pero se siente.</dd>
+            </dl>
+          </div>
         </li>
-        <li class="value card card--amarillo" data-state="closed">
-          <span class="value__emoji" aria-hidden="true">😂</span>
-          <h3 class="value__name">Mamadera de gallo</h3>
-          <p class="value__idea">Jocosidad</p>
-          <p class="value__line">Somos mamagallistas: pedir tiene que sacar una sonrisa.</p>
-          <button class="value__toggle" type="button" data-action="toggle-value" aria-expanded="false" aria-controls="valor-2">Cómo se nota</button>
-          <dl class="value__body" id="valor-2" hidden>
-            <dt>Se nota en</dt><dd>Chistes y frases costeñas en redes, WhatsApp, la web y la bolsa.</dd>
-            <dt>No es</dt><dd>Burlarse del cliente ni groserías: nos reímos con la gente, nunca de ella.</dd>
-          </dl>
+        <li class="value" data-state="closed" style="--c: var(--rosado); --s: var(--amarillo);">
+          <button class="value__head" type="button" data-action="toggle-value" aria-expanded="false" aria-controls="valor-2">
+            <span class="picotera value__name">Mamadera de gallo</span>
+            <span class="value__idea">Jocosidad</span>
+          </button>
+          <div class="value__body" id="valor-2" hidden>
+            <p class="value__line">Somos mamagallistas: pedir tiene que sacar una sonrisa.</p>
+            <dl>
+              <dt>Se nota en</dt><dd>Chistes y frases costeñas en redes, WhatsApp, la web y la bolsa.</dd>
+              <dt>No es</dt><dd>Burlarse del cliente ni groserías: nos reímos con la gente, nunca de ella.</dd>
+            </dl>
+          </div>
         </li>
-        <li class="value card card--crema" data-state="closed">
-          <span class="value__emoji" aria-hidden="true">🌽</span>
-          <h3 class="value__name">De pura cepa</h3>
-          <p class="value__idea">Autenticidad</p>
-          <p class="value__line">Sabor, palabras y recetas de la Costa de verdad, hechas en casa.</p>
-          <button class="value__toggle" type="button" data-action="toggle-value" aria-expanded="false" aria-controls="valor-3">Cómo se nota</button>
-          <dl class="value__body" id="valor-3" hidden>
-            <dt>Se nota en</dt><dd>Recetas de familia, salsas propias y platos que un costeño reconoce.</dd>
-            <dt>No es</dt><dd>Clichés, "latino genérico" ni salsas de galón industrial.</dd>
-          </dl>
+        <li class="value" data-state="closed" style="--c: var(--verde); --s: var(--rosado);">
+          <button class="value__head" type="button" data-action="toggle-value" aria-expanded="false" aria-controls="valor-3">
+            <span class="picotera value__name">De pura cepa</span>
+            <span class="value__idea">Autenticidad</span>
+          </button>
+          <div class="value__body" id="valor-3" hidden>
+            <p class="value__line">Sabor, palabras y recetas de la Costa de verdad, hechas en casa.</p>
+            <dl>
+              <dt>Se nota en</dt><dd>Recetas de familia, salsas propias y platos que un costeño reconoce.</dd>
+              <dt>No es</dt><dd>Clichés, "latino genérico" ni salsas de galón industrial.</dd>
+            </dl>
+          </div>
         </li>
-        <li class="value card card--verde" data-state="closed">
-          <span class="value__emoji" aria-hidden="true">🤗</span>
-          <h3 class="value__name">Más complaciente que na'</h3>
-          <p class="value__idea">Hospitalidad</p>
-          <p class="value__line">Consentimos al cliente como a un invitado en una casa costeña.</p>
-          <button class="value__toggle" type="button" data-action="toggle-value" aria-expanded="false" aria-controls="valor-4">Cómo se nota</button>
-          <dl class="value__body" id="valor-4" hidden>
-            <dt>Se nota en</dt><dd>Escuchar, darle gusto, responder rápido y con calidez.</dd>
-            <dt>No es</dt><dd>Decir que sí a todo sin poder cumplir, ni atención fría.</dd>
-          </dl>
+        <li class="value" data-state="closed" style="--c: var(--naranja); --s: var(--rosado);">
+          <button class="value__head" type="button" data-action="toggle-value" aria-expanded="false" aria-controls="valor-4">
+            <span class="picotera value__name">Más complaciente que na'</span>
+            <span class="value__idea">Hospitalidad</span>
+          </button>
+          <div class="value__body" id="valor-4" hidden>
+            <p class="value__line">Consentimos al cliente como a un invitado en una casa costeña.</p>
+            <dl>
+              <dt>Se nota en</dt><dd>Escuchar, darle gusto, responder rápido y con calidez.</dd>
+              <dt>No es</dt><dd>Decir que sí a todo sin poder cumplir, ni atención fría.</dd>
+            </dl>
+          </div>
         </li>
-        <li class="value card card--fucsia" data-state="closed">
-          <span class="value__emoji" aria-hidden="true">❤️</span>
-          <h3 class="value__name">De buen pecho</h3>
-          <p class="value__idea">Cariño</p>
-          <p class="value__line">El cariño genuino del costeño por el otro. De ahí sale todo lo demás.</p>
-          <button class="value__toggle" type="button" data-action="toggle-value" aria-expanded="false" aria-controls="valor-5">Cómo se nota</button>
-          <dl class="value__body" id="valor-5" hidden>
-            <dt>Se nota en</dt><dd>Buena fe y afecto real. Si algo sale mal, lo arreglamos sin excusas.</dd>
-            <dt>No es</dt><dd>Cariño fingido de manual, ni tratar al cliente como un número de pedido.</dd>
-          </dl>
+        <li class="value" data-state="closed" style="--c: var(--amarillo); --s: var(--verde);">
+          <button class="value__head" type="button" data-action="toggle-value" aria-expanded="false" aria-controls="valor-5">
+            <span class="picotera value__name">De buen pecho</span>
+            <span class="value__idea">Cariño</span>
+          </button>
+          <div class="value__body" id="valor-5" hidden>
+            <p class="value__line">El cariño genuino del costeño por el otro. De ahí sale todo lo demás.</p>
+            <dl>
+              <dt>Se nota en</dt><dd>Buena fe y afecto real. Si algo sale mal, lo arreglamos sin excusas.</dd>
+              <dt>No es</dt><dd>Cariño fingido de manual, ni tratar al cliente como un número de pedido.</dd>
+            </dl>
+          </div>
         </li>
       </ul>
     </section>
 
     <!-- ===================== PERSONALIDAD ===================== -->
-    <section class="chapter" id="personalidad" role="tabpanel" aria-labelledby="tab-personalidad" tabindex="-1">
-      <h2 class="chapter__title" id="personalidad-titulo">El anfitrión costeño</h2>
-      <p class="chapter__intro">La tía o el tío costeño que te recibe en la terraza: te sienta, te sirve de más, te echa un chiste y no te deja ir con hambre.</p>
+    <section class="chapter" id="personalidad" role="tabpanel" aria-labelledby="tab-personalidad" tabindex="-1" style="--c: var(--verde); --s: var(--rosado);">
+      <header class="chapter__head">
+        <p class="chapter__gancho">Si la marca fuera una persona</p>
+        <h2 class="picotera chapter__title">El anfitrión costeño</h2>
+        <p class="chapter__intro">La tía o el tío costeño que te recibe en la terraza: te sienta, te sirve de más, te echa un chiste y no te deja ir con hambre.</p>
+      </header>
 
-      <div class="cards cards--2">
-        <article class="card card--crema traits">
+      <div class="tablero tablero--2">
+        <article class="aviso aviso--lista">
           <h3>Es</h3>
           <ul>
-            <li><strong>Generoso:</strong> da de más, en comida y en trato.</li>
-            <li><strong>Alegre:</strong> todo se siente fiesta.</li>
-            <li><strong>Auténtico:</strong> habla como se habla en la Costa.</li>
-            <li><strong>Cercano:</strong> te trata como familia.</li>
-            <li><strong>Orgulloso:</strong> presume su tierra.</li>
+            <li><strong>Generoso.</strong> Da de más, en comida y en trato.</li>
+            <li><strong>Alegre.</strong> Todo se siente fiesta.</li>
+            <li><strong>Auténtico.</strong> Habla como se habla en la Costa.</li>
+            <li><strong>Cercano.</strong> Te trata como familia.</li>
+            <li><strong>Orgulloso.</strong> Presume su tierra.</li>
           </ul>
         </article>
-        <article class="card card--oscura traits traits--no">
+        <article class="aviso aviso--lista aviso--no">
           <h3>No es</h3>
           <ul>
             <li>Tacaño ni de "lo justo".</li>
@@ -185,12 +209,15 @@
     </section>
 
     <!-- ===================== VOZ ===================== -->
-    <section class="chapter" id="voz" role="tabpanel" aria-labelledby="tab-voz" tabindex="-1">
-      <h2 class="chapter__title" id="voz-titulo">Cómo hablamos</h2>
-      <p class="chapter__intro">Como en la terraza, no como en un banco. Frases cortas, cálidas y con humor. Al que no es de allá se le explica con cariño, sin dejar de sonar costeño.</p>
+    <section class="chapter" id="voz" role="tabpanel" aria-labelledby="tab-voz" tabindex="-1" style="--c: var(--naranja); --s: var(--rosado);">
+      <header class="chapter__head">
+        <p class="chapter__gancho">Como en la terraza, no como en un banco</p>
+        <h2 class="picotera chapter__title">Cómo hablamos</h2>
+        <p class="chapter__intro">Frases cortas, cálidas y con humor. Al que no es de allá se le explica con cariño, sin dejar de sonar costeño.</p>
+      </header>
 
       <div class="voice">
-        <div class="card card--oscura voice__demo">
+        <div class="voice__demo">
           <p class="voice__label" id="tono-label">El mismo mensaje para cada público</p>
           <div class="segmented" role="tablist" aria-labelledby="tono-label">
             <button type="button" role="tab" id="tab-costeno" aria-selected="true" aria-controls="chat" data-action="set-tone" data-tone="costeno">Costeño</button>
@@ -225,23 +252,26 @@
     </section>
 
     <!-- ===================== PÚBLICOS ===================== -->
-    <section class="chapter" id="publicos" role="tabpanel" aria-labelledby="tab-publicos" tabindex="-1">
-      <h2 class="chapter__title" id="publicos-titulo">Para quién cocinamos</h2>
-      <p class="chapter__intro">No se adapta la comida, se adapta la explicación.</p>
+    <section class="chapter" id="publicos" role="tabpanel" aria-labelledby="tab-publicos" tabindex="-1" style="--c: var(--amarillo); --s: var(--verde);">
+      <header class="chapter__head">
+        <p class="chapter__gancho">Entrada para todos</p>
+        <h2 class="picotera chapter__title">Para quién cocinamos</h2>
+        <p class="chapter__intro">No se adapta la comida, se adapta la explicación.</p>
+      </header>
 
-      <div class="cards cards--3">
-        <article class="card card--amarillo audience">
-          <p class="sticker sticker--tinta">Nos valida</p>
+      <div class="tablero tablero--3">
+        <article class="boleta" style="--c: var(--amarillo);">
+          <p class="boleta__rol">Nos valida</p>
           <h3>El costeño</h3>
           <p><strong>Busca</strong> volver a su tierra por un rato. <strong>Teme</strong> que sea costeño de mentiras. <strong>Le damos</strong> el sabor de allá, sin adaptar nada.</p>
         </article>
-        <article class="card card--rojo audience">
-          <p class="sticker sticker--tinta">Nos llena la cocina</p>
+        <article class="boleta" style="--c: var(--rosado);">
+          <p class="boleta__rol">Nos llena la cocina</p>
           <h3>El latino</h3>
           <p><strong>Busca</strong> sabor latino auténtico, distinto a lo de siempre. <strong>Teme</strong> que sea más de lo mismo. <strong>Le damos</strong> la Costa con algo familiar.</p>
         </article>
-        <article class="card card--verde audience">
-          <p class="sticker sticker--tinta">Nos hace crecer</p>
+        <article class="boleta" style="--c: var(--verde);">
+          <p class="boleta__rol">Nos hace crecer</p>
           <h3>El gringo</h3>
           <p><strong>Busca</strong> una experiencia nueva. <strong>Teme</strong> no saber qué pedir. <strong>Le damos</strong> una guía amable: te explicamos y te recomendamos.</p>
         </article>
@@ -249,86 +279,90 @@
     </section>
 
     <!-- ===================== IDENTIDAD ===================== -->
-    <section class="chapter" id="identidad" role="tabpanel" aria-labelledby="tab-identidad" tabindex="-1">
-      <h2 class="chapter__title" id="identidad-titulo">Carnaval de noche</h2>
-      <p class="chapter__intro">El alma es la de la web de pedidos: caricatura de fast food, contorno negro y sombra dura en todo, tarjetas chuecas, comida y movimiento. Los colores son los de la Costa: <strong>rojo, amarillo y verde de las banderas de Barranquilla y Cartagena</strong>, el fucsia de la marimonda y el azul del congo, todo sobre la noche de carnaval.</p>
+    <section class="chapter" id="identidad" role="tabpanel" aria-labelledby="tab-identidad" tabindex="-1" style="--c: var(--verde); --s: var(--rosado);">
+      <header class="chapter__head">
+        <p class="chapter__gancho">Así pinta el pintor de picó</p>
+        <h2 class="picotera chapter__title">Cartel de picó</h2>
+        <p class="chapter__intro">La identidad sale de los carteles de fiesta de picó de Barranquilla y Cartagena. Tienen reglas fijas, y por eso todo queda coherente. Son seis.</p>
+      </header>
 
-      <h3 class="sub">Colores del carnaval</h3>
+      <ol class="reglas">
+        <li class="regla">
+          <div class="regla__demo regla__demo--noche" aria-hidden="true"></div>
+          <h3>Fondo negro</h3>
+          <p>La noche de la verbena. Casi todo va sobre negro.</p>
+        </li>
+        <li class="regla">
+          <div class="regla__demo regla__demo--fluor" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <h3>Cuatro fluorescentes</h3>
+          <p>Amarillo, rosado, verde y naranja. Ninguno más.</p>
+        </li>
+        <li class="regla">
+          <div class="regla__demo" aria-hidden="true"><span class="picotera regla__letra" style="--c: var(--amarillo); --s: var(--rosado);">Ajá</span></div>
+          <h3>Letra picotera</h3>
+          <p>Relleno de color, primera capa blanca y sombra en bloque de otro color.</p>
+        </li>
+        <li class="regla">
+          <div class="regla__demo" aria-hidden="true"><span class="explosion explosion--mini"><span class="explosion__texto">¡Hoy!</span></span></div>
+          <h3>La explosión amarilla</h3>
+          <p>Ahí va lo más importante: la fecha, la promo, la frase clave.</p>
+        </li>
+        <li class="regla">
+          <div class="regla__demo regla__demo--eje" aria-hidden="true"><span></span><span></span><span></span></div>
+          <h3>Eje al centro</h3>
+          <p>Los carteles se componen centrados, de lo más grande a lo más chico.</p>
+        </li>
+        <li class="regla">
+          <div class="regla__demo regla__demo--estrellas" aria-hidden="true"><span class="estrella"></span><span class="estrella"></span></div>
+          <h3>Estrellas de marco</h3>
+          <p>Enmarcan el título, nunca tapan. Nada de confeti suelto.</p>
+        </li>
+      </ol>
+
+      <h3 class="picotera sub" style="--c: var(--amarillo); --s: var(--rosado);">Colores</h3>
       <ul class="swatches">
-        <li><button class="swatch" type="button" data-action="copy-color" data-hex="#F03A2E" data-name="Rojo"><span class="swatch__chip" style="background:#F03A2E;"></span><span class="swatch__name">Rojo</span><span class="swatch__role">Bandera costeña</span><span class="swatch__hex">#F03A2E</span></button></li>
-        <li><button class="swatch" type="button" data-action="copy-color" data-hex="#FFC21A" data-name="Amarillo"><span class="swatch__chip" style="background:#FFC21A;"></span><span class="swatch__name">Amarillo</span><span class="swatch__role">Bandera costeña · títulos y botones</span><span class="swatch__hex">#FFC21A</span></button></li>
-        <li><button class="swatch" type="button" data-action="copy-color" data-hex="#13A54F" data-name="Verde"><span class="swatch__chip" style="background:#13A54F;"></span><span class="swatch__name">Verde</span><span class="swatch__role">Bandera costeña</span><span class="swatch__hex">#13A54F</span></button></li>
-        <li><button class="swatch" type="button" data-action="copy-color" data-hex="#FF3E9A" data-name="Fucsia"><span class="swatch__chip" style="background:#FF3E9A;"></span><span class="swatch__name">Fucsia</span><span class="swatch__role">Marimonda</span><span class="swatch__hex">#FF3E9A</span></button></li>
-        <li><button class="swatch" type="button" data-action="copy-color" data-hex="#2D5BFF" data-name="Azul"><span class="swatch__chip" style="background:#2D5BFF;"></span><span class="swatch__name">Azul</span><span class="swatch__role">Congo</span><span class="swatch__hex">#2D5BFF</span></button></li>
-        <li><button class="swatch" type="button" data-action="copy-color" data-hex="#1A1035" data-name="Noche"><span class="swatch__chip" style="background:#1A1035;"></span><span class="swatch__name">Noche</span><span class="swatch__role">El fondo</span><span class="swatch__hex">#1A1035</span></button></li>
-        <li><button class="swatch" type="button" data-action="copy-color" data-hex="#FFF4E0" data-name="Crema"><span class="swatch__chip" style="background:#FFF4E0;"></span><span class="swatch__name">Crema</span><span class="swatch__role">Texto y tarjetas</span><span class="swatch__hex">#FFF4E0</span></button></li>
-        <li><button class="swatch" type="button" data-action="copy-color" data-hex="#0B0618" data-name="Tinta"><span class="swatch__chip" style="background:#0B0618;"></span><span class="swatch__name">Tinta</span><span class="swatch__role">Contornos y sombras</span><span class="swatch__hex">#0B0618</span></button></li>
+        <li><button class="swatch" type="button" data-action="copy-color" data-hex="#0C0A12" data-name="Noche"><span class="swatch__chip" style="background:#0C0A12;"></span><span class="swatch__name">Noche</span><span class="swatch__role">El cartón negro</span><span class="swatch__hex">#0C0A12</span></button></li>
+        <li><button class="swatch" type="button" data-action="copy-color" data-hex="#FFE500" data-name="Amarillo"><span class="swatch__chip" style="background:#FFE500;"></span><span class="swatch__name">Amarillo</span><span class="swatch__role">Explosión y botones</span><span class="swatch__hex">#FFE500</span></button></li>
+        <li><button class="swatch" type="button" data-action="copy-color" data-hex="#FF2E93" data-name="Rosado"><span class="swatch__chip" style="background:#FF2E93;"></span><span class="swatch__name">Rosado</span><span class="swatch__role">Sombras y fiesta</span><span class="swatch__hex">#FF2E93</span></button></li>
+        <li><button class="swatch" type="button" data-action="copy-color" data-hex="#3CFF4F" data-name="Verde"><span class="swatch__chip" style="background:#3CFF4F;"></span><span class="swatch__name">Verde</span><span class="swatch__role">Fresco, títulos</span><span class="swatch__hex">#3CFF4F</span></button></li>
+        <li><button class="swatch" type="button" data-action="copy-color" data-hex="#FF8A00" data-name="Naranja"><span class="swatch__chip" style="background:#FF8A00;"></span><span class="swatch__name">Naranja</span><span class="swatch__role">Calor, títulos</span><span class="swatch__hex">#FF8A00</span></button></li>
+        <li><button class="swatch" type="button" data-action="copy-color" data-hex="#FFFFFF" data-name="Blanco"><span class="swatch__chip" style="background:#FFFFFF;"></span><span class="swatch__name">Blanco</span><span class="swatch__role">La primera capa</span><span class="swatch__hex">#FFFFFF</span></button></li>
       </ul>
-      <p class="hint">Toca un color para copiar su código. Rojo, amarillo y verde mandan (son la Costa); fucsia y azul aparecen menos, como los disfraces en el desfile. El amarillo es el color de los botones.</p>
+      <p class="hint">Toca un color para copiar su código. Regla de combinación: el relleno de una letra y su sombra siempre son dos fluorescentes distintos.</p>
 
-      <h3 class="sub">Letras</h3>
-      <div class="cards cards--2">
-        <article class="card card--oscura specimen">
-          <p class="specimen__big" aria-hidden="true">Aa</p>
-          <p class="specimen__name">Anton</p>
-          <p>La letra de letrero de fast food: alta, gruesa y con contorno negro. Para títulos, precios y frases que gritan.</p>
+      <h3 class="picotera sub" style="--c: var(--rosado); --s: var(--amarillo);">Letras</h3>
+      <div class="tablero tablero--2">
+        <article class="aviso specimen">
+          <p class="picotera specimen__big" style="--c: var(--amarillo); --s: var(--rosado);" aria-hidden="true">Aa</p>
+          <h3>Lilita One</h3>
+          <p>Para títulos, siempre como letra picotera: relleno fluorescente, contorno blanco y sombra en bloque.</p>
         </article>
-        <article class="card card--crema specimen">
+        <article class="aviso specimen">
           <p class="specimen__big specimen__big--body" aria-hidden="true">Aa</p>
-          <p class="specimen__name">Nunito</p>
-          <p>La letra para leer: redonda, amable y clara en el celular. Para descripciones, menús y botones.</p>
+          <h3>Nunito</h3>
+          <p>Para leer: descripciones, menús y botones. En crema sobre negro.</p>
         </article>
-      </div>
-
-      <h3 class="sub">El estilo de caricatura</h3>
-      <div class="cards cards--3">
-        <article class="card card--crema rule-card">
-          <div class="rule-card__demo rule-card__demo--line" aria-hidden="true"></div>
-          <h4>Contorno negro de 4 px</h4>
-          <p>Todo lleva el mismo contorno: tarjetas, botones, medallones, adornos.</p>
-        </article>
-        <article class="card card--amarillo rule-card">
-          <div class="rule-card__demo rule-card__demo--shadow" aria-hidden="true"></div>
-          <h4>Sombra dura</h4>
-          <p>Siempre hacia abajo a la derecha, sin difuminar, en tinta.</p>
-        </article>
-        <article class="card card--fucsia rule-card">
-          <div class="rule-card__demo rule-card__demo--tilt" aria-hidden="true"></div>
-          <h4>Un poquito chueco</h4>
-          <p>Tarjetas y stickers giran 1 a 4 grados, como pegados a mano. Al pasar el mouse se enderezan.</p>
-        </article>
-      </div>
-
-      <h3 class="sub">Adornos de fiesta</h3>
-      <div class="cards cards--3">
-        <figure class="card card--oscura adorno">
-          <div class="adorno__demo adorno__demo--banderines" aria-hidden="true"></div>
-          <figcaption><strong>Banderines</strong> colgados arriba de portadas y promociones. Se mecen suave.</figcaption>
-        </figure>
-        <figure class="card card--oscura adorno">
-          <div class="adorno__demo adorno__demo--cinta" aria-hidden="true"><span>¡Eaaah! ✦ Rebosao ✦</span></div>
-          <figcaption><strong>Cinta de mamadera de gallo</strong>: frases costeñas que corren, como en la web de pedidos.</figcaption>
-        </figure>
-        <figure class="card card--oscura adorno">
-          <div class="adorno__demo adorno__demo--burst" aria-hidden="true"></div>
-          <figcaption><strong>Explosión de cómic</strong> detrás del logo o de un plato insignia. Gira despacio.</figcaption>
-        </figure>
       </div>
     </section>
 
     <!-- ===================== APLICACIONES ===================== -->
-    <section class="chapter" id="aplicaciones" role="tabpanel" aria-labelledby="tab-aplicaciones" tabindex="-1">
-      <h2 class="chapter__title" id="aplicaciones-titulo">Así se ve en la calle</h2>
-      <p class="chapter__intro">La identidad aplicada en tres piezas.</p>
+    <section class="chapter" id="aplicaciones" role="tabpanel" aria-labelledby="tab-aplicaciones" tabindex="-1" style="--c: var(--rosado); --s: var(--verde);">
+      <header class="chapter__head">
+        <p class="chapter__gancho">En la calle y en el celular</p>
+        <h2 class="picotera chapter__title">Así se ve</h2>
+        <p class="chapter__intro">Tres piezas hechas con las seis reglas.</p>
+      </header>
 
       <div class="apps">
         <figure class="app">
-          <div class="ig-post">
-            <div class="banderines banderines--small" aria-hidden="true"></div>
-            <p class="sticker sticker--rojo">Viernes de</p>
-            <p class="ig-post__title">Perro rebosao</p>
-            <div class="ig-post__medallon" aria-hidden="true"><svg focusable="false" viewBox="0 0 200 200"><g stroke="#120303" stroke-width="6" stroke-linejoin="round"><rect x="14" y="80" width="172" height="86" rx="43" fill="#f0a030"/><rect x="4" y="62" width="192" height="40" rx="20" fill="#e63312"/><path d="M24 82l14-14 14 14 14-14 14 14 14-14 14 14 14-14 14 14 14-14 14 14" fill="none" stroke="#ffc933" stroke-width="7" stroke-linecap="round"/></g></svg></div>
-            <p class="ig-post__text">Harta salsa de la casa, como debe ser.</p>
+          <div class="poster">
+            <span class="estrella poster__estrella poster__estrella--1" aria-hidden="true"></span>
+            <span class="estrella poster__estrella poster__estrella--2" aria-hidden="true"></span>
+            <p class="poster__gancho">Este viernes</p>
+            <p class="picotera poster__titulo" style="--c: var(--amarillo); --s: var(--rosado);">Perro</p>
+            <p class="picotera poster__titulo" style="--c: var(--verde); --s: var(--rosado);">rebosao</p>
+            <p class="poster__texto">Harta salsa de la casa, como debe ser</p>
+            <span class="explosion explosion--poster"><span class="explosion__texto">¡Hoy!</span></span>
           </div>
           <figcaption>Post de Instagram</figcaption>
         </figure>
@@ -336,8 +370,7 @@
         <figure class="app">
           <div class="listing">
             <div class="listing__cover">
-              <div class="burst burst--small" aria-hidden="true"></div>
-              <span class="listing__cover-title">¡Rebosao!</span>
+              <span class="picotera listing__cover-title" style="--c: var(--amarillo); --s: var(--rosado);">¡Rebosao!</span>
             </div>
             <div class="listing__info">
               <p class="listing__name">TAZ</p>
@@ -349,9 +382,8 @@
         </figure>
 
         <figure class="app">
-          <div class="bag-sticker">
-            <p class="bag-sticker__text">Aquí nadie se queda con hambre</p>
-            <p class="bag-sticker__sign">¡Buen provecho, mi llave!</p>
+          <div class="sticker-bolsa">
+            <span class="explosion explosion--sticker"><span class="explosion__texto">Aquí nadie se queda con hambre</span></span>
           </div>
           <figcaption>Sticker para cerrar la bolsa</figcaption>
         </figure>
@@ -359,60 +391,66 @@
     </section>
 
     <!-- ===================== REDES ===================== -->
-    <section class="chapter" id="redes" role="tabpanel" aria-labelledby="tab-redes" tabindex="-1">
-      <h2 class="chapter__title" id="redes-titulo">Dónde hablamos</h2>
-      <p class="chapter__intro">TikTok descubre, Instagram enamora, Facebook reúne y WhatsApp vende. De cada cuatro o cinco publicaciones, solo una vende directamente.</p>
+    <section class="chapter" id="redes" role="tabpanel" aria-labelledby="tab-redes" tabindex="-1" style="--c: var(--naranja); --s: var(--verde);">
+      <header class="chapter__head">
+        <p class="chapter__gancho">Dónde se anuncia la fiesta</p>
+        <h2 class="picotera chapter__title">Dónde hablamos</h2>
+        <p class="chapter__intro">TikTok descubre, Instagram enamora, Facebook reúne y WhatsApp vende. De cada cuatro o cinco publicaciones, solo una vende directamente.</p>
+      </header>
 
-      <div class="cards cards--4">
-        <article class="card card--crema channel">
+      <div class="tablero tablero--4">
+        <article class="boleta" style="--c: var(--amarillo);">
+          <p class="boleta__rol">Volumen</p>
           <h3>TikTok</h3>
-          <p class="channel__job">Volumen</p>
           <p>Humor costeño, tendencias y la salsa cayendo. De cuatro a siete videos por semana.</p>
         </article>
-        <article class="card card--amarillo channel">
+        <article class="boleta" style="--c: var(--rosado);">
+          <p class="boleta__rol">Vitrina</p>
           <h3>Instagram</h3>
-          <p class="channel__job">Vitrina</p>
           <p>Reels, perfil cuidado e historias diarias. Destacadas: menú, cómo pedir, reseñas.</p>
         </article>
-        <article class="card card--azul channel">
+        <article class="boleta" style="--c: var(--naranja);">
+          <p class="boleta__rol">Comunidad</p>
           <h3>Facebook</h3>
-          <p class="channel__job">Comunidad</p>
           <p>Combos para compartir y grupos de colombianos y latinos de la Bahía.</p>
         </article>
-        <article class="card card--verde channel">
+        <article class="boleta" style="--c: var(--verde);">
+          <p class="boleta__rol">Venta</p>
           <h3>WhatsApp</h3>
-          <p class="channel__job">Venta</p>
           <p>Catálogo, mensajes automáticos y el especial de la semana a los clientes.</p>
         </article>
       </div>
     </section>
 
     <!-- ===================== PENDIENTES ===================== -->
-    <section class="chapter" id="pendientes" role="tabpanel" aria-labelledby="tab-pendientes" tabindex="-1">
-      <h2 class="chapter__title" id="pendientes-titulo">Lo que falta</h2>
+    <section class="chapter" id="pendientes" role="tabpanel" aria-labelledby="tab-pendientes" tabindex="-1" style="--c: var(--amarillo); --s: var(--naranja);">
+      <header class="chapter__head">
+        <p class="chapter__gancho">Próximamente</p>
+        <h2 class="picotera chapter__title">Lo que falta</h2>
+      </header>
       <ul class="todo">
         <li data-state="done">Alma, valores, personalidad y voz</li>
         <li data-state="done">Públicos y redes</li>
-        <li data-state="review">Identidad visual 0.8 "Carnaval de noche": validar</li>
+        <li data-state="review">Identidad visual 1.0 "Cartel de picó": validar</li>
         <li>Nombre definitivo</li>
         <li>Historia de origen: quién cocina y por qué lo buscaban en la Costa</li>
         <li>Plato costeño insignia</li>
-        <li>Logo definitivo y personaje ilustrado</li>
-        <li>Aplicar la marca a empaques y DoorDash</li>
+        <li>Logo y personaje ilustrado</li>
+        <li>Aplicar la marca a la web, los empaques y DoorDash</li>
       </ul>
     </section>
 
   </main>
 
   <footer class="footer">
-    <div class="banderines" aria-hidden="true"></div>
-    <p class="sticker sticker--rojo">¡Coma que hay más!</p>
-    <p class="footer__line">Aquí nadie se queda con hambre</p>
-    <p class="footer__meta">Guía de marca, borrador 0.9. San José, California.</p>
+    <span class="estrella footer__estrella footer__estrella--1" aria-hidden="true"></span>
+    <span class="estrella footer__estrella footer__estrella--2" aria-hidden="true"></span>
+    <p class="picotera footer__line" style="--c: var(--amarillo); --s: var(--rosado);">¡Coma que hay más!</p>
+    <p class="footer__meta">Guía de marca, borrador 1.0. San José, California.</p>
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="js/main.js?v=0.9" defer></script>
+  <script src="js/main.js?v=1.0" defer></script>
 </body>
 </html>

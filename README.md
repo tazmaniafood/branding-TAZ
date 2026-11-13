@@ -14,15 +14,18 @@ Abre `index.html` en el navegador (con internet, para que carguen las fuentes).
 | `css/styles.css` | Estilos de la guía, mobile-first, con tipografía y espacios fluidos (`clamp()`). |
 | `js/main.js` | Interacciones con delegación de eventos (`data-action`), estado en `data-state` / `aria-*` y código defensivo. |
 
-## Identidad v0.9 · "Carnaval de noche"
+## Identidad v1.0 · "Cartel de picó"
 
-El **alma** viene de la web de pedidos (caricatura de fast food: contorno negro y sombra dura en todo, tarjetas chuecas, comida y movimiento). Los **colores** vienen de la Costa:
+La identidad sale de los **carteles de fiesta de picó** de Barranquilla y Cartagena. Tienen una gramática fija, y por eso todo queda coherente. Seis reglas:
 
-- **Rojo `#F03A2E`, amarillo `#FFC21A` y verde `#13A54F`:** las banderas de Barranquilla y Cartagena, los colores del Carnaval. Mandan.
-- **Fucsia `#FF3E9A` (marimonda) y azul `#2D5BFF` (congo):** acentos, como los disfraces del desfile.
-- **Noche `#1A1035`** de fondo, **crema `#FFF4E0`** para leer y **tinta `#0B0618`** para contornos y sombras.
-- **Letras:** Lilita One (títulos y cinta) + Nunito (lectura).
-- **Adornos y movimiento:** banderines de carnaval que se mecen, cinta de mamadera de gallo, confeti y banderines sueltos flotando en la portada y confeti en el cielo. Sin logo: todavía no está hecho. Respeta "reducir movimiento".
+1. **Fondo negro** (`#0C0A12`): la noche de la verbena.
+2. **Cuatro fluorescentes:** amarillo `#FFE500`, rosado `#FF2E93`, verde `#3CFF4F` y naranja `#FF8A00`. Ninguno más. Texto en crema `#FFF7EA`.
+3. **Letra picotera:** Lilita One en mayúsculas con relleno de color, primera capa blanca (contorno) y sombra en bloque de otro fluorescente. Clase `.picotera`, con `--c` (relleno) y `--s` (sombra).
+4. **La explosión amarilla:** ahí va lo más importante. Clase `.explosion`.
+5. **Eje al centro:** composición centrada, de lo más grande a lo más chico.
+6. **Estrellas de marco:** enmarcan, nunca tapan. Nada de confeti suelto.
+
+Para leer: Nunito. Movimiento: el cartel "se pega" línea por línea al cargar; después, solo lo que responde a lo que haces (pestañas, valores, chat). Respeta "reducir movimiento".
 
 ## Usar los tokens
 
@@ -42,7 +45,7 @@ El **alma** viene de la web de pedidos (caricatura de fast food: contorno negro 
 ## Estado
 
 - [x] Alma, valores, personalidad, voz, públicos y redes
-- [ ] Validar identidad visual v0.9
+- [ ] Validar identidad visual v1.0
 - [ ] Nombre definitivo
 - [ ] Historia de origen
 - [ ] Plato costeño insignia
