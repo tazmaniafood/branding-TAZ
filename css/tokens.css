@@ -1,102 +1,101 @@
 /* ==========================================================
-   Tokens de marca · v0.6 "Noche costeña"
+   Tokens de marca · v0.7 "Fiesta costeña"
    TAZ es un nombre provisional.
 
-   Color con intención:
-   - Base dominante: noche.
-   - Estructural: hueso (texto y superficies cálidas).
-   - Acento de acción (único): amarillo. Solo botones y llamados.
-   - Decoración: fucsia y cian. Sombras de letra y adornos.
-   Contrastes (WCAG): hueso/noche 17.4 · amarillo/noche 13.3 ·
-   cian/noche 10.4 · fucsia/noche 5.6 · fucsia-oscuro/hueso 5.4.
-   El fucsia normal NO va como texto sobre hueso (3.1).
+   El ADN viene de la web de pedidos (Frontend-consumidor):
+   caricatura cálida de fast food. Fondo vino, colores de antojo
+   de una sola familia (rojo, naranja, amarillo, crema), contorno
+   negro grueso y sombra dura en TODO. Así se ve ordenado.
+
+   Lo costeño vive dentro de ese estilo: palabras, banderines,
+   confeti, serpentinas y mamadera de gallo. No en colores fríos.
+
+   Contrastes (WCAG): crema/vino 15.9 · amarillo/vino 12.0 ·
+   tinta/amarillo 13.6 · tinta/naranja 8.6 · tinta/crema 18.5.
    ========================================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Nunito:wght@500;700;800;900&display=swap");
 
 :root {
-  /* ---- Marca ---- */
-  --brand-noche: #140F22;
-  --brand-hueso: #FBF6EC;
-  --brand-amarillo: #FFD60A;
-  --brand-fucsia: #FF3D8B;
-  --brand-cian: #22D3EE;
+  color-scheme: dark;
 
-  /* ---- Semánticos: superficies ---- */
-  --bg-surface: var(--brand-noche);
-  --bg-raised: #211A35;
-  --bg-sunken: #0E0A18;
-  --bg-warm: var(--brand-hueso);
-  --border-subtle: #322A4D;
-  --border-warm: #E6DBC4;
+  /* ---- Marca: la familia del antojo ---- */
+  --brand-vino: #2A0A0A;         /* Fondo: noche cálida */
+  --brand-tinta: #120303;        /* Contornos y sombras de caricatura */
+  --brand-rojo: #E63312;         /* Fuego, energía */
+  --brand-naranja: #F7941D;      /* Acción principal */
+  --brand-amarillo: #FFC933;     /* Títulos, alegría */
+  --brand-crema: #FFF3DC;        /* Texto y superficies cálidas */
+  --brand-verde: #7BD88F;        /* Fresco: confirmaciones y bebidas, poco */
 
-  /* ---- Semánticos: texto ---- */
-  --text-primary: var(--brand-hueso);
-  --text-secondary: #CBC4D8;
-  --text-on-warm: var(--brand-noche);
-  --text-on-warm-secondary: #5A554D;
-  --text-on-warm-accent: #C2185B;
+  /* Bloques de color (una superficie por categoría o tema) */
+  --block-tomate: #FF6B4A;
+  --block-naranja: #F7941D;
+  --block-amarillo: #FFC933;
+  --block-crema: #FFF3DC;
+  --block-mandarina: #FFA94D;
+  --block-verde: #7BD88F;
 
-  /* ---- Semánticos: acción y decoración ---- */
-  --accent: var(--brand-amarillo);
-  --on-accent: var(--brand-noche);
-  --decor-1: var(--brand-fucsia);
-  --decor-2: var(--brand-cian);
-  --focus-ring: 0 0 0 3px var(--brand-noche), 0 0 0 6px var(--brand-cian);
+  /* ---- Semánticos ---- */
+  --bg-surface: var(--brand-vino);
+  --bg-raised: #431111;
+  --bg-raised-2: #5A1717;
+  --bg-deep: #1D0606;
+  --text-primary: var(--brand-crema);
+  --text-secondary: #D9B9A0;
+  --text-on-block: var(--brand-vino);
+  --text-on-block-soft: #5A2A1A;
+  --text-red-on-light: #A8200A;   /* rojo para texto sobre crema/amarillo (AA) */
+  --accent: var(--brand-naranja);
+  --accent-hover: var(--brand-amarillo);
+  --on-accent: var(--brand-tinta);
+  --title: var(--brand-amarillo);
+
+  /* ---- El estilo de caricatura (lo que unifica todo) ---- */
+  --line: 4px solid var(--brand-tinta);
+  --line-thin: 3px solid var(--brand-tinta);
+  --shadow: 6px 6px 0 var(--brand-tinta);
+  --shadow-sm: 4px 4px 0 var(--brand-tinta);
+  --shadow-lg: 9px 10px 0 var(--brand-tinta);
+  --stroke-title: 8px var(--brand-tinta);
+  --halftone: radial-gradient(#ffffff14 2px, transparent 2.5px) 0 0 / 22px 22px;
+  --focus-ring: 0 0 0 3px var(--brand-tinta), 0 0 0 6px var(--brand-amarillo);
 
   /* ---- Tipografía ---- */
-  --font-display: "Lilita One", "Arial Rounded MT Bold", system-ui, sans-serif;
-  --font-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Anton", "Impact", "Arial Narrow", sans-serif;
+  --font-body: "Nunito", "Segoe UI", system-ui, sans-serif;
 
-  --step--1: clamp(0.84rem, 0.8rem + 0.15vw, 0.92rem);
+  --step--1: clamp(0.86rem, 0.82rem + 0.15vw, 0.94rem);
   --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.12rem);
-  --step-1: clamp(1.22rem, 1.1rem + 0.5vw, 1.45rem);
-  --step-2: clamp(1.55rem, 1.3rem + 1vw, 2.05rem);
-  --step-3: clamp(2rem, 1.5rem + 2vw, 3rem);
-  --step-4: clamp(2.6rem, 1.6rem + 4.5vw, 5.2rem);
-  --step-poster: clamp(3.2rem, 1rem + 9.5vw, 9.5rem);
+  --step-1: clamp(1.25rem, 1.12rem + 0.55vw, 1.5rem);
+  --step-2: clamp(1.6rem, 1.35rem + 1.1vw, 2.2rem);
+  --step-3: clamp(2.1rem, 1.6rem + 2.2vw, 3.3rem);
+  --step-4: clamp(2.6rem, 1.8rem + 3.6vw, 4.6rem);
+  --step-hero: clamp(3.4rem, 1.6rem + 7.4vw, 8rem);
 
-  --leading-tight: 0.92;
-  --leading-heading: 1.08;
-  --leading-body: 1.62;
-  --measure: 64ch;
-
-  /* ---- Espacio (fluido) ---- */
+  /* ---- Espacio ---- */
   --space-2xs: 0.25rem;
   --space-xs: 0.5rem;
   --space-sm: 0.75rem;
   --space-md: clamp(1rem, 0.9rem + 0.5vw, 1.35rem);
   --space-lg: clamp(1.5rem, 1.2rem + 1.4vw, 2.4rem);
   --space-xl: clamp(2.5rem, 1.8rem + 3vw, 4.5rem);
-  --space-2xl: clamp(4rem, 2.8rem + 5vw, 7.5rem);
+  --space-2xl: clamp(3.5rem, 2.6rem + 4vw, 6.5rem);
 
-  /* ---- Radios: la jerarquía también está en la forma ---- */
-  --radius-sm: 8px;       /* chips, entradas */
-  --radius-md: 16px;      /* superficies de contenido */
-  --radius-lg: 28px;      /* piezas destacadas (ticket, post) */
-  --radius-pill: 999px;   /* botones */
-
-  /* ---- Sombras en bloque: la sombra de letrero pintado ---- */
-  --shadow-block: 6px 6px 0 var(--brand-fucsia);
-  --shadow-block-sm: 4px 4px 0 var(--brand-fucsia);
-  --shadow-letra: 0.06em 0.06em 0 var(--brand-fucsia);
+  /* ---- Radios ---- */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 26px;
+  --radius-pill: 999px;
 
   /* ---- Movimiento ---- */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-swing: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --dur-fast: 0.18s;
-  --dur-base: 0.32s;
+  --ease-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 0.16s;
+  --dur-base: 0.3s;
 
-  /* ---- Adornos: la fiesta que cae (solo fucsia, amarillo, cian, hueso) ---- */
-  --adorno-banderines: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='168' height='40'%3E%3Cpath d='M0 3 H168' stroke='%23FBF6EC' stroke-width='2'/%3E%3Cpolygon points='4,3 48,3 26,34' fill='%23FFD60A'/%3E%3Cpolygon points='60,3 104,3 82,34' fill='%23FF3D8B'/%3E%3Cpolygon points='116,3 160,3 138,34' fill='%2322D3EE'/%3E%3C/svg%3E");
-  --adorno-serpentina-amarilla: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'%3E%3Cpath d='M4 40 C 18 8, 32 8, 40 30 S 62 52, 72 28 S 96 4, 116 22' fill='none' stroke='%23FFD60A' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
-  --adorno-serpentina-fucsia: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'%3E%3Cpath d='M4 22 C 20 52, 34 52, 44 30 S 66 6, 78 30 S 100 54, 116 36' fill='none' stroke='%23FF3D8B' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
-  --adorno-serpentina-cian: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'%3E%3Cpath d='M4 30 C 16 10, 30 10, 38 28 S 58 50, 68 30 S 90 8, 116 26' fill='none' stroke='%2322D3EE' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
-  --adorno-fila-bolitas:
-    radial-gradient(circle, var(--brand-amarillo) 0 4px, transparent 5px) 0 50% / 72px 100% repeat-x,
-    radial-gradient(circle, var(--brand-fucsia) 0 4px, transparent 5px) 24px 50% / 72px 100% repeat-x,
-    radial-gradient(circle, var(--brand-cian) 0 4px, transparent 5px) 48px 50% / 72px 100% repeat-x;
+  /* ---- Adornos costeños en estilo caricatura (con contorno) ---- */
+  --adorno-banderines: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='204' height='52'%3E%3Cpath d='M0 5 Q102 14 204 5' stroke='%23120303' stroke-width='4' fill='none'/%3E%3Cg stroke='%23120303' stroke-width='3.5' stroke-linejoin='round'%3E%3Cpolygon points='6,6 54,9 30,44' fill='%23FFC933'/%3E%3Cpolygon points='76,10 124,10 100,47' fill='%23E63312'/%3E%3Cpolygon points='146,9 194,6 170,44' fill='%23FFF3DC'/%3E%3C/g%3E%3C/svg%3E");
 
-  --layout-max: 1240px;
-  --index-width: 13rem;
+  --layout-max: 1180px;
 }
