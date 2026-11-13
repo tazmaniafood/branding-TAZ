@@ -186,11 +186,15 @@
       history.replaceState(null, "", "#" + id);
     }
 
+    // El menú vive arriba y es pegajoso: bajamos al inicio del contenido,
+    // dejando espacio para la carpa y su faldón.
     if (opts.scroll) {
+      var main = $("#contenido");
       var menu = $(".menu");
-      if (menu) {
-        var top = menu.getBoundingClientRect().top + window.scrollY;
-        window.scrollTo({ top: top, behavior: "smooth" });
+      if (main) {
+        var offset = (menu ? menu.offsetHeight : 0) + 30;
+        var top = main.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: Math.max(top, 0), behavior: "smooth" });
       }
     }
   }

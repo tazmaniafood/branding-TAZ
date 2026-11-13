@@ -25,6 +25,8 @@ Una sola idea: **la noche de fiesta en una casa costeña**, con el carrito de co
 5. **La explosión mango:** ahí va lo más importante. Clase `.explosion`.
 6. **La carpa:** como el toldo de un carrito de comida. Fondo de baldosa plana y apagada (corozo de noche `#3A0D1B`, rombo y figuras de fast food en tonos bajos) y un faldón oscuro con costuras verticales y ondas entre punta y punta, trazado en neón mango (`--falda-img`). Va en el menú y, volteado, en el pie; la cenefa bajo cada título es un pedacito de baldosa (`.cenefa`).
 
+**Neones del titular.** El titular de la portada lleva un letrero de neón a cada lado (`.cartel__titular`, `.neon`). Por ahora: `img/sombrero-vueltiao-neon.svg` a la izquierda y el mismo volteado a la derecha, mientras llega el segundo.
+
 Las ilustraciones y adornos llegan después y deben seguir la regla 4.
 
 Para leer: Nunito. Movimiento: el cartel "se pega" línea por línea al cargar; después, solo lo que responde a lo que haces (pestañas, valores, chat). Respeta "reducir movimiento".
@@ -47,7 +49,7 @@ Para leer: Nunito. Movimiento: el cartel "se pega" línea por línea al cargar; 
 ## Estado
 
 - [x] Alma, valores, personalidad, voz, públicos y redes
-- [ ] Validar identidad visual v3.5
+- [ ] Validar identidad visual v3.8
 - [ ] Nombre definitivo
 - [ ] Historia de origen
 - [ ] Plato costeño insignia
