@@ -25,7 +25,9 @@ Una sola idea: **la noche de fiesta en una casa costeña**, con el carrito de co
 5. **La explosión mango:** ahí va lo más importante. Clase `.explosion`.
 6. **La carpa:** como el toldo de un carrito de comida. Fondo de azulejos costeños (`img/azulejos-costenos.svg`: sombrero vueltiao, acordeón, palma, mar y sol, arepa de huevo, cayena, maracas y kanas wayuu, solo con colores de la paleta) con un velo negro (`--velo`) y un faldón de ondas entre punta y punta, trazado en neón mango (`--falda-img`). Va en el menú y, volteado, en el pie; la cenefa bajo cada título es un pedacito de azulejos (`.cenefa`).
 
-**Neones del titular.** A la izquierda, la Marimonda (`img/marimonda-neon.svg`); a la derecha, un carrusel de figuras de neón que se turnan cada 4 s (`.carrusel`, por ahora sombrero vueltiao y Marimonda). Para agregar una figura, se añade otro `<img class="carrusel__item">` dentro del carrusel. En pantallas de menos de 1100 px van arriba del titular.
+**Portada.** Texto a la izquierda (titular, cenefa, bajada, datos y botón) y, a la derecha, un carrusel de figuras de neón que se turnan cada 4 s (`.cartel__escena.carrusel`: sombrero vueltiao y Marimonda por ahora). Para agregar una figura, otro `<img class="carrusel__item">`. En celular las figuras van arriba.
+
+**Pestañas.** Letreros con borde de neón, cada uno de un color de la paleta (mango, tomate, loro, menta y azul), sobre fondo noche translúcido; la activa se enciende entera en su color.
 
 Las ilustraciones y adornos llegan después y deben seguir la regla 4.
 
@@ -49,7 +51,7 @@ Para leer: Nunito. Movimiento: el cartel "se pega" línea por línea al cargar; 
 ## Estado
 
 - [x] Alma, valores, personalidad, voz, públicos y redes
-- [ ] Validar identidad visual v4.4
+- [ ] Validar identidad visual v4.5
 - [ ] Nombre definitivo
 - [ ] Historia de origen
 - [ ] Plato costeño insignia

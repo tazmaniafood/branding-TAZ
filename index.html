@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>La carpa · Guía de marca TAZ (borrador 4.4)</title>
+  <title>La carpa · Guía de marca TAZ (borrador 4.5)</title>
   <meta name="description" content="Guía de identidad de la comida rápida costeña en San José, California, inspirada en la casa costeña, el picó y el Carnaval. Nombre provisional: TAZ.">
   <meta name="theme-color" content="#0C0A12">
-  <link rel="stylesheet" href="css/tokens.css?v=4.4">
-  <link rel="stylesheet" href="css/styles.css?v=4.4">
+  <link rel="stylesheet" href="css/tokens.css?v=4.5">
+  <link rel="stylesheet" href="css/styles.css?v=4.5">
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -29,43 +29,39 @@
 
   <!-- ===================== PORTADA: el cartel ===================== -->
   <header class="cartel">
-    <div class="explosion cartel__explosion">
-      <p class="explosion__texto">¡Hoy y todos los días!</p>
-    </div>
+    <!-- Izquierda: el texto. Derecha: las figuras de neón en carrusel
+         (para agregar una figura, otro <img class="carrusel__item">). -->
+    <div class="cartel__texto">
+      <p class="cartel__gancho">La Costa presenta</p>
 
-    <p class="cartel__gancho">La Costa presenta</p>
-
-    <!-- El titular con neón a cada lado: la Marimonda a la izquierda y
-         un carrusel de figuras a la derecha (se agregan más <img> dentro) -->
-    <div class="cartel__titular">
-      <img class="neon neon--izq" src="img/marimonda-neon.svg" alt="" width="1452" height="1116">
       <h1 class="cartel__titulo">
         <span class="picotera cartel__linea cartel__linea--1" style="--c: var(--mango); --s: var(--corozo);">Rebosao,</span>
         <span class="picotera cartel__linea cartel__linea--2" style="--c: var(--tomate); --s: var(--corozo);">mamagallista</span>
         <span class="picotera cartel__linea cartel__linea--3" style="--c: var(--loro); --s: var(--corozo);">y de pura cepa</span>
       </h1>
-      <div class="neon neon--der carrusel" aria-hidden="true">
-        <img class="carrusel__item" src="img/sombrero-vueltiao-neon.svg" alt="" width="1656" height="970">
-        <img class="carrusel__item" src="img/marimonda-neon.svg" alt="" width="1452" height="1116">
+
+      <span class="cenefa cenefa--cartel" aria-hidden="true"></span>
+
+      <p class="cartel__bajada">La guía de marca de nuestra comida rápida costeña: cómo somos, cómo hablamos y cómo nos vemos.</p>
+
+      <div class="cartel__datos">
+        <div class="calendario">
+          <span class="calendario__arriba">Comida rápida</span>
+          <span class="calendario__centro">costeña</span>
+        </div>
+        <div class="cartel__lugar">
+          <p>San José, California</p>
+          <p class="cartel__nota">TAZ es un nombre provisional. Borrador 4.5.</p>
+        </div>
       </div>
+
+      <a class="btn" href="#valores" data-action="show-section" data-target="valores">Ver los valores</a>
     </div>
 
-    <span class="cenefa cenefa--cartel" aria-hidden="true"></span>
-
-    <p class="cartel__bajada">La guía de marca de nuestra comida rápida costeña: cómo somos, cómo hablamos y cómo nos vemos.</p>
-
-    <div class="cartel__datos">
-      <div class="calendario">
-        <span class="calendario__arriba">Comida rápida</span>
-        <span class="calendario__centro">costeña</span>
-      </div>
-      <div class="cartel__lugar">
-        <p>San José, California</p>
-        <p class="cartel__nota">TAZ es un nombre provisional. Borrador 4.4.</p>
-      </div>
+    <div class="cartel__escena carrusel" aria-hidden="true">
+      <img class="carrusel__item" src="img/sombrero-vueltiao-neon.svg" alt="" width="1656" height="970">
+      <img class="carrusel__item" src="img/marimonda-neon.svg" alt="" width="1452" height="1116">
     </div>
-
-    <a class="btn" href="#valores" data-action="show-section" data-target="valores">Ver los valores</a>
   </header>
 
 
@@ -455,12 +451,12 @@
   <footer class="footer">
     <div class="footer__placa">
       <p class="picotera footer__line" style="--c: var(--mango); --s: var(--corozo);">¡Coma que hay más!</p>
-      <p class="footer__meta">Guía de marca, borrador 4.4. San José, California.</p>
+      <p class="footer__meta">Guía de marca, borrador 4.5. San José, California.</p>
     </div>
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="js/main.js?v=4.4" defer></script>
+  <script src="js/main.js?v=4.5" defer></script>
 </body>
 </html>
