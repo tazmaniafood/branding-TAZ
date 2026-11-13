@@ -1400,7 +1400,7 @@ main {
   width: min(18rem, 70%);
   height: 30px;
   margin: var(--space-md) auto 0;
-  background: var(--velo), var(--baldosa-img) 0 0 / 60px 60px, var(--corozo-noche);
+  background: var(--velo), var(--baldosa-img) 0 0 / 240px 90px, var(--noche);
   border: 2px solid var(--mango);
   border-radius: var(--radius-pill);
   box-shadow: var(--sombra-chica), var(--neon-mango);
