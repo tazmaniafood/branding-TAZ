@@ -295,9 +295,13 @@ a {
 }
 
 /* Festón de la carpa: baldosa con contorno crema */
-/* Faldón de la carpa: tela oscura con costuras verticales y ondas
-   entre punta y punta, trazadas en neón mango (ver --falda-img). */
+/* Faldón de la carpa: la misma baldosa sigue por dentro hasta las
+   ondas (::before, recortado con --falda-forma) y encima van las
+   costuras y ondas en neón mango (::after, --falda-lineas).
+   La baldosa va "fixed" para que no se corte entre carpa y faldón. */
+.menu::before,
 .menu::after,
+.footer::before,
 .footer::after {
   content: "";
   position: absolute;
@@ -305,9 +309,21 @@ a {
   right: 0;
   height: 54px;
   pointer-events: none;
-  background: var(--falda-img) 0 0 / 56px 54px repeat-x;
 }
 
+.menu::before,
+.footer::before {
+  background: var(--velo), var(--baldosa);
+  -webkit-mask: var(--falda-forma) 0 0 / 56px 54px repeat-x;
+  mask: var(--falda-forma) 0 0 / 56px 54px repeat-x;
+}
+
+.menu::after,
+.footer::after {
+  background: var(--falda-lineas) 0 0 / 56px 54px repeat-x;
+}
+
+.menu::before,
 .menu::after { top: 100%; }
 
 .menu__list {
@@ -1269,6 +1285,7 @@ main {
 }
 
 /* El mismo faldón de arriba, volteado: las puntas miran hacia arriba */
+.footer::before,
 .footer::after {
   bottom: 100%;
   transform: scaleY(-1);
