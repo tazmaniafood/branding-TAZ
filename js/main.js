@@ -1,5 +1,5 @@
 // ==========================================================
-// Guía de marca v0.9 · interacciones
+// Guía de marca v1.1 · interacciones
 // Patrones: delegación de eventos con data-action, estado
 // visual en data-state / aria-*, código defensivo (todo se
 // verifica antes de usarse) y sin variables globales.
@@ -219,6 +219,121 @@
       showSection(next.getAttribute("data-target"), { focusTab: true });
     }
   });
+
+  // ----------------------------------------------------------
+  // Marco de fiesta. Cada pieza está colocada a mano:
+  // [tipo, x %, y %, ancho rem, giro, color, ¿se ve en celular?]
+  // Tipos: e = estrella de cinco puntas, c = chispa de cuatro, sa/sb = serpentina, d = destello, b = bombillo.
+  // Regla: todo en los bordes; el centro queda libre para el texto.
+  // ----------------------------------------------------------
+  var MARCOS = {
+    cartel: [
+      ["sa", 7, 9, 8, 18, "rosado", 1], ["sb", 92, 9, 7.5, -160, "verde", 1],
+      ["sb", 5, 48, 6, -70, "naranja", 0], ["sa", 95, 44, 6, 110, "rosado", 0],
+      ["sa", 8, 80, 7.5, -25, "verde", 0], ["sb", 92, 84, 8, 200, "amarillo", 1],
+      ["sa", 30, 4, 5, 8, "amarillo", 0], ["sb", 70, 5, 5, -10, "naranja", 0],
+      ["e", 15, 21, 2.99, 0, "amarillo", 1], ["e", 85, 23, 2.3, 0, "rosado", 1],
+      ["c", 11, 34, 1.65, 0, "verde", 1], ["c", 90, 33, 1.8, 0, "naranja", 1],
+      ["e", 14, 60, 1.84, 0, "rosado", 0], ["e", 87, 62, 2.64, 0, "naranja", 0],
+      ["c", 4, 67, 1.5, 0, "amarillo", 1], ["c", 96, 70, 1.5, 0, "verde", 1],
+      ["e", 22, 90, 1.84, 0, "rosado", 1], ["e", 80, 93, 2.53, 0, "amarillo", 0],
+      ["c", 40, 96, 1.5, 0, "verde", 0], ["c", 60, 97, 1.65, 0, "rosado", 0],
+      ["c", 4, 22, 1.8, 0, "naranja", 1], ["c", 97, 21, 1.65, 0, "amarillo", 1],
+      ["d", 24, 13, 2.86, -25, "amarillo", 0], ["d", 76, 14, 2.86, 25, "verde", 0],
+      ["d", 17, 72, 2.6, -115, "amarillo", 0], ["d", 83, 75, 2.6, 115, "rosado", 0],
+      ["d", 9, 26, 2.08, -40, "rosado", 1], ["d", 92, 52, 2.08, 70, "amarillo", 0],
+      ["b", 4, 39, 0.5, 0, "amarillo", 1], ["b", 97, 58, 0.5, 0, "verde", 1],
+      ["b", 30, 92, 0.55, 0, "naranja", 0], ["b", 70, 90, 0.55, 0, "verde", 0],
+      ["b", 12, 92, 0.5, 0, "amarillo", 1], ["b", 50, 3, 0.5, 0, "rosado", 0],
+      ["b", 7, 58, 0.5, 0, "rosado", 1], ["b", 93, 30, 0.5, 0, "verde", 1],
+      ["b", 25, 22, 0.5, 0, "verde", 0], ["b", 75, 25, 0.5, 0, "naranja", 0],
+      ["c", 36, 12, 1.4, 0, "rosado", 0], ["c", 64, 10, 1.5, 0, "amarillo", 0],
+      ["c", 2, 88, 1.4, 0, "rosado", 1], ["c", 98, 92, 1.4, 0, "naranja", 1],
+      ["d", 10, 96, 2.34, -150, "naranja", 0], ["d", 90, 4, 2.34, 30, "amarillo", 0],
+      ["sa", 3, 30, 5, 80, "amarillo", 0], ["sb", 97, 70, 5, -100, "rosado", 0]
+    ],
+    titulo: [
+      ["sa", 6, 40, 5.5, 12, "rosado", 0], ["sb", 94, 58, 5.5, -168, "verde", 0],
+      ["e", 18, 16, 1.75, 0, "amarillo", 1], ["e", 82, 18, 2.2, 0, "naranja", 1],
+      ["c", 4, 80, 1.5, 0, "verde", 0], ["c", 96, 84, 1.65, 0, "rosado", 0],
+      ["c", 12, 90, 1.4, 0, "naranja", 0], ["c", 88, 92, 1.5, 0, "amarillo", 0],
+      ["d", 14, 50, 2.2, -35, "amarillo", 0], ["d", 86, 44, 2.2, 35, "rosado", 0],
+      ["b", 13, 72, 0.45, 0, "naranja", 0], ["b", 88, 32, 0.45, 0, "amarillo", 0],
+      ["b", 4, 20, 0.45, 0, "rosado", 1], ["b", 96, 18, 0.45, 0, "verde", 1],
+      ["b", 26, 6, 0.45, 0, "verde", 0], ["b", 74, 6, 0.45, 0, "rosado", 0]
+    ],
+    poster: [
+      ["sa", 16, 6, 5, 14, "rosado", 1], ["sb", 84, 7, 5, -14, "verde", 1],
+      ["sa", 10, 90, 4.5, -20, "naranja", 1],
+      ["e", 10, 20, 1.72, 0, "amarillo", 1], ["c", 90, 22, 1.8, 0, "rosado", 1],
+      ["c", 7, 55, 1.5, 0, "verde", 1], ["c", 93, 50, 1.65, 0, "amarillo", 1],
+      ["c", 30, 95, 1.5, 0, "amarillo", 1],
+      ["d", 26, 16, 1.82, -25, "amarillo", 1], ["d", 74, 16, 1.82, 25, "naranja", 1],
+      ["b", 6, 36, 0.4, 0, "rosado", 1], ["b", 94, 36, 0.4, 0, "verde", 1],
+      ["b", 8, 72, 0.4, 0, "amarillo", 1], ["b", 50, 4, 0.4, 0, "amarillo", 1]
+    ],
+    pie: [
+      ["sa", 8, 50, 6, 10, "rosado", 0], ["sb", 92, 50, 6, -170, "verde", 0],
+      ["e", 18, 28, 1.84, 0, "amarillo", 1], ["e", 82, 30, 2.07, 0, "naranja", 1],
+      ["c", 5, 82, 1.5, 0, "verde", 1], ["c", 95, 78, 1.65, 0, "rosado", 1],
+      ["d", 22, 70, 2.08, -120, "amarillo", 0], ["d", 78, 70, 2.08, 120, "rosado", 0],
+      ["b", 30, 88, 0.45, 0, "verde", 0], ["b", 70, 88, 0.45, 0, "amarillo", 0],
+      ["b", 4, 30, 0.45, 0, "rosado", 1], ["b", 96, 30, 0.45, 0, "amarillo", 1]
+    ],
+    demo: [
+      ["sa", 12, 26, 3.4, 15, "rosado", 1], ["sb", 88, 74, 3.4, -165, "verde", 1],
+      ["c", 14, 76, 1.65, 0, "amarillo", 1], ["c", 86, 24, 1.8, 0, "naranja", 1],
+      ["d", 26, 52, 1.56, -60, "amarillo", 1], ["d", 74, 50, 1.56, 60, "rosado", 1],
+      ["b", 5, 50, 0.35, 0, "verde", 1], ["b", 95, 50, 0.35, 0, "amarillo", 1]
+    ]
+  };
+
+  var SVG_NS = "http://www.w3.org/2000/svg";
+  var TIPOS = { e: "estrella", c: "chispa", sa: "serpentina", sb: "serpentina", d: "destello", b: "bombillo" };
+
+  function crearPieza(spec, index) {
+    var tipo = spec[0];
+    var pieza = document.createElement("span");
+    pieza.className = "pieza pieza--" + TIPOS[tipo];
+    pieza.style.cssText =
+      "--x:" + spec[1] + "%;--y:" + spec[2] + "%;--w:" + spec[3] + "rem;" +
+      "--r:" + spec[4] + "deg;--tint:var(--" + spec[5] + ");--i:" + index;
+    if (!spec[6]) pieza.setAttribute("data-movil", "no");
+
+    if (tipo === "sa" || tipo === "sb" || tipo === "d") {
+      var id = tipo === "d" ? "destello" : tipo === "sa" ? "serpentina-a" : "serpentina-b";
+      var svg = document.createElementNS(SVG_NS, "svg");
+      svg.setAttribute("viewBox", tipo === "d" ? "0 0 40 40" : "0 0 120 60");
+      var use = document.createElementNS(SVG_NS, "use");
+      use.setAttribute("href", "#" + id);
+      svg.appendChild(use);
+      pieza.appendChild(svg);
+    }
+    return pieza;
+  }
+
+  function pintarMarco(contenedor, nombre) {
+    var specs = MARCOS[nombre];
+    if (!specs) return;
+    var frag = document.createDocumentFragment();
+    specs.forEach(function (spec, i) { frag.appendChild(crearPieza(spec, i)); });
+    contenedor.appendChild(frag);
+  }
+
+  // Cada título de sección lleva su marco
+  $all(".chapter__head").forEach(function (head) {
+    var marco = document.createElement("div");
+    marco.className = "festejo";
+    marco.setAttribute("data-festejo", "titulo");
+    marco.setAttribute("aria-hidden", "true");
+    head.insertBefore(marco, head.firstChild);
+  });
+
+  $all("[data-festejo]").forEach(function (el) {
+    pintarMarco(el, el.getAttribute("data-festejo"));
+  });
+  var marcoCartel = $(".festejo[data-festejo='cartel']");
+  if (marcoCartel) marcoCartel.classList.add("festejo--bombillos");
 
   // Al cargar: abrir la sección del enlace (#valores) o la primera
   var initial = (window.location.hash || "").slice(1);

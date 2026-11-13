@@ -3,21 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Cartel de picó · Guía de marca TAZ (borrador 1.0)</title>
+  <title>Cartel de picó · Guía de marca TAZ (borrador 1.1)</title>
   <meta name="description" content="Guía de identidad de la comida rápida costeña en San José, California, inspirada en los carteles de fiesta de picó. Nombre provisional: TAZ.">
   <meta name="theme-color" content="#0C0A12">
-  <link rel="stylesheet" href="css/tokens.css?v=1.0">
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="css/tokens.css?v=1.1">
+  <link rel="stylesheet" href="css/styles.css?v=1.1">
 </head>
 <body>
+  <!-- Piezas del marco de fiesta: cada una con capa blanca debajo, como la letra picotera -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="serpentina-a" viewBox="0 0 120 60">
+      <path d="M6 44 C 18 6, 36 4, 38 24 S 28 50, 46 46 S 66 8, 76 24 S 70 52, 88 42 S 106 14, 114 18" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round"/>
+      <path d="M6 44 C 18 6, 36 4, 38 24 S 28 50, 46 46 S 66 8, 76 24 S 70 52, 88 42 S 106 14, 114 18" fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="serpentina-b" viewBox="0 0 120 60">
+      <path d="M6 14 C 30 2, 44 30, 28 34 S 22 12, 46 16 S 72 46, 60 50 S 52 26, 80 28 S 108 52, 114 40" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round"/>
+      <path d="M6 14 C 30 2, 44 30, 28 34 S 22 12, 46 16 S 72 46, 60 50 S 52 26, 80 28 S 108 52, 114 40" fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="destello" viewBox="0 0 40 40">
+      <path d="M20 16 V4 M27 19 L36 10 M13 19 L4 10" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+      <path d="M20 16 V4 M27 19 L36 10 M13 19 L4 10" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+    </symbol>
+  </svg>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <!-- ===================== PORTADA: el cartel ===================== -->
   <header class="cartel">
-    <span class="estrella estrella--1" aria-hidden="true"></span>
-    <span class="estrella estrella--2" aria-hidden="true"></span>
-    <span class="estrella estrella--3" aria-hidden="true"></span>
-    <span class="estrella estrella--4" aria-hidden="true"></span>
+    <div class="festejo" data-festejo="cartel" aria-hidden="true"></div>
 
     <div class="explosion cartel__explosion">
       <p class="explosion__texto">¡Hoy y todos los días!</p>
@@ -40,7 +52,7 @@
       </div>
       <div class="cartel__lugar">
         <p>San José, California</p>
-        <p class="cartel__nota">TAZ es un nombre provisional. Borrador 1.0.</p>
+        <p class="cartel__nota">TAZ es un nombre provisional. Borrador 1.1.</p>
       </div>
     </div>
 
@@ -313,9 +325,9 @@
           <p>Los carteles se componen centrados, de lo más grande a lo más chico.</p>
         </li>
         <li class="regla">
-          <div class="regla__demo regla__demo--estrellas" aria-hidden="true"><span class="estrella"></span><span class="estrella"></span></div>
-          <h3>Estrellas de marco</h3>
-          <p>Enmarcan el título, nunca tapan. Nada de confeti suelto.</p>
+          <div class="regla__demo regla__demo--marco" aria-hidden="true"><span class="regla__titulo">Título</span><div class="festejo" data-festejo="demo"></div></div>
+          <h3>Marco de fiesta</h3>
+          <p>Estrellas, serpentinas, destellos y bombillos llenan los bordes, bien tupido. El centro queda limpio para el texto. Nada de confeti suelto.</p>
         </li>
       </ol>
 
@@ -356,8 +368,7 @@
       <div class="apps">
         <figure class="app">
           <div class="poster">
-            <span class="estrella poster__estrella poster__estrella--1" aria-hidden="true"></span>
-            <span class="estrella poster__estrella poster__estrella--2" aria-hidden="true"></span>
+            <div class="festejo" data-festejo="poster" aria-hidden="true"></div>
             <p class="poster__gancho">Este viernes</p>
             <p class="picotera poster__titulo" style="--c: var(--amarillo); --s: var(--rosado);">Perro</p>
             <p class="picotera poster__titulo" style="--c: var(--verde); --s: var(--rosado);">rebosao</p>
@@ -431,7 +442,7 @@
       <ul class="todo">
         <li data-state="done">Alma, valores, personalidad y voz</li>
         <li data-state="done">Públicos y redes</li>
-        <li data-state="review">Identidad visual 1.0 "Cartel de picó": validar</li>
+        <li data-state="review">Identidad visual 1.1 "Cartel de picó": validar</li>
         <li>Nombre definitivo</li>
         <li>Historia de origen: quién cocina y por qué lo buscaban en la Costa</li>
         <li>Plato costeño insignia</li>
@@ -443,14 +454,13 @@
   </main>
 
   <footer class="footer">
-    <span class="estrella footer__estrella footer__estrella--1" aria-hidden="true"></span>
-    <span class="estrella footer__estrella footer__estrella--2" aria-hidden="true"></span>
+    <div class="festejo" data-festejo="pie" aria-hidden="true"></div>
     <p class="picotera footer__line" style="--c: var(--amarillo); --s: var(--rosado);">¡Coma que hay más!</p>
-    <p class="footer__meta">Guía de marca, borrador 1.0. San José, California.</p>
+    <p class="footer__meta">Guía de marca, borrador 1.1. San José, California.</p>
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="js/main.js?v=1.0" defer></script>
+  <script src="js/main.js?v=1.1" defer></script>
 </body>
 </html>
