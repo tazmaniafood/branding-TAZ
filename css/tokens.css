@@ -1,5 +1,5 @@
 /* ==========================================================
-   Tokens de marca · v1.0 "Cartel de picó"
+   Tokens de marca · v1.2 "Cartel de picó"
    TAZ es un nombre provisional.
 
    La identidad sale de los carteles de fiesta de picó de la
@@ -7,16 +7,19 @@
    eso todo queda coherente:
 
    1. Fondo negro: la noche de la verbena.
-   2. Colores fluorescentes: amarillo, rosado, verde y naranja.
+   2. Cuatro colores de carnaval: amarillo, rosado, verde y naranja.
+      Vivos pero no fosforescentes, para que no cansen la vista.
    3. Letra picotera: relleno de color + primera capa blanca
       (contorno) + sombra en bloque de otro color.
    4. La explosión amarilla: ahí va lo más importante.
    5. Eje vertical: composición centrada, jerarquía clara.
-   6. Estrellas como marco. Nada de confeti suelto.
+   6. Marco de fiesta en los bordes. Nada de confeti suelto.
+   + El toldo: el menú y el pie son la sombrilla de colores
+     del puesto de comida, con borde festoneado.
 
-   Contrastes (WCAG) sobre noche: crema 18.5 · amarillo 15.4 ·
-   verde 14.6 · naranja 8.3 · rosado 5.7 · gris 9.9.
-   Noche sobre cualquier fluorescente: mínimo 5.7.
+   Contrastes (WCAG) sobre noche: crema 17.9 · amarillo 13.5 ·
+   verde 10.4 · naranja 9.0 · rosado 6.4 · gris 9.9.
+   Noche sobre cualquiera de los cuatro colores: mínimo 6.4.
    ========================================================== */
 
 @import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@500;700;800;900&display=swap");
@@ -30,14 +33,14 @@
   --panel-2: #221C2E;
   --linea-suave: #2E2640;
 
-  /* ---- Los fluorescentes del pintor de picó ---- */
-  --amarillo: #FFE500;
-  --rosado: #FF2E93;
-  --verde: #3CFF4F;
-  --naranja: #FF8A00;
+  /* ---- Los colores de carnaval (antes eran neón y cansaban) ---- */
+  --amarillo: #FFD23F;
+  --rosado: #F0609E;
+  --verde: #55D486;
+  --naranja: #FF9447;
 
   /* ---- La primera capa y el texto ---- */
-  --blanco: #FFFFFF;
+  --blanco: #FFF4E2;
   --crema: #FFF7EA;
   --gris: #BDB4CC;
 
@@ -100,6 +103,16 @@
   --estrella: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
 
   --estrella-5: polygon(50% 0%, 63% 34%, 100% 36%, 71% 59%, 81% 96%, 50% 75%, 19% 96%, 29% 59%, 0% 36%, 37% 34%);
+
+  /* ---- El toldo: la sombrilla del puesto de comida ---- */
+  --toldo-franja: 64px;
+  --toldo:
+    radial-gradient(rgb(255 244 226 / 0.2) 2px, transparent 2.6px) 0 0 / 16px 16px,
+    repeating-linear-gradient(90deg,
+      var(--rosado) 0 var(--toldo-franja),
+      var(--naranja) 0 calc(var(--toldo-franja) * 2),
+      var(--amarillo) 0 calc(var(--toldo-franja) * 3),
+      var(--verde) 0 calc(var(--toldo-franja) * 4));
 
   --layout-max: 1120px;
 }

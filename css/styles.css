@@ -1,7 +1,7 @@
 /* ==========================================================
    Guía de marca · v1.0 "Cartel de picó"
    Mobile-first. Depende de tokens.css.
-   Seis reglas: fondo negro, cuatro fluorescentes, letra
+   Seis reglas: fondo negro, cuatro colores de carnaval, letra
    picotera, explosión amarilla, eje al centro, estrellas.
    ========================================================== */
 
@@ -316,47 +316,89 @@ a {
   top: 0;
   z-index: 30;
   margin-top: var(--space-lg);
-  background: var(--noche);
-  border-block: 2px solid var(--linea-suave);
+  background: var(--toldo);
+  border-top: 4px solid var(--noche);
+}
+
+/* Festón: cada onda sigue su franja, con capa blanca debajo */
+.menu::before,
+.menu::after,
+.footer::before,
+.footer::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  -webkit-mask-size: var(--toldo-franja) 100%;
+  mask-size: var(--toldo-franja) 100%;
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+}
+
+.menu::before,
+.menu::after { top: 100%; }
+
+.menu::before {
+  height: 25px;
+  background: var(--blanco);
+  -webkit-mask-image: radial-gradient(34px 25px at 50% 0, #000 97%, transparent);
+  mask-image: radial-gradient(34px 25px at 50% 0, #000 97%, transparent);
+}
+
+.menu::after {
+  height: 21px;
+  background: var(--toldo);
+  -webkit-mask-image: radial-gradient(32px 21px at 50% 0, #000 97%, transparent);
+  mask-image: radial-gradient(32px 21px at 50% 0, #000 97%, transparent);
 }
 
 .menu__list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2px var(--space-2xs);
+  gap: var(--space-xs) var(--space-xs);
   width: min(100% - 2 * var(--space-md), 1280px);
   margin-inline: auto;
-  padding: var(--space-sm) 0;
+  padding: var(--space-sm) 0 var(--space-xs);
 }
 
 .menu__tab {
   display: block;
-  padding: 0.3rem 0.8rem;
-  color: var(--crema);
+  padding: 0.25rem 0.85rem;
+  color: var(--noche);
+  background: var(--crema);
   font-family: var(--font-display);
   font-size: 0.98rem;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   text-decoration: none;
-  border: 2px solid transparent;
+  border: 3px solid var(--noche);
   border-radius: var(--radius-pill);
+  box-shadow: 0 4px 0 var(--noche);
   transition:
     background var(--dur-fast) var(--ease-out),
     color var(--dur-fast) var(--ease-out),
-    transform var(--dur-fast) var(--ease-pop);
+    transform var(--dur-fast) var(--ease-pop),
+    box-shadow var(--dur-fast) var(--ease-out);
 }
 
-.menu__tab:hover {
-  border-color: var(--linea-suave);
-}
+.menu__tab:nth-child(odd) { transform: rotate(-1.5deg); }
+.menu__tab:nth-child(even) { transform: rotate(1.5deg); }
+
+.menu__tab:hover { transform: translateY(-2px) rotate(0deg); }
+.menu__tab:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--noche); }
 
 .menu__tab[aria-selected="true"] {
-  background: var(--amarillo);
-  color: var(--noche);
+  background: var(--noche);
+  color: var(--amarillo);
   border-color: var(--blanco);
-  box-shadow: 3px 3px 0 var(--rosado);
-  transform: rotate(-2deg);
+  transform: translateY(-2px) rotate(-2deg);
+}
+
+@media (max-width: 600px) {
+  .menu__list { gap: 6px; }
+  .menu__tab { font-size: 0.86rem; padding: 0.2rem 0.65rem; }
 }
 
 /* ==========================================================
@@ -1203,10 +1245,41 @@ main {
    ========================================================== */
 .footer {
   position: relative;
-  margin-top: var(--space-2xl);
-  padding: var(--space-xl) var(--space-md);
+  margin-top: calc(var(--space-2xl) + 25px);
+  padding: var(--space-lg) var(--space-md);
   text-align: center;
-  border-top: 2px solid var(--linea-suave);
+  background: var(--toldo);
+}
+
+/* El mismo toldo, con el festón mirando hacia arriba */
+.footer::before,
+.footer::after { bottom: 100%; }
+
+.footer::before {
+  height: 25px;
+  background: var(--blanco);
+  -webkit-mask-image: radial-gradient(34px 25px at 50% 100%, #000 97%, transparent);
+  mask-image: radial-gradient(34px 25px at 50% 100%, #000 97%, transparent);
+}
+
+.footer::after {
+  height: 21px;
+  background: var(--toldo);
+  background-position: 0 0, 0 0;
+  -webkit-mask-image: radial-gradient(32px 21px at 50% 100%, #000 97%, transparent);
+  mask-image: radial-gradient(32px 21px at 50% 100%, #000 97%, transparent);
+}
+
+/* La placa del puesto, colgada debajo del toldo */
+.footer__placa {
+  width: min(100%, 36rem);
+  margin-inline: auto;
+  padding: var(--space-lg) var(--space-md);
+  background: var(--noche);
+  border: var(--borde);
+  border-radius: 18px;
+  box-shadow: 6px 6px 0 var(--noche);
+  transform: rotate(-1deg);
 }
 
 .footer__line {
@@ -1244,7 +1317,6 @@ main {
 
 .cartel > :not(.festejo),
 .poster > :not(.festejo):not(.explosion--poster),
-.footer > :not(.festejo),
 .chapter__head > :not(.festejo) {
   position: relative;
   z-index: 1;
@@ -1290,7 +1362,7 @@ main {
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--tint);
-  box-shadow: 0 0 0 2px var(--blanco), 0 0 12px 2px var(--tint);
+  box-shadow: 0 0 0 2px var(--blanco), 0 0 6px var(--tint);
 }
 
 /* Fila de bombillos arriba y abajo, como la marquesina del picó */
@@ -1322,7 +1394,6 @@ main {
 }
 
 .chapter__head { position: relative; padding: var(--space-md) 0; }
-.footer { overflow: hidden; }
 
 @media (max-width: 600px) {
   .pieza { width: calc(var(--w) * 0.72); }
@@ -1451,7 +1522,6 @@ main {
   .festejo::before { animation: bombillos 1.2s steps(1) infinite; }
   .festejo::after { animation: bombillos 1.2s steps(1) -0.6s infinite; }
   .chapter .festejo > .pieza,
-  .footer .festejo > .pieza,
   .poster .festejo > .pieza,
   .regla .festejo > .pieza { animation-delay: 0s, calc(var(--i) * -0.41s); }
 
