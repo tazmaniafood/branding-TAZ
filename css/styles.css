@@ -48,7 +48,7 @@ figure {
 }
 
 a {
-  color: var(--amarillo);
+  color: var(--mango);
 }
 
 :focus-visible {
@@ -63,7 +63,7 @@ a {
   top: -5rem;
   z-index: 60;
   padding: var(--space-xs) var(--space-md);
-  background: var(--amarillo);
+  background: var(--mango);
   color: var(--noche);
   font-weight: 900;
   border-radius: var(--radius-pill);
@@ -119,7 +119,7 @@ a {
 
 .explosion::after {
   inset: 5%;
-  background: var(--amarillo);
+  background: var(--mango);
 }
 
 .explosion__texto {
@@ -134,7 +134,7 @@ a {
   display: block;
   width: 2rem;
   aspect-ratio: 1;
-  background: var(--amarillo);
+  background: var(--mango);
   clip-path: var(--estrella);
 }
 
@@ -151,10 +151,10 @@ a {
   letter-spacing: 0.03em;
   text-decoration: none;
   color: var(--noche);
-  background: var(--amarillo);
+  background: var(--mango);
   border: var(--borde);
   border-radius: var(--radius-pill);
-  box-shadow: 5px 5px 0 var(--rosado);
+  box-shadow: 5px 5px 0 var(--buganvilia);
   cursor: pointer;
   transition:
     transform var(--dur-fast) var(--ease-out),
@@ -163,12 +163,12 @@ a {
 
 .btn:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 7px 7px 0 var(--rosado);
+  box-shadow: 7px 7px 0 var(--buganvilia);
 }
 
 .btn:active {
   transform: translate(3px, 3px);
-  box-shadow: 1px 1px 0 var(--rosado);
+  box-shadow: 1px 1px 0 var(--buganvilia);
 }
 
 /* ==========================================================
@@ -247,12 +247,12 @@ a {
   color: var(--noche);
   border: var(--borde);
   border-radius: var(--radius-sm);
-  box-shadow: 5px 5px 0 var(--verde);
+  box-shadow: 5px 5px 0 var(--palma);
 }
 
 .calendario__arriba {
   padding: 0.2rem 0.8rem;
-  background: var(--rosado);
+  background: var(--buganvilia);
   color: var(--noche);
   font-weight: 900;
   font-size: var(--step--1);
@@ -289,7 +289,7 @@ a {
   z-index: 2;
   overflow: hidden;
   margin: -1.6rem -2rem 0;
-  background: var(--amarillo);
+  background: var(--mango);
   border-block: 4px solid var(--blanco);
   transform: rotate(-1.5deg);
   color: var(--noche);
@@ -391,7 +391,7 @@ a {
 
 .menu__tab[aria-selected="true"] {
   background: var(--noche);
-  color: var(--amarillo);
+  color: var(--mango);
   border-color: var(--blanco);
   transform: translateY(-2px) rotate(-2deg);
 }
@@ -409,6 +409,8 @@ main {
   margin-inline: auto;
   outline: none;
 }
+
+.chapter:focus-visible { box-shadow: none; }
 
 .chapter {
   padding-top: var(--space-xl);
@@ -526,7 +528,7 @@ main {
 .aviso--no li {
   color: var(--text-secondary);
   text-decoration: line-through;
-  text-decoration-color: var(--rosado);
+  text-decoration-color: var(--buganvilia);
   text-decoration-thickness: 2px;
 }
 
@@ -761,7 +763,7 @@ main {
   align-items: center;
   gap: var(--space-sm);
   padding: var(--space-xs) var(--space-md);
-  background: var(--verde);
+  background: var(--palma);
   color: var(--noche);
 }
 
@@ -772,7 +774,7 @@ main {
   height: 2.4rem;
   border-radius: 50%;
   background: var(--noche);
-  color: var(--amarillo);
+  color: var(--mango);
   font-family: var(--font-display);
   font-size: var(--step-1);
 }
@@ -853,10 +855,11 @@ main {
   border-radius: var(--radius-pill);
 }
 
-.chip:nth-child(4n + 1) { background: var(--amarillo); }
-.chip:nth-child(4n + 2) { background: var(--rosado); }
-.chip:nth-child(4n + 3) { background: var(--verde); }
-.chip:nth-child(4n + 4) { background: var(--naranja); }
+.chip:nth-child(5n + 1) { background: var(--mango); }
+.chip:nth-child(5n + 2) { background: var(--buganvilia); }
+.chip:nth-child(5n + 3) { background: var(--palma); }
+.chip:nth-child(5n + 4) { background: var(--achiote); }
+.chip:nth-child(5n + 5) { background: var(--caribe); }
 
 .chip.chip--no {
   background: none;
@@ -865,7 +868,7 @@ main {
 }
 
 .chip--no s {
-  text-decoration-color: var(--rosado);
+  text-decoration-color: var(--buganvilia);
   text-decoration-thickness: 2px;
 }
 
@@ -910,7 +913,7 @@ main {
 
 .regla h3::before {
   content: counter(regla) ". ";
-  color: var(--amarillo);
+  color: var(--mango);
 }
 
 .regla p {
@@ -942,10 +945,11 @@ main {
   height: 100%;
 }
 
-.regla__demo--fluor span:nth-child(1) { background: var(--amarillo); }
-.regla__demo--fluor span:nth-child(2) { background: var(--rosado); }
-.regla__demo--fluor span:nth-child(3) { background: var(--verde); }
-.regla__demo--fluor span:nth-child(4) { background: var(--naranja); }
+.regla__demo--fluor span:nth-child(1) { background: var(--mango); }
+.regla__demo--fluor span:nth-child(2) { background: var(--buganvilia); }
+.regla__demo--fluor span:nth-child(3) { background: var(--palma); }
+.regla__demo--fluor span:nth-child(4) { background: var(--achiote); }
+.regla__demo--fluor span:nth-child(5) { background: var(--caribe); }
 
 .regla__letra {
   font-size: 3.4rem;
@@ -973,7 +977,7 @@ main {
   background: var(--crema);
 }
 
-.regla__demo--eje span:nth-child(1) { width: 70%; height: 22px; background: var(--amarillo); }
+.regla__demo--eje span:nth-child(1) { width: 70%; height: 22px; background: var(--mango); }
 .regla__demo--eje span:nth-child(2) { width: 46%; }
 .regla__demo--eje span:nth-child(3) { width: 28%; }
 
@@ -1008,7 +1012,7 @@ main {
 }
 
 .swatch[data-state="copied"] {
-  border-color: var(--verde);
+  border-color: var(--palma);
 }
 
 .swatch__chip {
@@ -1097,7 +1101,7 @@ main {
   background: var(--noche);
   border: var(--borde);
   border-radius: var(--radius-md);
-  box-shadow: 6px 6px 0 var(--rosado);
+  box-shadow: 6px 6px 0 var(--buganvilia);
 }
 
 .poster__titulo {
@@ -1135,7 +1139,7 @@ main {
   color: var(--noche);
   border: var(--borde);
   border-radius: var(--radius-md);
-  box-shadow: 6px 6px 0 var(--verde);
+  box-shadow: 6px 6px 0 var(--palma);
 }
 
 .listing__cover {
@@ -1228,16 +1232,16 @@ main {
 .todo li[data-state="done"] {
   color: var(--text-secondary);
   text-decoration: line-through;
-  text-decoration-color: var(--rosado);
+  text-decoration-color: var(--buganvilia);
   text-decoration-thickness: 2px;
 }
 
 .todo li[data-state="done"]::before {
-  background: var(--verde);
+  background: var(--palma);
 }
 
 .todo li[data-state="review"]::before {
-  background: var(--amarillo);
+  background: var(--mango);
 }
 
 /* ==========================================================
@@ -1296,8 +1300,8 @@ main {
 
 /* ==========================================================
    MARCO DE FIESTA
-   Cuatro piezas, todas con capa blanca como la letra picotera:
-   estrella, serpentina, destello y bombillo. Van tupidas en los
+   Tres piezas, todas con capa blanca como la letra picotera:
+   estrella, serpentina y destello. Van tupidas en los
    bordes, colocadas a mano en js/main.js. El centro queda libre.
    ========================================================== */
 .sprite {
@@ -1358,28 +1362,7 @@ main {
 .pieza--chispa::after { clip-path: var(--estrella); }
 .pieza--chispa::after { inset: 18%; }
 
-.pieza--bombillo {
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: var(--tint);
-  box-shadow: 0 0 0 2px var(--blanco), 0 0 6px var(--tint);
-}
 
-/* Fila de bombillos arriba y abajo, como la marquesina del picó */
-.festejo--bombillos::before,
-.festejo--bombillos::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 14px;
-  background:
-    radial-gradient(circle at 7px 7px, var(--amarillo) 0 4px, transparent 5px) 0 0 / 56px 14px repeat-x,
-    radial-gradient(circle at 7px 7px, var(--rosado) 0 4px, transparent 5px) 28px 0 / 56px 14px repeat-x;
-}
-
-.festejo--bombillos::before { top: 10px; }
-.festejo--bombillos::after { bottom: 34px; }
 
 /* Rayos de explosión detrás del cartel */
 .cartel::before {
@@ -1424,7 +1407,7 @@ main {
   bottom: calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
   z-index: 70;
   padding: var(--space-xs) var(--space-lg);
-  background: var(--verde);
+  background: var(--palma);
   color: var(--noche);
   font-weight: 900;
   border: 2px solid var(--blanco);
@@ -1479,10 +1462,6 @@ main {
   50% { rotate: 5deg; }
 }
 
-@keyframes bombillos {
-  0% { opacity: 1; }
-  50% { opacity: 0.25; }
-}
 
 @keyframes latir {
   0%, 100% { scale: 1; }
@@ -1519,8 +1498,6 @@ main {
   .festejo > .pieza--chispa { animation: aparecer 0.45s var(--ease-pop) calc(0.9s + var(--i) * 15ms) both, titilar 2.4s ease-in-out calc(var(--i) * -0.41s) infinite; }
   .festejo > .pieza--serpentina { animation: aparecer 0.45s var(--ease-pop) calc(0.9s + var(--i) * 15ms) both, mecer 5s ease-in-out calc(var(--i) * -0.7s) infinite; }
   .festejo > .pieza--destello { animation: aparecer 0.45s var(--ease-pop) calc(0.9s + var(--i) * 15ms) both, latir 1.6s ease-in-out calc(var(--i) * -0.3s) infinite; }
-  .festejo::before { animation: bombillos 1.2s steps(1) infinite; }
-  .festejo::after { animation: bombillos 1.2s steps(1) -0.6s infinite; }
   .chapter .festejo > .pieza,
   .poster .festejo > .pieza,
   .regla .festejo > .pieza { animation-delay: 0s, calc(var(--i) * -0.41s); }

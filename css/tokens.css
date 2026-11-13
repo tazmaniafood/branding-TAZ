@@ -1,5 +1,5 @@
 /* ==========================================================
-   Tokens de marca · v1.2 "Cartel de picó"
+   Tokens de marca · v1.3 "Cartel de picó"
    TAZ es un nombre provisional.
 
    La identidad sale de los carteles de fiesta de picó de la
@@ -7,19 +7,19 @@
    eso todo queda coherente:
 
    1. Fondo negro: la noche de la verbena.
-   2. Cuatro colores de carnaval: amarillo, rosado, verde y naranja.
-      Vivos pero no fosforescentes, para que no cansen la vista.
+   2. Cinco colores costeños (mango, buganvilia, palma, achiote,
+      caribe) y dos hondos para sombras (corozo, caribe hondo).
    3. Letra picotera: relleno de color + primera capa blanca
       (contorno) + sombra en bloque de otro color.
    4. La explosión amarilla: ahí va lo más importante.
    5. Eje vertical: composición centrada, jerarquía clara.
    6. Marco de fiesta en los bordes. Nada de confeti suelto.
-   + El toldo: el menú y el pie son la sombrilla de colores
-     del puesto de comida, con borde festoneado.
+   + El toldo: el menú y el pie son la carpa del puesto de comida,
+     de un solo color (caribe hondo), con borde festoneado.
 
-   Contrastes (WCAG) sobre noche: crema 17.9 · amarillo 13.5 ·
-   verde 10.4 · naranja 9.0 · rosado 6.4 · gris 9.9.
-   Noche sobre cualquiera de los cuatro colores: mínimo 6.4.
+   Contrastes (WCAG) sobre noche: crema 17.4 · mango 10.7 ·
+   palma 7.0 · achiote 6.3 · caribe 6.1 · buganvilia 5.0.
+   Corozo y caribe hondo no van como texto sobre noche.
    ========================================================== */
 
 @import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@500;700;800;900&display=swap");
@@ -33,15 +33,20 @@
   --panel-2: #221C2E;
   --linea-suave: #2E2640;
 
-  /* ---- Los colores de carnaval (antes eran neón y cansaban) ---- */
-  --amarillo: #FFD23F;
-  --rosado: #F0609E;
-  --verde: #55D486;
-  --naranja: #FF9447;
+  /* ---- Cinco colores costeños, vivos pero no de juguete ---- */
+  --mango: #F5B335;       /* la explosión, los botones */
+  --buganvilia: #E0457B;  /* la fiesta */
+  --palma: #3FAE6A;       /* lo fresco */
+  --achiote: #EE6A2F;     /* el calor del fogón */
+  --caribe: #1E9EA6;      /* el mar */
+
+  /* ---- Dos hondos, solo para sombras y para el toldo ---- */
+  --corozo: #8A1F37;
+  --caribe-hondo: #106B73;
 
   /* ---- La primera capa y el texto ---- */
-  --blanco: #FFF4E2;
-  --crema: #FFF7EA;
+  --blanco: #FFF1DC;
+  --crema: #FFF1DC;
   --gris: #BDB4CC;
 
   /* ---- Semánticos ---- */
@@ -50,13 +55,13 @@
   --bg-raised-2: var(--panel-2);
   --text-primary: var(--crema);
   --text-secondary: var(--gris);
-  --accent: var(--amarillo);
+  --accent: var(--mango);
   --on-accent: var(--noche);
-  --focus-ring: 0 0 0 3px var(--noche), 0 0 0 6px var(--verde);
+  --focus-ring: 0 0 0 3px var(--noche), 0 0 0 6px var(--palma);
 
   /* Color de cada sección (lo cambia cada cartel) */
-  --c: var(--amarillo);     /* relleno */
-  --s: var(--rosado);       /* sombra en bloque */
+  --c: var(--mango);     /* relleno */
+  --s: var(--corozo);     /* sombra en bloque */
 
   /* ---- Tipografía ---- */
   --font-display: "Lilita One", "Arial Rounded MT Bold", system-ui, sans-serif;
@@ -105,14 +110,10 @@
   --estrella-5: polygon(50% 0%, 63% 34%, 100% 36%, 71% 59%, 81% 96%, 50% 75%, 19% 96%, 29% 59%, 0% 36%, 37% 34%);
 
   /* ---- El toldo: la sombrilla del puesto de comida ---- */
-  --toldo-franja: 64px;
+  --toldo-franja: 56px;
   --toldo:
-    radial-gradient(rgb(255 244 226 / 0.2) 2px, transparent 2.6px) 0 0 / 16px 16px,
-    repeating-linear-gradient(90deg,
-      var(--rosado) 0 var(--toldo-franja),
-      var(--naranja) 0 calc(var(--toldo-franja) * 2),
-      var(--amarillo) 0 calc(var(--toldo-franja) * 3),
-      var(--verde) 0 calc(var(--toldo-franja) * 4));
+    radial-gradient(rgb(255 241 220 / 0.14) 2px, transparent 2.6px) 0 0 / 16px 16px,
+    var(--caribe-hondo);
 
   --layout-max: 1120px;
 }

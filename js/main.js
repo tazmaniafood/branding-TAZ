@@ -223,65 +223,54 @@
   // ----------------------------------------------------------
   // Marco de fiesta. Cada pieza está colocada a mano:
   // [tipo, x %, y %, ancho rem, giro, color, ¿se ve en celular?]
-  // Tipos: e = estrella de cinco puntas, c = chispa de cuatro, sa/sb = serpentina, d = destello, b = bombillo.
+  // Tipos: e = estrella de cinco puntas, c = chispa de cuatro, sa/sb = serpentina, d = destello.
   // Regla: todo en los bordes; el centro queda libre para el texto.
   // ----------------------------------------------------------
   var MARCOS = {
     cartel: [
-      ["sa", 7, 9, 8, 18, "rosado", 1], ["sb", 92, 9, 7.5, -160, "verde", 1],
-      ["sb", 5, 48, 6, -70, "naranja", 0], ["sa", 95, 44, 6, 110, "rosado", 0],
-      ["sa", 8, 80, 7.5, -25, "verde", 0], ["sb", 92, 84, 8, 200, "amarillo", 1],
-      ["sa", 30, 4, 5, 8, "amarillo", 0], ["sb", 70, 5, 5, -10, "naranja", 0],
-      ["e", 15, 21, 2.99, 0, "amarillo", 1], ["e", 85, 23, 2.3, 0, "rosado", 1],
-      ["c", 11, 34, 1.65, 0, "verde", 1], ["c", 90, 33, 1.8, 0, "naranja", 1],
-      ["e", 14, 60, 1.84, 0, "rosado", 0], ["e", 87, 62, 2.64, 0, "naranja", 0],
-      ["c", 4, 67, 1.5, 0, "amarillo", 1], ["c", 96, 70, 1.5, 0, "verde", 1],
-      ["e", 22, 90, 1.84, 0, "rosado", 1], ["e", 80, 93, 2.53, 0, "amarillo", 0],
-      ["c", 40, 96, 1.5, 0, "verde", 0], ["c", 60, 97, 1.65, 0, "rosado", 0],
-      ["c", 4, 22, 1.8, 0, "naranja", 1], ["c", 97, 21, 1.65, 0, "amarillo", 1],
-      ["d", 24, 13, 2.86, -25, "amarillo", 0], ["d", 76, 14, 2.86, 25, "verde", 0],
-      ["d", 17, 72, 2.6, -115, "amarillo", 0], ["d", 83, 75, 2.6, 115, "rosado", 0],
-      ["d", 9, 26, 2.08, -40, "rosado", 1], ["d", 92, 52, 2.08, 70, "amarillo", 0],
-      ["b", 4, 39, 0.5, 0, "amarillo", 1], ["b", 97, 58, 0.5, 0, "verde", 1],
-      ["b", 30, 92, 0.55, 0, "naranja", 0], ["b", 70, 90, 0.55, 0, "verde", 0],
-      ["b", 12, 92, 0.5, 0, "amarillo", 1], ["b", 50, 3, 0.5, 0, "rosado", 0],
-      ["b", 7, 58, 0.5, 0, "rosado", 1], ["b", 93, 30, 0.5, 0, "verde", 1],
-      ["b", 25, 22, 0.5, 0, "verde", 0], ["b", 75, 25, 0.5, 0, "naranja", 0],
-      ["c", 36, 12, 1.4, 0, "rosado", 0], ["c", 64, 10, 1.5, 0, "amarillo", 0],
-      ["c", 2, 88, 1.4, 0, "rosado", 1], ["c", 98, 92, 1.4, 0, "naranja", 1],
-      ["d", 10, 96, 2.34, -150, "naranja", 0], ["d", 90, 4, 2.34, 30, "amarillo", 0],
-      ["sa", 3, 30, 5, 80, "amarillo", 0], ["sb", 97, 70, 5, -100, "rosado", 0]
+      ["sa", 7, 9, 8, 18, "buganvilia", 1], ["sb", 92, 9, 7.5, -160, "palma", 1],
+      ["sb", 5, 48, 6, -70, "achiote", 0], ["sa", 95, 44, 6, 110, "buganvilia", 0],
+      ["sa", 8, 80, 7.5, -25, "palma", 0], ["sb", 92, 84, 8, 200, "mango", 1],
+      ["sa", 30, 4, 5, 8, "mango", 0], ["sb", 70, 5, 5, -10, "achiote", 0],
+      ["e", 15, 21, 2.99, 0, "mango", 1], ["e", 85, 23, 2.3, 0, "buganvilia", 1],
+      ["c", 11, 34, 1.65, 0, "palma", 1], ["c", 90, 33, 1.8, 0, "achiote", 1],
+      ["e", 14, 60, 1.84, 0, "buganvilia", 0], ["e", 87, 62, 2.64, 0, "achiote", 0],
+      ["c", 4, 67, 1.5, 0, "mango", 1], ["c", 96, 70, 1.5, 0, "palma", 1],
+      ["e", 22, 90, 1.84, 0, "buganvilia", 1], ["e", 80, 93, 2.53, 0, "mango", 0],
+      ["c", 40, 96, 1.5, 0, "palma", 0], ["c", 60, 97, 1.65, 0, "buganvilia", 0],
+      ["c", 4, 22, 1.8, 0, "achiote", 1], ["c", 97, 21, 1.65, 0, "mango", 1],
+      ["d", 24, 13, 2.86, -25, "mango", 0], ["d", 76, 14, 2.86, 25, "palma", 0],
+      ["d", 17, 72, 2.6, -115, "mango", 0], ["d", 83, 75, 2.6, 115, "buganvilia", 0],
+      ["d", 9, 26, 2.08, -40, "buganvilia", 1], ["d", 92, 52, 2.08, 70, "mango", 0],
+      ["c", 36, 12, 1.4, 0, "buganvilia", 0], ["c", 64, 10, 1.5, 0, "mango", 0],
+      ["c", 2, 88, 1.4, 0, "buganvilia", 1], ["c", 98, 92, 1.4, 0, "achiote", 1],
+      ["d", 10, 96, 2.34, -150, "achiote", 0], ["d", 90, 4, 2.34, 30, "mango", 0],
+      ["sa", 3, 30, 5, 80, "mango", 0], ["sb", 97, 70, 5, -100, "buganvilia", 0]
     ],
     titulo: [
-      ["sa", 6, 40, 5.5, 12, "rosado", 0], ["sb", 94, 58, 5.5, -168, "verde", 0],
-      ["e", 18, 16, 1.75, 0, "amarillo", 1], ["e", 82, 18, 2.2, 0, "naranja", 1],
-      ["c", 4, 80, 1.5, 0, "verde", 0], ["c", 96, 84, 1.65, 0, "rosado", 0],
-      ["c", 12, 90, 1.4, 0, "naranja", 0], ["c", 88, 92, 1.5, 0, "amarillo", 0],
-      ["d", 14, 50, 2.2, -35, "amarillo", 0], ["d", 86, 44, 2.2, 35, "rosado", 0],
-      ["b", 13, 72, 0.45, 0, "naranja", 0], ["b", 88, 32, 0.45, 0, "amarillo", 0],
-      ["b", 4, 20, 0.45, 0, "rosado", 1], ["b", 96, 18, 0.45, 0, "verde", 1],
-      ["b", 26, 6, 0.45, 0, "verde", 0], ["b", 74, 6, 0.45, 0, "rosado", 0]
+      ["sa", 6, 40, 5.5, 12, "buganvilia", 0], ["sb", 94, 58, 5.5, -168, "palma", 0],
+      ["e", 18, 16, 1.75, 0, "mango", 1], ["e", 82, 18, 2.2, 0, "achiote", 1],
+      ["c", 4, 80, 1.5, 0, "palma", 0], ["c", 96, 84, 1.65, 0, "buganvilia", 0],
+      ["c", 12, 90, 1.4, 0, "achiote", 0], ["c", 88, 92, 1.5, 0, "mango", 0],
+      ["d", 14, 50, 2.2, -35, "mango", 0], ["d", 86, 44, 2.2, 35, "buganvilia", 0]
     ],
     poster: [
-      ["sa", 16, 6, 5, 14, "rosado", 1], ["sb", 84, 7, 5, -14, "verde", 1],
-      ["sa", 10, 90, 4.5, -20, "naranja", 1],
-      ["e", 10, 20, 1.72, 0, "amarillo", 1], ["c", 90, 22, 1.8, 0, "rosado", 1],
-      ["c", 7, 55, 1.5, 0, "verde", 1], ["c", 93, 50, 1.65, 0, "amarillo", 1],
-      ["c", 30, 95, 1.5, 0, "amarillo", 1],
-      ["d", 26, 16, 1.82, -25, "amarillo", 1], ["d", 74, 16, 1.82, 25, "naranja", 1],
-      ["b", 6, 36, 0.4, 0, "rosado", 1], ["b", 94, 36, 0.4, 0, "verde", 1],
-      ["b", 8, 72, 0.4, 0, "amarillo", 1], ["b", 50, 4, 0.4, 0, "amarillo", 1]
+      ["sa", 16, 6, 5, 14, "buganvilia", 1], ["sb", 84, 7, 5, -14, "palma", 1],
+      ["sa", 10, 90, 4.5, -20, "achiote", 1],
+      ["e", 10, 20, 1.72, 0, "mango", 1], ["c", 90, 22, 1.8, 0, "buganvilia", 1],
+      ["c", 7, 55, 1.5, 0, "palma", 1], ["c", 93, 50, 1.65, 0, "mango", 1],
+      ["c", 30, 95, 1.5, 0, "mango", 1],
+      ["d", 26, 16, 1.82, -25, "mango", 1], ["d", 74, 16, 1.82, 25, "achiote", 1]
     ],
     demo: [
-      ["sa", 12, 26, 3.4, 15, "rosado", 1], ["sb", 88, 74, 3.4, -165, "verde", 1],
-      ["c", 14, 76, 1.65, 0, "amarillo", 1], ["c", 86, 24, 1.8, 0, "naranja", 1],
-      ["d", 26, 52, 1.56, -60, "amarillo", 1], ["d", 74, 50, 1.56, 60, "rosado", 1],
-      ["b", 5, 50, 0.35, 0, "verde", 1], ["b", 95, 50, 0.35, 0, "amarillo", 1]
+      ["sa", 12, 26, 3.4, 15, "buganvilia", 1], ["sb", 88, 74, 3.4, -165, "palma", 1],
+      ["c", 14, 76, 1.65, 0, "mango", 1], ["c", 86, 24, 1.8, 0, "achiote", 1],
+      ["d", 26, 52, 1.56, -60, "mango", 1], ["d", 74, 50, 1.56, 60, "buganvilia", 1]
     ]
   };
 
   var SVG_NS = "http://www.w3.org/2000/svg";
-  var TIPOS = { e: "estrella", c: "chispa", sa: "serpentina", sb: "serpentina", d: "destello", b: "bombillo" };
+  var TIPOS = { e: "estrella", c: "chispa", sa: "serpentina", sb: "serpentina", d: "destello" };
 
   function crearPieza(spec, index) {
     var tipo = spec[0];
@@ -324,8 +313,6 @@
   $all("[data-festejo]").forEach(function (el) {
     pintarMarco(el, el.getAttribute("data-festejo"));
   });
-  var marcoCartel = $(".festejo[data-festejo='cartel']");
-  if (marcoCartel) marcoCartel.classList.add("festejo--bombillos");
 
   // Al cargar: abrir la sección del enlace (#valores) o la primera
   var initial = (window.location.hash || "").slice(1);
