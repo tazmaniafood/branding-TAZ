@@ -363,7 +363,7 @@ a {
 
 .menu__tab:hover {
   border-color: var(--noche);
-  background: var(--blanco);
+  background: var(--carpa-clara);
 }
 
 .menu__tab[aria-selected="true"] {
