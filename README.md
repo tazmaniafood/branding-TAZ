@@ -14,7 +14,7 @@ Abre `index.html` en el navegador (con internet, para que carguen las fuentes).
 | `css/styles.css` | Estilos de la guía, mobile-first, con tipografía y espacios fluidos (`clamp()`). |
 | `js/main.js` | Interacciones con delegación de eventos (`data-action`), estado en `data-state` / `aria-*` y código defensivo. |
 
-## Identidad v3.4 · "La carpa"
+## Identidad v3.5 · "La carpa"
 
 Una sola idea: **la noche de fiesta en una casa costeña**, con el carrito de comida en la puerta, el cartel de picó y los colores planos del fast food. Los colores salen de las escaleras pintadas de los barrios, la Marimonda del Carnaval y la baldosa de la casa: planos y vivos, de fast food. Seis reglas:
 
@@ -23,7 +23,7 @@ Una sola idea: **la noche de fiesta en una casa costeña**, con el carrito de co
 3. **Letra picotera:** Lilita One en mayúsculas, relleno de color, contorno crema y sombra corozo. Clase `.picotera`, con `--c` (relleno) y `--s` (sombra).
 4. **La calcomanía:** todo objeto (tarjeta, botón, pestaña, chip, muestra) se dibuja como la letra: relleno plano, contorno (`--contorno`, o `--contorno-tinta` sobre claro) y sombra dura corozo (`--sombra`, `--sombra-chica`).
 5. **La explosión mango:** ahí va lo más importante. Clase `.explosion`.
-6. **La carpa:** como el toldo de un carrito de comida. Fondo de baldosa de neón (corozo de noche `#4A1022`, rombo mango y figuras de fast food: aspa, aro, gema y rombo) apagada con un velo negro (`--velo`); una línea de neón mango (`--neon-linea-*`); y el borde festoneado de lona mango con líneas de corte `#B8861A`. Va en el menú y en el pie; la cenefa bajo cada título es un pedacito (`.cenefa`).
+6. **La carpa:** como el toldo de un carrito de comida. Fondo de baldosa plana y apagada (corozo de noche `#3A0D1B`, rombo y figuras de fast food en tonos bajos) y un faldón oscuro con costuras verticales y ondas entre punta y punta, trazado en neón mango (`--falda-img`). Va en el menú y, volteado, en el pie; la cenefa bajo cada título es un pedacito de baldosa (`.cenefa`).
 
 Las ilustraciones y adornos llegan después y deben seguir la regla 4.
 
@@ -47,7 +47,7 @@ Para leer: Nunito. Movimiento: el cartel "se pega" línea por línea al cargar; 
 ## Estado
 
 - [x] Alma, valores, personalidad, voz, públicos y redes
-- [ ] Validar identidad visual v3.4
+- [ ] Validar identidad visual v3.5
 - [ ] Nombre definitivo
 - [ ] Historia de origen
 - [ ] Plato costeño insignia

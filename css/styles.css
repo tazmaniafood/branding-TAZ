@@ -1,5 +1,5 @@
 /* ==========================================================
-   Guía de marca · v3.4 "La carpa"
+   Guía de marca · v3.5 "La carpa"
    Mobile-first. Depende de tokens.css.
    Seis reglas: la noche, paleta con oficios, letra picotera,
    la calcomanía, la explosión mango y la carpa.
@@ -295,46 +295,20 @@ a {
 }
 
 /* Festón de la carpa: baldosa con contorno crema */
-/* Borde de la carpa: lona mango festoneada, con líneas de corte
-   entre paño y paño, como el toldo de un carrito de comida.
-   ::before es el filo oscuro; ::after es la lona. */
-.menu::before,
+/* Faldón de la carpa: tela oscura con costuras verticales y ondas
+   entre punta y punta, trazadas en neón mango (ver --falda-img). */
 .menu::after,
-.footer::before,
 .footer::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
+  height: 54px;
   pointer-events: none;
-  -webkit-mask-repeat: no-repeat, repeat-x;
-  mask-repeat: no-repeat, repeat-x;
+  background: var(--falda-img) 0 0 / 56px 54px repeat-x;
 }
 
-.menu::before,
 .menu::after { top: 100%; }
-
-.menu::before {
-  height: 34px;
-  background: var(--noche);
-  -webkit-mask-image: linear-gradient(#000, #000), radial-gradient(30px 21px at 50% 13px, #000 97%, transparent);
-  mask-image: linear-gradient(#000, #000), radial-gradient(30px 21px at 50% 13px, #000 97%, transparent);
-  -webkit-mask-size: 100% 14px, var(--toldo-franja) 100%;
-  mask-size: 100% 14px, var(--toldo-franja) 100%;
-}
-
-.menu::after {
-  height: 31px;
-  background:
-    repeating-linear-gradient(90deg, transparent 0 calc(var(--toldo-franja) - 3px), var(--lona-costura) calc(var(--toldo-franja) - 3px) var(--toldo-franja)),
-    linear-gradient(var(--lona-costura), var(--lona-costura)) 0 11px / 100% 2px no-repeat,
-    linear-gradient(rgb(255 255 255 / 0.18), transparent 40%, rgb(0 0 0 / 0.12)),
-    var(--lona);
-  -webkit-mask-image: linear-gradient(#000, #000), radial-gradient(28px 19px at 50% 12px, #000 97%, transparent);
-  mask-image: linear-gradient(#000, #000), radial-gradient(28px 19px at 50% 12px, #000 97%, transparent);
-  -webkit-mask-size: 100% 12px, var(--toldo-franja) 100%;
-  mask-size: 100% 12px, var(--toldo-franja) 100%;
-}
 
 .menu__list {
   display: flex;
@@ -1288,47 +1262,23 @@ main {
    ========================================================== */
 .footer {
   position: relative;
-  margin-top: calc(var(--space-2xl) + 34px);
-  padding: var(--space-xl) var(--space-md);
+  margin-top: calc(var(--space-2xl) + 54px);
+  padding: var(--space-md) var(--space-md) var(--space-lg);
   text-align: center;
-  background: var(--neon-linea-arriba), var(--velo), var(--baldosa);
+  background: var(--velo), var(--baldosa);
 }
 
-/* La misma carpa de arriba, con el festón mirando hacia arriba */
-.footer::before,
-.footer::after { bottom: 100%; }
-
-.footer::before {
-  height: 34px;
-  background: var(--noche);
-  -webkit-mask-image: linear-gradient(#000, #000), radial-gradient(30px 21px at 50% calc(100% - 13px), #000 97%, transparent);
-  mask-image: linear-gradient(#000, #000), radial-gradient(30px 21px at 50% calc(100% - 13px), #000 97%, transparent);
-  -webkit-mask-size: 100% 14px, var(--toldo-franja) 100%;
-  mask-size: 100% 14px, var(--toldo-franja) 100%;
-  -webkit-mask-position: 0 100%, 0 0;
-  mask-position: 0 100%, 0 0;
-}
-
+/* El mismo faldón de arriba, volteado: las puntas miran hacia arriba */
 .footer::after {
-  height: 31px;
-  background:
-    repeating-linear-gradient(90deg, transparent 0 calc(var(--toldo-franja) - 3px), var(--lona-costura) calc(var(--toldo-franja) - 3px) var(--toldo-franja)),
-    linear-gradient(var(--lona-costura), var(--lona-costura)) 0 calc(100% - 11px) / 100% 2px no-repeat,
-    linear-gradient(rgb(0 0 0 / 0.12), transparent 60%, rgb(255 255 255 / 0.18)),
-    var(--lona);
-  -webkit-mask-image: linear-gradient(#000, #000), radial-gradient(28px 19px at 50% calc(100% - 12px), #000 97%, transparent);
-  mask-image: linear-gradient(#000, #000), radial-gradient(28px 19px at 50% calc(100% - 12px), #000 97%, transparent);
-  -webkit-mask-size: 100% 12px, var(--toldo-franja) 100%;
-  mask-size: 100% 12px, var(--toldo-franja) 100%;
-  -webkit-mask-position: 0 100%, 0 0;
-  mask-position: 0 100%, 0 0;
+  bottom: 100%;
+  transform: scaleY(-1);
 }
 
 /* La placa: una calcomanía más, puesta sobre el piso */
 .footer__placa {
   width: min(100%, 36rem);
   margin-inline: auto;
-  padding: var(--space-lg) var(--space-md);
+  padding: var(--space-md);
   background: var(--noche);
   border: var(--borde);
   border-radius: var(--radius-md);
@@ -1337,13 +1287,13 @@ main {
 }
 
 .footer__line {
-  font-size: var(--step-4);
+  font-size: var(--step-3);
   line-height: 1;
   transform: rotate(-2deg);
 }
 
 .footer__meta {
-  margin-top: var(--space-md);
+  margin-top: var(--space-sm);
   color: var(--text-secondary);
 }
 
@@ -1379,7 +1329,7 @@ main {
   height: 30px;
   margin: var(--space-md) auto 0;
   background: var(--velo), var(--baldosa-img) 0 0 / 60px 60px, var(--corozo-noche);
-  border: 2px solid var(--lona);
+  border: 2px solid var(--mango);
   border-radius: var(--radius-pill);
   box-shadow: var(--sombra-chica), var(--neon-mango);
 }
