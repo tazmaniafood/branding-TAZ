@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TAZ · Identidad de marca (v0.1)</title>
+  <title>TAZ · Identidad de marca (v0.2)</title>
   <meta name="description" content="Guía de identidad de marca: comida rápida de la Costa colombiana en San José, CA. Nombre provisional.">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -20,6 +20,7 @@
         <li><a href="#voz">Voz</a></li>
         <li><a href="#publicos">Públicos</a></li>
         <li><a href="#visual">Visual</a></li>
+        <li><a href="#redes">Redes</a></li>
         <li><a href="#pendientes">Pendientes</a></li>
       </ul>
     </div>
@@ -27,10 +28,10 @@
 
   <header class="hero" id="inicio">
     <div class="container">
-      <span class="hero__tag">Guía de marca · v0.1 · borrador</span>
+      <span class="hero__tag">Guía de marca · v0.2 · borrador</span>
       <h1 class="hero__title">Rebosao, mamagallista<br>y de pura cepa</h1>
       <p class="hero__lead">Comida rápida como se hace en la Costa: con sabor, con alegría y sin medirse.</p>
-      <p class="hero__note">* "TAZ" es un nombre provisional para diferenciar el proyecto. Colores y tipografías también son provisionales: aquí se construye la identidad paso a paso.</p>
+      <p class="hero__note">* "TAZ" es un nombre provisional para diferenciar el proyecto. Colores y tipografías siguen en construcción: aquí se construye la identidad paso a paso.</p>
     </div>
   </header>
 
@@ -151,8 +152,8 @@
             </dl>
           </article>
 
-          <article class="card" style="background: var(--color-tinta); color: var(--color-arena);">
-            <h3 style="color: var(--color-sol);">En una frase</h3>
+          <article class="card" style="background: var(--color-plancha); color: var(--color-crema);">
+            <h3 style="color: var(--color-mostaza);">En una frase</h3>
             <p style="font-family: var(--font-display); font-size: var(--fs-lg); line-height: 1.3;">"Rebosao, mamagallista y de pura cepa: como en casa."</p>
           </article>
 
@@ -204,9 +205,9 @@
             <h3>Un mismo mensaje, tres tonos</h3>
             <p>El pedido va en camino. Es la misma persona hablando, solo ajusta cuánto explica:</p>
             <div class="tone-switch" role="group" aria-label="Elegir público">
-              <button class="btn btn--small btn--sol" type="button" data-tone="costeno" aria-pressed="true">Costeño</button>
-              <button class="btn btn--small btn--sol" type="button" data-tone="latino" aria-pressed="false">Latino</button>
-              <button class="btn btn--small btn--sol" type="button" data-tone="gringo" aria-pressed="false">Gringo</button>
+              <button class="btn btn--small btn--mostaza" type="button" data-tone="costeno" aria-pressed="true">Costeño</button>
+              <button class="btn btn--small btn--mostaza" type="button" data-tone="latino" aria-pressed="false">Latino</button>
+              <button class="btn btn--small btn--mostaza" type="button" data-tone="gringo" aria-pressed="false">Gringo</button>
             </div>
             <p class="tone-output" id="tone-output" aria-live="polite"></p>
           </article>
@@ -246,7 +247,7 @@
 
         <h3 style="margin-top: var(--space-5);">Así suena en la práctica</h3>
         <div class="grid grid--2">
-          <article class="card"><p><strong>Bio de Instagram</strong></p><p>"Comida de calle costeña 🌴 Hecha en casa, servida rebosá. San José, CA."</p></article>
+          <article class="card"><p><strong>Bio de Instagram</strong></p><p>"Comida de calle costeña 🔥 Hecha en casa, servida rebosá. San José, CA."</p></article>
           <article class="card"><p><strong>DoorDash</strong></p><p>"Costeño street food from Colombia's Caribbean coast. Homemade sauces, generous portions, made like back home."</p></article>
           <article class="card"><p><strong>En la bolsa</strong></p><p>"Aquí nadie se queda con hambre."</p></article>
           <article class="card"><p><strong>Respuesta a una mala reseña</strong></p><p>"Ay, mi llave, eso no está bien y nos duele. Escríbenos y te lo arreglamos como se debe."</p></article>
@@ -259,7 +260,7 @@
       <div class="container">
         <span class="section__kicker">05 · Para quién</span>
         <h2>Públicos</h2>
-        <blockquote class="quote quote--alt">Auténtico para el costeño, cercano para el latino, guiado para el gringo.</blockquote>
+        <blockquote class="quote quote--pico">Auténtico para el costeño, cercano para el latino, guiado para el gringo.</blockquote>
         <p class="section__intro">Regla clave: <strong>no se adapta la comida, se adapta la explicación.</strong> Si se suaviza la comida para el gringo, se pierde al costeño, y sin el costeño se pierde la autenticidad que atrae al gringo.</p>
 
         <div class="grid grid--3">
@@ -297,59 +298,126 @@
     <!-- ===================== VISUAL ===================== -->
     <section class="section" id="visual">
       <div class="container">
-        <span class="section__kicker">06 · Identidad visual · provisional</span>
+        <span class="section__kicker">06 · Identidad visual · v0.2</span>
         <h2>Colores, letras y formas</h2>
-        <p class="section__intro">Territorio visual: <strong>los picós y el Carnaval de la Costa</strong>, con letras infladas, colores fuertes y carteles pintados a mano. Nada de banderas ni clichés. <em>Toca un color para copiar su código.</em></p>
+        <p class="section__intro"><strong>Fast food con alma costeña.</strong> La base es la de la comida rápida, la que despierta el antojo: rojo, mostaza y negro. El alma costeña entra en los acentos: el fucsia de los picós y el rosado de la salsa rosada. Cada color lleva nombre de la cocina. <em>Toca un color para copiar su código.</em></p>
+
+        <p style="font-size: var(--fs-sm);"><strong>Proporción de uso:</strong> 60% crema y plancha · 30% fogón y mostaza · 10% picó y salsa rosada. Los acentos son el toque, no la base: si se abusa del fucsia, se vuelve playero.</p>
 
         <div class="swatches" id="swatches">
-          <button class="swatch" type="button" data-hex="#FFC72C" data-name="Sol"><div class="swatch__color" style="background:#FFC72C"></div><div class="swatch__info"><strong>Sol</strong>Energía, abundancia<br><code>#FFC72C</code></div></button>
-          <button class="swatch" type="button" data-hex="#E8412C" data-name="Picante"><div class="swatch__color" style="background:#E8412C"></div><div class="swatch__info"><strong>Picante</strong>Antojo, salsa, fuego<br><code>#E8412C</code></div></button>
-          <button class="swatch" type="button" data-hex="#00A6A6" data-name="Caribe"><div class="swatch__color" style="background:#00A6A6"></div><div class="swatch__info"><strong>Caribe</strong>El mar, frescura<br><code>#00A6A6</code></div></button>
-          <button class="swatch" type="button" data-hex="#FF2E88" data-name="Picó"><div class="swatch__color" style="background:#FF2E88"></div><div class="swatch__info"><strong>Picó</strong>Fiesta, mamadera de gallo<br><code>#FF2E88</code></div></button>
-          <button class="swatch" type="button" data-hex="#6A1B4D" data-name="Corozo"><div class="swatch__color" style="background:#6A1B4D"></div><div class="swatch__info"><strong>Corozo</strong>Acento profundo<br><code>#6A1B4D</code></div></button>
-          <button class="swatch" type="button" data-hex="#FFF4DE" data-name="Arena"><div class="swatch__color" style="background:#FFF4DE"></div><div class="swatch__info"><strong>Arena</strong>Fondo cálido<br><code>#FFF4DE</code></div></button>
-          <button class="swatch" type="button" data-hex="#1E1A2B" data-name="Tinta"><div class="swatch__color" style="background:#1E1A2B"></div><div class="swatch__info"><strong>Tinta</strong>Texto y contornos<br><code>#1E1A2B</code></div></button>
+          <button class="swatch" type="button" data-hex="#E3261C" data-name="Rojo fogón"><div class="swatch__color" style="background:#E3261C"></div><div class="swatch__info"><strong>Rojo fogón</strong>Principal: hambre, fuego<br><code>#E3261C</code></div></button>
+          <button class="swatch" type="button" data-hex="#FFC20E" data-name="Mostaza"><div class="swatch__color" style="background:#FFC20E"></div><div class="swatch__info"><strong>Mostaza</strong>Alegría, abundancia<br><code>#FFC20E</code></div></button>
+          <button class="swatch" type="button" data-hex="#141414" data-name="Negro plancha"><div class="swatch__color" style="background:#141414"></div><div class="swatch__info"><strong>Negro plancha</strong>Contraste y contornos<br><code>#141414</code></div></button>
+          <button class="swatch" type="button" data-hex="#FFF8EC" data-name="Crema suero"><div class="swatch__color" style="background:#FFF8EC"></div><div class="swatch__info"><strong>Crema suero</strong>Fondo limpio y cálido<br><code>#FFF8EC</code></div></button>
+          <button class="swatch" type="button" data-hex="#E6197D" data-name="Fucsia picó"><div class="swatch__color" style="background:#E6197D"></div><div class="swatch__info"><strong>Fucsia picó</strong>Acento: fiesta y humor<br><code>#E6197D</code></div></button>
+          <button class="swatch" type="button" data-hex="#F6A5B4" data-name="Salsa rosada"><div class="swatch__color" style="background:#F6A5B4"></div><div class="swatch__info"><strong>Salsa rosada</strong>Acento: el sello colombiano<br><code>#F6A5B4</code></div></button>
         </div>
 
         <div class="grid grid--2" style="margin-top: var(--space-5);">
           <article class="card">
-            <p class="section__kicker">Títulos · Lilita One</p>
-            <p class="type-sample--display">¡Ajá! Todo sale rebosao</p>
-            <p style="font-size: var(--fs-sm); color: var(--text-muted);">Letras redondas e infladas, como los carteles de los picós.</p>
+            <p class="section__kicker">Títulos · Bowlby One</p>
+            <p class="type-sample--display">¡AJÁ! TODO SALE REBOSAO</p>
+            <p style="font-size: var(--fs-sm); color: var(--text-muted);">Gruesa y pesada, como el letrero de un puesto de comida rápida. Se lee de lejos y en una miniatura de app.</p>
           </article>
           <article class="card">
-            <p class="section__kicker">Textos · Nunito</p>
-            <p class="type-sample--body">Salchipapa costeña con harta salsa de la casa, queso costeño y papita ripio. Hecha en casa, como en la Costa.</p>
-            <p style="font-size: var(--fs-sm); color: var(--text-muted);">Redonda, amable y fácil de leer en el celular.</p>
+            <p class="section__kicker">Textos · Rubik</p>
+            <p class="type-sample--body">Salchipapa costeña con harta salsa de la casa, queso costeño y papita ripio. <strong>Hecha en casa, como en la Costa.</strong></p>
+            <p style="font-size: var(--fs-sm); color: var(--text-muted);">Fuerte y moderna, legible en el celular, con pesos gruesos para precios y llamados.</p>
           </article>
         </div>
 
         <h3 style="margin-top: var(--space-5);">Botones</h3>
         <p>
           <a class="btn" href="#visual">¡Pide ya!</a>
-          <a class="btn btn--sol" href="#visual">¿Lo quieres rebosao?</a>
-          <a class="btn btn--caribe" href="#visual">Ver el menú</a>
+          <a class="btn btn--mostaza" href="#visual">¿Lo quieres rebosao?</a>
+          <a class="btn btn--pico" href="#visual">Ver el menú</a>
           <a class="btn btn--ghost" href="#visual">Escríbenos</a>
         </p>
-        <p style="font-size: var(--fs-sm); color: var(--text-muted);">Contornos gruesos y sombras duras, como un cartel pintado a mano. Formas redondeadas: nada rígido.</p>
+        <p style="font-size: var(--fs-sm); color: var(--text-muted);">Contornos gruesos y sombras duras, como un letrero de calle. Formas redondeadas: nada rígido.</p>
+      </div>
+    </section>
+
+    <!-- ===================== REDES ===================== -->
+    <section class="section" id="redes">
+      <div class="container">
+        <span class="section__kicker">07 · Dónde hablamos</span>
+        <h2>Redes y canales</h2>
+        <p class="section__intro">Cada red tiene un trabajo distinto. No se publica lo mismo en todas: se adapta el formato a lo que cada una hace mejor. Juntas forman un camino:</p>
+
+        <ol class="funnel">
+          <li><strong>TikTok descubre</strong>Gente nueva nos conoce.</li>
+          <li><strong>Instagram enamora</strong>Nos sigue y se antoja.</li>
+          <li><strong>Facebook reúne</strong>La comunidad latina nos recomienda.</li>
+          <li><strong>WhatsApp vende</strong>Pide, y vuelve a pedir.</li>
+        </ol>
+
+        <div class="grid grid--2">
+          <article class="card social social--tiktok">
+            <span class="social__role">Volumen</span>
+            <h3>TikTok</h3>
+            <dl>
+              <dt>Para qué</dt><dd>Alcance: llegar a gente que no nos conoce, sobre todo jóvenes latinos y gringos curiosos.</dd>
+              <dt>Qué publicar</dt><dd>Mucho y rápido: humor costeño, POV, tendencias con sonido de moda, la salsa cayendo, "gringo prueba comida costeña".</dd>
+              <dt>Frecuencia</dt><dd>4 a 7 videos por semana. Aquí gana la constancia.</dd>
+              <dt>Cómo medimos</dt><dd>Vistas, compartidos y seguidores nuevos.</dd>
+            </dl>
+          </article>
+
+          <article class="card social social--instagram">
+            <span class="social__role">Vitrina</span>
+            <h3>Instagram</h3>
+            <dl>
+              <dt>Para qué</dt><dd>La cara bonita de la marca: lo instagrameable, la comunidad y el antojo diario.</dd>
+              <dt>Qué publicar</dt><dd>Reels (los mejores de TikTok), un feed cuidado con fotos que den hambre, e <strong>historias todos los días</strong>: el especial del día, encuestas, pedidos saliendo y reposts de clientes.</dd>
+              <dt>Destacadas fijas</dt><dd>Menú · Cómo pedir · Zona de delivery · Reseñas · Palabras costeñas.</dd>
+              <dt>Frecuencia</dt><dd>3 o 4 reels por semana e historias a diario.</dd>
+              <dt>Cómo medimos</dt><dd>Guardados, mensajes directos y clics al link.</dd>
+            </dl>
+          </article>
+
+          <article class="card social social--facebook">
+            <span class="social__role">Comunidad</span>
+            <h3>Facebook</h3>
+            <dl>
+              <dt>Para qué</dt><dd>Llegar a la comunidad latina adulta y a las familias, que es donde más se pide para compartir (como la pizza).</dd>
+              <dt>Qué publicar</dt><dd>Combos familiares con precio claro, publicaciones en <strong>grupos de colombianos y latinos de San José y la Bahía</strong>, eventos (partidos, 20 de julio) y reseñas.</dd>
+              <dt>Frecuencia</dt><dd>3 publicaciones por semana más presencia en grupos.</dd>
+              <dt>Cómo medimos</dt><dd>Mensajes, recomendaciones y pedidos que llegan desde grupos.</dd>
+            </dl>
+          </article>
+
+          <article class="card social social--whatsapp">
+            <span class="social__role">Venta y recompra</span>
+            <h3>WhatsApp</h3>
+            <dl>
+              <dt>Para qué</dt><dd>Cerrar el pedido y hacer que el cliente vuelva. Es donde se convierte todo lo anterior.</dd>
+              <dt>Qué usar</dt><dd>Catálogo, mensaje de bienvenida y de ausencia automáticos, respuestas rápidas, etiquetas de clientes, listas de difusión con el especial de la semana y estados con el plato del día.</dd>
+              <dt>Tono</dt><dd>El más cercano: "¡Ajá, mi llave! ¿Qué se te antoja hoy?"</dd>
+              <dt>Cómo medimos</dt><dd>Pedidos cerrados y clientes que repiten.</dd>
+            </dl>
+          </article>
+        </div>
+
+        <p style="margin-top: var(--space-4); font-size: var(--fs-sm); color: var(--text-muted);">Regla de oro en todas: de cada 4 o 5 publicaciones, solo una vende directamente. Las demás entretienen, enseñan cultura costeña, generan nostalgia o muestran a los clientes.</p>
       </div>
     </section>
 
     <!-- ===================== PENDIENTES ===================== -->
     <section class="section" id="pendientes">
       <div class="container">
-        <span class="section__kicker">07 · Lo que sigue</span>
+        <span class="section__kicker">08 · Lo que sigue</span>
         <h2>Pendientes de la marca</h2>
         <ul class="todo">
           <li class="done">Esencia, propósito y posicionamiento</li>
           <li class="done">Valores (v1)</li>
           <li class="done">Personalidad y voz</li>
           <li class="done">Públicos</li>
+          <li class="done">Rol de cada red social (v1)</li>
           <li>Nombre definitivo (finalistas: ¡Erda!, Cargao, Curramba... según la ciudad de origen)</li>
           <li>Historia de origen (quién cocina y por qué lo buscaban en la Costa)</li>
           <li>Plato o platos costeños insignia que respalden la promesa</li>
           <li>Logo y personaje ilustrado (la cara de la marca, sin mostrar personas)</li>
-          <li>Paleta y tipografías definitivas</li>
+          <li>Validar paleta y tipografías v0.2 (dirección fast food)</li>
           <li>Aplicaciones: web, empaques, redes, WhatsApp y DoorDash</li>
         </ul>
       </div>
@@ -360,7 +428,7 @@
   <footer class="footer">
     <div class="container">
       <strong>Aquí nadie se queda con hambre.</strong>
-      Guía de marca v0.1 · nombre provisional · San José, CA
+      Guía de marca v0.2 · nombre provisional · San José, CA
     </div>
   </footer>
 

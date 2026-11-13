@@ -33,9 +33,11 @@ Guía de identidad de marca de la comida rápida costeña en San José, CA.
 - [x] Valores: Rebosao, Mamadera de gallo, De pura cepa, Más complaciente que na', De buen pecho
 - [x] Personalidad y voz
 - [x] Públicos
+- [x] Rol de cada red: TikTok (volumen), Instagram (vitrina), Facebook (comunidad), WhatsApp (venta y recompra)
+- [x] Identidad visual v0.2: fast food con alma costeña (rojo fogón, mostaza, negro plancha + fucsia picó y salsa rosada; Bowlby One + Rubik)
 - [ ] Nombre definitivo
 - [ ] Historia de origen
 - [ ] Plato(s) costeño(s) insignia
 - [ ] Logo y personaje ilustrado
-- [ ] Paleta y tipografías definitivas (las actuales son provisionales)
+- [ ] Validar paleta y tipografías v0.2
 - [ ] Aplicaciones: web, empaques, redes, WhatsApp, DoorDash
