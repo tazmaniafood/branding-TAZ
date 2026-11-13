@@ -20,7 +20,7 @@ La marca es **un letrero de neón encendido en una noche de Carnaval, debajo de 
 
 1. **La noche:** todo va sobre noche morada `#0D0919`.
 2. **Seis neones:** mango `#FFC93C`, tomate `#FF4A5A` y cian `#2EC8FF` para títulos y botones; naranja `#FF8A2B`, morado `#B455FF` y lima `#7CFF6B` para figuras y detalles. Uno por título.
-3. **Letra de letrero:** Lilita One en mayúsculas como tubo de neón (clase `.letrero`, color con `--n`). Solo títulos; el texto va en Nunito crema.
+3. **Letra picotera de neón:** Lilita One en mayúsculas con relleno de color, contorno crema, sombra uva y brillo de neón (clase `.letrero`, color con `--n`). Subtítulos en Nunito negrita con neón suave; texto corrido en Nunito crema.
 4. **Figuras de Carnaval:** sombrero vueltiao, Marimonda y torito en neón (`img/*-neon.svg`), en carrusel en la portada. Son la cara de la marca mientras llega el logo.
 5. **La carpa:** arriba y abajo, azulejos costeños de neón con faldón de ondas en neón mango (`--toldo`, `--falda-*`). Se conserva tal cual.
 6. **Un solo protagonista:** en cada pantalla brilla una sola cosa. Notas sin cajas (`.nota`, separadas por una línea), botón principal en mango, todo alineado a la izquierda.

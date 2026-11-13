@@ -259,9 +259,10 @@ a {
 }
 
 /* ==========================================================
-   LETRERO DE NEÓN
-   La letra de los títulos: centro claro y brillo del color
-   alrededor, como un tubo encendido. El color sale de --n.
+   LETRERO: la letra picotera, ahora encendida
+   Lilita One con relleno del color, contorno crema, sombra en
+   bloque uva y el brillo de neón del mismo color alrededor.
+   El color sale de --n.
    ========================================================== */
 :root { --n: var(--mango); }
 
@@ -272,17 +273,33 @@ a {
   letter-spacing: 0.02em;
 }
 
-/* El color se calcula en cada línea, para que cada una tenga su neón */
 .letrero,
 .letrero > span {
-  color: color-mix(in srgb, var(--n) 22%, #FFFFFF);
+  color: var(--n);
+  -webkit-text-stroke: 0.07em var(--crema);
+  paint-order: stroke fill;
   text-shadow:
-    0 0 1px #FFFFFF,
-    0 0 6px var(--n),
-    0 0 14px var(--n),
-    0 0 32px color-mix(in srgb, var(--n) 70%, transparent),
-    0 0 60px color-mix(in srgb, var(--n) 40%, transparent);
+    0.06em 0.06em 0 var(--uva),
+    0.1em 0.1em 0 var(--uva),
+    0 0 18px color-mix(in srgb, var(--n) 75%, transparent),
+    0 0 42px color-mix(in srgb, var(--n) 45%, transparent);
 }
+
+/* Subtítulos: Nunito negrita con un neón suave, segundo nivel */
+.nota h3,
+.voice__words h3,
+.regla h3,
+.lineup .value__idea,
+.swatch__name,
+.app figcaption {
+  font-family: var(--font-body);
+  font-weight: 900;
+  color: color-mix(in srgb, var(--n) 25%, #FFFFFF);
+  text-shadow: 0 0 8px color-mix(in srgb, var(--n) 70%, transparent), 0 0 20px color-mix(in srgb, var(--n) 35%, transparent);
+}
+
+.nota h3,
+.voice__words h3 { letter-spacing: -0.01em; }
 
 /* ==========================================================
    PORTADA
@@ -557,8 +574,10 @@ a {
 
 .value__head:hover .value__name,
 .value[data-state="open"] .value__name {
-  color: color-mix(in srgb, var(--n) 22%, #FFFFFF);
-  text-shadow: 0 0 6px var(--n), 0 0 18px var(--n), 0 0 36px color-mix(in srgb, var(--n) 55%, transparent);
+  color: var(--n);
+  -webkit-text-stroke: 0.06em var(--crema);
+  paint-order: stroke fill;
+  text-shadow: 0.06em 0.06em 0 var(--uva), 0 0 18px color-mix(in srgb, var(--n) 70%, transparent);
 }
 
 .value__idea {
