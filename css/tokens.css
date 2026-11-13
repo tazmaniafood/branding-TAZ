@@ -1,5 +1,5 @@
 /* ==========================================================
-   Tokens de marca · v2.0 "La verbena en casa"
+   Tokens de marca · v2.1 "La verbena en casa"
    TAZ es un nombre provisional.
 
    Una sola idea: la fiesta de noche en la terraza de una casa
@@ -18,12 +18,13 @@
       sombra dura corozo. Una sola esquina para tarjetas, píldora
       para lo que se toca.
    5. La explosión mango: ahí va lo más importante.
-   6. La casa: carpa gris tenue arriba, piso de baldosa abajo.
+   6. La baldosa: arriba (carpa), abajo (piso) y como cenefa en
+      cada sección. Es lo que une toda la casa.
 
    Contorno: crema sobre noche; noche sobre carpa o crema.
    Contrastes (WCAG) sobre noche: crema 17.4 · mango 10.7 ·
    palma 7.0 · achiote 6.3 · caribe 6.1 · buganvilia 5.0.
-   Noche sobre carpa: 11.4.
+   Sobre la baldosa solo van objetos sólidos (pestañas, placas).
    ==========================================================*/
 
 @import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@500;700;800;900&display=swap");
@@ -39,7 +40,7 @@
 
   /* ---- La paleta tiene oficios (proporción aproximada) ----
      Noche 60 %: el fondo.
-     Corozo 20 %: TODAS las sombras.
+     Corozo 20 %: TODAS las sombras y la baldosa.
      Mango, achiote, buganvilia 15 %: títulos y botones (cálidos).
      Caribe y palma 5 %: solo detalles chicos, nunca en títulos. */
   --corozo: #8A1F37;      /* el vino oscuro de las sombras */
@@ -48,6 +49,7 @@
   --buganvilia: #E0457B;  /* la fiesta */
   --caribe: #1E9EA6;      /* el mar, en detalles */
   --palma: #3FAE6A;       /* confirmar y WhatsApp */
+  --caribe-hondo: #106B73; /* el azul de la baldosa */
 
   /* ---- La primera capa y el texto ---- */
   --blanco: #FFF1DC;
@@ -116,12 +118,7 @@
 
   /* ---- El toldo: la sombrilla del puesto de comida ---- */
   --toldo-franja: 56px;
-  --carpa: #C9C3CD;        /* gris tenue, con el mismo tinte violeta de la noche */
-  --carpa-clara: #D8D3DB;  /* hover de las pestañas */
-  --carpa-punto: #3A3441;  /* gris oscuro */
-  --toldo:
-    radial-gradient(rgb(58 52 65 / 0.45) 1.6px, transparent 2.1px) 0 0 / 16px 16px,
-    var(--carpa);
+  --toldo: var(--baldosa);
 
   /* ---- La calcomanía: contorno + sombra dura, siempre corozo ---- */
   --contorno: 3px solid var(--crema);
@@ -130,8 +127,10 @@
   --sombra-chica: 3px 3px 0 var(--corozo);
 
   /* ---- El piso: baldosa de casa costeña ---- */
-  /* Dibujada en SVG con los mismos colores: panel, corozo, mango */
-  --baldosa: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2317131F'/%3E%3Cpath d='M32 3 61 32 32 61 3 32Z' fill='none' stroke='%232E2640' stroke-width='2'/%3E%3Cg fill='%238A1F37'%3E%3Cpath d='M0 0H13A13 13 0 0 1 0 13Z'/%3E%3Cpath d='M64 0V13A13 13 0 0 1 51 0Z'/%3E%3Cpath d='M0 64V51A13 13 0 0 1 13 64Z'/%3E%3Cpath d='M64 64H51A13 13 0 0 1 64 51Z'/%3E%3Cellipse cx='32' cy='21' rx='5' ry='8'/%3E%3Cellipse cx='32' cy='43' rx='5' ry='8'/%3E%3Cellipse cx='21' cy='32' rx='8' ry='5'/%3E%3Cellipse cx='43' cy='32' rx='8' ry='5'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='4' fill='%23F5B335'/%3E%3Crect x='0.5' y='0.5' width='63' height='63' fill='none' stroke='%230C0A12'/%3E%3C/svg%3E") 0 0 / 64px 64px, var(--panel);
+  /* Baldosa hidráulica: base corozo, pétalos caribe hondo, rombo y
+     centro mango. Es la carpa de arriba, el piso de abajo y la cenefa
+     de cada sección. Colores iguales a los tokens. */
+  --baldosa: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%238A1F37'/%3E%3Cpath d='M32 4 60 32 32 60 4 32Z' fill='none' stroke='%23F5B335' stroke-width='2.5'/%3E%3Cg fill='%23106B73'%3E%3Cpath d='M0 0H14A14 14 0 0 1 0 14Z'/%3E%3Cpath d='M64 0V14A14 14 0 0 1 50 0Z'/%3E%3Cpath d='M0 64V50A14 14 0 0 1 14 64Z'/%3E%3Cpath d='M64 64H50A14 14 0 0 1 64 50Z'/%3E%3C/g%3E%3Cg fill='%23106B73'%3E%3Cellipse cx='32' cy='21' rx='5' ry='8'/%3E%3Cellipse cx='32' cy='43' rx='5' ry='8'/%3E%3Cellipse cx='21' cy='32' rx='8' ry='5'/%3E%3Cellipse cx='43' cy='32' rx='8' ry='5'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='4.5' fill='%23F5B335'/%3E%3Crect x='0.5' y='0.5' width='63' height='63' fill='none' stroke='%235E1426'/%3E%3C/svg%3E") 0 0 / 64px 64px, var(--corozo);
 
   --layout-max: 1120px;
 }

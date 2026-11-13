@@ -1,5 +1,5 @@
 /* ==========================================================
-   Guía de marca · v2.0 "La verbena en casa"
+   Guía de marca · v2.1 "La verbena en casa"
    Mobile-first. Depende de tokens.css.
    Seis reglas: la noche, paleta con oficios, letra picotera,
    la calcomanía, la explosión mango y la casa (carpa + baldosa).
@@ -292,13 +292,13 @@ a {
   z-index: 30;
   margin-top: var(--space-lg);
   background: var(--toldo);
-  border-top: 4px solid var(--carpa-punto);
-  border-bottom: 0;
 }
 
-/* Festón de la carpa, con su línea gris oscuro */
+/* Festón de la carpa: baldosa con contorno crema */
 .menu::before,
-.menu::after {
+.menu::after,
+.footer::before,
+.footer::after {
   content: "";
   position: absolute;
   left: 0;
@@ -315,7 +315,7 @@ a {
 
 .menu::before {
   height: 25px;
-  background: var(--carpa-punto);
+  background: var(--crema);
   -webkit-mask-image: radial-gradient(34px 25px at 50% 0, #000 97%, transparent);
   mask-image: radial-gradient(34px 25px at 50% 0, #000 97%, transparent);
 }
@@ -339,17 +339,18 @@ a {
 
 /* Pestañas: letreros sobre la carpa. Tranquilas por defecto;
    la activa es la única que se enciende en mango. */
+/* Pestañas: calcomanías sólidas sobre la baldosa */
 .menu__tab {
   display: block;
   padding: 0.35rem 0.95rem;
-  color: var(--noche);
-  background: var(--carpa);
+  color: var(--crema);
+  background: var(--noche);
   font-family: var(--font-display);
   font-size: 0.98rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   text-decoration: none;
-  border: 2px solid rgb(52 48 58 / 0.45);
+  border: 2px solid rgb(255 241 220 / 0.55);
   border-radius: var(--radius-pill);
   transition:
     background var(--dur-fast) var(--ease-out),
@@ -359,22 +360,19 @@ a {
     box-shadow var(--dur-fast) var(--ease-out);
 }
 
-.menu__tab:hover {
-  border-color: var(--noche);
-  background: var(--carpa-clara);
-}
+.menu__tab:hover { border-color: var(--crema); }
 
 .menu__tab[aria-selected="true"] {
   color: var(--noche);
   background: var(--mango);
   border: var(--contorno-tinta);
-  box-shadow: var(--sombra-chica);
+  box-shadow: 3px 3px 0 var(--noche);
   transform: translateY(-2px);
 }
 
 .menu__tab:active {
   transform: translateY(1px);
-  box-shadow: 0 0 0 var(--corozo);
+  box-shadow: 0 0 0 var(--noche);
 }
 
 @media (max-width: 600px) {
@@ -947,9 +945,9 @@ main {
   padding: 0.3rem 0.8rem;
   font-family: var(--font-display);
   text-transform: uppercase;
-  color: var(--noche);
-  background: var(--carpa);
-  border: 2px solid rgb(52 48 58 / 0.45);
+  color: var(--crema);
+  background: var(--noche);
+  border: 2px solid rgb(255 241 220 / 0.55);
   border-radius: var(--radius-pill);
 }
 
@@ -957,7 +955,7 @@ main {
   color: var(--noche);
   background: var(--mango);
   border: var(--contorno-tinta);
-  box-shadow: var(--sombra-chica);
+  box-shadow: 3px 3px 0 var(--noche);
 }
 
 .regla__letra {
@@ -1007,8 +1005,9 @@ main {
 }
 
 .regla__demo--casa .casa__piso {
-  background: var(--baldosa);
-  border-top: 4px solid var(--corozo);
+  background: var(--panel-2);
+  display: grid;
+  place-items: center;
 }
 
 
@@ -1282,22 +1281,28 @@ main {
    ========================================================== */
 .footer {
   position: relative;
-  margin-top: var(--space-2xl);
-  padding: var(--space-xl) var(--space-md) var(--space-2xl);
+  margin-top: calc(var(--space-2xl) + 25px);
+  padding: var(--space-xl) var(--space-md);
   text-align: center;
   background: var(--baldosa);
-  border-top: 6px solid var(--corozo);
 }
 
-/* El zócalo: la línea donde la pared se encuentra con el piso */
+/* La misma carpa de arriba, con el festón mirando hacia arriba */
+.footer::before,
+.footer::after { bottom: 100%; }
+
 .footer::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 100%;
-  height: 10px;
-  background: var(--panel-2);
+  height: 25px;
+  background: var(--crema);
+  -webkit-mask-image: radial-gradient(34px 25px at 50% 100%, #000 97%, transparent);
+  mask-image: radial-gradient(34px 25px at 50% 100%, #000 97%, transparent);
+}
+
+.footer::after {
+  height: 21px;
+  background: var(--baldosa);
+  -webkit-mask-image: radial-gradient(32px 21px at 50% 100%, #000 97%, transparent);
+  mask-image: radial-gradient(32px 21px at 50% 100%, #000 97%, transparent);
 }
 
 /* La placa: una calcomanía más, puesta sobre el piso */
@@ -1308,7 +1313,7 @@ main {
   background: var(--noche);
   border: var(--borde);
   border-radius: var(--radius-md);
-  box-shadow: var(--sombra);
+  box-shadow: 6px 6px 0 var(--noche);
   transform: rotate(-1deg);
 }
 
@@ -1347,6 +1352,19 @@ main {
 }
 
 .chapter__head { position: relative; padding: var(--space-md) 0; }
+
+/* Cenefa: una franja de baldosa bajo cada título, la que une las secciones */
+.cenefa {
+  display: block;
+  width: min(18rem, 70%);
+  height: 30px;
+  margin: var(--space-md) auto 0;
+  background: var(--baldosa);
+  background-size: 30px 30px, auto;
+  border: 2px solid var(--crema);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--sombra-chica);
+}
 
 /* ==========================================================
    TOAST
@@ -1474,3 +1492,5 @@ main {
     transition-duration: 0.01ms !important;
   }
 }
+
+.cenefa--cartel { margin-top: 0; }
