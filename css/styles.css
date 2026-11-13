@@ -291,14 +291,12 @@ a {
   top: 0;
   z-index: 30;
   margin-top: var(--space-lg);
-  background: var(--toldo);
 }
 
-/* Festón de la carpa: baldosa con contorno crema */
-/* Faldón de la carpa: la misma baldosa sigue por dentro hasta las
-   ondas (::before, recortado con --falda-forma) y encima van las
-   costuras y ondas en neón mango (::after, --falda-lineas).
-   La baldosa va "fixed" para que no se corte entre carpa y faldón. */
+/* La carpa es UNA sola pieza de baldosa (::before) que cubre el menú
+   y baja hasta las ondas, recortada con --falda-forma. Así la baldosa
+   no se parte ni se mueve. Encima, las costuras y ondas en neón
+   (::after, --falda-lineas). */
 .menu::before,
 .menu::after,
 .footer::before,
@@ -307,24 +305,33 @@ a {
   position: absolute;
   left: 0;
   right: 0;
-  height: 54px;
+  z-index: 0;
   pointer-events: none;
 }
 
-.menu::before,
-.footer::before {
+.menu::before {
+  top: 0;
+  height: calc(100% + 54px);
   background: var(--velo), var(--baldosa);
-  -webkit-mask: var(--falda-forma) 0 0 / 56px 54px repeat-x;
-  mask: var(--falda-forma) 0 0 / 56px 54px repeat-x;
+  -webkit-mask:
+    linear-gradient(#000, #000) 0 0 / 100% calc(100% - 54px) no-repeat,
+    var(--falda-forma) 0 100% / 56px 54px repeat-x;
+  mask:
+    linear-gradient(#000, #000) 0 0 / 100% calc(100% - 54px) no-repeat,
+    var(--falda-forma) 0 100% / 56px 54px repeat-x;
 }
 
-.menu::after,
-.footer::after {
+.menu::after {
+  top: 100%;
+  height: 54px;
   background: var(--falda-lineas) 0 0 / 56px 54px repeat-x;
 }
 
-.menu::before,
-.menu::after { top: 100%; }
+.menu__list,
+.footer > * {
+  position: relative;
+  z-index: 1;
+}
 
 .menu__list {
   display: flex;
@@ -1281,14 +1288,26 @@ main {
   margin-top: calc(var(--space-2xl) + 54px);
   padding: var(--space-md) var(--space-md) var(--space-lg);
   text-align: center;
-  background: var(--velo), var(--baldosa);
+  background: none;
 }
 
-/* El mismo faldón de arriba, volteado: las puntas miran hacia arriba */
-.footer::before,
+/* El mismo faldón, con las puntas hacia arriba */
+.footer::before {
+  top: -54px;
+  bottom: 0;
+  background: var(--velo), var(--baldosa);
+  -webkit-mask:
+    var(--falda-forma-arriba) 0 0 / 56px 54px repeat-x,
+    linear-gradient(#000, #000) 0 54px / 100% calc(100% - 54px) no-repeat;
+  mask:
+    var(--falda-forma-arriba) 0 0 / 56px 54px repeat-x,
+    linear-gradient(#000, #000) 0 54px / 100% calc(100% - 54px) no-repeat;
+}
+
 .footer::after {
-  bottom: 100%;
-  transform: scaleY(-1);
+  top: -54px;
+  height: 54px;
+  background: var(--falda-lineas-arriba) 0 0 / 56px 54px repeat-x;
 }
 
 /* La placa: una calcomanía más, puesta sobre el piso */
