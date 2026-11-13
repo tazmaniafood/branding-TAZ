@@ -1,5 +1,5 @@
 /* ==========================================================
-   Tokens de marca · v1.4 "Cartel de picó"
+   Tokens de marca · v1.5 "Cartel de picó"
    TAZ es un nombre provisional.
 
    La identidad sale de los carteles de fiesta de picó de la
@@ -7,19 +7,17 @@
    eso todo queda coherente:
 
    1. Fondo negro: la noche de la verbena.
-   2. Cinco colores costeños (mango, buganvilia, palma, achiote,
-      caribe) y dos hondos para sombras (corozo, caribe hondo).
+   2. Una paleta con oficios: noche de fondo, corozo para la carpa
+      y las sombras, cálidos para títulos, fríos solo en detalles.
    3. Letra picotera: relleno de color + primera capa blanca
       (contorno) + sombra en bloque de otro color.
    4. La explosión amarilla: ahí va lo más importante.
    5. Eje vertical: composición centrada, jerarquía clara.
-   6. Marco de fiesta en los bordes. Nada de confeti suelto.
-   + El toldo: el menú y el pie son la carpa del puesto de comida,
-     de un solo color (corozo, vino oscuro), con borde festoneado.
+   6. La carpa: menú y pie en corozo con borde festoneado.
 
    Contrastes (WCAG) sobre noche: crema 17.4 · mango 10.7 ·
    palma 7.0 · achiote 6.3 · caribe 6.1 · buganvilia 5.0.
-   Corozo y caribe hondo no van como texto sobre noche.
+   Corozo no va como texto sobre noche. Crema sobre corozo: 8.1.
    ========================================================== */
 
 @import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@500;700;800;900&display=swap");
@@ -33,16 +31,17 @@
   --panel-2: #221C2E;
   --linea-suave: #2E2640;
 
-  /* ---- Cinco colores costeños, vivos pero no de juguete ---- */
-  --mango: #F5B335;       /* la explosión, los botones */
-  --buganvilia: #E0457B;  /* la fiesta */
-  --palma: #3FAE6A;       /* lo fresco */
+  /* ---- La paleta tiene oficios (proporción aproximada) ----
+     Noche 60 %: el fondo.
+     Corozo 20 %: la carpa y TODAS las sombras.
+     Mango, achiote, buganvilia 15 %: títulos y botones (cálidos).
+     Caribe y palma 5 %: solo detalles chicos, nunca en títulos. */
+  --corozo: #8A1F37;      /* el vino oscuro de la marca */
+  --mango: #F5B335;       /* lo principal: explosión, botones, activo */
   --achiote: #EE6A2F;     /* el calor del fogón */
-  --caribe: #1E9EA6;      /* el mar */
-
-  /* ---- Dos hondos, solo para sombras y para el toldo ---- */
-  --corozo: #8A1F37;
-  --caribe-hondo: #106B73;
+  --buganvilia: #E0457B;  /* la fiesta */
+  --caribe: #1E9EA6;      /* el mar, en detalles */
+  --palma: #3FAE6A;       /* confirmar y WhatsApp */
 
   /* ---- La primera capa y el texto ---- */
   --blanco: #FFF1DC;
@@ -57,7 +56,7 @@
   --text-secondary: var(--gris);
   --accent: var(--mango);
   --on-accent: var(--noche);
-  --focus-ring: 0 0 0 3px var(--noche), 0 0 0 6px var(--palma);
+  --focus-ring: 0 0 0 3px var(--noche), 0 0 0 6px var(--mango);
 
   /* Color de cada sección (lo cambia cada cartel) */
   --c: var(--mango);     /* relleno */

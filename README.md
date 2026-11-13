@@ -14,18 +14,17 @@ Abre `index.html` en el navegador (con internet, para que carguen las fuentes).
 | `css/styles.css` | Estilos de la guía, mobile-first, con tipografía y espacios fluidos (`clamp()`). |
 | `js/main.js` | Interacciones con delegación de eventos (`data-action`), estado en `data-state` / `aria-*` y código defensivo. |
 
-## Identidad v1.4 · "Cartel de picó"
+## Identidad v1.5 · "Cartel de picó"
 
 La identidad sale de los **carteles de fiesta de picó** de Barranquilla y Cartagena. Tienen una gramática fija, y por eso todo queda coherente. Seis reglas:
 
 1. **Fondo negro** (`#0C0A12`): la noche de la verbena.
-2. **Cinco colores costeños:** mango `#F5B335`, buganvilia `#E0457B`, palma `#3FAE6A`, achiote `#EE6A2F` y caribe `#1E9EA6`. Dos hondos solo para sombras y toldo: corozo `#8A1F37` y caribe hondo `#106B73`. Texto en crema `#FFF1DC`.
+2. **Paleta con oficios:** noche `#0C0A12` de fondo (60 %); corozo `#8A1F37` para la carpa y todas las sombras (20 %); mango `#F5B335`, achiote `#EE6A2F` y buganvilia `#E0457B` para títulos y botones (15 %); caribe `#1E9EA6` y palma `#3FAE6A` solo en detalles chicos (5 %), nunca en títulos. Texto en crema `#FFF1DC`.
 3. **Letra picotera:** Lilita One en mayúsculas con relleno de color, primera capa blanca (contorno) y sombra en bloque de otro color. Clase `.picotera`, con `--c` (relleno) y `--s` (sombra).
 4. **La explosión amarilla:** ahí va lo más importante. Clase `.explosion`.
 5. **Eje al centro:** composición centrada, de lo más grande a lo más chico.
-6. **Marco de fiesta:** estrellas, serpentinas y destellos, tupidos en los bordes y con capa blanca como la letra picotera. El centro queda limpio para el texto. Cada pieza está colocada a mano en `MARCOS` (js/main.js); nada de confeti al azar.
+6. **La carpa:** menú y pie en corozo con borde festoneado. Pestañas como letreros con borde crema; la activa se enciende en mango. Las ilustraciones y adornos llegan después.
 
-**El toldo.** El menú y el pie son la carpa del puesto de comida, el mismo toldo festoneado del sitio de pedidos, de un solo color: corozo, vino oscuro (`--toldo` en tokens.css). El festón lleva capa crema debajo.
 
 Para leer: Nunito. Movimiento: el cartel "se pega" línea por línea al cargar; después, solo lo que responde a lo que haces (pestañas, valores, chat). Respeta "reducir movimiento".
 
@@ -47,7 +46,7 @@ Para leer: Nunito. Movimiento: el cartel "se pega" línea por línea al cargar; 
 ## Estado
 
 - [x] Alma, valores, personalidad, voz, públicos y redes
-- [ ] Validar identidad visual v1.4
+- [ ] Validar identidad visual v1.5
 - [ ] Nombre definitivo
 - [ ] Historia de origen
 - [ ] Plato costeño insignia
