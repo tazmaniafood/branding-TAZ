@@ -15,14 +15,15 @@ Abre `index.html` en el navegador (con internet, para que carguen las fuentes).
 | `img/logo-taz.png` | Logo actual (provisional), tomado de la web de pedidos. |
 | `js/main.js` | Interacciones con delegación de eventos (`data-action`), estado en `data-state` / `aria-*` y código defensivo. |
 
-## Identidad v0.7 · "Fiesta costeña"
+## Identidad v0.8 · "Carnaval de noche"
 
-Alineada con la web de pedidos (Frontend-consumidor): caricatura cálida de fast food.
+El **alma** viene de la web de pedidos (caricatura de fast food: contorno negro y sombra dura en todo, tarjetas chuecas, comida y movimiento). Los **colores** vienen de la Costa:
 
-- **Colores del antojo:** vino `#2A0A0A` (fondo), rojo `#E63312`, naranja `#F7941D` (acción), amarillo `#FFC933` (títulos), crema `#FFF3DC` (texto y tarjetas), tinta `#120303` (contornos y sombras). Verde `#7BD88F` solo para confirmar.
-- **Letras:** Anton (títulos con contorno negro) + Nunito (lectura).
-- **Estilo:** contorno tinta de 4 px y sombra dura en todo; tarjetas un poquito chuecas que se enderezan al pasar el mouse.
-- **Lo costeño:** palabras, cinta de mamadera de gallo, banderines, explosión de cómic y medallones de comida. Todo animado (respeta "reducir movimiento").
+- **Rojo `#F03A2E`, amarillo `#FFC21A` y verde `#13A54F`:** las banderas de Barranquilla y Cartagena, los colores del Carnaval. Mandan.
+- **Fucsia `#FF3E9A` (marimonda) y azul `#2D5BFF` (congo):** acentos, como los disfraces del desfile.
+- **Noche `#1A1035`** de fondo, **crema `#FFF4E0`** para leer y **tinta `#0B0618`** para contornos y sombras.
+- **Letras:** Anton (títulos) + Nunito (lectura).
+- **Adornos y movimiento:** banderines de carnaval que se mecen, cinta de mamadera de gallo, explosión de cómic con molinete rojo y verde, medallones de comida flotando y confeti en el cielo. Respeta "reducir movimiento".
 
 ## Usar los tokens
 
@@ -42,7 +43,7 @@ Alineada con la web de pedidos (Frontend-consumidor): caricatura cálida de fast
 ## Estado
 
 - [x] Alma, valores, personalidad, voz, públicos y redes
-- [ ] Validar identidad visual v0.7
+- [ ] Validar identidad visual v0.8
 - [ ] Nombre definitivo
 - [ ] Historia de origen
 - [ ] Plato costeño insignia

@@ -1,17 +1,20 @@
 /* ==========================================================
-   Tokens de marca · v0.7 "Fiesta costeña"
+   Tokens de marca · v0.8 "Carnaval de noche"
    TAZ es un nombre provisional.
 
-   El ADN viene de la web de pedidos (Frontend-consumidor):
-   caricatura cálida de fast food. Fondo vino, colores de antojo
-   de una sola familia (rojo, naranja, amarillo, crema), contorno
-   negro grueso y sombra dura en TODO. Así se ve ordenado.
+   El ALMA viene de la web de pedidos: caricatura de fast food,
+   contorno negro en todo, sombra dura, tarjetas chuecas,
+   medallones de comida y todo en movimiento.
 
-   Lo costeño vive dentro de ese estilo: palabras, banderines,
-   confeti, serpentinas y mamadera de gallo. No en colores fríos.
+   Los COLORES vienen de la Costa:
+   - Rojo, amarillo y verde: las banderas de Barranquilla y
+     Cartagena, los colores del Carnaval.
+   - Fucsia y azul: los disfraces de marimonda y congo.
+   - Todo sobre la noche de carnaval.
 
-   Contrastes (WCAG): crema/vino 15.9 · amarillo/vino 12.0 ·
-   tinta/amarillo 13.6 · tinta/naranja 8.6 · tinta/crema 18.5.
+   Contrastes (WCAG): crema/noche 16.5 · amarillo/noche 11.1 ·
+   tinta/amarillo 12.3 · tinta/rojo 5.1 · tinta/verde 6.2 ·
+   tinta/fucsia 6.1 · crema/azul 4.8 · tinta/crema 18.3.
    ========================================================== */
 
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Nunito:wght@500;700;800;900&display=swap");
@@ -19,35 +22,42 @@
 :root {
   color-scheme: dark;
 
-  /* ---- Marca: la familia del antojo ---- */
-  --brand-vino: #2A0A0A;         /* Fondo: noche cálida */
-  --brand-tinta: #120303;        /* Contornos y sombras de caricatura */
-  --brand-rojo: #E63312;         /* Fuego, energía */
-  --brand-naranja: #F7941D;      /* Acción principal */
-  --brand-amarillo: #FFC933;     /* Títulos, alegría */
-  --brand-crema: #FFF3DC;        /* Texto y superficies cálidas */
-  --brand-verde: #7BD88F;        /* Fresco: confirmaciones y bebidas, poco */
+  /* ---- La noche ---- */
+  --brand-noche: #1A1035;        /* Fondo: cielo de noche de carnaval */
+  --brand-tinta: #0B0618;        /* Contornos y sombras de caricatura */
 
-  /* Bloques de color (una superficie por categoría o tema) */
-  --block-tomate: #FF6B4A;
-  --block-naranja: #F7941D;
-  --block-amarillo: #FFC933;
-  --block-crema: #FFF3DC;
-  --block-mandarina: #FFA94D;
-  --block-verde: #7BD88F;
+  /* ---- Banderas de la Costa (los principales) ---- */
+  --brand-rojo: #F03A2E;
+  --brand-amarillo: #FFC21A;
+  --brand-verde: #13A54F;
+
+  /* ---- Disfraces del Carnaval (acentos) ---- */
+  --brand-fucsia: #FF3E9A;       /* Marimonda */
+  --brand-azul: #2D5BFF;         /* Congo */
+
+  /* ---- Para leer ---- */
+  --brand-crema: #FFF4E0;
+
+  /* ---- Bloques de color (tarjetas) ---- */
+  --block-rojo: var(--brand-rojo);
+  --block-amarillo: var(--brand-amarillo);
+  --block-verde: var(--brand-verde);
+  --block-fucsia: var(--brand-fucsia);
+  --block-azul: var(--brand-azul);
+  --block-crema: var(--brand-crema);
 
   /* ---- Semánticos ---- */
-  --bg-surface: var(--brand-vino);
-  --bg-raised: #431111;
-  --bg-raised-2: #5A1717;
-  --bg-deep: #1D0606;
+  --bg-surface: var(--brand-noche);
+  --bg-raised: #2A1C52;
+  --bg-raised-2: #3A2870;
+  --bg-deep: #120A26;
   --text-primary: var(--brand-crema);
-  --text-secondary: #D9B9A0;
-  --text-on-block: var(--brand-vino);
-  --text-on-block-soft: #5A2A1A;
-  --text-red-on-light: #A8200A;   /* rojo para texto sobre crema/amarillo (AA) */
-  --accent: var(--brand-naranja);
-  --accent-hover: var(--brand-amarillo);
+  --text-secondary: #CFC3EA;
+  --text-on-block: var(--brand-tinta);
+  --text-on-block-soft: #2B1E45;
+  --text-red-on-light: #A8200A;
+  --accent: var(--brand-amarillo);
+  --accent-hover: var(--brand-crema);
   --on-accent: var(--brand-tinta);
   --title: var(--brand-amarillo);
 
@@ -58,8 +68,15 @@
   --shadow-sm: 4px 4px 0 var(--brand-tinta);
   --shadow-lg: 9px 10px 0 var(--brand-tinta);
   --stroke-title: 8px var(--brand-tinta);
-  --halftone: radial-gradient(#ffffff14 2px, transparent 2.5px) 0 0 / 22px 22px;
   --focus-ring: 0 0 0 3px var(--brand-tinta), 0 0 0 6px var(--brand-amarillo);
+
+  /* Fondo de noche: puntitos de cómic + confeti de carnaval */
+  --cielo:
+    radial-gradient(circle at 12% 18%, var(--brand-amarillo) 0 3px, transparent 3.5px) 0 0 / 260px 260px,
+    radial-gradient(circle at 70% 40%, var(--brand-fucsia) 0 3px, transparent 3.5px) 0 0 / 260px 260px,
+    radial-gradient(circle at 38% 78%, var(--brand-verde) 0 3px, transparent 3.5px) 0 0 / 260px 260px,
+    radial-gradient(circle at 88% 86%, var(--brand-rojo) 0 3px, transparent 3.5px) 0 0 / 260px 260px,
+    radial-gradient(#ffffff12 2px, transparent 2.5px) 0 0 / 22px 22px;
 
   /* ---- Tipografía ---- */
   --font-display: "Anton", "Impact", "Arial Narrow", sans-serif;
@@ -94,8 +111,8 @@
   --dur-fast: 0.16s;
   --dur-base: 0.3s;
 
-  /* ---- Adornos costeños en estilo caricatura (con contorno) ---- */
-  --adorno-banderines: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='204' height='52'%3E%3Cpath d='M0 5 Q102 14 204 5' stroke='%23120303' stroke-width='4' fill='none'/%3E%3Cg stroke='%23120303' stroke-width='3.5' stroke-linejoin='round'%3E%3Cpolygon points='6,6 54,9 30,44' fill='%23FFC933'/%3E%3Cpolygon points='76,10 124,10 100,47' fill='%23E63312'/%3E%3Cpolygon points='146,9 194,6 170,44' fill='%23FFF3DC'/%3E%3C/g%3E%3C/svg%3E");
+  /* ---- Banderines de carnaval (con contorno) ---- */
+  --adorno-banderines: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='52'%3E%3Cpath d='M0 5 Q150 14 300 5' stroke='%230B0618' stroke-width='4' fill='none'/%3E%3Cg stroke='%230B0618' stroke-width='3.5' stroke-linejoin='round'%3E%3Cpolygon points='6,6 54,9 30,44' fill='%23F03A2E'/%3E%3Cpolygon points='66,9 114,10 90,46' fill='%23FFC21A'/%3E%3Cpolygon points='126,10 174,10 150,47' fill='%2313A54F'/%3E%3Cpolygon points='186,10 234,9 210,46' fill='%23FF3E9A'/%3E%3Cpolygon points='246,9 294,6 270,44' fill='%232D5BFF'/%3E%3C/g%3E%3C/svg%3E");
 
   --layout-max: 1180px;
 }

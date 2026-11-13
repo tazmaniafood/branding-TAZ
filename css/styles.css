@@ -1,5 +1,5 @@
 /* ==========================================================
-   Guía de marca · v0.7 "Fiesta costeña"
+   Guía de marca · v0.8 "Carnaval de noche"
    Estilo caricatura de fast food (el mismo de la web de pedidos).
    Regla de oro: TODO lleva contorno tinta y sombra dura.
    Mobile-first. Depende de tokens.css.
@@ -26,7 +26,7 @@ body {
   font-weight: 500;
   line-height: 1.55;
   color: var(--text-primary);
-  background: var(--halftone), var(--bg-surface);
+  background: var(--cielo), var(--bg-surface);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -162,12 +162,12 @@ a {
   margin-top: var(--space-xs);
 }
 
-.card--tomate { background: var(--block-tomate); --text-on-block-soft: #3D1208; }
-.card--naranja { background: var(--block-naranja); }
+.card--rojo { background: var(--block-rojo); --text-on-block-soft: var(--brand-tinta); }
+.card--verde { background: var(--block-verde); --text-on-block-soft: var(--brand-tinta); }
+.card--fucsia { background: var(--block-fucsia); --text-on-block-soft: var(--brand-tinta); }
+.card--azul { background: var(--block-azul); color: var(--brand-crema); --text-on-block-soft: var(--brand-crema); }
 .card--amarillo { background: var(--block-amarillo); }
 .card--crema { background: var(--block-crema); }
-.card--mandarina { background: var(--block-mandarina); }
-.card--verde { background: var(--block-verde); }
 .card--oscura {
   background: var(--bg-raised);
   color: var(--text-primary);
@@ -245,8 +245,7 @@ a {
   position: absolute;
   inset: 15%;
   background:
-    radial-gradient(#e6331299 2px, transparent 2.6px) 0 0 / 11px 11px,
-    var(--brand-naranja);
+    repeating-conic-gradient(var(--brand-rojo) 0 15deg, var(--brand-verde) 15deg 30deg);
 }
 
 /* ==========================================================
@@ -256,17 +255,8 @@ a {
   position: relative;
   overflow: hidden;
   padding: calc(52px + var(--space-lg)) var(--space-md) var(--space-xl);
-  background: var(--brand-rojo);
+  background: var(--cielo), var(--bg-deep);
   border-bottom: 6px solid var(--brand-tinta);
-}
-
-.hero::after {
-  /* textura de puntos de cómic sobre el rojo */
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(#12030322 2px, transparent 2.6px) 0 0 / 16px 16px;
-  pointer-events: none;
 }
 
 .hero__inner {
@@ -277,11 +267,6 @@ a {
   align-items: center;
   width: min(100%, var(--layout-max));
   margin-inline: auto;
-}
-
-.hero__copy .sticker--rojo {
-  background: var(--brand-tinta);
-  color: var(--brand-amarillo);
 }
 
 .hero__title {
@@ -315,7 +300,7 @@ a {
   margin-top: var(--space-md);
   font-size: var(--step--1);
   font-weight: 800;
-  color: var(--brand-tinta);
+  color: var(--text-secondary);
 }
 
 .scene {
@@ -451,7 +436,7 @@ a {
 }
 
 .index__list a[aria-current="true"] {
-  background: var(--brand-naranja);
+  background: var(--brand-amarillo);
   color: var(--brand-tinta);
   border-color: var(--brand-tinta);
 }
@@ -740,7 +725,7 @@ main {
   align-items: center;
   gap: var(--space-sm);
   padding: var(--space-xs) var(--space-md);
-  background: var(--brand-rojo);
+  background: var(--brand-verde);
   border-bottom: var(--line);
 }
 
@@ -759,14 +744,14 @@ main {
   font-family: var(--font-display);
   font-size: var(--step-1);
   line-height: 1.05;
-  color: var(--brand-crema);
+  color: var(--brand-tinta);
 }
 
 .chat__online {
   font-family: var(--font-body);
   font-weight: 800;
   font-size: var(--step--1);
-  color: var(--brand-amarillo);
+  color: var(--brand-tinta);
 }
 
 .chat__thread {
@@ -837,8 +822,8 @@ main {
 
 .chip:nth-child(4n + 1) { background: var(--block-amarillo); transform: rotate(-2deg); }
 .chip:nth-child(4n + 2) { background: var(--block-crema); transform: rotate(1.5deg); }
-.chip:nth-child(4n + 3) { background: var(--block-mandarina); transform: rotate(-1deg); }
-.chip:nth-child(4n + 4) { background: var(--block-tomate); transform: rotate(2deg); }
+.chip:nth-child(4n + 3) { background: var(--block-verde); transform: rotate(-1deg); }
+.chip:nth-child(4n + 4) { background: var(--block-fucsia); transform: rotate(2deg); }
 
 .chip.chip--no {
   background: var(--bg-raised);
@@ -1093,27 +1078,14 @@ main {
   justify-content: center;
   aspect-ratio: 1;
   padding: calc(52px + var(--space-sm)) var(--space-md) var(--space-md);
-  background: var(--brand-rojo);
+  background: var(--cielo), var(--bg-deep);
   border: var(--line);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
   transform: rotate(-1.5deg);
 }
 
-.ig-post::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(#12030322 2px, transparent 2.6px) 0 0 / 14px 14px;
-}
-
-.ig-post > * {
-  position: relative;
-}
-
 .ig-post .sticker--rojo {
-  background: var(--brand-tinta);
-  color: var(--brand-amarillo);
   font-size: var(--step-0);
 }
 
@@ -1460,3 +1432,6 @@ main {
     transition-duration: 0.01ms !important;
   }
 }
+
+.card--azul h3,
+.card--azul .value__line { color: var(--brand-crema); }
