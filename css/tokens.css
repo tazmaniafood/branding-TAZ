@@ -1,61 +1,80 @@
 /* ==========================================================
-   TAZ (nombre provisional) · Tokens de marca v0.2
-   Dirección: FAST FOOD con alma costeña.
-   Base de antojo (rojo, mostaza, negro) + acentos de picó
-   (fucsia) y salsa rosada. Los colores llevan nombres de
-   la cocina costeña.
-   Regla de uso: 60% crema/plancha · 30% fogón/mostaza ·
-   10% picó/rosado.
+   TAZ (nombre provisional) · Tokens de marca v0.3
+   Dirección: "Noche costeña". Mezcla de tres territorios:
+   - Noche de picó (base): fondo negro, amarillo eléctrico y
+     fucsia picó, letras con contorno.
+   - Letrero de tienda: hueso cálido para menús y empaques,
+     letras con sombra en bloque. El "como en casa".
+   - Carnaval: rojo, verde y azul rey como confeti en los
+     detalles, nunca como base.
+   Proporción: 50% noche · 20% hueso · 15% amarillo + fucsia ·
+   15% confeti (rojo, verde, azul).
    ========================================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=Bowlby+One&family=Rubik:wght@400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;700;800&display=swap");
 
 :root {
-  /* ---- Base fast food: el antojo ---- */
-  --color-fogon: #E3261C;        /* Rojo fogón: hambre, fuego, energía. Color principal */
-  --color-fogon-oscuro: #B51A12;
-  --color-mostaza: #FFC20E;      /* Amarillo mostaza: alegría, abundancia, llamar la atención */
-  --color-plancha: #141414;      /* Negro plancha: contraste, contornos, letras */
-  --color-plancha-suave: #4A4A4A;
+  /* ---- Noche de picó: la base ---- */
+  --color-noche: #111111;        /* Fondo principal: la noche costeña */
+  --color-noche-2: #1E1E24;      /* Superficies oscuras secundarias */
+  --color-amarillo: #FFE500;     /* Amarillo eléctrico: el color que grita */
+  --color-fucsia: #FF2E88;       /* Fucsia picó: la fiesta y la mamadera de gallo */
 
-  /* ---- Alma costeña: acentos (máx. 10%) ---- */
-  --color-pico: #E6197D;         /* Fucsia picó: la fiesta y la mamadera de gallo */
-  --color-rosado: #F6A5B4;       /* Salsa rosada: el sello de la comida rápida colombiana */
+  /* ---- Letrero de tienda: la calidez ---- */
+  --color-hueso: #FBF6EC;        /* Menús, empaques, tarjetas: "como en casa" */
+  --color-hueso-oscuro: #EDE3CF;
 
-  /* ---- Fondos ---- */
-  --color-crema: #FFF8EC;        /* Crema suero costeño: fondo limpio y cálido */
-  --color-crema-oscura: #F2E4C9;
+  /* ---- Carnaval: el confeti (solo detalles) ---- */
+  --color-rojo: #E0201B;
+  --color-verde: #1F9D4B;
+  --color-azul: #2547D0;
+
+  /* ---- Neutros ---- */
+  --color-gris-claro: #C9C3B8;   /* Texto secundario sobre noche */
+  --color-gris-oscuro: #5A554D;  /* Texto secundario sobre hueso */
   --color-blanco: #FFFFFF;
 
   /* ---- Usos semánticos ---- */
-  --bg: var(--color-crema);
-  --text: var(--color-plancha);
-  --text-muted: var(--color-plancha-suave);
-  --accent: var(--color-fogon);
-  --accent-2: var(--color-pico);
-  --highlight: var(--color-mostaza);
+  --bg: var(--color-noche);
+  --text: var(--color-hueso);
+  --text-muted: var(--color-gris-claro);
+  --accent: var(--color-fucsia);
+  --highlight: var(--color-amarillo);
+
+  /* Franja de confeti (separadores, bordes de portada y pie) */
+  --confeti: repeating-linear-gradient(
+    90deg,
+    var(--color-amarillo) 0 40px,
+    var(--color-fucsia) 40px 80px,
+    var(--color-rojo) 80px 120px,
+    var(--color-verde) 120px 160px,
+    var(--color-azul) 160px 200px
+  );
 
   /* ---- Tipografía ---- */
-  --font-display: "Bowlby One", "Arial Black", Impact, system-ui, sans-serif; /* Gruesa, de letrero de comida rápida */
-  --font-body: "Rubik", system-ui, -apple-system, "Segoe UI", sans-serif;      /* Fuerte y legible en el celular */
+  --font-display: "Lilita One", "Arial Rounded MT Bold", system-ui, sans-serif; /* Letras infladas de picó */
+  --font-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   --fs-xs: 0.8rem;
   --fs-sm: 0.95rem;
-  --fs-md: 1.05rem;
-  --fs-lg: 1.45rem;
-  --fs-xl: 2.1rem;
-  --fs-xxl: clamp(2.4rem, 6vw, 4.4rem);
+  --fs-md: 1.08rem;
+  --fs-lg: 1.5rem;
+  --fs-xl: 2.2rem;
+  --fs-xxl: clamp(2.6rem, 6.5vw, 4.8rem);
 
-  /* ---- Formas: redondeadas y con carácter ---- */
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
+  /* ---- Formas ---- */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
   --radius-pill: 999px;
 
-  /* ---- Sombras duras tipo letrero de calle ---- */
-  --shadow-cartel: 4px 4px 0 var(--color-plancha);
-  --shadow-cartel-lg: 7px 7px 0 var(--color-plancha);
-  --border-cartel: 3px solid var(--color-plancha);
+  /* ---- Sombras en bloque (letrero) con color de picó ---- */
+  --shadow-cartel: 5px 5px 0 var(--color-fucsia);
+  --shadow-cartel-amarillo: 5px 5px 0 var(--color-amarillo);
+  --border-cartel: 3px solid var(--color-noche);
+
+  /* ---- Letras de picó: relleno amarillo con sombra fucsia ---- */
+  --letras-pico: 4px 4px 0 var(--color-fucsia);
 
   /* ---- Espaciado ---- */
   --space-1: 0.25rem;

@@ -34,10 +34,10 @@ Guía de identidad de marca de la comida rápida costeña en San José, CA.
 - [x] Personalidad y voz
 - [x] Públicos
 - [x] Rol de cada red: TikTok (volumen), Instagram (vitrina), Facebook (comunidad), WhatsApp (venta y recompra)
-- [x] Identidad visual v0.2: fast food con alma costeña (rojo fogón, mostaza, negro plancha + fucsia picó y salsa rosada; Bowlby One + Rubik)
+- [x] Identidad visual v0.3 "Noche costeña": noche de picó (base negra, amarillo eléctrico, fucsia) + calidez de letrero de tienda (hueso, sombra en bloque) + confeti de Carnaval (rojo, verde, azul). Lilita One + Nunito
 - [ ] Nombre definitivo
 - [ ] Historia de origen
 - [ ] Plato(s) costeño(s) insignia
 - [ ] Logo y personaje ilustrado
-- [ ] Validar paleta y tipografías v0.2
+- [ ] Validar la identidad visual v0.3
 - [ ] Aplicaciones: web, empaques, redes, WhatsApp, DoorDash
