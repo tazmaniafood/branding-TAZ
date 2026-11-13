@@ -34,10 +34,10 @@ Guía de identidad de marca de la comida rápida costeña en San José, CA.
 - [x] Personalidad y voz
 - [x] Públicos
 - [x] Rol de cada red: TikTok (volumen), Instagram (vitrina), Facebook (comunidad), WhatsApp (venta y recompra)
-- [x] Identidad visual v0.4 "Noche costeña": base noche, neones del picó (amarillo, fucsia, verde, cian, naranja), vivos de hamaca y Carnaval, hueso de tienda. Formas: franja de hamaca, banderines, bafle de picó, destellos, letrero de neón y confeti. Lilita One + Nunito
+- [x] Identidad visual v0.5 "Noche costeña": 5 colores (noche, hueso, amarillo, fucsia, cian) y una familia de adornos, "la fiesta que cae" (bolitas de confeti, serpentinas y banderines), con reglas de uso. Lilita One + Nunito
 - [ ] Nombre definitivo
 - [ ] Historia de origen
 - [ ] Plato(s) costeño(s) insignia
 - [ ] Logo y personaje ilustrado
-- [ ] Validar la identidad visual v0.4
+- [ ] Validar la identidad visual v0.5
 - [ ] Aplicaciones: web, empaques, redes, WhatsApp, DoorDash

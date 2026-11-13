@@ -1,5 +1,5 @@
 /* ==========================================================
-   Guía de marca v0.4 · estilos "Noche costeña"
+   Guía de marca v0.5 · estilos "Noche costeña"
    Depende de tokens.css
    ========================================================== */
 
@@ -109,61 +109,52 @@ a {
 .hero {
   position: relative;
   overflow: hidden;
-  padding: calc(var(--space-6) + 30px) 0 calc(var(--space-5) + 22px);
+  padding: calc(var(--space-6) + 24px) 0 var(--space-6);
+  border-bottom: 2px solid var(--color-noche-3);
   background: var(--color-noche);
 }
 
 .hero::before {
-  /* Banderines de fiesta colgados arriba */
+  /* Banderines colgados arriba */
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 46px;
+  height: 40px;
   background: var(--banderines) repeat-x;
   pointer-events: none;
 }
 
-.hero::after {
-  /* Franja de hamaca abajo */
-  content: "";
+.serpentina {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 22px;
-  background: var(--hamaca);
+  width: 170px;
+  height: 85px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
 }
 
-.hero__bafle {
-  /* Bafle de picó: anillos de neón */
+.serpentina--amarilla { background-image: var(--serpentina-amarilla); }
+.serpentina--fucsia { background-image: var(--serpentina-fucsia); }
+.serpentina--cian { background-image: var(--serpentina-cian); }
+
+.hero .serpentina--1 { top: 70px; right: 6%; transform: rotate(18deg); }
+.hero .serpentina--2 { bottom: 150px; right: 16%; width: 130px; height: 65px; transform: rotate(-20deg); }
+.hero .serpentina--3 { bottom: 50px; right: 4%; width: 150px; height: 75px; transform: rotate(-8deg); }
+
+.bolita {
   position: absolute;
-  right: -90px;
-  top: 50%;
-  width: 420px;
-  height: 420px;
-  transform: translateY(-50%);
   border-radius: 50%;
-  background:
-    radial-gradient(circle, var(--color-noche) 0 46px, transparent 47px),
-    repeating-radial-gradient(circle, transparent 0 22px, var(--neon-fucsia) 22px 25px, transparent 25px 34px, var(--neon-cian) 34px 36px);
-  opacity: 0.55;
   pointer-events: none;
 }
 
-.destello {
-  position: absolute;
-  width: 26px;
-  height: 26px;
-  background: var(--destello) no-repeat center / contain;
-  pointer-events: none;
-}
-
-.destello--1 { top: 22%; right: 34%; }
-.destello--2 { top: 64%; right: 26%; width: 18px; height: 18px; }
-.destello--3 { top: 36%; right: 8%; width: 34px; height: 34px; }
-.destello--4 { bottom: 18%; left: 58%; width: 16px; height: 16px; }
+.bolita--s { width: 6px; height: 6px; }
+.bolita--m { width: 10px; height: 10px; }
+.bolita--l { width: 14px; height: 14px; }
+.bolita--amarilla { background: var(--color-amarillo); }
+.bolita--fucsia { background: var(--color-fucsia); }
+.bolita--cian { background: var(--color-cian); }
 
 .hero .container {
   position: relative;
@@ -215,9 +206,8 @@ a {
   left: 50%;
   transform: translateX(-50%);
   width: min(100% - 2rem, var(--max-width));
-  height: 8px;
-  border-radius: var(--radius-pill);
-  background: var(--hamaca);
+  height: 14px;
+  background: var(--fila-bolitas);
 }
 
 .section__kicker {
@@ -256,7 +246,7 @@ a {
 }
 
 .card a {
-  color: var(--color-rojo);
+  color: #C2185B;
 }
 
 .card .section__kicker {
@@ -331,7 +321,7 @@ a {
 }
 
 .value__name {
-  color: var(--value-ink, var(--color-rojo));
+  color: var(--color-noche);
   margin-bottom: var(--space-1);
 }
 
@@ -366,11 +356,11 @@ a {
   margin: 0 0 var(--space-2);
 }
 
-.value--1 { --value-color: var(--color-amarillo); --value-ink: #9A7A00; }
-.value--2 { --value-color: var(--color-fucsia); --value-ink: #D81B72; }
-.value--3 { --value-color: var(--color-rojo); --value-on: var(--color-hueso); --value-ink: var(--color-rojo); }
-.value--4 { --value-color: var(--color-verde); --value-on: var(--color-hueso); --value-ink: var(--color-verde); }
-.value--5 { --value-color: var(--color-azul); --value-on: var(--color-hueso); --value-ink: var(--color-azul); }
+.value--1 { --value-color: var(--color-amarillo); }
+.value--2 { --value-color: var(--color-fucsia); }
+.value--3 { --value-color: var(--color-cian); }
+.value--4 { --value-color: var(--color-amarillo); }
+.value--5 { --value-color: var(--color-fucsia); }
 
 /* ---------- Tabla Es / No es ---------- */
 .is-isnt {
@@ -525,9 +515,9 @@ a {
   text-shadow: var(--letras-pico);
 }
 
-.letras-tienda {
-  color: var(--color-rojo);
-  text-shadow: 3px 3px 0 var(--color-verde);
+.letras-hueso {
+  color: var(--color-noche);
+  text-shadow: 3px 3px 0 var(--color-fucsia);
 }
 
 /* ---------- Botones ---------- */
@@ -599,8 +589,8 @@ a {
 
 .social--tiktok { border-top-color: var(--color-noche); }
 .social--instagram { border-top-color: var(--color-fucsia); }
-.social--facebook { border-top-color: var(--color-azul); }
-.social--whatsapp { border-top-color: var(--color-verde); }
+.social--facebook { border-top-color: var(--color-amarillo); }
+.social--whatsapp { border-top-color: var(--color-cian); }
 
 .social__role {
   display: inline-block;
@@ -693,8 +683,8 @@ a {
 }
 
 .todo li.done::before {
-  background: var(--color-verde);
-  border-color: var(--color-verde);
+  background: var(--color-amarillo);
+  border-color: var(--color-amarillo);
 }
 
 /* ---------- Pie ---------- */
@@ -702,7 +692,7 @@ a {
   position: relative;
   background: var(--color-noche);
   color: var(--color-gris-claro);
-  padding: calc(var(--space-5) + 10px) 0 var(--space-5);
+  padding: calc(var(--space-5) + 40px) 0 var(--space-5);
   text-align: center;
   font-size: var(--fs-sm);
 }
@@ -713,8 +703,8 @@ a {
   top: 0;
   left: 0;
   right: 0;
-  height: 14px;
-  background: var(--hamaca);
+  height: 40px;
+  background: var(--banderines) repeat-x;
 }
 
 .footer strong {
@@ -762,124 +752,86 @@ a {
   .swatch, .btn, .toast { transition: none; }
 }
 
-/* ---------- Neón ---------- */
-.neon {
-  font-family: var(--font-display);
-  color: #FFFFFF;
-}
-
-.neon--fucsia { text-shadow: var(--brillo-fucsia); }
-.neon--cian { text-shadow: var(--brillo-cian); }
-.neon--verde { text-shadow: var(--brillo-verde); }
-.neon--amarillo { text-shadow: var(--brillo-amarillo); }
-
-.neon-box {
-  border: 3px solid var(--neon-cian);
-  border-radius: var(--radius-md);
-  box-shadow: 0 0 8px var(--neon-cian), inset 0 0 8px var(--neon-cian);
-  padding: var(--space-3) var(--space-4);
-  display: inline-block;
-}
-
-.hero__neon {
-  display: block;
-  width: max-content;
-  font-size: var(--fs-lg);
-  margin-bottom: var(--space-2);
-  transform: rotate(-3deg);
-}
-
-/* ---------- Formas y patrones (muestras) ---------- */
-.patterns {
+/* ---------- Adornos (muestras) ---------- */
+.adornos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--space-4);
 }
 
-.pattern {
+.adorno {
   background: var(--color-noche-2);
   border: 2px solid var(--color-noche-3);
   border-radius: var(--radius-md);
   overflow: hidden;
 }
 
-.pattern__sample {
+.adorno__muestra {
   position: relative;
   height: 140px;
   background: var(--color-noche);
   overflow: hidden;
 }
 
-.pattern__info {
+.adorno__info {
   padding: var(--space-3);
   font-size: var(--fs-sm);
   color: var(--color-gris-claro);
 }
 
-.pattern__info strong {
+.adorno__info strong {
   display: block;
   font-family: var(--font-display);
   font-weight: 400;
   font-size: var(--fs-md);
-  color: var(--neon-amarillo);
+  color: var(--color-amarillo);
   margin-bottom: var(--space-1);
 }
 
-.sample--hamaca { background: var(--hamaca); }
+.muestra--banderines { background: var(--banderines) repeat-x 0 24px, var(--color-noche); }
 
-.sample--banderines {
-  background: var(--banderines) repeat-x 0 20px, var(--color-noche);
-}
-
-.sample--bafle {
-  display: grid;
-  place-items: center;
-}
-
-.sample--bafle::before {
-  content: "";
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
+.muestra--serpentinas {
   background:
-    radial-gradient(circle, var(--neon-amarillo) 0 14px, var(--color-noche) 15px 20px, transparent 21px),
-    repeating-radial-gradient(circle, transparent 0 12px, var(--neon-fucsia) 12px 15px, transparent 15px 20px, var(--neon-cian) 20px 22px);
-}
-
-.sample--destellos {
-  background:
-    var(--destello) no-repeat 20% 30% / 34px,
-    var(--destello) no-repeat 55% 70% / 22px,
-    var(--destello) no-repeat 80% 25% / 28px,
-    var(--destello) no-repeat 38% 80% / 14px,
+    var(--serpentina-amarilla) no-repeat 10% 25% / 110px 55px,
+    var(--serpentina-fucsia) no-repeat 85% 40% / 120px 60px,
+    var(--serpentina-cian) no-repeat 40% 90% / 100px 50px,
     var(--color-noche);
 }
 
-.sample--neon {
-  display: grid;
-  place-items: center;
-}
-
-.sample--confeti {
+.muestra--bolitas {
   background:
-    radial-gradient(circle at 12% 30%, var(--neon-fucsia) 0 6px, transparent 7px),
-    radial-gradient(circle at 30% 70%, var(--neon-amarillo) 0 5px, transparent 6px),
-    radial-gradient(circle at 48% 25%, var(--neon-cian) 0 7px, transparent 8px),
-    radial-gradient(circle at 62% 65%, var(--neon-verde) 0 5px, transparent 6px),
-    radial-gradient(circle at 80% 35%, var(--neon-naranja) 0 6px, transparent 7px),
-    radial-gradient(circle at 90% 75%, var(--vivo-morado) 0 7px, transparent 8px),
+    radial-gradient(circle at 15% 30%, var(--color-amarillo) 0 7px, transparent 8px),
+    radial-gradient(circle at 32% 68%, var(--color-fucsia) 0 5px, transparent 6px),
+    radial-gradient(circle at 50% 28%, var(--color-cian) 0 3px, transparent 4px),
+    radial-gradient(circle at 66% 62%, var(--color-amarillo) 0 3px, transparent 4px),
+    radial-gradient(circle at 80% 35%, var(--color-fucsia) 0 7px, transparent 8px),
+    radial-gradient(circle at 88% 75%, var(--color-cian) 0 5px, transparent 6px),
     var(--color-noche);
 }
 
-.swatch__color--neon {
-  box-shadow: inset 0 0 0 6px rgba(255, 255, 255, 0.12);
+.reglas {
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-3);
 }
 
-@media (max-width: 640px) {
-  .hero__bafle {
-    width: 260px;
-    height: 260px;
-    right: -120px;
-    opacity: 0.35;
+.reglas li {
+  background: var(--color-noche-2);
+  border-left: 4px solid var(--color-amarillo);
+  padding: var(--space-3);
+  font-size: var(--fs-sm);
+  color: var(--color-gris-claro);
+}
+
+.reglas li strong {
+  color: var(--color-hueso);
+}
+
+@media (max-width: 760px) {
+  .hero .serpentina {
+    opacity: 0.45;
   }
 }
