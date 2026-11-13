@@ -215,38 +215,59 @@ a {
 /* Titular con un neón a cada lado */
 .cartel__titular {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
   gap: var(--space-sm);
   width: 100%;
   max-width: 1400px;
 }
 
-.cartel__titular .cartel__titulo { font-size: clamp(2.5rem, 0.6rem + 6vw, 6.6rem); }
+.cartel__titular .cartel__titulo { font-size: clamp(2.3rem, 0.4rem + 5vw, 6rem); }
 
 .neon {
   display: block;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   height: auto;
   pointer-events: none;
 }
 
 .neon--izq { justify-self: end; }
 .neon--der { justify-self: start; }
-.neon--espejo { transform: scaleX(-1); }
 
-/* En celular los neones van arriba del titular, uno a cada lado */
-@media (max-width: 760px) {
+/* Carrusel: las figuras se turnan encendiéndose y apagándose */
+.carrusel {
+  display: grid;
+  aspect-ratio: 3 / 2;
+}
+
+.carrusel__item {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.carrusel__item.is-on { opacity: 1; }
+
+/* Pantallas medianas y celular: los neones van arriba del titular */
+@media (max-width: 1100px) {
   .cartel__titular {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "izq der" "titulo titulo";
     row-gap: var(--space-xs);
   }
 
-  .cartel__titular .cartel__titulo { grid-area: titulo; }
-  .neon--izq { grid-area: izq; max-width: 160px; }
-  .neon--der { grid-area: der; max-width: 160px; }
+  .cartel__titular .cartel__titulo { grid-area: titulo; font-size: var(--step-5); }
+  .neon--izq { grid-area: izq; max-width: 220px; }
+  .neon--der { grid-area: der; max-width: 220px; }
+}
+
+@media (max-width: 600px) {
+  .neon--izq,
+  .neon--der { max-width: 150px; }
 }
 
 .cartel__linea--1 { transform: rotate(-2deg); }

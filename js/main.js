@@ -225,6 +225,21 @@
   });
 
 
+  // Carrusel de neones: cambia de figura cada 4 s (quieto si se pide menos movimiento)
+  $all(".carrusel").forEach(function (carrusel) {
+    var items = $all(".carrusel__item", carrusel);
+    if (!items.length) return;
+    var actual = 0;
+    items[0].classList.add("is-on");
+    var quieto = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (items.length < 2 || quieto) return;
+    setInterval(function () {
+      items[actual].classList.remove("is-on");
+      actual = (actual + 1) % items.length;
+      items[actual].classList.add("is-on");
+    }, 4000);
+  });
+
   // Al cargar: abrir la sección del enlace (#valores) o la primera
   var initial = (window.location.hash || "").slice(1);
   if (!document.getElementById(initial)) initial = DEFAULT_SECTION;
