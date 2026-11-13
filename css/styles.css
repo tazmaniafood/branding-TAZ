@@ -1,8 +1,8 @@
 /* ==========================================================
-   Guía de marca · v3.0 "La escalera"
+   Guía de marca · v3.2 "La baldosa"
    Mobile-first. Depende de tokens.css.
    Seis reglas: la noche, paleta con oficios, letra picotera,
-   la calcomanía, la explosión mango y la escalera.
+   la calcomanía, la explosión mango y la baldosa.
    ========================================================== */
 
 /* ---------- Base ---------- */
@@ -294,7 +294,7 @@ a {
   background: var(--toldo);
 }
 
-/* Festón de la carpa: el escalón azulejo con contorno crema */
+/* Festón de la carpa: baldosa con contorno crema */
 .menu::before,
 .menu::after,
 .footer::before,
@@ -322,7 +322,7 @@ a {
 
 .menu::after {
   height: 21px;
-  background: var(--azulejo-noche);
+  background: var(--corozo);
   -webkit-mask-image: radial-gradient(32px 21px at 50% 0, #000 97%, transparent);
   mask-image: radial-gradient(32px 21px at 50% 0, #000 97%, transparent);
 }
@@ -339,7 +339,7 @@ a {
 
 /* Pestañas: letreros sobre la carpa. Tranquilas por defecto;
    la activa es la única que se enciende en mango. */
-/* Pestañas: calcomanías sólidas sobre el escalón azulejo */
+/* Pestañas: calcomanías sólidas sobre la baldosa */
 .menu__tab {
   display: block;
   padding: 0.35rem 0.95rem;
@@ -929,7 +929,7 @@ main {
 .p-mango { flex: 2; background: var(--mango); }
 .p-tomate { flex: 1.5; background: var(--tomate); }
 .p-loro { flex: 1; background: var(--loro); }
-.p-azulejo { flex: 1; background: var(--azulejo); }
+.p-azulejo { flex: 1; background: var(--petroleo); }
 .p-menta { flex: 0.6; background: var(--menta); }
 
 /* La carpa en miniatura */
@@ -989,7 +989,7 @@ main {
 .calco--boton { width: 4.2rem; height: 1.6rem; background: var(--mango); border-radius: var(--radius-pill); }
 .calco--chip { width: 2.2rem; height: 1.2rem; background: var(--tomate); border-radius: var(--radius-pill); }
 
-/* Demo de la escalera: carpa arriba, escalón abajo */
+/* Demo de la baldosa: carpa arriba, cenefa abajo */
 .regla__demo--casa {
   display: grid;
   grid-template-rows: 1fr 1fr;
@@ -1300,7 +1300,7 @@ main {
 
 .footer::after {
   height: 21px;
-  background: var(--azulejo-noche);
+  background: var(--corozo);
   -webkit-mask-image: radial-gradient(32px 21px at 50% 100%, #000 97%, transparent);
   mask-image: radial-gradient(32px 21px at 50% 100%, #000 97%, transparent);
 }
@@ -1353,13 +1353,13 @@ main {
 
 .chapter__head { position: relative; padding: var(--space-md) 0; }
 
-/* Cenefa: un escalón bajo cada título, el que une las secciones */
+/* Cenefa: una franja de baldosa bajo cada título, la que une las secciones */
 .cenefa {
   display: block;
   width: min(18rem, 70%);
   height: 30px;
   margin: var(--space-md) auto 0;
-  background: var(--escalon-tomate) 0 0 / 120px 30px, var(--panel-2);
+  background: var(--baldosa-img) 0 0 / 60px 60px, var(--corozo);
   border: 2px solid var(--crema);
   border-radius: var(--radius-pill);
   box-shadow: var(--sombra-chica);
@@ -1494,9 +1494,3 @@ main {
 
 .cenefa--cartel { margin-top: 0; }
 
-/* Cada sección lleva su escalón, en el orden de la escalera */
-.chapter:nth-of-type(5n + 1) .cenefa { background-image: var(--escalon-azulejo); }
-.chapter:nth-of-type(5n + 2) .cenefa { background-image: var(--escalon-loro); }
-.chapter:nth-of-type(5n + 3) .cenefa { background-image: var(--escalon-menta); }
-.chapter:nth-of-type(5n + 4) .cenefa { background-image: var(--escalon-mango); }
-.chapter:nth-of-type(5n + 5) .cenefa { background-image: var(--escalon-tomate); }
