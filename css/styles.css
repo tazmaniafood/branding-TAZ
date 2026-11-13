@@ -1,8 +1,8 @@
 /* ==========================================================
-   Guía de marca · v1.0 "Cartel de picó"
+   Guía de marca · v2.0 "La verbena en casa"
    Mobile-first. Depende de tokens.css.
-   Seis reglas: fondo negro, cuatro colores de carnaval, letra
-   picotera, explosión amarilla, eje al centro, estrellas.
+   Seis reglas: la noche, paleta con oficios, letra picotera,
+   la calcomanía, la explosión mango y la casa (carpa + baldosa).
    ========================================================== */
 
 /* ---------- Base ---------- */
@@ -78,7 +78,7 @@ a {
    PIEZAS DEL CARTEL
    ========================================================== */
 
-/* Letra picotera: relleno + contorno blanco + sombra en bloque */
+/* Letra picotera: relleno + contorno crema + sombra corozo */
 .picotera {
   display: inline-block;
   font-family: var(--font-display);
@@ -112,7 +112,7 @@ a {
 }
 
 .explosion::before {
-  /* primera capa blanca, igual que las letras */
+  /* contorno crema, igual que las letras */
   inset: 0;
   background: var(--blanco);
 }
@@ -154,7 +154,7 @@ a {
   background: var(--mango);
   border: var(--borde);
   border-radius: var(--radius-pill);
-  box-shadow: 5px 5px 0 var(--corozo);
+  box-shadow: var(--sombra-chica);
   cursor: pointer;
   transition:
     transform var(--dur-fast) var(--ease-out),
@@ -163,12 +163,12 @@ a {
 
 .btn:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 7px 7px 0 var(--corozo);
+  box-shadow: 5px 5px 0 var(--corozo);
 }
 
 .btn:active {
   transform: translate(3px, 3px);
-  box-shadow: 1px 1px 0 var(--corozo);
+  box-shadow: 0 0 0 var(--corozo);
 }
 
 /* ==========================================================
@@ -246,8 +246,8 @@ a {
   background: var(--crema);
   color: var(--noche);
   border: var(--borde);
-  border-radius: var(--radius-sm);
-  box-shadow: 5px 5px 0 var(--corozo);
+  border-radius: var(--radius-md);
+  box-shadow: var(--sombra-chica);
 }
 
 .calendario__arriba {
@@ -296,11 +296,9 @@ a {
   border-bottom: 0;
 }
 
-/* Festón: cada onda sigue su franja, con capa blanca debajo */
+/* Festón de la carpa, con su línea gris oscuro */
 .menu::before,
-.menu::after,
-.footer::before,
-.footer::after {
+.menu::after {
   content: "";
   position: absolute;
   left: 0;
@@ -369,14 +367,14 @@ a {
 .menu__tab[aria-selected="true"] {
   color: var(--noche);
   background: var(--mango);
-  border-color: var(--noche);
-  box-shadow: 0 4px 0 var(--noche);
+  border: var(--contorno-tinta);
+  box-shadow: var(--sombra-chica);
   transform: translateY(-2px);
 }
 
 .menu__tab:active {
   transform: translateY(1px);
-  box-shadow: 0 1px 0 var(--noche);
+  box-shadow: 0 0 0 var(--corozo);
 }
 
 @media (max-width: 600px) {
@@ -445,7 +443,7 @@ main {
   color: var(--text-secondary);
 }
 
-/* Avisos: tarjetas oscuras con contorno blanco y sombra del color de la sección */
+/* Avisos: calcomanías oscuras con contorno crema y sombra corozo */
 .tablero {
   display: grid;
   gap: var(--space-lg);
@@ -467,7 +465,7 @@ main {
   background: var(--panel);
   border: var(--borde);
   border-radius: var(--radius-md);
-  box-shadow: 6px 6px 0 var(--corozo);
+  box-shadow: var(--sombra);
 }
 
 .aviso h3 {
@@ -535,7 +533,7 @@ main {
   color: var(--noche);
   border: var(--borde);
   border-radius: var(--radius-md);
-  box-shadow: 6px 6px 0 var(--blanco);
+  box-shadow: var(--sombra);
 }
 
 .boleta::before,
@@ -653,7 +651,7 @@ main {
   background: var(--panel);
   border: var(--borde);
   border-radius: var(--radius-md);
-  box-shadow: 6px 6px 0 var(--corozo);
+  box-shadow: var(--sombra);
 }
 
 .value__line {
@@ -710,7 +708,8 @@ main {
   flex-wrap: wrap;
   gap: 4px;
   padding: 4px;
-  border: 2px solid var(--linea-suave);
+  border: var(--borde);
+  box-shadow: var(--sombra-chica);
   border-radius: var(--radius-pill);
 }
 
@@ -738,7 +737,7 @@ main {
   background: var(--panel);
   border: var(--borde);
   border-radius: var(--radius-md);
-  box-shadow: 6px 6px 0 var(--corozo);
+  box-shadow: var(--sombra);
 }
 
 .chat__bar {
@@ -834,7 +833,8 @@ main {
   padding: 0.25rem 0.85rem;
   color: var(--noche);
   font-weight: 900;
-  border: 2px solid var(--blanco);
+  border: 2px solid var(--crema);
+  box-shadow: var(--sombra-chica);
   border-radius: var(--radius-pill);
 }
 
@@ -884,8 +884,9 @@ main {
   counter-increment: regla;
   padding: var(--space-md);
   background: var(--panel);
-  border: 2px solid var(--linea-suave);
+  border: var(--borde);
   border-radius: var(--radius-md);
+  box-shadow: var(--sombra);
 }
 
 .regla h3 {
@@ -955,8 +956,8 @@ main {
 .regla__demo--carpa .is-on {
   color: var(--noche);
   background: var(--mango);
-  border-color: var(--noche);
-  box-shadow: 0 3px 0 var(--noche);
+  border: var(--contorno-tinta);
+  box-shadow: var(--sombra-chica);
 }
 
 .regla__letra {
@@ -972,22 +973,43 @@ main {
   font-size: 1.3rem;
 }
 
-.regla__demo--eje {
+/* Demo de la calcomanía: tres objetos, un mismo dibujo */
+.regla__demo--calco {
   display: flex;
-  flex-direction: column;
+  gap: var(--space-sm);
   justify-content: center;
-  gap: 8px;
+  align-items: center;
 }
 
-.regla__demo--eje span {
-  height: 12px;
-  border-radius: 6px;
-  background: var(--crema);
+.calco {
+  display: block;
+  border: var(--contorno);
+  box-shadow: var(--sombra-chica);
 }
 
-.regla__demo--eje span:nth-child(1) { width: 70%; height: 22px; background: var(--mango); }
-.regla__demo--eje span:nth-child(2) { width: 46%; }
-.regla__demo--eje span:nth-child(3) { width: 28%; }
+.calco--tarjeta { width: 3.4rem; height: 2.6rem; background: var(--panel-2); border-radius: var(--radius-md); }
+.calco--boton { width: 4.2rem; height: 1.6rem; background: var(--mango); border-radius: var(--radius-pill); }
+.calco--chip { width: 2.2rem; height: 1.2rem; background: var(--buganvilia); border-radius: var(--radius-pill); }
+
+/* Demo de la casa: carpa arriba, baldosa abajo */
+.regla__demo--casa {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  place-items: stretch;
+}
+
+.regla__demo--casa .casa__carpa {
+  background: var(--toldo);
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+}
+
+.regla__demo--casa .casa__piso {
+  background: var(--baldosa);
+  border-top: 4px solid var(--corozo);
+}
 
 
 /* ---------- Identidad: colores y letras ---------- */
@@ -1001,14 +1023,17 @@ main {
 
 .swatch {
   display: grid;
+  grid-template-rows: auto auto 1fr auto;
   width: 100%;
+  height: 100%;
   padding: 0 0 var(--space-md);
   overflow: hidden;
   background: var(--panel);
   color: var(--crema);
   font: inherit;
   text-align: left;
-  border: 2px solid var(--linea-suave);
+  border: var(--borde);
+  box-shadow: var(--sombra-chica);
   border-radius: var(--radius-md);
   cursor: pointer;
   transition: transform var(--dur-base) var(--ease-pop), border-color var(--dur-fast) var(--ease-out);
@@ -1109,7 +1134,7 @@ main {
   background: var(--noche);
   border: var(--borde);
   border-radius: var(--radius-md);
-  box-shadow: 6px 6px 0 var(--corozo);
+  box-shadow: var(--sombra);
 }
 
 .poster__titulo {
@@ -1147,7 +1172,7 @@ main {
   color: var(--noche);
   border: var(--borde);
   border-radius: var(--radius-md);
-  box-shadow: 6px 6px 0 var(--corozo);
+  box-shadow: var(--sombra);
 }
 
 .listing__cover {
@@ -1211,7 +1236,7 @@ main {
   background: var(--panel);
   border: var(--borde);
   border-radius: var(--radius-md);
-  box-shadow: 6px 6px 0 var(--corozo);
+  box-shadow: var(--sombra);
 }
 
 .todo li {
@@ -1257,40 +1282,33 @@ main {
    ========================================================== */
 .footer {
   position: relative;
-  margin-top: calc(var(--space-2xl) + 25px);
-  padding: var(--space-lg) var(--space-md);
+  margin-top: var(--space-2xl);
+  padding: var(--space-xl) var(--space-md) var(--space-2xl);
   text-align: center;
-  background: var(--toldo);
+  background: var(--baldosa);
+  border-top: 6px solid var(--corozo);
 }
 
-/* El mismo toldo, con el festón mirando hacia arriba */
-.footer::before,
-.footer::after { bottom: 100%; }
-
+/* El zócalo: la línea donde la pared se encuentra con el piso */
 .footer::before {
-  height: 25px;
-  background: var(--carpa-punto);
-  -webkit-mask-image: radial-gradient(34px 25px at 50% 100%, #000 97%, transparent);
-  mask-image: radial-gradient(34px 25px at 50% 100%, #000 97%, transparent);
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: 10px;
+  background: var(--panel-2);
 }
 
-.footer::after {
-  height: 21px;
-  background: var(--toldo);
-  background-position: 0 0, 0 0;
-  -webkit-mask-image: radial-gradient(32px 21px at 50% 100%, #000 97%, transparent);
-  mask-image: radial-gradient(32px 21px at 50% 100%, #000 97%, transparent);
-}
-
-/* La placa del puesto, colgada debajo del toldo */
+/* La placa: una calcomanía más, puesta sobre el piso */
 .footer__placa {
   width: min(100%, 36rem);
   margin-inline: auto;
   padding: var(--space-lg) var(--space-md);
   background: var(--noche);
   border: var(--borde);
-  border-radius: 18px;
-  box-shadow: 6px 6px 0 var(--noche);
+  border-radius: var(--radius-md);
+  box-shadow: var(--sombra);
   transform: rotate(-1deg);
 }
 
@@ -1342,7 +1360,8 @@ main {
   background: var(--palma);
   color: var(--noche);
   font-weight: 900;
-  border: 2px solid var(--blanco);
+  border: 2px solid var(--crema);
+  box-shadow: var(--sombra-chica);
   border-radius: var(--radius-pill);
   opacity: 0;
   visibility: hidden;
