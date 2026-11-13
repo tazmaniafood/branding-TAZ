@@ -1,8 +1,8 @@
 /* ==========================================================
-   Guía de marca · v3.5 "La carpa"
+   Guía de marca · v6.0 "Noche de Carnaval"
    Mobile-first. Depende de tokens.css.
-   Seis reglas: la noche, paleta con oficios, letra picotera,
-   la calcomanía, la explosión mango y la carpa.
+   Un letrero de neón en la noche de Carnaval, debajo de la carpa.
+   Lo que brilla es lo importante; lo demás se queda quieto.
    ========================================================== */
 
 /* ---------- Base ---------- */
@@ -74,258 +74,6 @@ a {
   top: var(--space-md);
 }
 
-/* ==========================================================
-   PIEZAS DEL CARTEL
-   ========================================================== */
-
-/* Letra picotera: relleno + contorno crema + sombra uva */
-.picotera {
-  display: inline-block;
-  font-family: var(--font-display);
-  text-transform: uppercase;
-  letter-spacing: 0.01em;
-  color: var(--c);
-  -webkit-text-stroke: var(--picotera-contorno) var(--blanco);
-  paint-order: stroke fill;
-  text-shadow:
-    var(--picotera-sombra) var(--picotera-sombra) 0 var(--s),
-    calc(var(--picotera-sombra) * 1.6) calc(var(--picotera-sombra) * 1.6) 0 var(--s);
-}
-
-/* La explosión amarilla */
-.explosion {
-  position: relative;
-  display: grid;
-  place-items: center;
-  aspect-ratio: 1;
-  text-align: center;
-  color: var(--noche);
-  isolation: isolate;
-}
-
-.explosion::before,
-.explosion::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  clip-path: var(--explosion);
-}
-
-.explosion::before {
-  /* contorno crema, igual que las letras */
-  inset: 0;
-  background: var(--blanco);
-}
-
-.explosion::after {
-  inset: 5%;
-  background: var(--mango);
-}
-
-.explosion__texto {
-  width: 62%;
-  font-family: var(--font-display);
-  text-transform: uppercase;
-  line-height: 1;
-}
-
-/* Estrella de cuatro puntas */
-.estrella {
-  display: block;
-  width: 2rem;
-  aspect-ratio: 1;
-  background: var(--mango);
-  clip-path: var(--estrella);
-}
-
-/* Botón */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 3rem;
-  padding: 0.55rem 1.8rem;
-  font-family: var(--font-display);
-  font-size: var(--step-1);
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  text-decoration: none;
-  color: var(--noche);
-  background: var(--mango);
-  border: var(--borde);
-  border-radius: var(--radius-pill);
-  box-shadow: var(--sombra-chica);
-  cursor: pointer;
-  transition:
-    transform var(--dur-fast) var(--ease-out),
-    box-shadow var(--dur-fast) var(--ease-out);
-}
-
-.btn:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 5px 5px 0 var(--uva);
-}
-
-.btn:active {
-  transform: translate(3px, 3px);
-  box-shadow: 0 0 0 var(--uva);
-}
-
-/* ==========================================================
-   PORTADA: el cartel
-   ========================================================== */
-/* Portada en dos columnas: texto a la izquierda, figuras a la derecha */
-.cartel {
-  position: relative;
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-  align-items: center;
-  gap: var(--space-lg);
-  padding: calc(var(--space-xl) + 40px) max(var(--space-lg), (100% - 1320px) / 2) var(--space-2xl);
-  background: var(--noche);
-}
-
-.cartel__texto {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-md);
-  text-align: left;
-}
-
-.cartel__escena {
-  width: 100%;
-  max-width: 560px;
-  justify-self: center;
-}
-
-.cartel .cartel__titulo { align-items: flex-start; font-size: clamp(2.6rem, 0.6rem + 5.2vw, 6.4rem); }
-.cartel .cenefa--cartel { margin: 0; }
-.cartel .cartel__datos { justify-content: flex-start; }
-
-@media (max-width: 900px) {
-  .cartel {
-    grid-template-columns: 1fr;
-    padding: calc(var(--space-lg) + 30px) var(--space-md) var(--space-xl);
-  }
-
-  .cartel__escena { order: -1; max-width: 300px; }
-}
-
-.cartel__explosion {
-  width: clamp(8.5rem, 7rem + 6vw, 12rem);
-  transform: rotate(-8deg);
-}
-
-.cartel__explosion .explosion__texto {
-  font-size: clamp(1rem, 0.85rem + 0.6vw, 1.35rem);
-}
-
-.cartel__gancho,
-.chapter__gancho,
-.poster__gancho {
-  font-family: var(--font-display);
-  font-size: var(--step-1);
-  color: var(--crema);
-  letter-spacing: 0.02em;
-}
-
-.cartel__titulo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: var(--step-5);
-  line-height: 0.98;
-}
-
-/* Carrusel: las figuras se turnan encendiéndose y apagándose */
-.carrusel {
-  display: grid;
-  aspect-ratio: 4 / 3;
-}
-
-.carrusel__item {
-  grid-area: 1 / 1;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
-
-.carrusel__item.is-on { opacity: 1; }
-
-.cartel__linea--1 { transform: rotate(-2deg); }
-.cartel__linea--2 { transform: rotate(1deg); }
-.cartel__linea--3 {
-  font-size: 0.62em;
-  margin-top: 0.15em;
-  transform: rotate(-1deg);
-}
-
-.cartel__bajada {
-  max-width: 34ch;
-  margin-top: var(--space-sm);
-  font-size: var(--step-1);
-  font-weight: 800;
-  line-height: 1.4;
-}
-
-.cartel__datos {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-md);
-  margin: var(--space-sm) 0 var(--space-md);
-}
-
-/* El recuadro tipo calendario de los carteles de Cartagena */
-.calendario {
-  display: grid;
-  overflow: hidden;
-  min-width: 9rem;
-  text-align: center;
-  background: var(--crema);
-  color: var(--noche);
-  border: var(--borde);
-  border-radius: var(--radius-md);
-  box-shadow: var(--sombra-chica);
-}
-
-.calendario__arriba {
-  padding: 0.2rem 0.8rem;
-  background: var(--tomate);
-  color: var(--noche);
-  font-weight: 900;
-  font-size: var(--step--1);
-}
-
-.calendario__centro {
-  padding: 0.25rem 0.8rem 0.4rem;
-  font-family: var(--font-display);
-  font-size: var(--step-2);
-  text-transform: uppercase;
-}
-
-.cartel__lugar {
-  text-align: left;
-  font-family: var(--font-display);
-  font-size: var(--step-1);
-}
-
-.cartel__nota {
-  font-family: var(--font-body);
-  font-size: var(--step--1);
-  font-weight: 700;
-  color: var(--text-secondary);
-}
-
-
-@media (max-width: 600px) {
-  .cartel__lugar { text-align: center; }
-}
 
 /* ==========================================================
    MENÚ (pestañas)
@@ -426,902 +174,6 @@ a {
   .menu__tab { font-size: 0.86rem; padding: 0.25rem 0.7rem; }
 }
 
-/* ==========================================================
-   CAPÍTULOS (cada uno es un cartel)
-   ========================================================== */
-main {
-  width: min(100% - 2 * var(--space-md), var(--layout-max));
-  margin-inline: auto;
-  outline: none;
-}
-
-.chapter:focus-visible { box-shadow: none; }
-
-.chapter {
-  padding-top: var(--space-xl);
-  outline: none;
-}
-
-.chapter[hidden] {
-  display: none;
-}
-
-.chapter__head {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-xs);
-  text-align: center;
-}
-
-.chapter__title {
-  font-size: var(--step-4);
-  line-height: 1;
-  transform: rotate(-1.5deg);
-}
-
-.chapter__intro {
-  max-width: 52ch;
-  margin-top: var(--space-sm);
-  font-size: var(--step-1);
-  line-height: 1.45;
-  color: var(--text-secondary);
-}
-
-.chapter__intro strong {
-  color: var(--c);
-}
-
-.sub {
-  display: block;
-  width: fit-content;
-  margin: var(--space-xl) auto var(--space-md);
-  font-size: var(--step-3);
-}
-
-.hint {
-  max-width: 60ch;
-  margin: var(--space-md) auto 0;
-  text-align: center;
-  font-size: var(--step--1);
-  color: var(--text-secondary);
-}
-
-/* Avisos: calcomanías oscuras con contorno crema y sombra uva */
-.tablero {
-  display: grid;
-  gap: var(--space-lg);
-  margin-top: var(--space-xl);
-}
-
-@media (min-width: 720px) {
-  .tablero--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .tablero--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .tablero--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (min-width: 1000px) {
-  .tablero--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-}
-
-.aviso {
-  padding: var(--space-md) var(--space-md) var(--space-lg);
-  background: var(--panel);
-  border: var(--borde);
-  border-radius: var(--radius-md);
-  box-shadow: var(--sombra);
-}
-
-.aviso h3 {
-  margin-bottom: var(--space-xs);
-  font-size: var(--step-2);
-  color: var(--c);
-  text-transform: uppercase;
-}
-
-.aviso p {
-  color: var(--text-secondary);
-}
-
-.aviso--lista ul {
-  padding: 0;
-  list-style: none;
-}
-
-.aviso--lista li {
-  padding: var(--space-xs) 0;
-  border-bottom: 1px dashed var(--linea-suave);
-  font-size: var(--step-1);
-}
-
-.aviso--lista li:last-child {
-  border-bottom: 0;
-}
-
-.aviso--lista li strong {
-  color: var(--c);
-}
-
-.aviso--no {
-  box-shadow: 6px 6px 0 var(--linea-suave);
-}
-
-.aviso--no h3 {
-  color: var(--text-secondary);
-}
-
-.aviso--no li {
-  color: var(--text-secondary);
-  text-decoration: line-through;
-  text-decoration-color: var(--tomate);
-  text-decoration-thickness: 2px;
-}
-
-/* El alma: la frase en la explosión */
-.explosion--grande {
-  width: min(100%, 26rem);
-  margin: var(--space-xl) auto 0;
-  transform: rotate(-4deg);
-}
-
-.explosion--grande .explosion__texto {
-  font-size: clamp(1.35rem, 1rem + 1.4vw, 2rem);
-}
-
-/* Boletas (públicos y redes): entrada de verbena */
-.boleta {
-  position: relative;
-  padding: var(--space-md) var(--space-md) var(--space-lg);
-  text-align: center;
-  background: var(--c);
-  color: var(--noche);
-  border: var(--borde);
-  border-radius: var(--radius-md);
-  box-shadow: var(--sombra);
-}
-
-.boleta::before,
-.boleta::after {
-  /* muescas de boleta */
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 22px;
-  height: 22px;
-  margin-top: -11px;
-  background: var(--noche);
-  border: var(--borde);
-  border-radius: 50%;
-}
-
-.boleta::before { left: -13px; }
-.boleta::after { right: -13px; }
-
-.boleta__rol {
-  display: inline-block;
-  margin-bottom: var(--space-xs);
-  padding: 0.1rem 0.8rem;
-  background: var(--noche);
-  color: var(--c);
-  font-weight: 900;
-  font-size: var(--step--1);
-  border-radius: var(--radius-pill);
-}
-
-.boleta h3 {
-  margin-bottom: var(--space-xs);
-  font-size: var(--step-3);
-  text-transform: uppercase;
-}
-
-.boleta p:last-child {
-  font-weight: 700;
-}
-
-/* ---------- Valores: el line-up ---------- */
-.lineup {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-sm);
-  margin-top: var(--space-xl);
-  padding: 0;
-  list-style: none;
-  text-align: center;
-}
-
-.value {
-  width: 100%;
-  max-width: 46rem;
-}
-
-.value__head {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-2xs);
-  width: 100%;
-  padding: var(--space-xs);
-  background: none;
-  border: 0;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-  border-radius: var(--radius-md);
-}
-
-.value__name {
-  font-size: var(--step-3);
-  line-height: 1;
-  transition: transform var(--dur-base) var(--ease-pop);
-}
-
-.value:nth-child(odd) .value__name { transform: rotate(-1.5deg); }
-.value:nth-child(even) .value__name { transform: rotate(1.5deg); }
-
-.value__head:hover .value__name {
-  transform: rotate(0) scale(1.04);
-}
-
-.value__idea {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-weight: 800;
-  color: var(--text-secondary);
-}
-
-.value__idea::after {
-  content: "+";
-  display: inline-grid;
-  place-items: center;
-  width: 1.4rem;
-  height: 1.4rem;
-  font-weight: 900;
-  color: var(--noche);
-  background: var(--c);
-  border-radius: 50%;
-  transition: transform var(--dur-base) var(--ease-pop);
-}
-
-.value[data-state="open"] .value__idea::after {
-  transform: rotate(45deg);
-}
-
-.value__body {
-  margin: var(--space-sm) auto var(--space-md);
-  padding: var(--space-md) var(--space-lg);
-  text-align: left;
-  background: var(--panel);
-  border: var(--borde);
-  border-radius: var(--radius-md);
-  box-shadow: var(--sombra);
-}
-
-.value__line {
-  margin-bottom: var(--space-sm);
-  font-size: var(--step-1);
-  font-weight: 800;
-}
-
-.value__body dl {
-  display: grid;
-  gap: var(--space-2xs) var(--space-md);
-}
-
-.value__body dt {
-  font-weight: 900;
-  color: var(--c);
-}
-
-.value__body dd {
-  margin: 0 0 var(--space-xs);
-  color: var(--text-secondary);
-}
-
-@media (min-width: 720px) {
-  .value__body dl {
-    grid-template-columns: max-content 1fr;
-  }
-
-  .value__body dd {
-    margin: 0;
-  }
-}
-
-/* ---------- Voz ---------- */
-.voice {
-  display: grid;
-  gap: var(--space-xl);
-  margin-top: var(--space-xl);
-  align-items: start;
-}
-
-@media (min-width: 900px) {
-  .voice { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
-}
-
-.voice__label {
-  margin-bottom: var(--space-sm);
-  font-weight: 800;
-  color: var(--text-secondary);
-}
-
-.segmented {
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  padding: 4px;
-  border: var(--borde);
-  box-shadow: var(--sombra-chica);
-  border-radius: var(--radius-pill);
-}
-
-.segmented button {
-  min-height: 2.5rem;
-  padding: 0.3rem 1.1rem;
-  background: none;
-  border: 0;
-  border-radius: var(--radius-pill);
-  color: var(--crema);
-  font-family: var(--font-display);
-  font-size: var(--step-0);
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.segmented button[aria-selected="true"] {
-  background: var(--c);
-  color: var(--noche);
-}
-
-.chat {
-  margin-top: var(--space-md);
-  overflow: hidden;
-  background: var(--panel);
-  border: var(--borde);
-  border-radius: var(--radius-md);
-  box-shadow: var(--sombra);
-}
-
-.chat__bar {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-xs) var(--space-md);
-  background: var(--lima);
-  color: var(--noche);
-}
-
-.chat__avatar {
-  display: grid;
-  place-items: center;
-  width: 2.4rem;
-  height: 2.4rem;
-  border-radius: 50%;
-  background: var(--noche);
-  color: var(--mango);
-  font-family: var(--font-display);
-  font-size: var(--step-1);
-}
-
-.chat__name {
-  display: flex;
-  flex-direction: column;
-  font-family: var(--font-display);
-  font-size: var(--step-1);
-  line-height: 1.05;
-}
-
-.chat__online {
-  font-family: var(--font-body);
-  font-weight: 800;
-  font-size: var(--step--1);
-}
-
-.chat__thread {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  min-height: 11rem;
-  padding: var(--space-md);
-}
-
-.bubble {
-  max-width: 85%;
-  padding: var(--space-xs) var(--space-md);
-  font-weight: 700;
-  line-height: 1.4;
-  border-radius: 18px;
-}
-
-.bubble--in {
-  align-self: flex-start;
-  background: var(--panel-2);
-  border-bottom-left-radius: 4px;
-}
-
-.bubble--out {
-  align-self: flex-end;
-  background: var(--crema);
-  color: var(--noche);
-  border-bottom-right-radius: 4px;
-}
-
-.voice__note {
-  margin-top: var(--space-sm);
-  font-size: var(--step--1);
-  color: var(--text-secondary);
-}
-
-.voice__words h3 {
-  margin-bottom: var(--space-sm);
-  font-size: var(--step-2);
-  color: var(--c);
-  text-transform: uppercase;
-}
-
-.voice__words h3:not(:first-child) {
-  margin-top: var(--space-lg);
-}
-
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-xs);
-  padding: 0;
-  list-style: none;
-}
-
-.chip {
-  padding: 0.25rem 0.85rem;
-  color: var(--noche);
-  font-weight: 900;
-  border: 2px solid var(--crema);
-  box-shadow: var(--sombra-chica);
-  border-radius: var(--radius-pill);
-}
-
-.chip:nth-child(5n + 1) { background: var(--mango); }
-.chip:nth-child(5n + 2) { background: var(--tomate); }
-.chip:nth-child(5n + 3) { background: var(--lima); }
-.chip:nth-child(5n + 4) { background: var(--lima); }
-.chip:nth-child(5n + 5) { background: var(--cian); }
-
-.chip.chip--no {
-  background: none;
-  color: var(--text-secondary);
-  border-color: var(--linea-suave);
-}
-
-.chip--no s {
-  text-decoration-color: var(--tomate);
-  text-decoration-thickness: 2px;
-}
-
-.voice__why {
-  max-width: 50ch;
-  margin-top: var(--space-md);
-  font-size: var(--step--1);
-  color: var(--text-secondary);
-}
-
-/* ---------- Identidad: las seis reglas ---------- */
-.reglas {
-  display: grid;
-  gap: var(--space-lg);
-  margin-top: var(--space-xl);
-  padding: 0;
-  list-style: none;
-  counter-reset: regla;
-}
-
-@media (min-width: 640px) {
-  .reglas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (min-width: 1000px) {
-  .reglas { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-
-.regla {
-  counter-increment: regla;
-  padding: var(--space-md);
-  background: var(--panel);
-  border: var(--borde);
-  border-radius: var(--radius-md);
-  box-shadow: var(--sombra);
-}
-
-.regla h3 {
-  margin-top: var(--space-md);
-  font-size: var(--step-1);
-  text-transform: uppercase;
-}
-
-.regla h3::before {
-  content: counter(regla) ". ";
-  color: var(--mango);
-}
-
-.regla p {
-  margin-top: var(--space-2xs);
-  color: var(--text-secondary);
-}
-
-.regla__demo {
-  display: grid;
-  place-items: center;
-  height: 7.5rem;
-  overflow: hidden;
-  background: var(--noche);
-  border-radius: var(--radius-sm);
-}
-
-.regla__demo--noche {
-  background: var(--noche);
-  box-shadow: inset 0 0 0 2px var(--linea-suave);
-}
-
-/* La paleta en su proporción: mucha noche, buen uva y neones */
-.regla__demo--paleta {
-  display: flex;
-  gap: 0;
-}
-
-.regla__demo--paleta span { height: 100%; }
-.p-noche { flex: 6; background: var(--panel-2); }
-.p-uva { flex: 3; background: var(--uva); }
-.p-mango { flex: 2; background: var(--mango); }
-.p-tomate { flex: 1.2; background: var(--tomate); }
-.p-naranja { flex: 0.8; background: var(--naranja); }
-.p-lima { flex: 0.6; background: var(--lima); }
-.p-morado { flex: 1; background: var(--morado); }
-.p-cian { flex: 1; background: var(--cian); }
-
-/* La carpa en miniatura */
-.regla__demo--carpa {
-  display: flex;
-  gap: var(--space-xs);
-  justify-content: center;
-  align-items: center;
-  background: var(--toldo);
-}
-
-.regla__demo--carpa span {
-  padding: 0.3rem 0.8rem;
-  font-family: var(--font-display);
-  text-transform: uppercase;
-  color: var(--crema);
-  background: var(--uva);
-  border: 2px solid var(--mango);
-  border-radius: var(--radius-pill);
-}
-
-.regla__demo--carpa .is-on {
-  color: var(--noche);
-  background: var(--mango);
-  border: var(--contorno-tinta);
-  box-shadow: 3px 3px 0 var(--noche);
-}
-
-.regla__letra {
-  font-size: 3.4rem;
-}
-
-.explosion--mini {
-  width: 6.5rem;
-  transform: rotate(-8deg);
-}
-
-.explosion--mini .explosion__texto {
-  font-size: 1.3rem;
-}
-
-/* Demo de la calcomanía: tres objetos, un mismo dibujo */
-.regla__demo--calco {
-  display: flex;
-  gap: var(--space-sm);
-  justify-content: center;
-  align-items: center;
-}
-
-.calco {
-  display: block;
-  border: var(--contorno);
-  box-shadow: var(--sombra-chica);
-}
-
-.calco--tarjeta { width: 3.4rem; height: 2.6rem; background: var(--panel-2); border-radius: var(--radius-md); }
-.calco--boton { width: 4.2rem; height: 1.6rem; background: var(--mango); border-radius: var(--radius-pill); }
-.calco--chip { width: 2.2rem; height: 1.2rem; background: var(--tomate); border-radius: var(--radius-pill); }
-
-/* Demo de la baldosa: carpa arriba, cenefa abajo */
-.regla__demo--casa {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  place-items: stretch;
-}
-
-.regla__demo--casa .casa__carpa {
-  background: var(--toldo);
-  display: flex;
-  gap: 6px;
-  justify-content: center;
-  align-items: center;
-}
-
-.regla__demo--casa .casa__piso {
-  background: var(--panel-2);
-  display: grid;
-  place-items: center;
-}
-
-
-/* ---------- Identidad: colores y letras ---------- */
-.swatches {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 9.5rem), 1fr));
-  gap: var(--space-md);
-  padding: 0;
-  list-style: none;
-}
-
-.swatch {
-  display: grid;
-  grid-template-rows: auto auto 1fr auto;
-  width: 100%;
-  height: 100%;
-  padding: 0 0 var(--space-md);
-  overflow: hidden;
-  background: var(--panel);
-  color: var(--crema);
-  font: inherit;
-  text-align: left;
-  border: var(--borde);
-  box-shadow: var(--sombra-chica);
-  border-radius: var(--radius-md);
-  cursor: pointer;
-  transition: transform var(--dur-base) var(--ease-pop), border-color var(--dur-fast) var(--ease-out);
-}
-
-.swatch:hover {
-  transform: translateY(-4px) rotate(-1deg);
-  border-color: var(--blanco);
-}
-
-.swatch[data-state="copied"] {
-  border-color: var(--lima);
-}
-
-.swatch__chip {
-  height: 5rem;
-  margin-bottom: var(--space-sm);
-  border-bottom: 2px solid var(--linea-suave);
-}
-
-.swatch__name,
-.swatch__role,
-.swatch__hex {
-  padding-inline: var(--space-md);
-}
-
-.swatch__name {
-  font-family: var(--font-display);
-  font-size: var(--step-1);
-  text-transform: uppercase;
-}
-
-.swatch__role {
-  font-size: var(--step--1);
-  color: var(--text-secondary);
-}
-
-.swatch__hex {
-  margin-top: var(--space-2xs);
-  font-weight: 900;
-  font-variant-numeric: tabular-nums;
-}
-
-.specimen {
-  text-align: center;
-}
-
-.specimen h3 {
-  margin-top: var(--space-sm);
-}
-
-.specimen__big {
-  font-size: clamp(5rem, 3rem + 7vw, 8rem);
-  line-height: 1;
-}
-
-.specimen__big--body {
-  display: block;
-  font-family: var(--font-body);
-  font-weight: 900;
-  color: var(--crema);
-}
-
-/* ==========================================================
-   APLICACIONES
-   ========================================================== */
-.apps {
-  display: grid;
-  gap: var(--space-xl) var(--space-lg);
-  margin-top: var(--space-xl);
-}
-
-@media (min-width: 900px) {
-  .apps {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: start;
-  }
-}
-
-.app figcaption {
-  margin-top: var(--space-md);
-  text-align: center;
-  font-weight: 800;
-  color: var(--text-secondary);
-}
-
-/* Post de Instagram: un cartel de picó vertical */
-.poster {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: 4 / 5;
-  padding: var(--space-lg) var(--space-md);
-  text-align: center;
-  background: var(--noche);
-  border: var(--borde);
-  border-radius: var(--radius-md);
-  box-shadow: var(--sombra);
-}
-
-.poster__titulo {
-  font-size: clamp(2.6rem, 1.6rem + 3.4vw, 3.8rem);
-  line-height: 1;
-}
-
-.poster__titulo + .poster__titulo {
-  transform: rotate(-3deg);
-}
-
-.poster__texto {
-  max-width: 18ch;
-  margin-top: var(--space-sm);
-  font-weight: 800;
-}
-
-.explosion--poster {
-  position: absolute;
-  right: -6%;
-  bottom: -5%;
-  width: 40%;
-  transform: rotate(-12deg);
-}
-
-.explosion--poster .explosion__texto {
-  font-size: clamp(1.1rem, 0.8rem + 1vw, 1.6rem);
-}
-
-
-/* Ficha de DoorDash */
-.listing {
-  overflow: hidden;
-  background: var(--crema);
-  color: var(--noche);
-  border: var(--borde);
-  border-radius: var(--radius-md);
-  box-shadow: var(--sombra);
-}
-
-.listing__cover {
-  display: grid;
-  place-items: center;
-  aspect-ratio: 16 / 9;
-  background: var(--noche);
-}
-
-.listing__cover-title {
-  font-size: clamp(2.2rem, 1.6rem + 2.4vw, 3rem);
-  transform: rotate(-4deg);
-}
-
-.listing__info {
-  padding: var(--space-md);
-}
-
-.listing__name {
-  font-family: var(--font-display);
-  font-size: var(--step-3);
-  line-height: 1;
-}
-
-.listing__tag {
-  font-weight: 900;
-  color: var(--uva);
-}
-
-.listing__desc {
-  margin-top: var(--space-xs);
-  font-size: var(--step--1);
-  font-weight: 700;
-  color: #4A4352;
-}
-
-/* Sticker de bolsa: la explosión sola */
-.sticker-bolsa {
-  display: grid;
-  place-items: center;
-}
-
-.explosion--sticker {
-  width: min(100%, 19rem);
-  transform: rotate(-6deg);
-}
-
-.explosion--sticker .explosion__texto {
-  width: 58%;
-  font-size: clamp(1.4rem, 1rem + 1.4vw, 1.9rem);
-}
-
-/* ==========================================================
-   LO QUE FALTA
-   ========================================================== */
-.todo {
-  max-width: 40rem;
-  margin: var(--space-xl) auto 0;
-  padding: var(--space-md) var(--space-lg);
-  list-style: none;
-  background: var(--panel);
-  border: var(--borde);
-  border-radius: var(--radius-md);
-  box-shadow: var(--sombra);
-}
-
-.todo li {
-  position: relative;
-  padding: var(--space-xs) 0 var(--space-xs) 2.2rem;
-  font-weight: 700;
-  border-bottom: 1px dashed var(--linea-suave);
-}
-
-.todo li:last-child {
-  border-bottom: 0;
-}
-
-.todo li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: 1.3rem;
-  aspect-ratio: 1;
-  border: 2px solid var(--gris);
-  clip-path: var(--estrella);
-  background: var(--linea-suave);
-}
-
-.todo li[data-state="done"] {
-  color: var(--text-secondary);
-  text-decoration: line-through;
-  text-decoration-color: var(--tomate);
-  text-decoration-thickness: 2px;
-}
-
-.todo li[data-state="done"]::before {
-  background: var(--lima);
-}
-
-.todo li[data-state="review"]::before {
-  background: var(--mango);
-}
 
 /* ==========================================================
    PIE
@@ -1351,74 +203,6 @@ main {
   top: -54px;
   height: 54px;
   background: var(--falda-lineas-arriba) 0 0 / 56px 54px repeat-x;
-}
-
-/* La placa: una calcomanía más, puesta sobre el piso */
-.footer__placa {
-  width: min(100%, 36rem);
-  margin-inline: auto;
-  padding: var(--space-md);
-  background: var(--noche);
-  border: var(--borde);
-  border-radius: var(--radius-md);
-  box-shadow: 6px 6px 0 var(--noche);
-  transform: rotate(-1deg);
-}
-
-.footer__line {
-  font-size: var(--step-3);
-  line-height: 1;
-  transform: rotate(-2deg);
-}
-
-.footer__meta {
-  margin-top: var(--space-sm);
-  color: var(--text-secondary);
-}
-
-
-/* ==========================================================
-   PORTADA: capas
-   ========================================================== */
-.cartel > * {
-  position: relative;
-  z-index: 1;
-}
-
-.cartel::before { z-index: 0; }
-
-/* Rayos de explosión detrás del cartel */
-.cartel::before {
-  content: "";
-  position: absolute;
-  inset: -20%;
-  z-index: 0;
-  background: repeating-conic-gradient(from 0deg at 72% 50%, var(--panel) 0deg 6deg, transparent 6deg 15deg);
-  -webkit-mask: radial-gradient(circle at 72% 50%, #000 0 14%, transparent 45%);
-  mask: radial-gradient(circle at 72% 50%, #000 0 14%, transparent 45%);
-  pointer-events: none;
-}
-
-@media (max-width: 900px) {
-  .cartel::before {
-    background: repeating-conic-gradient(from 0deg at 50% 18%, var(--panel) 0deg 6deg, transparent 6deg 15deg);
-    -webkit-mask: radial-gradient(circle at 50% 18%, #000 0 14%, transparent 45%);
-    mask: radial-gradient(circle at 50% 18%, #000 0 14%, transparent 45%);
-  }
-}
-
-.chapter__head { position: relative; padding: var(--space-md) 0; }
-
-/* Cenefa: una franja de baldosa bajo cada título, la que une las secciones */
-.cenefa {
-  display: block;
-  width: min(18rem, 70%);
-  height: 30px;
-  margin: var(--space-md) auto 0;
-  background: var(--velo), var(--baldosa-img) 0 0 / 120px 60px, var(--noche);
-  border: 2px solid var(--mango);
-  border-radius: var(--radius-pill);
-  box-shadow: var(--sombra-chica), var(--neon-mango);
 }
 
 /* ==========================================================
@@ -1454,99 +238,781 @@ main {
     opacity var(--dur-fast) var(--ease-out);
 }
 
+
+/* La placa del pie: un letrero apagado con el lema encendido */
+.footer__placa {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 34rem);
+  margin-inline: auto;
+  padding: var(--space-md) var(--space-lg);
+  background: rgb(13 9 25 / 0.92);
+  border: 1px solid var(--linea-suave);
+  border-radius: var(--radius-lg);
+}
+
+.footer__line { font-size: var(--step-3); line-height: 1; }
+
+.footer__meta {
+  margin-top: var(--space-sm);
+  color: var(--text-secondary);
+}
+
+/* ==========================================================
+   LETRERO DE NEÓN
+   La letra de los títulos: centro claro y brillo del color
+   alrededor, como un tubo encendido. El color sale de --n.
+   ========================================================== */
+:root { --n: var(--mango); }
+
+.letrero {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* El color se calcula en cada línea, para que cada una tenga su neón */
+.letrero,
+.letrero > span {
+  color: color-mix(in srgb, var(--n) 22%, #FFFFFF);
+  text-shadow:
+    0 0 1px #FFFFFF,
+    0 0 6px var(--n),
+    0 0 14px var(--n),
+    0 0 32px color-mix(in srgb, var(--n) 70%, transparent),
+    0 0 60px color-mix(in srgb, var(--n) 40%, transparent);
+}
+
+/* ==========================================================
+   PORTADA
+   Texto a la izquierda, figuras de neón a la derecha.
+   ========================================================== */
+.cartel {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-xl);
+  min-height: min(88vh, 860px);
+  padding: calc(var(--space-xl) + 54px) max(var(--space-lg), (100% - 1240px) / 2) var(--space-xl);
+}
+
+/* Un halo de luz detrás de las figuras, como el reflejo del letrero en la pared */
+.cartel::before {
+  content: "";
+  position: absolute;
+  right: max(0px, (100% - 1240px) / 2);
+  top: 50%;
+  width: min(60vw, 720px);
+  aspect-ratio: 1;
+  translate: 10% -50%;
+  background: radial-gradient(closest-side, rgb(180 85 255 / 0.18), rgb(46 200 255 / 0.06) 55%, transparent);
+  pointer-events: none;
+}
+
+.cartel > * { position: relative; }
+
+.cartel__texto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-lg);
+}
+
+.cartel__titulo {
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(2.6rem, 0.8rem + 5.4vw, 6.2rem);
+  line-height: 0.98;
+}
+
+.cartel__linea:last-child { font-size: 0.62em; margin-top: 0.12em; }
+
+.cartel__bajada {
+  max-width: 40ch;
+  font-size: var(--step-1);
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.cartel__nota {
+  font-size: var(--step--1);
+  color: var(--text-secondary);
+}
+
+.cartel__escena {
+  width: 100%;
+  max-width: 560px;
+  justify-self: center;
+}
+
+@media (max-width: 900px) {
+  .cartel {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    min-height: 0;
+    padding: calc(var(--space-lg) + 54px) var(--space-md) var(--space-xl);
+  }
+
+  .cartel__escena { order: -1; max-width: 320px; }
+  .cartel::before { right: 50%; top: 22%; translate: 50% -50%; width: 120vw; }
+}
+
+/* Carrusel: las figuras se turnan encendiéndose y apagándose */
+.carrusel {
+  display: grid;
+  aspect-ratio: 1;
+}
+
+.carrusel__item {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.carrusel__item.is-on { opacity: 1; }
+
+/* ==========================================================
+   BOTÓN
+   El principal es el único que brilla; va en mango.
+   ========================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.7rem 1.6rem;
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--noche);
+  background: var(--mango);
+  border: 2px solid #FFF0B8;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--neon-mango);
+  transition: transform var(--dur-fast) var(--ease-pop), box-shadow var(--dur-fast) var(--ease-out);
+}
+
+.btn:hover { transform: translateY(-2px); box-shadow: 0 0 12px rgb(255 201 60 / 0.95), 0 0 34px rgb(255 201 60 / 0.55); }
+.btn:active { transform: translateY(1px); }
+
+/* ==========================================================
+   CAPÍTULOS
+   Alineados a la izquierda; el título es el único que brilla.
+   ========================================================== */
+.chapter {
+  --n: var(--mango);
+  width: min(100% - 2 * var(--space-md), 1120px);
+  margin: 0 auto;
+  padding: var(--space-xl) 0 var(--space-lg);
+}
+
+.chapter[hidden] { display: none; }
+.chapter:focus-visible { box-shadow: none; }
+
+.chapter__head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  max-width: 62ch;
+  margin-bottom: var(--space-xl);
+}
+
+.chapter__title { font-size: var(--step-4); line-height: 1; }
+
+.chapter__intro {
+  font-size: var(--step-1);
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.chapter__intro strong { color: var(--crema); font-weight: 800; }
+
+/* Cenefa: un pedacito de la carpa bajo cada título */
+.cenefa {
+  display: block;
+  width: min(14rem, 60%);
+  height: 26px;
+  margin-top: var(--space-xs);
+  background: var(--velo), var(--baldosa-img) 0 0 / 104px 52px, var(--noche);
+  border: 2px solid var(--mango);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 0 6px rgb(255 201 60 / 0.6);
+}
+
+.sub {
+  margin: var(--space-xl) 0 var(--space-md);
+  font-size: var(--step-2);
+}
+
+.hint {
+  margin-top: var(--space-sm);
+  font-size: var(--step--1);
+  color: var(--text-secondary);
+}
+
+/* ---------- Columnas de notas: sin cajas, separadas por una línea ---------- */
+.columnas {
+  display: grid;
+  gap: var(--space-lg) var(--space-xl);
+}
+
+@media (min-width: 720px) {
+  .columnas--2 { grid-template-columns: repeat(2, 1fr); }
+  .columnas--3 { grid-template-columns: repeat(3, 1fr); }
+  .columnas--4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1000px) {
+  .columnas--4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+.nota {
+  --n: var(--mango);
+  padding-top: var(--space-md);
+  border-top: 2px solid var(--linea-suave);
+}
+
+.nota h3 {
+  margin-bottom: var(--space-xs);
+  font-size: var(--step-2);
+  color: var(--crema);
+}
+
+.nota p,
+.nota li { color: var(--text-secondary); }
+.nota strong { color: var(--crema); font-weight: 800; }
+
+.nota__rol {
+  margin-bottom: var(--space-2xs);
+  font-weight: 800;
+  color: var(--n) !important;
+}
+
+.nota ul {
+  display: grid;
+  gap: var(--space-xs);
+  padding: 0;
+  list-style: none;
+}
+
+.nota--no li { text-decoration: line-through; text-decoration-color: var(--tomate); text-decoration-thickness: 2px; }
+
+/* ---------- Alma: el propósito, como un letrero en la pared ---------- */
+.manifiesto {
+  max-width: 24ch;
+  margin-bottom: var(--space-xl);
+  padding-left: var(--space-md);
+  border-left: 4px solid var(--mango);
+  box-shadow: -6px 0 14px -8px var(--mango);
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  line-height: 1.12;
+  color: var(--crema);
+}
+
+/* ---------- Valores: el cartel de la fiesta ---------- */
+.lineup {
+  padding: 0;
+  list-style: none;
+  border-top: 2px solid var(--linea-suave);
+}
+
+.value {
+  --n: var(--mango);
+  border-bottom: 2px solid var(--linea-suave);
+}
+
+.value__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-md);
+  width: 100%;
+  padding: var(--space-md) 0;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.value__name {
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--crema);
+  transition: color var(--dur-fast) var(--ease-out), text-shadow var(--dur-fast) var(--ease-out);
+}
+
+.value__head:hover .value__name,
+.value[data-state="open"] .value__name {
+  color: color-mix(in srgb, var(--n) 22%, #FFFFFF);
+  text-shadow: 0 0 6px var(--n), 0 0 18px var(--n), 0 0 36px color-mix(in srgb, var(--n) 55%, transparent);
+}
+
+.value__idea {
+  flex-shrink: 0;
+  font-weight: 800;
+  color: var(--text-secondary);
+}
+
+.value__idea::after {
+  content: "+";
+  display: inline-block;
+  margin-left: var(--space-xs);
+  color: var(--n);
+  transition: rotate var(--dur-fast) var(--ease-out);
+}
+
+.value[data-state="open"] .value__idea::after { rotate: 45deg; }
+
+.value__body {
+  display: grid;
+  gap: var(--space-sm);
+  max-width: 62ch;
+  padding-bottom: var(--space-lg);
+}
+
+.value__line { font-size: var(--step-1); color: var(--crema); }
+
+.value__body dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-xs) var(--space-md);
+  color: var(--text-secondary);
+}
+
+.value__body dt { font-weight: 800; color: var(--n); }
+.value__body dd { margin: 0; }
+
+/* ---------- Voz ---------- */
+.voice {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 900px) {
+  .voice { grid-template-columns: 1fr 1fr; align-items: start; }
+}
+
+.voice__demo {
+  display: grid;
+  gap: var(--space-md);
+  justify-items: start;
+}
+
+.voice__label { font-weight: 800; color: var(--text-secondary); }
+
+.segmented {
+  display: inline-flex;
+  padding: 4px;
+  gap: 4px;
+  background: var(--panel);
+  border: 1px solid var(--linea-suave);
+  border-radius: var(--radius-pill);
+}
+
+.segmented button {
+  min-height: 40px;
+  padding: 0.3rem 1.1rem;
+  font: inherit;
+  font-weight: 800;
+  color: var(--text-secondary);
+  background: none;
+  border: 0;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+
+.segmented button[aria-selected="true"] { color: var(--noche); background: var(--crema); }
+
+.chat {
+  width: 100%;
+  max-width: 26rem;
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid var(--linea-suave);
+  border-radius: var(--radius-lg);
+}
+
+.chat__bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--linea-suave);
+}
+
+.chat__avatar {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-family: var(--font-display);
+  color: var(--noche);
+  background: var(--lima);
+  border-radius: 50%;
+}
+
+.chat__name { display: grid; font-weight: 800; line-height: 1.2; }
+.chat__online { font-size: var(--step--1); font-weight: 600; color: var(--lima); }
+
+.chat__thread {
+  display: grid;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+}
+
+.bubble {
+  max-width: 85%;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 1.1rem;
+}
+
+.bubble--in { justify-self: start; background: var(--panel-2); border-bottom-left-radius: 0.3rem; }
+.bubble--out { justify-self: end; color: var(--noche); background: var(--crema); border-bottom-right-radius: 0.3rem; font-weight: 700; }
+
+.voice__note { font-size: var(--step--1); color: var(--text-secondary); }
+
+.voice__words h3 {
+  margin: 0 0 var(--space-sm);
+  font-size: var(--step-2);
+}
+
+.voice__words h3 + .chips { margin-bottom: var(--space-lg); }
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  padding: 0.3rem 0.9rem;
+  font-weight: 800;
+  color: var(--crema);
+  border: 1.5px solid var(--linea-suave);
+  border-radius: var(--radius-pill);
+}
+
+.chip--no { color: var(--text-secondary); }
+.chip--no s { text-decoration-color: var(--tomate); text-decoration-thickness: 2px; }
+
+.voice__why { font-size: var(--step--1); color: var(--text-secondary); }
+
+/* ---------- Identidad: las reglas ---------- */
+.reglas {
+  display: grid;
+  gap: var(--space-lg);
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 900px) {
+  .reglas { grid-template-columns: 1fr 1fr; gap: var(--space-xl) var(--space-xl); }
+}
+
+.regla {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+.regla h3 { margin-bottom: var(--space-2xs); font-size: var(--step-1); color: var(--crema); }
+.regla p { color: var(--text-secondary); }
+
+.regla__demo {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--panel);
+  border-radius: var(--radius-md);
+}
+
+.regla__demo--noche { background: radial-gradient(circle at 70% 30%, var(--panel-2), var(--noche) 70%); }
+
+.regla__demo--paleta {
+  display: flex;
+  gap: 8px;
+  padding: var(--space-sm);
+}
+
+.regla__demo--paleta span {
+  flex: 1;
+  height: 70%;
+  background: var(--n);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 0 10px var(--n);
+}
+
+.regla__letra { font-size: 2.2rem; }
+
+.regla__demo--figuras {
+  display: flex;
+  gap: 2px;
+  padding: var(--space-2xs);
+}
+
+.regla__demo--figuras img { width: 33%; height: auto; }
+
+.regla__demo--carpa {
+  background: var(--velo), var(--baldosa-img) 0 0 / 128px 64px, var(--noche);
+  box-shadow: inset 0 -4px 0 var(--mango), inset 0 -10px 12px -6px var(--mango);
+}
+
+.regla__demo--uno {
+  display: flex;
+  gap: 10px;
+  padding: var(--space-md);
+}
+
+.regla__demo--uno span {
+  flex: 1;
+  height: 40%;
+  background: var(--panel-2);
+  border-radius: var(--radius-sm);
+}
+
+.regla__demo--uno .is-on { height: 60%; background: var(--mango); box-shadow: var(--neon-mango); }
+
+/* ---------- Colores ---------- */
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  gap: var(--space-md);
+  padding: 0;
+  list-style: none;
+}
+
+.swatch {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  padding: 0;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.swatch__chip {
+  aspect-ratio: 3 / 2;
+  margin-bottom: var(--space-xs);
+  border: 1px solid var(--linea-suave);
+  border-radius: var(--radius-md);
+  transition: transform var(--dur-fast) var(--ease-pop);
+}
+
+.swatch:hover .swatch__chip { transform: translateY(-3px); }
+.swatch__name { font-weight: 800; }
+.swatch__role { font-size: var(--step--1); color: var(--text-secondary); }
+.swatch__hex { font-size: var(--step--1); color: var(--text-secondary); }
+
+/* ---------- Letras ---------- */
+.specimen__big {
+  margin-bottom: var(--space-sm);
+  font-size: 5rem;
+  line-height: 1;
+}
+
+.specimen__big--body {
+  font-family: var(--font-body);
+  font-weight: 800;
+  color: var(--crema);
+}
+
+/* ==========================================================
+   APLICACIONES
+   ========================================================== */
+.apps {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 900px) {
+  .apps { grid-template-columns: repeat(3, 1fr); align-items: start; }
+}
+
+.app figcaption {
+  margin-top: var(--space-sm);
+  font-weight: 800;
+  color: var(--text-secondary);
+}
+
+/* Post de Instagram */
+.poster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-xs);
+  aspect-ratio: 4 / 5;
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+  background: radial-gradient(circle at 50% 32%, rgb(255 74 90 / 0.18), transparent 55%), var(--noche);
+  border: 1px solid var(--linea-suave);
+  border-radius: var(--radius-lg);
+}
+
+.poster__figura { width: 62%; margin-bottom: auto; }
+.poster__titulo { font-size: 2.4rem; line-height: 1; }
+.poster__texto { color: var(--text-secondary); }
+
+.poster__cta {
+  margin-top: var(--space-xs);
+  padding: 0.3rem 1rem;
+  font-weight: 800;
+  color: var(--noche);
+  background: var(--lima);
+  border-radius: var(--radius-pill);
+}
+
+/* Ficha de DoorDash */
+.listing {
+  overflow: hidden;
+  background: #FFFFFF;
+  color: #1A1A1A;
+  border-radius: var(--radius-lg);
+}
+
+.listing__cover {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  background: var(--noche);
+}
+
+.listing__cover img { width: 70%; }
+.listing__info { padding: var(--space-md); }
+.listing__name { font-weight: 900; font-size: var(--step-1); }
+.listing__tag { font-size: var(--step--1); color: #5A5A5A; }
+.listing__desc { margin-top: var(--space-xs); font-size: var(--step--1); color: #333333; }
+
+/* Sticker de la bolsa */
+.sticker {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  width: min(100%, 18rem);
+  margin-inline: auto;
+  padding: var(--space-lg);
+  text-align: center;
+  background: var(--noche);
+  border: 3px solid var(--mango);
+  border-radius: 50%;
+  box-shadow: var(--neon-mango), inset 0 0 18px rgb(255 201 60 / 0.35);
+}
+
+.sticker__texto { font-size: 1.7rem; line-height: 1.05; }
+
+/* ==========================================================
+   LO QUE FALTA
+   ========================================================== */
+.todo {
+  display: grid;
+  gap: var(--space-sm);
+  max-width: 44rem;
+  padding: 0;
+  list-style: none;
+}
+
+.todo li {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: baseline;
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--linea-suave);
+}
+
+.todo li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 2px solid var(--text-secondary);
+  border-radius: 50%;
+  translate: 0 0.1rem;
+}
+
+.todo li[data-state="done"] { color: var(--text-secondary); }
+.todo li[data-state="done"]::before { background: var(--lima); border-color: var(--lima); box-shadow: 0 0 8px var(--lima); }
+.todo li[data-state="review"]::before { border-color: var(--mango); box-shadow: 0 0 8px var(--mango); }
+
 /* ==========================================================
    MOVIMIENTO
-   Un momento orquestado al cargar: el cartel "se pega" línea
-   por línea. Luego, solo lo que responde a lo que haces.
+   Un solo momento al cargar: el titular se enciende como un
+   letrero, línea por línea. Lo demás responde a lo que haces.
    ========================================================== */
-@keyframes pegar {
-  0% { opacity: 0; scale: 1.25; }
-  60% { opacity: 1; scale: 0.96; }
-  100% { opacity: 1; scale: 1; }
-}
-
-@keyframes explotar {
-  0% { opacity: 0; scale: 0.3; rotate: -40deg; }
-  70% { opacity: 1; scale: 1.08; rotate: 4deg; }
-  100% { opacity: 1; scale: 1; rotate: 0deg; }
-}
-
-@keyframes titilar {
-  0%, 100% { scale: 1; }
-  50% { scale: 0.7; }
-}
-
-
-
-
-@keyframes latir {
-  0%, 100% { scale: 1; }
-  50% { scale: 1.05; }
-}
-
-@keyframes correr {
-  to { transform: translateX(-50%); }
+@keyframes encender {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  14% { opacity: 0.15; }
+  22% { opacity: 1; }
+  26% { opacity: 0.4; }
+  34%, 100% { opacity: 1; }
 }
 
 @keyframes entrar {
-  from { opacity: 0; translate: 0 14px; }
+  from { opacity: 0; translate: 0 10px; }
   to { opacity: 1; translate: 0 0; }
 }
 
 @keyframes abrir {
-  from { opacity: 0; translate: 0 -8px; scale: 0.97; }
-  to { opacity: 1; translate: 0 0; scale: 1; }
+  from { opacity: 0; translate: 0 -6px; }
+  to { opacity: 1; translate: 0 0; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .cartel__gancho { animation: pegar 0.5s var(--ease-pop) 0.35s both; }
-  .cartel__linea--1 { animation: pegar 0.55s var(--ease-pop) 0.5s both; }
-  .cartel__linea--2 { animation: pegar 0.55s var(--ease-pop) 0.7s both; }
-  .cartel__linea--3 { animation: pegar 0.55s var(--ease-pop) 0.9s both; }
+  .cartel__linea { animation: encender 1.1s linear both; }
+  .cartel__linea:nth-child(2) { animation-delay: 0.25s; }
+  .cartel__linea:nth-child(3) { animation-delay: 0.5s; }
   .cartel__bajada,
-  .cartel__datos,
-  .cartel__texto > .btn { animation: entrar 0.5s var(--ease-out) 1.1s both; }
-  .cartel__escena { animation: entrar 0.6s var(--ease-out) 0.3s both; }
-
-
-
-  .chapter.is-entering .chapter__head { animation: entrar 0.4s var(--ease-out) both; }
-  .chapter.is-entering .chapter__title { animation: pegar 0.5s var(--ease-pop) both; }
-  .chapter.is-entering .lineup > li,
-  .chapter.is-entering .tablero > *,
-  .chapter.is-entering .reglas > li,
-  .chapter.is-entering .apps > *,
-  .chapter.is-entering .explosion--grande { animation: entrar 0.45s var(--ease-out) both; }
-  .chapter.is-entering .lineup > li:nth-child(2),
-  .chapter.is-entering .tablero > :nth-child(2),
-  .chapter.is-entering .reglas > li:nth-child(2),
-  .chapter.is-entering .apps > :nth-child(2) { animation-delay: 0.07s; }
-  .chapter.is-entering .lineup > li:nth-child(3),
-  .chapter.is-entering .tablero > :nth-child(3),
-  .chapter.is-entering .reglas > li:nth-child(3),
-  .chapter.is-entering .apps > :nth-child(3) { animation-delay: 0.14s; }
-  .chapter.is-entering .lineup > li:nth-child(4),
-  .chapter.is-entering .tablero > :nth-child(4),
-  .chapter.is-entering .reglas > li:nth-child(4) { animation-delay: 0.21s; }
-  .chapter.is-entering .lineup > li:nth-child(5),
-  .chapter.is-entering .reglas > li:nth-child(5) { animation-delay: 0.28s; }
-  .chapter.is-entering .reglas > li:nth-child(6) { animation-delay: 0.35s; }
-
-  .value[data-state="open"] .value__body { animation: abrir var(--dur-base) var(--ease-pop); }
-  .bubble--out.is-new { animation: abrir var(--dur-base) var(--ease-pop); }
+  .cartel__texto > .btn,
+  .cartel__nota { animation: entrar 0.5s var(--ease-out) 0.9s both; }
+  .chapter.is-entering { animation: entrar 0.35s var(--ease-out) both; }
+  .value[data-state="open"] .value__body { animation: abrir 0.25s var(--ease-out) both; }
+  .bubble.is-new { animation: entrar 0.3s var(--ease-out) both; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
-.cenefa--cartel { margin-top: 0; }
-
+/* En celular el menú es una sola fila que se desliza de lado */
+@media (max-width: 760px) {
+  .menu__list {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding-inline: var(--space-md);
+    width: 100%;
+  }
+  .menu__list::-webkit-scrollbar { display: none; }
+  .menu__tab { flex-shrink: 0; }
+}

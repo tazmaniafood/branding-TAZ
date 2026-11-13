@@ -14,24 +14,16 @@ Abre `index.html` en el navegador (con internet, para que carguen las fuentes).
 | `css/styles.css` | Estilos de la guía, mobile-first, con tipografía y espacios fluidos (`clamp()`). |
 | `js/main.js` | Interacciones con delegación de eventos (`data-action`), estado en `data-state` / `aria-*` y código defensivo. |
 
-## Identidad v5.0 · "Noche de Carnaval"
+## Identidad v6.0 · "Noche de Carnaval"
 
-Una sola idea: **la noche de Carnaval en la Costa, con letreros de neón vivos**. Arriba y abajo, la carpa del carrito de comida con su faldón de neón y sus azulejos costeños; los títulos son de cartel de picó; lo demás va pegado como calcomanía. Seis reglas:
+La marca es **un letrero de neón encendido en una noche de Carnaval, debajo de la carpa del carrito de comida**. Lo que brilla es lo importante; lo demás se queda quieto y oscuro para que brille más. Seis reglas:
 
 1. **La noche:** todo va sobre noche morada `#0D0919`.
-2. **Neones de Carnaval:** mango `#FFC93C`, tomate `#FF4A5A` y cian `#2EC8FF` para títulos y botones; naranja `#FF8A2B`, morado `#B455FF` y lima `#7CFF6B` para figuras y detalles (lima también para confirmar y WhatsApp); uva `#5B1F94` en todas las sombras; texto en crema `#FFF1DC`.
-3. **Letra picotera:** Lilita One en mayúsculas, relleno de color, contorno crema y sombra uva. Clase `.picotera`, con `--c` (relleno) y `--s` (sombra).
-4. **La calcomanía:** todo objeto (tarjeta, botón, pestaña, chip, muestra) se dibuja como la letra: relleno plano, contorno (`--contorno`, o `--contorno-tinta` sobre claro) y sombra dura uva (`--sombra`, `--sombra-chica`).
-5. **La explosión mango:** ahí va lo más importante. Clase `.explosion`.
-6. **La carpa:** el toldo de un carrito de comida. Fondo de azulejos costeños de neón (`img/azulejos-costenos.svg`: sombrero vueltiao, acordeón, palma, mar y sol, arepa de huevo, cayena, maracas y kanas wayuu) con un velo suave, y un faldón de ondas en neón mango (`--falda-*`). Va en el menú y, volteado, en el pie; la cenefa de cada título es un pedacito.
-
-**Portada.** Texto a la izquierda (titular, cenefa, bajada, datos y botón) y, a la derecha, un carrusel de figuras de neón que se turnan cada 4 s (`.cartel__escena.carrusel`: sombrero vueltiao y Marimonda por ahora). Para agregar una figura, otro `<img class="carrusel__item">`. En celular las figuras van arriba.
-
-**Pestañas.** Tranquilas, para no competir con el titular: letra crema y borde crema tenue sobre noche translúcida; solo la activa se enciende en neón mango.
-
-Las ilustraciones y adornos llegan después y deben seguir la regla 4.
-
-Para leer: Nunito. Movimiento: el cartel "se pega" línea por línea al cargar; después, solo lo que responde a lo que haces (pestañas, valores, chat). Respeta "reducir movimiento".
+2. **Seis neones:** mango `#FFC93C`, tomate `#FF4A5A` y cian `#2EC8FF` para títulos y botones; naranja `#FF8A2B`, morado `#B455FF` y lima `#7CFF6B` para figuras y detalles. Uno por título.
+3. **Letra de letrero:** Lilita One en mayúsculas como tubo de neón (clase `.letrero`, color con `--n`). Solo títulos; el texto va en Nunito crema.
+4. **Figuras de Carnaval:** sombrero vueltiao, Marimonda y torito en neón (`img/*-neon.svg`), en carrusel en la portada. Son la cara de la marca mientras llega el logo.
+5. **La carpa:** arriba y abajo, azulejos costeños de neón con faldón de ondas en neón mango (`--toldo`, `--falda-*`). Se conserva tal cual.
+6. **Un solo protagonista:** en cada pantalla brilla una sola cosa. Notas sin cajas (`.nota`, separadas por una línea), botón principal en mango, todo alineado a la izquierda.
 
 ## Usar los tokens
 
@@ -51,7 +43,7 @@ Para leer: Nunito. Movimiento: el cartel "se pega" línea por línea al cargar; 
 ## Estado
 
 - [x] Alma, valores, personalidad, voz, públicos y redes
-- [ ] Validar identidad visual v5.0
+- [ ] Validar identidad visual v6.0
 - [ ] Nombre definitivo
 - [ ] Historia de origen
 - [ ] Plato costeño insignia
