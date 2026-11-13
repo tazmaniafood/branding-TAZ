@@ -14,7 +14,7 @@ Abre `index.html` en el navegador (con internet, para que carguen las fuentes).
 | `css/styles.css` | Estilos de la guía, mobile-first, con tipografía y espacios fluidos (`clamp()`). |
 | `js/main.js` | Interacciones con delegación de eventos (`data-action`), estado en `data-state` / `aria-*` y código defensivo. |
 
-## Identidad v1.3 · "Cartel de picó"
+## Identidad v1.4 · "Cartel de picó"
 
 La identidad sale de los **carteles de fiesta de picó** de Barranquilla y Cartagena. Tienen una gramática fija, y por eso todo queda coherente. Seis reglas:
 
@@ -25,7 +25,7 @@ La identidad sale de los **carteles de fiesta de picó** de Barranquilla y Carta
 5. **Eje al centro:** composición centrada, de lo más grande a lo más chico.
 6. **Marco de fiesta:** estrellas, serpentinas y destellos, tupidos en los bordes y con capa blanca como la letra picotera. El centro queda limpio para el texto. Cada pieza está colocada a mano en `MARCOS` (js/main.js); nada de confeti al azar.
 
-**El toldo.** El menú y el pie son la carpa del puesto de comida, el mismo toldo festoneado del sitio de pedidos, de un solo color: caribe hondo (`--toldo` en tokens.css). El festón lleva capa crema debajo.
+**El toldo.** El menú y el pie son la carpa del puesto de comida, el mismo toldo festoneado del sitio de pedidos, de un solo color: corozo, vino oscuro (`--toldo` en tokens.css). El festón lleva capa crema debajo.
 
 Para leer: Nunito. Movimiento: el cartel "se pega" línea por línea al cargar; después, solo lo que responde a lo que haces (pestañas, valores, chat). Respeta "reducir movimiento".
 
@@ -47,7 +47,7 @@ Para leer: Nunito. Movimiento: el cartel "se pega" línea por línea al cargar; 
 ## Estado
 
 - [x] Alma, valores, personalidad, voz, públicos y redes
-- [ ] Validar identidad visual v1.3
+- [ ] Validar identidad visual v1.4
 - [ ] Nombre definitivo
 - [ ] Historia de origen
 - [ ] Plato costeño insignia

@@ -1,5 +1,5 @@
 /* ==========================================================
-   Tokens de marca · v1.3 "Cartel de picó"
+   Tokens de marca · v1.4 "Cartel de picó"
    TAZ es un nombre provisional.
 
    La identidad sale de los carteles de fiesta de picó de la
@@ -15,7 +15,7 @@
    5. Eje vertical: composición centrada, jerarquía clara.
    6. Marco de fiesta en los bordes. Nada de confeti suelto.
    + El toldo: el menú y el pie son la carpa del puesto de comida,
-     de un solo color (caribe hondo), con borde festoneado.
+     de un solo color (corozo, vino oscuro), con borde festoneado.
 
    Contrastes (WCAG) sobre noche: crema 17.4 · mango 10.7 ·
    palma 7.0 · achiote 6.3 · caribe 6.1 · buganvilia 5.0.
@@ -113,7 +113,7 @@
   --toldo-franja: 56px;
   --toldo:
     radial-gradient(rgb(255 241 220 / 0.14) 2px, transparent 2.6px) 0 0 / 16px 16px,
-    var(--caribe-hondo);
+    var(--corozo);
 
   --layout-max: 1120px;
 }
