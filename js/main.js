@@ -1,113 +1,178 @@
 // ==========================================================
-// Guía de marca · interacciones
-// - Mostrar/ocultar detalle de cada valor
-// - Selector de tono (costeño / latino / gringo)
-// - Copiar códigos de color
-// - Resaltar la sección activa en el menú
+// Guía de marca v0.6 · interacciones
+// Patrones: delegación de eventos con data-action, estado
+// visual en data-state / aria-*, código defensivo (todo se
+// verifica antes de usarse) y sin variables globales.
 // ==========================================================
 
 (function () {
   "use strict";
 
-  // ---------- Valores: ver más / ver menos ----------
-  document.querySelectorAll(".value__toggle").forEach(function (button) {
-    button.addEventListener("click", function () {
-      var card = button.closest(".value");
-      var isOpen = card.classList.toggle("is-open");
-      button.setAttribute("aria-expanded", String(isOpen));
-      button.textContent = isOpen ? "Ver menos" : "Ver más";
-    });
-  });
-
-  // ---------- Voz: mismo mensaje, tres tonos ----------
-  var tones = {
+  // ---------- Estado (solo datos) ----------
+  var TONES = {
     costeno: {
-      text: "¡Eche, ya va saliendo eso rebosao! Prepárate, mi llave.",
-      note: "Costeño: el acento completo, sin explicar nada."
+      answer: "¡Eche, ya va saliendo eso rebosao! Prepárate, mi llave.",
+      note: "Con el costeño, el acento completo y sin explicar nada."
     },
     latino: {
-      text: "¡Tu pedido ya va en camino, bien rebosadito como en la Costa!",
-      note: "Latino: español cercano, con el toque costeño a la vista."
+      answer: "¡Tu pedido ya va en camino, bien rebosadito como en la Costa!",
+      note: "Con el latino, español cercano y el toque costeño a la vista."
     },
     gringo: {
-      text: "Your order is on its way, rebosao (loaded) the costeño way. ¡Buen provecho!",
-      note: "Gringo: inglés cálido, con la palabra costeña y su traducción."
+      answer: "Your order is on its way, rebosao (loaded) the costeño way. ¡Buen provecho!",
+      note: "Con el gringo, inglés cálido con la palabra costeña y su traducción."
     }
   };
 
-  var toneOutput = document.getElementById("tone-output");
-  var toneButtons = document.querySelectorAll("[data-tone]");
+  var QUESTIONS = {
+    costeno: "¿Ya va saliendo mi pedido?",
+    latino: "¿Ya va saliendo mi pedido?",
+    gringo: "Is my order on the way?"
+  };
 
-  function setTone(key) {
-    var tone = tones[key];
-    if (!tone || !toneOutput) return;
-    toneOutput.innerHTML = "";
-    toneOutput.appendChild(document.createTextNode("“" + tone.text + "”"));
-    var note = document.createElement("small");
-    note.textContent = tone.note;
-    toneOutput.appendChild(note);
-    toneButtons.forEach(function (b) {
-      b.setAttribute("aria-pressed", String(b.dataset.tone === key));
-    });
+  // ---------- Utilidades ----------
+  function $(selector, root) {
+    return (root || document).querySelector(selector);
   }
 
-  toneButtons.forEach(function (b) {
-    b.addEventListener("click", function () {
-      setTone(b.dataset.tone);
-    });
-  });
-  setTone("costeno");
+  function $all(selector, root) {
+    return Array.prototype.slice.call((root || document).querySelectorAll(selector));
+  }
 
-  // ---------- Paleta: copiar código de color ----------
-  var toast = document.getElementById("toast");
-  var toastTimer;
+  // ---------- Toast (feedback inmediato) ----------
+  var toastTimer = null;
 
   function showToast(message) {
+    var toast = $("#toast");
     if (!toast) return;
     toast.textContent = message;
-    toast.classList.add("is-visible");
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(function () {
-      toast.classList.remove("is-visible");
-    }, 1800);
+    toast.setAttribute("data-state", "visible");
+    window.clearTimeout(toastTimer);
+    toastTimer = window.setTimeout(function () {
+      toast.removeAttribute("data-state");
+    }, 2000);
   }
 
-  document.querySelectorAll(".swatch").forEach(function (swatch) {
-    swatch.addEventListener("click", function () {
-      var hex = swatch.dataset.hex;
-      var name = swatch.dataset.name;
-      var done = function () { showToast("¡Copiado! " + name + " " + hex); };
+  // ---------- Acciones ----------
+  function toggleValue(button) {
+    var item = button.closest(".value");
+    var panelId = button.getAttribute("aria-controls");
+    var panel = panelId ? document.getElementById(panelId) : null;
+    if (!item || !panel) return;
 
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(hex).then(done, function () {
-          showToast(name + ": " + hex);
-        });
-      } else {
-        showToast(name + ": " + hex);
-      }
+    var willOpen = item.getAttribute("data-state") !== "open";
+    item.setAttribute("data-state", willOpen ? "open" : "closed");
+    button.setAttribute("aria-expanded", String(willOpen));
+    panel.hidden = !willOpen;
+  }
+
+  function setTone(button, moveFocus) {
+    var key = button.getAttribute("data-tone");
+    var tone = TONES[key];
+    var chat = $("#chat");
+    if (!tone || !chat) return;
+
+    $all('[data-action="set-tone"]').forEach(function (tab) {
+      var selected = tab === button;
+      tab.setAttribute("aria-selected", String(selected));
+      tab.setAttribute("tabindex", selected ? "0" : "-1");
     });
+
+    chat.setAttribute("data-tone", key);
+    chat.setAttribute("aria-labelledby", button.id);
+
+    var question = $('[data-slot="question"]', chat);
+    var answer = $('[data-slot="answer"]', chat);
+    var note = $('[data-slot="note"]');
+
+    if (question) question.textContent = QUESTIONS[key];
+    if (answer) {
+      answer.textContent = tone.answer;
+      answer.classList.remove("is-new");
+      // Forzar reflujo para reiniciar la animación de llegada
+      void answer.offsetWidth;
+      answer.classList.add("is-new");
+    }
+    if (note) note.textContent = tone.note;
+    if (moveFocus) button.focus();
+  }
+
+  function copyColor(button) {
+    var hex = button.getAttribute("data-hex");
+    var name = button.getAttribute("data-name") || "Color";
+    if (!hex) return;
+
+    function done(copied) {
+      showToast(copied ? name + " copiado: " + hex : name + ": " + hex);
+      button.setAttribute("data-state", "copied");
+      window.setTimeout(function () {
+        button.removeAttribute("data-state");
+      }, 1200);
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(hex).then(
+        function () { done(true); },
+        function () { done(false); }
+      );
+    } else {
+      done(false);
+    }
+  }
+
+  var ACTIONS = {
+    "toggle-value": toggleValue,
+    "set-tone": function (el) { setTone(el, false); },
+    "copy-color": copyColor
+  };
+
+  // ---------- Delegación de eventos ----------
+  document.addEventListener("click", function (event) {
+    var target = event.target.closest("[data-action]");
+    if (!target) return;
+    var handler = ACTIONS[target.getAttribute("data-action")];
+    if (handler) handler(target);
   });
 
-  // ---------- Menú: resaltar sección activa ----------
-  var links = document.querySelectorAll(".nav__links a");
-  var sections = Array.prototype.map.call(links, function (link) {
-    return document.querySelector(link.getAttribute("href"));
+  // Flechas del teclado en las pestañas de tono (patrón tablist)
+  document.addEventListener("keydown", function (event) {
+    var tab = event.target.closest('[data-action="set-tone"]');
+    if (!tab) return;
+    var tabs = $all('[data-action="set-tone"]');
+    var index = tabs.indexOf(tab);
+    var next = null;
+
+    if (event.key === "ArrowRight") next = tabs[(index + 1) % tabs.length];
+    if (event.key === "ArrowLeft") next = tabs[(index - 1 + tabs.length) % tabs.length];
+    if (event.key === "Home") next = tabs[0];
+    if (event.key === "End") next = tabs[tabs.length - 1];
+
+    if (next) {
+      event.preventDefault();
+      setTone(next, true);
+    }
   });
 
-  if ("IntersectionObserver" in window) {
+  // ---------- Índice: marcar el capítulo visible ----------
+  var links = $all(".index__list a");
+  if (links.length && "IntersectionObserver" in window) {
+    var byId = {};
+    links.forEach(function (link) {
+      var id = (link.getAttribute("href") || "").slice(1);
+      if (id) byId[id] = link;
+    });
+
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
-        links.forEach(function (link) {
-          link.classList.toggle(
-            "is-active",
-            link.getAttribute("href") === "#" + entry.target.id
-          );
-        });
+        links.forEach(function (link) { link.removeAttribute("aria-current"); });
+        var active = byId[entry.target.id];
+        if (active) active.setAttribute("aria-current", "true");
       });
-    }, { rootMargin: "-40% 0px -55% 0px" });
+    }, { rootMargin: "-35% 0px -60% 0px" });
 
-    sections.forEach(function (section) {
+    Object.keys(byId).forEach(function (id) {
+      var section = document.getElementById(id);
       if (section) observer.observe(section);
     });
   }

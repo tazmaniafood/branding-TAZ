@@ -3,222 +3,232 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TAZ · Identidad de marca (v0.5)</title>
-  <meta name="description" content="Guía de identidad de marca: comida rápida de la Costa colombiana en San José, CA. Nombre provisional.">
-  <link rel="stylesheet" href="css/tokens.css?v=0.5">
-  <link rel="stylesheet" href="css/styles.css?v=0.5">
+  <title>Noche costeña · Guía de marca (borrador 0.6)</title>
+  <meta name="description" content="Guía de identidad de una comida rápida de la Costa colombiana en San José, California. Nombre provisional: TAZ.">
+  <meta name="theme-color" content="#140F22">
+  <link rel="stylesheet" href="css/tokens.css?v=0.6">
+  <link rel="stylesheet" href="css/styles.css?v=0.6">
 </head>
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-  <nav class="nav" aria-label="Secciones de la guía">
-    <div class="container nav__inner">
-      <a class="nav__logo" href="#inicio">TAZ<span aria-hidden="true">*</span></a>
-      <ul class="nav__links">
-        <li><a href="#esencia">Esencia</a></li>
+  <!-- ===================== PORTADA: el cartel de picó ===================== -->
+  <header class="poster">
+    <div class="poster__banderines" aria-hidden="true"></div>
+    <span class="serpentina serpentina--amarilla poster__serpentina poster__serpentina--1" aria-hidden="true"></span>
+    <span class="serpentina serpentina--cian poster__serpentina poster__serpentina--2" aria-hidden="true"></span>
+
+    <div class="poster__bar">
+      <a class="marca" href="#contenido" aria-label="TAZ, nombre provisional. Ir al contenido">TAZ<sup aria-hidden="true">*</sup></a>
+      <p class="poster__status">Guía de marca, borrador 0.6</p>
+    </div>
+
+    <div class="poster__body">
+      <h1 class="poster__title">
+        <span class="poster__line poster__line--1">Rebosao,</span>
+        <span class="poster__line poster__line--2">mamagallista</span>
+        <span class="poster__line poster__line--3">y de pura cepa</span>
+      </h1>
+
+      <div class="poster__foot">
+        <p class="poster__lead">Comida rápida como se hace en la Costa: con sabor, con alegría y sin medirse. Hecha en casa en San José, California.</p>
+
+        <aside class="ticket" aria-label="Ejemplo de la marca aplicada: plato del día">
+          <p class="ticket__kicker">Hoy en la plancha</p>
+          <p class="ticket__dish">Perro rebosao</p>
+          <p class="ticket__desc">Salchicha, papita ripio, queso costeño y harta salsa de la casa.</p>
+          <a class="btn btn--accent" href="#aplicaciones">¿Lo quieres rebosao?</a>
+        </aside>
+      </div>
+    </div>
+    <p class="poster__note">* TAZ es un nombre provisional mientras decidimos el definitivo.</p>
+  </header>
+
+  <div class="layout">
+    <!-- ===================== ÍNDICE ===================== -->
+    <nav class="index" aria-label="Índice de la guía">
+      <p class="index__title">En esta guía</p>
+      <ul class="index__list">
+        <li><a href="#alma">El alma</a></li>
         <li><a href="#valores">Valores</a></li>
         <li><a href="#personalidad">Personalidad</a></li>
         <li><a href="#voz">Voz</a></li>
         <li><a href="#publicos">Públicos</a></li>
-        <li><a href="#visual">Visual</a></li>
+        <li><a href="#identidad">Identidad visual</a></li>
+        <li><a href="#aplicaciones">Aplicaciones</a></li>
         <li><a href="#redes">Redes</a></li>
-        <li><a href="#pendientes">Pendientes</a></li>
+        <li><a href="#pendientes">Lo que falta</a></li>
       </ul>
-    </div>
-  </nav>
+    </nav>
 
-  <header class="hero" id="inicio">
-    <span class="serpentina serpentina--amarilla serpentina--1" aria-hidden="true"></span>
-    <span class="serpentina serpentina--fucsia serpentina--2" aria-hidden="true"></span>
-    <span class="serpentina serpentina--cian serpentina--3" aria-hidden="true"></span>
-    <div class="container">
-      <span class="hero__tag">Guía de marca · v0.5 · borrador</span>
-      <h1 class="hero__title">Rebosao, mamagallista<br>y de pura cepa</h1>
-      <p class="hero__lead">Comida rápida como se hace en la Costa: con sabor, con alegría y sin medirse.</p>
-      <p class="hero__note">* "TAZ" es un nombre provisional para diferenciar el proyecto. Colores y tipografías siguen en construcción: aquí se construye la identidad paso a paso.</p>
-    </div>
-  </header>
+    <main id="contenido" tabindex="-1">
 
-  <main>
+      <!-- ===================== EL ALMA ===================== -->
+      <section class="chapter" id="alma" aria-labelledby="alma-titulo">
+        <h2 class="chapter__title" id="alma-titulo">El alma</h2>
+        <p class="chapter__intro">Todo lo que hace la marca (el nombre, el menú, los colores, las redes, la forma de atender) pasa por una pregunta: <strong>¿esto se siente costeño?</strong></p>
 
-    <!-- ===================== ESENCIA ===================== -->
-    <section class="section" id="esencia">
-      <div class="container">
-        <span class="section__kicker">01 · El alma</span>
-        <h2>Esencia y propósito</h2>
-        <p class="section__intro">Todo lo que hace la marca (el nombre, el menú, los colores, las redes, la atención) tiene que pasar por un filtro: <strong>¿esto se siente costeño?</strong></p>
-
-        <blockquote class="quote">
-          "Comida rápida como se hace en la Costa: con sabor, con alegría y sin medirse."
+        <blockquote class="manifesto">
+          <p>Que nadie se sienta lejos de casa a la hora de comer.</p>
         </blockquote>
 
-        <div class="grid grid--2">
-          <article class="card">
-            <h3>Propósito</h3>
-            <p><strong>Que nadie se sienta lejos de casa a la hora de comer.</strong></p>
-            <p>Para el costeño es volver a su tierra por un rato. Para el latino, una casa vecina. Para el gringo, una casa costeña que lo invita a entrar.</p>
-          </article>
-
-          <article class="card">
+        <div class="alma-grid">
+          <article class="alma-item">
             <h3>Quiénes somos</h3>
-            <p>Costeños de la Costa Caribe colombiana que se mudaron a EE. UU. y que siempre cocinaron y se destacaron allá. La comida rápida costeña es de las más queridas de Colombia, y la traemos a San José como se hace en casa.</p>
+            <p>Costeños de la Costa Caribe colombiana que se mudaron a Estados Unidos y que siempre cocinaron y se destacaron allá. La comida rápida costeña es de las más queridas de Colombia, y la traemos a San José como se hace en casa.</p>
           </article>
-
-          <article class="card">
-            <h3>Posicionamiento</h3>
-            <p><strong>Para</strong> latinos y curiosos en San José que extrañan o quieren descubrir la comida de verdad, <strong>somos</strong> la comida rápida de calle de la Costa colombiana <strong>que</strong> sirve todo rebosao, con salsas hechas en casa y la alegría de allá, <strong>porque</strong> en la Costa nadie se queda con hambre.</p>
+          <article class="alma-item">
+            <h3>Para quién y por qué</h3>
+            <p>Para latinos y curiosos en San José que extrañan o quieren descubrir la comida de verdad. Servimos todo rebosao, con salsas hechas en casa y la alegría de allá, porque en la Costa nadie se queda con hambre.</p>
           </article>
-
-          <article class="card">
+          <article class="alma-item">
             <h3>El cambio de mirada</h3>
-            <p>No somos "fast food barato". Somos <strong>comida de calle costeña</strong>, y en la Costa eso no es pobreza: es cultura y orgullo. Lo rápido es solo la forma de servirla.</p>
+            <p>No somos fast food barato. Somos comida de calle costeña, y en la Costa eso no es pobreza: es cultura y orgullo. Lo rápido es solo la forma de servirla.</p>
           </article>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ===================== VALORES ===================== -->
-    <section class="section" id="valores">
-      <div class="container">
-        <span class="section__kicker">02 · La brújula</span>
-        <h2>Valores</h2>
-        <p class="section__intro">Cinco valores con nombre costeño. Cada uno dice cómo se ve en la práctica y qué no es, para tomar decisiones sin dudar.</p>
+      <!-- ===================== VALORES ===================== -->
+      <section class="chapter" id="valores" aria-labelledby="valores-titulo">
+        <h2 class="chapter__title" id="valores-titulo">Valores</h2>
+        <p class="chapter__intro">Cinco valores con nombre costeño. Abre cada uno para ver cómo se nota en el día a día y qué no es.</p>
 
-        <div class="grid grid--3">
-
-          <article class="card value value--1">
-            <span class="value__num" aria-hidden="true">1</span>
-            <h3 class="value__name">Rebosao</h3>
-            <p class="value__concept">Abundancia</p>
-            <p>En la Costa nadie se queda con hambre. Servir de más es respeto por el que llega.</p>
-            <button class="btn btn--small btn--ghost value__toggle" type="button" aria-expanded="false">Ver más</button>
-            <dl class="value__details">
-              <dt>Se ve así</dt>
-              <dd>Porciones generosas, harta salsa, nunca "lo justo". Todo sale rebosao.</dd>
-              <dt>No es</dt>
-              <dd>Barato ni desperdicio. La abundancia se mide y se costea, pero se siente.</dd>
-            </dl>
-          </article>
-
-          <article class="card value value--2">
-            <span class="value__num" aria-hidden="true">2</span>
-            <h3 class="value__name">Mamadera de gallo</h3>
-            <p class="value__concept">Jocosidad</p>
-            <p>Somos mamagallistas: el humor costeño está en todo. Pedir tiene que sacar una sonrisa.</p>
-            <button class="btn btn--small btn--ghost value__toggle" type="button" aria-expanded="false">Ver más</button>
-            <dl class="value__details">
-              <dt>Se ve así</dt>
-              <dd>Chistes, ocurrencias y frases costeñas en las redes, el WhatsApp, la web y la bolsa.</dd>
-              <dt>No es</dt>
-              <dd>Burlarse del cliente, payasadas ni groserías. Nos reímos <em>con</em> la gente, nunca <em>de</em> ella.</dd>
-            </dl>
-          </article>
-
-          <article class="card value value--3">
-            <span class="value__num" aria-hidden="true">3</span>
-            <h3 class="value__name">De pura cepa</h3>
-            <p class="value__concept">Autenticidad</p>
-            <p>Sabor, palabras y recetas de la Costa de verdad, hechas en casa.</p>
-            <button class="btn btn--small btn--ghost value__toggle" type="button" aria-expanded="false">Ver más</button>
-            <dl class="value__details">
-              <dt>Se ve así</dt>
-              <dd>Recetas de familia, salsas propias, acento costeño y platos que un costeño reconoce. Lo que se puede hacer en casa, se hace en casa.</dd>
-              <dt>No es</dt>
-              <dd>Clichés, sombrero vueltiao en todo, "latino genérico" ni salsas de galón industrial.</dd>
-            </dl>
-          </article>
-
-          <article class="card value value--4">
-            <span class="value__num" aria-hidden="true">4</span>
-            <h3 class="value__name">Más complaciente que na'</h3>
-            <p class="value__concept">Hospitalidad</p>
-            <p>Consentimos al cliente como a un invitado en una casa costeña. Es <strong>cómo atendemos</strong>.</p>
-            <button class="btn btn--small btn--ghost value__toggle" type="button" aria-expanded="false">Ver más</button>
-            <dl class="value__details">
-              <dt>Se ve así</dt>
-              <dd>Escuchar, darle gusto, responder rápido y con calidez, tratarlo como familia.</dd>
-              <dt>No es</dt>
-              <dd>Decir que sí a todo sin poder cumplir, ni atención fría y automática.</dd>
-            </dl>
-          </article>
-
-          <article class="card value value--5">
-            <span class="value__num" aria-hidden="true">5</span>
-            <h3 class="value__name">De buen pecho</h3>
-            <p class="value__concept">Cariño</p>
-            <p>El cariño genuino del costeño por el otro. Es <strong>de dónde sale</strong> todo lo demás: el corazón.</p>
-            <button class="btn btn--small btn--ghost value__toggle" type="button" aria-expanded="false">Ver más</button>
-            <dl class="value__details">
-              <dt>Se ve así</dt>
-              <dd>Buena fe, nobleza y afecto real por el cliente. Si algo sale mal, lo reconocemos y lo arreglamos sin excusas.</dd>
-              <dt>No es</dt>
-              <dd>Cariño fingido de manual ni "el cliente es un número de pedido".</dd>
-            </dl>
-          </article>
-
-          <article class="card card--noche">
-            <h3>En una frase</h3>
-            <p class="letras-pico" style="font-family: var(--font-display); font-size: var(--fs-lg); line-height: 1.3;">"Rebosao, mamagallista y de pura cepa: como en casa."</p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== PERSONALIDAD ===================== -->
-    <section class="section" id="personalidad">
-      <div class="container">
-        <span class="section__kicker">03 · Si la marca fuera una persona</span>
-        <h2>Personalidad: el Anfitrión Costeño</h2>
-        <p class="section__intro">La tía o el tío costeño que te recibe en la terraza: te sienta, te sirve de más, te echa un chiste y no te deja ir con hambre. Mezcla al que <strong>cuida</strong> (generoso, acogedor) con al que <strong>alegra</strong> (mamagallista, festivo, sin pena).</p>
-
-        <table class="is-isnt">
-          <thead>
-            <tr><th scope="col">Es</th><th scope="col">No es</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>Generoso:</strong> da de más, en comida y en trato</td><td>Tacaño ni "lo justo"</td></tr>
-            <tr><td><strong>Alegre:</strong> todo se siente fiesta</td><td>Payaso ni burlón</td></tr>
-            <tr><td><strong>Auténtico:</strong> habla como se habla en la Costa</td><td>Disfrazado de costeño ni de cliché</td></tr>
-            <tr><td><strong>Cercano:</strong> te trata como familia</td><td>Confianzudo ni grosero</td></tr>
-            <tr><td><strong>Orgulloso:</strong> presume su tierra</td><td>Arrogante ni cerrado a otros</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- ===================== VOZ ===================== -->
-    <section class="section" id="voz">
-      <div class="container">
-        <span class="section__kicker">04 · Cómo hablamos</span>
-        <h2>Voz y tono</h2>
-
-        <div class="grid grid--2">
-          <article class="card">
-            <h3>Principios de voz</h3>
-            <ol>
-              <li><strong>Habla como en la terraza, no como en un banco.</strong> Frases cortas, cálidas, con exclamaciones.</li>
-              <li><strong>Mama gallo, pero nunca se burla del cliente.</strong></li>
-              <li><strong>Es generoso también con las palabras.</strong> Nunca seco ni transaccional.</li>
-              <li><strong>Muestra, no presume.</strong> No dice "somos auténticos": lo demuestra.</li>
-              <li><strong>Explica sin dejar de ser costeño.</strong> Al gringo se le traduce con cariño.</li>
-            </ol>
-          </article>
-
-          <article class="card">
-            <h3>Un mismo mensaje, tres tonos</h3>
-            <p>El pedido va en camino. Es la misma persona hablando, solo ajusta cuánto explica:</p>
-            <div class="tone-switch" role="group" aria-label="Elegir público">
-              <button class="btn btn--small btn--fucsia" type="button" data-tone="costeno" aria-pressed="true">Costeño</button>
-              <button class="btn btn--small btn--fucsia" type="button" data-tone="latino" aria-pressed="false">Latino</button>
-              <button class="btn btn--small btn--fucsia" type="button" data-tone="gringo" aria-pressed="false">Gringo</button>
+        <ul class="values">
+          <li class="value" data-state="closed" style="--value-dot: var(--brand-amarillo);">
+            <button class="value__head" type="button" data-action="toggle-value" aria-expanded="false" aria-controls="valor-1">
+              <span class="value__name">Rebosao</span>
+              <span class="value__idea">Abundancia</span>
+              <span class="value__icon" aria-hidden="true"></span>
+            </button>
+            <p class="value__line">En la Costa nadie se queda con hambre. Servir de más es respeto por el que llega.</p>
+            <div class="value__body" id="valor-1" hidden>
+              <dl>
+                <dt>Se nota en</dt><dd>Porciones generosas, harta salsa, nunca "lo justo".</dd>
+                <dt>No es</dt><dd>Barato ni desperdicio. La abundancia se mide y se costea, pero se siente.</dd>
+              </dl>
             </div>
-            <p class="tone-output" id="tone-output" aria-live="polite"></p>
-          </article>
-        </div>
+          </li>
 
-        <div class="grid grid--2" style="margin-top: var(--space-4);">
-          <article class="card">
-            <h3>Palabras que sí usamos</h3>
+          <li class="value" data-state="closed" style="--value-dot: var(--brand-fucsia);">
+            <button class="value__head" type="button" data-action="toggle-value" aria-expanded="false" aria-controls="valor-2">
+              <span class="value__name">Mamadera de gallo</span>
+              <span class="value__idea">Jocosidad</span>
+              <span class="value__icon" aria-hidden="true"></span>
+            </button>
+            <p class="value__line">Somos mamagallistas: el humor costeño está en todo. Pedir tiene que sacar una sonrisa.</p>
+            <div class="value__body" id="valor-2" hidden>
+              <dl>
+                <dt>Se nota en</dt><dd>Chistes, ocurrencias y frases costeñas en las redes, el WhatsApp, la web y la bolsa.</dd>
+                <dt>No es</dt><dd>Burlarse del cliente, payasadas ni groserías. Nos reímos con la gente, nunca de ella.</dd>
+              </dl>
+            </div>
+          </li>
+
+          <li class="value" data-state="closed" style="--value-dot: var(--brand-cian);">
+            <button class="value__head" type="button" data-action="toggle-value" aria-expanded="false" aria-controls="valor-3">
+              <span class="value__name">De pura cepa</span>
+              <span class="value__idea">Autenticidad</span>
+              <span class="value__icon" aria-hidden="true"></span>
+            </button>
+            <p class="value__line">Sabor, palabras y recetas de la Costa de verdad, hechas en casa.</p>
+            <div class="value__body" id="valor-3" hidden>
+              <dl>
+                <dt>Se nota en</dt><dd>Recetas de familia, salsas propias, acento costeño y platos que un costeño reconoce.</dd>
+                <dt>No es</dt><dd>Clichés, sombrero vueltiao en todo, "latino genérico" ni salsas de galón industrial.</dd>
+              </dl>
+            </div>
+          </li>
+
+          <li class="value" data-state="closed" style="--value-dot: var(--brand-amarillo);">
+            <button class="value__head" type="button" data-action="toggle-value" aria-expanded="false" aria-controls="valor-4">
+              <span class="value__name">Más complaciente que na'</span>
+              <span class="value__idea">Hospitalidad</span>
+              <span class="value__icon" aria-hidden="true"></span>
+            </button>
+            <p class="value__line">Consentimos al cliente como a un invitado en una casa costeña. Es cómo atendemos.</p>
+            <div class="value__body" id="valor-4" hidden>
+              <dl>
+                <dt>Se nota en</dt><dd>Escuchar, darle gusto, responder rápido y con calidez, tratarlo como familia.</dd>
+                <dt>No es</dt><dd>Decir que sí a todo sin poder cumplir, ni atención fría y automática.</dd>
+              </dl>
+            </div>
+          </li>
+
+          <li class="value" data-state="closed" style="--value-dot: var(--brand-fucsia);">
+            <button class="value__head" type="button" data-action="toggle-value" aria-expanded="false" aria-controls="valor-5">
+              <span class="value__name">De buen pecho</span>
+              <span class="value__idea">Cariño</span>
+              <span class="value__icon" aria-hidden="true"></span>
+            </button>
+            <p class="value__line">El cariño genuino del costeño por el otro. Es de dónde sale todo lo demás.</p>
+            <div class="value__body" id="valor-5" hidden>
+              <dl>
+                <dt>Se nota en</dt><dd>Buena fe, nobleza y afecto real. Si algo sale mal, lo reconocemos y lo arreglamos sin excusas.</dd>
+                <dt>No es</dt><dd>Cariño fingido de manual, ni tratar al cliente como un número de pedido.</dd>
+              </dl>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ===================== PERSONALIDAD ===================== -->
+      <section class="chapter" id="personalidad" aria-labelledby="personalidad-titulo">
+        <h2 class="chapter__title" id="personalidad-titulo">El anfitrión costeño</h2>
+        <p class="chapter__intro">Si la marca fuera una persona, sería la tía o el tío costeño que te recibe en la terraza: te sienta, te sirve de más, te echa un chiste y no te deja ir con hambre.</p>
+
+        <div class="traits">
+          <div class="traits__col">
+            <h3 class="traits__heading">Es</h3>
+            <ul>
+              <li><strong>Generoso.</strong> Da de más, en comida y en trato.</li>
+              <li><strong>Alegre.</strong> Todo se siente fiesta.</li>
+              <li><strong>Auténtico.</strong> Habla como se habla en la Costa.</li>
+              <li><strong>Cercano.</strong> Te trata como familia.</li>
+              <li><strong>Orgulloso.</strong> Presume su tierra.</li>
+            </ul>
+          </div>
+          <div class="traits__col traits__col--no">
+            <h3 class="traits__heading">No es</h3>
+            <ul>
+              <li>Tacaño ni de "lo justo".</li>
+              <li>Payaso ni burlón.</li>
+              <li>Disfrazado de costeño.</li>
+              <li>Confianzudo ni grosero.</li>
+              <li>Arrogante ni cerrado a otros.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== VOZ ===================== -->
+      <section class="chapter" id="voz" aria-labelledby="voz-titulo">
+        <h2 class="chapter__title" id="voz-titulo">Cómo hablamos</h2>
+        <p class="chapter__intro">Como en la terraza, no como en un banco. Frases cortas y cálidas, humor costeño y nunca secos. Al que no es de allá se le explica con cariño, sin dejar de sonar costeño.</p>
+
+        <div class="voice">
+          <div class="voice__demo">
+            <p class="voice__label" id="tono-label">El mismo mensaje para cada público</p>
+            <div class="segmented" role="tablist" aria-labelledby="tono-label">
+              <button type="button" role="tab" id="tab-costeno" aria-selected="true" aria-controls="chat" data-action="set-tone" data-tone="costeno">Costeño</button>
+              <button type="button" role="tab" id="tab-latino" aria-selected="false" aria-controls="chat" data-action="set-tone" data-tone="latino" tabindex="-1">Latino</button>
+              <button type="button" role="tab" id="tab-gringo" aria-selected="false" aria-controls="chat" data-action="set-tone" data-tone="gringo" tabindex="-1">Gringo</button>
+            </div>
+
+            <div class="chat" id="chat" role="tabpanel" aria-labelledby="tab-costeno" data-tone="costeno">
+              <div class="chat__bar">
+                <span class="chat__avatar" aria-hidden="true">T</span>
+                <span class="chat__name">TAZ<span class="chat__online">en línea</span></span>
+              </div>
+              <div class="chat__thread">
+                <p class="bubble bubble--in" data-slot="question">¿Ya va saliendo mi pedido?</p>
+                <p class="bubble bubble--out" data-slot="answer" aria-live="polite">¡Eche, ya va saliendo eso rebosao! Prepárate, mi llave.</p>
+              </div>
+            </div>
+            <p class="voice__note" data-slot="note">Con el costeño, el acento completo y sin explicar nada.</p>
+          </div>
+
+          <div class="voice__words">
+            <h3>Palabras de la casa</h3>
             <ul class="chips">
               <li class="chip">¡Ajá!</li>
               <li class="chip">¡Eche!</li>
@@ -230,230 +240,209 @@
               <li class="chip">Bacano</li>
               <li class="chip">A la orden</li>
               <li class="chip">¡Coma que hay más!</li>
-              <li class="chip">Buen provecho</li>
             </ul>
-          </article>
-
-          <article class="card">
             <h3>Palabras que no usamos</h3>
             <ul class="chips">
-              <li class="chip chip--no">Barato</li>
-              <li class="chip chip--no">Económico</li>
-              <li class="chip chip--no">Combo ahorro</li>
-              <li class="chip chip--no">Gourmet</li>
-              <li class="chip chip--no">Premium</li>
-              <li class="chip chip--no">Groserías</li>
+              <li class="chip chip--no"><s>Barato</s></li>
+              <li class="chip chip--no"><s>Económico</s></li>
+              <li class="chip chip--no"><s>Combo ahorro</s></li>
+              <li class="chip chip--no"><s>Gourmet</s></li>
+              <li class="chip chip--no"><s>Premium</s></li>
             </ul>
-            <p style="margin-top: var(--space-3); font-size: var(--fs-sm); color: var(--text-muted);">"Barato" nos devuelve al aura de pobreza del fast food; "gourmet" no somos nosotros. Y aunque allá se digan con cariño, las groserías no van: es una marca para familias.</p>
-          </article>
+            <p class="voice__why">"Barato" nos devuelve al aura de pobreza del fast food, y "gourmet" no somos nosotros. Las groserías tampoco van, aunque allá se digan con cariño: es una marca para familias.</p>
+          </div>
         </div>
+      </section>
 
-        <h3 style="margin-top: var(--space-5);">Así suena en la práctica</h3>
-        <div class="grid grid--2">
-          <article class="card"><p><strong>Bio de Instagram</strong></p><p>"Comida de calle costeña 🔥 Hecha en casa, servida rebosá. San José, CA."</p></article>
-          <article class="card"><p><strong>DoorDash</strong></p><p>"Costeño street food from Colombia's Caribbean coast. Homemade sauces, generous portions, made like back home."</p></article>
-          <article class="card"><p><strong>En la bolsa</strong></p><p>"Aquí nadie se queda con hambre."</p></article>
-          <article class="card"><p><strong>Respuesta a una mala reseña</strong></p><p>"Ay, mi llave, eso no está bien y nos duele. Escríbenos y te lo arreglamos como se debe."</p></article>
-        </div>
-      </div>
-    </section>
+      <!-- ===================== PÚBLICOS ===================== -->
+      <section class="chapter" id="publicos" aria-labelledby="publicos-titulo">
+        <h2 class="chapter__title" id="publicos-titulo">Para quién cocinamos</h2>
+        <p class="chapter__intro">No se adapta la comida, se adapta la explicación. Si se suaviza la comida para el gringo, se pierde al costeño, y sin el costeño se pierde la autenticidad que atrae al gringo.</p>
 
-    <!-- ===================== PÚBLICOS ===================== -->
-    <section class="section" id="publicos">
-      <div class="container">
-        <span class="section__kicker">05 · Para quién</span>
-        <h2>Públicos</h2>
-        <blockquote class="quote quote--fucsia">Auténtico para el costeño, cercano para el latino, guiado para el gringo.</blockquote>
-        <p class="section__intro">Regla clave: <strong>no se adapta la comida, se adapta la explicación.</strong> Si se suaviza la comida para el gringo, se pierde al costeño, y sin el costeño se pierde la autenticidad que atrae al gringo.</p>
-
-        <div class="grid grid--3">
-          <article class="card audience">
-            <span class="audience__role">Validador</span>
+        <div class="audiences">
+          <article class="audience">
             <h3>El costeño</h3>
-            <dl>
-              <dt>Busca</dt><dd>Volver a su tierra por un rato.</dd>
-              <dt>Teme</dt><dd>Que sea "costeño de mentiras".</dd>
-              <dt>Le damos</dt><dd>Autenticidad total: el sabor de allá.</dd>
-            </dl>
+            <p class="audience__role">Nos valida</p>
+            <p><strong>Busca</strong> volver a su tierra por un rato. <strong>Teme</strong> que sea costeño de mentiras. <strong>Le damos</strong> el sabor de allá, sin adaptar nada.</p>
           </article>
-          <article class="card audience">
-            <span class="audience__role">Volumen</span>
+          <article class="audience">
             <h3>El latino</h3>
-            <dl>
-              <dt>Busca</dt><dd>Sabor latino auténtico, distinto a lo de siempre.</dd>
-              <dt>Teme</dt><dd>Que sea más de lo mismo.</dd>
-              <dt>Le damos</dt><dd>Descubrir la Costa con algo familiar.</dd>
-            </dl>
+            <p class="audience__role">Nos llena la cocina</p>
+            <p><strong>Busca</strong> sabor latino auténtico, distinto a lo de siempre. <strong>Teme</strong> que sea más de lo mismo. <strong>Le damos</strong> la Costa con algo familiar.</p>
           </article>
-          <article class="card audience">
-            <span class="audience__role">Crecimiento</span>
+          <article class="audience">
             <h3>El gringo</h3>
-            <dl>
-              <dt>Busca</dt><dd>Una experiencia nueva, acercarse a otra cultura.</dd>
-              <dt>Teme</dt><dd>No saber qué pedir o que no le guste.</dd>
-              <dt>Le damos</dt><dd>Una guía amable: "te explicamos, te recomendamos".</dd>
-            </dl>
+            <p class="audience__role">Nos hace crecer</p>
+            <p><strong>Busca</strong> una experiencia nueva. <strong>Teme</strong> no saber qué pedir. <strong>Le damos</strong> una guía amable: te explicamos y te recomendamos.</p>
           </article>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ===================== VISUAL ===================== -->
-    <section class="section" id="visual">
-      <div class="container">
-        <span class="section__kicker">06 · Identidad visual · v0.5</span>
-        <h2>Noche costeña</h2>
-        <p class="section__intro">Una sola historia: <strong>la fiesta de noche en la Costa</strong>. Una sola familia de formas: <strong>lo que cae en la fiesta</strong> (bolitas de confeti, serpentinas y banderines). Y pocos colores, siempre los mismos. La coherencia sale de repetir, no de agregar. <em>Toca un color para copiar su código.</em></p>
+      <!-- ===================== IDENTIDAD VISUAL ===================== -->
+      <section class="chapter" id="identidad" aria-labelledby="identidad-titulo">
+        <h2 class="chapter__title" id="identidad-titulo">Noche costeña</h2>
+        <p class="chapter__intro">Una sola historia: la fiesta de noche en la Costa. Pocos colores, siempre los mismos, y una sola familia de adornos: lo que cae en la fiesta. La coherencia sale de repetir, no de agregar.</p>
 
-        <div class="swatches" id="swatches">
-          <button class="swatch" type="button" data-hex="#140F22" data-name="Noche"><div class="swatch__color" style="background:#140F22;"></div><div class="swatch__info"><span class="swatch__group">Fondo</span><strong>Noche</strong><code>#140F22</code></div></button>
-          <button class="swatch" type="button" data-hex="#FBF6EC" data-name="Hueso"><div class="swatch__color" style="background:#FBF6EC;border-bottom: 2px solid #EDE3CF;"></div><div class="swatch__info"><span class="swatch__group">Texto y superficies</span><strong>Hueso</strong><code>#FBF6EC</code></div></button>
-          <button class="swatch" type="button" data-hex="#FFD60A" data-name="Amarillo"><div class="swatch__color" style="background:#FFD60A;"></div><div class="swatch__info"><span class="swatch__group">Principal</span><strong>Amarillo</strong><code>#FFD60A</code></div></button>
-          <button class="swatch" type="button" data-hex="#FF3D8B" data-name="Fucsia"><div class="swatch__color" style="background:#FF3D8B;"></div><div class="swatch__info"><span class="swatch__group">Secundario</span><strong>Fucsia</strong><code>#FF3D8B</code></div></button>
-          <button class="swatch" type="button" data-hex="#22D3EE" data-name="Cian"><div class="swatch__color" style="background:#22D3EE;"></div><div class="swatch__info"><span class="swatch__group">Acento</span><strong>Cian</strong><code>#22D3EE</code></div></button>
+        <h3 class="sub">Colores</h3>
+        <div class="proportion" role="img" aria-label="Proporción de uso: noche 55 por ciento, hueso 20, amarillo 13, fucsia 8 y cian 4.">
+          <span style="--w: 55; background: var(--brand-noche);"></span>
+          <span style="--w: 20; background: var(--brand-hueso);"></span>
+          <span style="--w: 13; background: var(--brand-amarillo);"></span>
+          <span style="--w: 8; background: var(--brand-fucsia);"></span>
+          <span style="--w: 4; background: var(--brand-cian);"></span>
         </div>
-        <p style="font-size: var(--fs-sm); margin-top: var(--space-3);"><strong>Proporción:</strong> noche de fondo casi siempre · amarillo para lo que tiene que verse (títulos, botones) · fucsia para sombras y detalles · cian solo como acento, poco, para que brille cuando aparece.</p>
+        <p class="proportion__caption">Así se reparte el color en cualquier pieza: mucha noche, hueso para leer y respirar, y los colores de fiesta en poquito.</p>
 
-        <h3 style="margin-top: var(--space-6); color: var(--color-amarillo);">Adornos: la fiesta que cae</h3>
+        <ul class="swatches">
+          <li><button class="swatch" type="button" data-action="copy-color" data-hex="#140F22" data-name="Noche"><span class="swatch__chip" style="background:#140F22;"></span><span class="swatch__name">Noche</span><span class="swatch__role">El fondo de casi todo</span><span class="swatch__hex">#140F22</span></button></li>
+          <li><button class="swatch" type="button" data-action="copy-color" data-hex="#FBF6EC" data-name="Hueso"><span class="swatch__chip" style="background:#FBF6EC;"></span><span class="swatch__name">Hueso</span><span class="swatch__role">Texto, menú y empaques</span><span class="swatch__hex">#FBF6EC</span></button></li>
+          <li><button class="swatch" type="button" data-action="copy-color" data-hex="#FFD60A" data-name="Amarillo"><span class="swatch__chip" style="background:#FFD60A;"></span><span class="swatch__name">Amarillo</span><span class="swatch__role">Títulos y botones de acción</span><span class="swatch__hex">#FFD60A</span></button></li>
+          <li><button class="swatch" type="button" data-action="copy-color" data-hex="#FF3D8B" data-name="Fucsia"><span class="swatch__chip" style="background:#FF3D8B;"></span><span class="swatch__name">Fucsia</span><span class="swatch__role">Sombras de letra y adornos</span><span class="swatch__hex">#FF3D8B</span></button></li>
+          <li><button class="swatch" type="button" data-action="copy-color" data-hex="#22D3EE" data-name="Cian"><span class="swatch__chip" style="background:#22D3EE;"></span><span class="swatch__name">Cian</span><span class="swatch__role">Acento, en poquito</span><span class="swatch__hex">#22D3EE</span></button></li>
+        </ul>
+        <p class="hint">Toca un color para copiar su código. El fucsia nunca va como texto sobre hueso: no se lee bien. Para eso está el fucsia oscuro #C2185B.</p>
+
+        <h3 class="sub">Letras</h3>
+        <div class="type-specimen">
+          <div class="type-specimen__display">
+            <p class="specimen-big" aria-hidden="true">Aa</p>
+            <p class="specimen-name">Lilita One</p>
+            <p>La letra de picó pintado a mano. Gruesa, redonda y alegre. Para títulos, siempre con su sombra fucsia en bloque sobre la noche.</p>
+          </div>
+          <div class="type-specimen__body">
+            <p class="specimen-big specimen-big--body" aria-hidden="true">Aa</p>
+            <p class="specimen-name">Nunito</p>
+            <p>La letra para leer. Redonda como la Lilita, pero tranquila. Para menús, descripciones y todo lo que se lee en el celular.</p>
+          </div>
+        </div>
+
+        <h3 class="sub">Adornos: la fiesta que cae</h3>
         <div class="adornos">
-          <article class="adorno"><div class="adorno__muestra muestra--bolitas"></div><div class="adorno__info"><strong>Bolitas de confeti</strong>Tres tamaños, tres colores. Sueltas en las esquinas o en fila como separador.</div></article>
-          <article class="adorno"><div class="adorno__muestra muestra--serpentinas"></div><div class="adorno__info"><strong>Serpentinas</strong>Cintas onduladas, siempre con el mismo grosor y puntas redondas. Entran desde los bordes.</div></article>
-          <article class="adorno"><div class="adorno__muestra muestra--banderines"></div><div class="adorno__info"><strong>Banderines</strong>Triángulos colgados de un hilo, siempre arriba: portadas, posts de promociones y eventos.</div></article>
+          <figure class="adorno">
+            <div class="adorno__muestra adorno__muestra--bolitas" aria-hidden="true"></div>
+            <figcaption><strong>Bolitas de confeti.</strong> Tres tamaños, tres colores. Sueltas en las esquinas o en fila como separador.</figcaption>
+          </figure>
+          <figure class="adorno">
+            <div class="adorno__muestra adorno__muestra--serpentinas" aria-hidden="true"></div>
+            <figcaption><strong>Serpentinas.</strong> Siempre con el mismo grosor y puntas redondas. Entran desde los bordes.</figcaption>
+          </figure>
+          <figure class="adorno">
+            <div class="adorno__muestra adorno__muestra--banderines" aria-hidden="true"></div>
+            <figcaption><strong>Banderines.</strong> Colgados de un hilo, siempre arriba: portadas, promociones y eventos.</figcaption>
+          </figure>
         </div>
 
-        <ul class="reglas">
-          <li><strong>En los bordes, nunca detrás del texto.</strong> Los adornos enmarcan; el mensaje y la comida van limpios en el centro.</li>
-          <li><strong>Máximo dos tipos de adorno por pieza.</strong> Por ejemplo, banderines arriba y bolitas abajo. Nunca los tres apilados.</li>
-          <li><strong>Solo amarillo, fucsia, cian y hueso.</strong> Si aparece otro color en un adorno, no es de la marca.</li>
-          <li><strong>Mismo trazo, mismos tamaños.</strong> Serpentinas de 4 px con puntas redondas; bolitas de 6, 10 o 14 px.</li>
+        <ul class="rules">
+          <li>Los adornos enmarcan desde los bordes. Nunca van detrás del texto ni de la comida.</li>
+          <li>Máximo dos tipos de adorno por pieza.</li>
+          <li>Solo amarillo, fucsia, cian y hueso. Si aparece otro color, no es de la marca.</li>
+          <li>Mismo trazo y mismos tamaños: serpentinas de 4 px; bolitas de 6, 10 o 14 px.</li>
         </ul>
+      </section>
 
-        <div class="grid grid--2" style="margin-top: var(--space-5);">
-          <article class="card card--noche">
-            <p class="section__kicker">Títulos · Lilita One · sobre noche</p>
-            <p class="type-sample--display letras-pico">¡EAAAH! PERRO REBOSAO</p>
-            <p style="font-size: var(--fs-sm); color: var(--text-muted);">Amarillo con sombra fucsia en bloque. Redes, portadas, letreros.</p>
-          </article>
-          <article class="card">
-            <p class="section__kicker">Títulos · Lilita One · sobre hueso</p>
-            <p class="type-sample--display letras-hueso">¡EAAAH! PERRO REBOSAO</p>
-            <p style="font-size: var(--fs-sm); color: var(--text-muted);">Noche con sombra fucsia en bloque. Menú, empaques, tarjetas.</p>
-          </article>
-          <article class="card">
-            <p class="section__kicker">Textos · Nunito</p>
-            <p class="type-sample--body">Salchipapa costeña con harta salsa de la casa, queso costeño y papita ripio. <strong>Hecha en casa, como en la Costa.</strong></p>
-            <p style="font-size: var(--fs-sm); color: var(--text-muted);">Redonda, amable y fácil de leer en el celular.</p>
-          </article>
+      <!-- ===================== APLICACIONES ===================== -->
+      <section class="chapter" id="aplicaciones" aria-labelledby="aplicaciones-titulo">
+        <h2 class="chapter__title" id="aplicaciones-titulo">Así se ve en la calle</h2>
+        <p class="chapter__intro">La identidad aplicada en tres piezas reales. Cada una usa máximo dos adornos.</p>
+
+        <div class="apps">
+          <figure class="app">
+            <div class="ig-post">
+              <div class="ig-post__banderines" aria-hidden="true"></div>
+              <p class="ig-post__kicker">Viernes de</p>
+              <p class="ig-post__title">Perro rebosao</p>
+              <p class="ig-post__text">Harta salsa de la casa, como debe ser.</p>
+              <span class="serpentina serpentina--fucsia ig-post__serpentina" aria-hidden="true"></span>
+            </div>
+            <figcaption>Post de Instagram: banderines y serpentina.</figcaption>
+          </figure>
+
+          <figure class="app">
+            <div class="listing">
+              <div class="listing__cover">
+                <span class="listing__cover-title">TAZ</span>
+                <span class="listing__bolitas" aria-hidden="true"></span>
+              </div>
+              <div class="listing__info">
+                <p class="listing__name">TAZ <span>Colombian street food</span></p>
+                <p class="listing__desc">Costeño street food from Colombia's Caribbean coast. Homemade sauces, generous portions, made like back home.</p>
+                <ul class="listing__tags">
+                  <li>Salchipapa</li><li>Perros</li><li>Pizza costeña</li>
+                </ul>
+              </div>
+            </div>
+            <figcaption>Ficha en DoorDash: fila de bolitas.</figcaption>
+          </figure>
+
+          <figure class="app">
+            <div class="sticker">
+              <div class="sticker__inner">
+                <p class="sticker__text">Aquí nadie se queda con hambre</p>
+                <p class="sticker__sign">TAZ</p>
+              </div>
+            </div>
+            <figcaption>Sticker para cerrar la bolsa: anillo de confeti.</figcaption>
+          </figure>
         </div>
+      </section>
 
-        <h3 style="margin-top: var(--space-5);">Botones</h3>
-        <p>
-          <a class="btn" href="#visual">¡Pide ya, mi llave!</a>
-          <a class="btn btn--fucsia" href="#visual">¿Lo quieres rebosao?</a>
-          <a class="btn btn--rojo" href="#visual">Ver el menú</a>
-          <a class="btn btn--ghost" href="#visual">Escríbenos</a>
-        </p>
-        <p style="font-size: var(--fs-sm); color: var(--text-muted);">Botones redondos con sombra en bloque de color, entre letrero de tienda y picó. Nada rígido.</p>
-      </div>
-    </section>
+      <!-- ===================== REDES ===================== -->
+      <section class="chapter" id="redes" aria-labelledby="redes-titulo">
+        <h2 class="chapter__title" id="redes-titulo">Dónde hablamos</h2>
+        <p class="chapter__intro">Cada red tiene un trabajo distinto. <strong>TikTok descubre, Instagram enamora, Facebook reúne y WhatsApp vende.</strong> De cada cuatro o cinco publicaciones, solo una vende directamente.</p>
 
-    <!-- ===================== REDES ===================== -->
-    <section class="section" id="redes">
-      <div class="container">
-        <span class="section__kicker">07 · Dónde hablamos</span>
-        <h2>Redes y canales</h2>
-        <p class="section__intro">Cada red tiene un trabajo distinto. No se publica lo mismo en todas: se adapta el formato a lo que cada una hace mejor. Juntas forman un camino:</p>
-
-        <ol class="funnel">
-          <li><strong>TikTok descubre</strong>Gente nueva nos conoce.</li>
-          <li><strong>Instagram enamora</strong>Nos sigue y se antoja.</li>
-          <li><strong>Facebook reúne</strong>La comunidad latina nos recomienda.</li>
-          <li><strong>WhatsApp vende</strong>Pide, y vuelve a pedir.</li>
-        </ol>
-
-        <div class="grid grid--2">
-          <article class="card social social--tiktok">
-            <span class="social__role">Volumen</span>
+        <div class="channels">
+          <article class="channel">
             <h3>TikTok</h3>
-            <dl>
-              <dt>Para qué</dt><dd>Alcance: llegar a gente que no nos conoce, sobre todo jóvenes latinos y gringos curiosos.</dd>
-              <dt>Qué publicar</dt><dd>Mucho y rápido: humor costeño, POV, tendencias con sonido de moda, la salsa cayendo, "gringo prueba comida costeña".</dd>
-              <dt>Frecuencia</dt><dd>4 a 7 videos por semana. Aquí gana la constancia.</dd>
-              <dt>Cómo medimos</dt><dd>Vistas, compartidos y seguidores nuevos.</dd>
-            </dl>
+            <p class="channel__job">Volumen: que nos conozca gente nueva.</p>
+            <p>Humor costeño, tendencias, la salsa cayendo y "gringo prueba comida costeña". De cuatro a siete videos por semana. Medimos vistas, compartidos y seguidores nuevos.</p>
           </article>
-
-          <article class="card social social--instagram">
-            <span class="social__role">Vitrina</span>
+          <article class="channel">
             <h3>Instagram</h3>
-            <dl>
-              <dt>Para qué</dt><dd>La cara bonita de la marca: lo instagrameable, la comunidad y el antojo diario.</dd>
-              <dt>Qué publicar</dt><dd>Reels (los mejores de TikTok), un feed cuidado con fotos que den hambre, e <strong>historias todos los días</strong>: el especial del día, encuestas, pedidos saliendo y reposts de clientes.</dd>
-              <dt>Destacadas fijas</dt><dd>Menú · Cómo pedir · Zona de delivery · Reseñas · Palabras costeñas.</dd>
-              <dt>Frecuencia</dt><dd>3 o 4 reels por semana e historias a diario.</dd>
-              <dt>Cómo medimos</dt><dd>Guardados, mensajes directos y clics al link.</dd>
-            </dl>
+            <p class="channel__job">Vitrina: que nos sigan y se antojen.</p>
+            <p>Reels, un perfil cuidado y historias todos los días. Destacadas fijas: menú, cómo pedir, zona de entrega, reseñas y palabras costeñas. Medimos guardados, mensajes y clics.</p>
           </article>
-
-          <article class="card social social--facebook">
-            <span class="social__role">Comunidad</span>
+          <article class="channel">
             <h3>Facebook</h3>
-            <dl>
-              <dt>Para qué</dt><dd>Llegar a la comunidad latina adulta y a las familias, que es donde más se pide para compartir (como la pizza).</dd>
-              <dt>Qué publicar</dt><dd>Combos familiares con precio claro, publicaciones en <strong>grupos de colombianos y latinos de San José y la Bahía</strong>, eventos (partidos, 20 de julio) y reseñas.</dd>
-              <dt>Frecuencia</dt><dd>3 publicaciones por semana más presencia en grupos.</dd>
-              <dt>Cómo medimos</dt><dd>Mensajes, recomendaciones y pedidos que llegan desde grupos.</dd>
-            </dl>
+            <p class="channel__job">Comunidad: que nos recomienden las familias.</p>
+            <p>Combos para compartir con precio claro, grupos de colombianos y latinos de la Bahía y fechas especiales. Medimos mensajes y pedidos que llegan desde grupos.</p>
           </article>
-
-          <article class="card social social--whatsapp">
-            <span class="social__role">Venta y recompra</span>
+          <article class="channel">
             <h3>WhatsApp</h3>
-            <dl>
-              <dt>Para qué</dt><dd>Cerrar el pedido y hacer que el cliente vuelva. Es donde se convierte todo lo anterior.</dd>
-              <dt>Qué usar</dt><dd>Catálogo, mensaje de bienvenida y de ausencia automáticos, respuestas rápidas, etiquetas de clientes, listas de difusión con el especial de la semana y estados con el plato del día.</dd>
-              <dt>Tono</dt><dd>El más cercano: "¡Ajá, mi llave! ¿Qué se te antoja hoy?"</dd>
-              <dt>Cómo medimos</dt><dd>Pedidos cerrados y clientes que repiten.</dd>
-            </dl>
+            <p class="channel__job">Venta: que pidan y vuelvan a pedir.</p>
+            <p>Catálogo, bienvenida y ausencia automáticas, respuestas rápidas y listas de difusión con el especial de la semana. Medimos pedidos cerrados y clientes que repiten.</p>
           </article>
         </div>
+      </section>
 
-        <p style="margin-top: var(--space-4); font-size: var(--fs-sm); color: var(--text-muted);">Regla de oro en todas: de cada 4 o 5 publicaciones, solo una vende directamente. Las demás entretienen, enseñan cultura costeña, generan nostalgia o muestran a los clientes.</p>
-      </div>
-    </section>
-
-    <!-- ===================== PENDIENTES ===================== -->
-    <section class="section" id="pendientes">
-      <div class="container">
-        <span class="section__kicker">08 · Lo que sigue</span>
-        <h2>Pendientes de la marca</h2>
+      <!-- ===================== PENDIENTES ===================== -->
+      <section class="chapter" id="pendientes" aria-labelledby="pendientes-titulo">
+        <h2 class="chapter__title" id="pendientes-titulo">Lo que falta</h2>
         <ul class="todo">
-          <li class="done">Esencia, propósito y posicionamiento</li>
-          <li class="done">Valores (v1)</li>
-          <li class="done">Personalidad y voz</li>
-          <li class="done">Públicos</li>
-          <li class="done">Rol de cada red social (v1)</li>
-          <li>Nombre definitivo (finalistas: ¡Erda!, Cargao, Curramba... según la ciudad de origen)</li>
-          <li>Historia de origen (quién cocina y por qué lo buscaban en la Costa)</li>
-          <li>Plato o platos costeños insignia que respalden la promesa</li>
-          <li>Logo y personaje ilustrado (la cara de la marca, sin mostrar personas)</li>
-          <li>Validar paleta y tipografías v0.5 (dirección fast food)</li>
-          <li>Aplicaciones: web, empaques, redes, WhatsApp y DoorDash</li>
+          <li data-state="done">Alma, propósito y posicionamiento</li>
+          <li data-state="done">Valores</li>
+          <li data-state="done">Personalidad y voz</li>
+          <li data-state="done">Públicos y redes</li>
+          <li data-state="review">Identidad visual 0.6: validar</li>
+          <li>Nombre definitivo</li>
+          <li>Historia de origen: quién cocina y por qué lo buscaban en la Costa</li>
+          <li>Plato costeño insignia que respalde la promesa</li>
+          <li>Logo y personaje ilustrado</li>
+          <li>Aplicar la marca a la web, los empaques y DoorDash</li>
         </ul>
-      </div>
-    </section>
+      </section>
 
-  </main>
+    </main>
+  </div>
 
   <footer class="footer">
-    <div class="container">
-      <strong>Aquí nadie se queda con hambre.</strong>
-      Guía de marca v0.5 · nombre provisional · San José, CA
-    </div>
+    <div class="footer__banderines" aria-hidden="true"></div>
+    <p class="footer__line">Aquí nadie se queda con hambre.</p>
+    <p class="footer__meta">Guía de marca, borrador 0.6. San José, California.</p>
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="js/main.js?v=0.5"></script>
+  <script src="js/main.js?v=0.6" defer></script>
 </body>
 </html>

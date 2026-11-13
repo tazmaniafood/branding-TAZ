@@ -1,18 +1,26 @@
 # branding-TAZ
 
-Guía de identidad de marca de la comida rápida costeña en San José, CA.
+Guía de identidad de la comida rápida costeña en San José, California.
 **"TAZ" es un nombre provisional**, solo para diferenciar el proyecto.
 
-## Qué hay aquí
+Abre `index.html` en el navegador (con internet, para que carguen las fuentes).
+
+## Archivos
 
 | Archivo | Para qué sirve |
 |---|---|
-| `index.html` | La guía de marca: esencia, valores, personalidad, voz, públicos e identidad visual. Ábrela en el navegador. |
-| `css/tokens.css` | Variables de marca (colores, tipografías, bordes, sombras, espacios). Úsalas en cualquier página del proyecto. |
-| `css/styles.css` | Estilos de la guía. |
-| `js/main.js` | Interacciones de la guía (valores desplegables, selector de tono, copiar colores). |
+| `index.html` | La guía: alma, valores, personalidad, voz, públicos, identidad visual, aplicaciones, redes y pendientes. HTML semántico y accesible. |
+| `css/tokens.css` | Tokens de marca y semánticos (`--bg-surface`, `--text-primary`, `--accent`, `--space-*`, `--step-*`, radios, sombras, movimiento y adornos). Úsalo en cualquier página del proyecto. |
+| `css/styles.css` | Estilos de la guía, mobile-first, con tipografía y espacios fluidos (`clamp()`). |
+| `js/main.js` | Interacciones con delegación de eventos (`data-action`), estado en `data-state` / `aria-*` y código defensivo. |
 
-## Cómo usar los tokens en otro proyecto
+## Identidad v0.6 · "Noche costeña"
+
+- **Colores:** noche `#140F22` (base), hueso `#FBF6EC` (estructural), amarillo `#FFD60A` (único acento de acción), fucsia `#FF3D8B` y cian `#22D3EE` (solo decoración). Texto con contraste WCAG AA.
+- **Letras:** Lilita One (letra de picó, títulos) + Nunito (lectura).
+- **Adornos, "la fiesta que cae":** bolitas de confeti, serpentinas y banderines. En los bordes, máximo dos por pieza.
+
+## Usar los tokens
 
 ```html
 <link rel="stylesheet" href="css/tokens.css">
@@ -20,24 +28,19 @@ Guía de identidad de marca de la comida rápida costeña en San José, CA.
 
 ```css
 .boton-pedir {
-  background: var(--color-picante);
+  background: var(--accent);
+  color: var(--on-accent);
   font-family: var(--font-display);
-  border: var(--border-cartel);
-  box-shadow: var(--shadow-cartel);
+  box-shadow: var(--shadow-block-sm);
 }
 ```
 
-## Estado (v0.1)
+## Estado
 
-- [x] Esencia, propósito y posicionamiento
-- [x] Valores: Rebosao, Mamadera de gallo, De pura cepa, Más complaciente que na', De buen pecho
-- [x] Personalidad y voz
-- [x] Públicos
-- [x] Rol de cada red: TikTok (volumen), Instagram (vitrina), Facebook (comunidad), WhatsApp (venta y recompra)
-- [x] Identidad visual v0.5 "Noche costeña": 5 colores (noche, hueso, amarillo, fucsia, cian) y una familia de adornos, "la fiesta que cae" (bolitas de confeti, serpentinas y banderines), con reglas de uso. Lilita One + Nunito
+- [x] Alma, valores, personalidad, voz, públicos y redes
+- [ ] Validar identidad visual v0.6
 - [ ] Nombre definitivo
 - [ ] Historia de origen
-- [ ] Plato(s) costeño(s) insignia
+- [ ] Plato costeño insignia
 - [ ] Logo y personaje ilustrado
-- [ ] Validar la identidad visual v0.5
-- [ ] Aplicaciones: web, empaques, redes, WhatsApp, DoorDash
+- [ ] Aplicar la marca a la web, empaques y DoorDash

@@ -1,100 +1,102 @@
 /* ==========================================================
-   TAZ (nombre provisional) · Tokens de marca v0.5
-   "Noche costeña" con coherencia.
+   Tokens de marca · v0.6 "Noche costeña"
+   TAZ es un nombre provisional.
 
-   UNA historia: la fiesta de noche en la Costa.
-   UNA familia de formas: lo que cae en la fiesta
-     -> bolitas de confeti, serpentinas y banderines.
-   POCOS colores, siempre los mismos:
-     - Noche (fondo) y Hueso (texto y superficies cálidas)
-     - Amarillo (principal), Fucsia (secundario), Cian (acento)
-
-   Reglas:
-   - Los adornos van en los bordes (arriba, abajo, esquinas),
-     nunca detrás del texto.
-   - Máximo 2 tipos de adorno por pieza.
-   - Los adornos solo usan amarillo, fucsia, cian y hueso.
+   Color con intención:
+   - Base dominante: noche.
+   - Estructural: hueso (texto y superficies cálidas).
+   - Acento de acción (único): amarillo. Solo botones y llamados.
+   - Decoración: fucsia y cian. Sombras de letra y adornos.
+   Contrastes (WCAG): hueso/noche 17.4 · amarillo/noche 13.3 ·
+   cian/noche 10.4 · fucsia/noche 5.6 · fucsia-oscuro/hueso 5.4.
+   El fucsia normal NO va como texto sobre hueso (3.1).
    ========================================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap");
 
 :root {
-  /* ---- Los 5 colores de la marca ---- */
-  --color-noche: #140F22;        /* Fondo: la noche costeña */
-  --color-hueso: #FBF6EC;        /* Texto sobre noche y superficies cálidas */
-  --color-amarillo: #FFD60A;     /* Principal: títulos, botones, lo que tiene que verse */
-  --color-fucsia: #FF3D8B;       /* Secundario: sombras de letra, detalles, fiesta */
-  --color-cian: #22D3EE;         /* Acento: poco, para que brille cuando aparece */
+  /* ---- Marca ---- */
+  --brand-noche: #140F22;
+  --brand-hueso: #FBF6EC;
+  --brand-amarillo: #FFD60A;
+  --brand-fucsia: #FF3D8B;
+  --brand-cian: #22D3EE;
 
-  /* ---- Variaciones de apoyo (no son colores nuevos) ---- */
-  --color-noche-2: #211A35;      /* Superficie oscura (tarjetas sobre noche) */
-  --color-noche-3: #322A4D;      /* Bordes sutiles sobre noche */
-  --color-hueso-oscuro: #EDE3CF; /* Bordes sobre hueso */
-  --color-gris-claro: #CBC4D8;   /* Texto secundario sobre noche */
-  --color-gris-oscuro: #5A554D;  /* Texto secundario sobre hueso */
+  /* ---- Semánticos: superficies ---- */
+  --bg-surface: var(--brand-noche);
+  --bg-raised: #211A35;
+  --bg-sunken: #0E0A18;
+  --bg-warm: var(--brand-hueso);
+  --border-subtle: #322A4D;
+  --border-warm: #E6DBC4;
 
-  /* ---- Usos semánticos ---- */
-  --bg: var(--color-noche);
-  --text: var(--color-hueso);
-  --text-muted: var(--color-gris-claro);
-  --accent: var(--color-fucsia);
-  --highlight: var(--color-amarillo);
+  /* ---- Semánticos: texto ---- */
+  --text-primary: var(--brand-hueso);
+  --text-secondary: #CBC4D8;
+  --text-on-warm: var(--brand-noche);
+  --text-on-warm-secondary: #5A554D;
+  --text-on-warm-accent: #C2185B;
 
-  /* ==========================================================
-     ADORNOS: la fiesta que cae
-     Todos usan los mismos 3 colores, el mismo grosor de línea
-     (4px, puntas redondas) y 3 tamaños de bolita (6, 10, 14px).
-     ========================================================== */
-
-  /* Banderines: triángulos colgados de un hilo */
-  --banderines: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='168' height='40'%3E%3Cpath d='M0 3 H168' stroke='%23FBF6EC' stroke-width='2'/%3E%3Cpolygon points='4,3 48,3 26,34' fill='%23FFD60A'/%3E%3Cpolygon points='60,3 104,3 82,34' fill='%23FF3D8B'/%3E%3Cpolygon points='116,3 160,3 138,34' fill='%2322D3EE'/%3E%3C/svg%3E");
-
-  /* Serpentinas: cintas onduladas */
-  --serpentina-amarilla: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'%3E%3Cpath d='M4 40 C 18 8, 32 8, 40 30 S 62 52, 72 28 S 96 4, 116 22' fill='none' stroke='%23FFD60A' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
-  --serpentina-fucsia: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'%3E%3Cpath d='M4 22 C 20 52, 34 52, 44 30 S 66 6, 78 30 S 100 54, 116 36' fill='none' stroke='%23FF3D8B' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
-  --serpentina-cian: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'%3E%3Cpath d='M4 30 C 16 10, 30 10, 38 28 S 58 50, 68 30 S 90 8, 116 26' fill='none' stroke='%2322D3EE' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
-
-  /* Fila de bolitas (separadores y bordes) */
-  --fila-bolitas:
-    radial-gradient(circle, var(--color-amarillo) 0 4px, transparent 5px) 0 50% / 72px 100% repeat-x,
-    radial-gradient(circle, var(--color-fucsia) 0 4px, transparent 5px) 24px 50% / 72px 100% repeat-x,
-    radial-gradient(circle, var(--color-cian) 0 4px, transparent 5px) 48px 50% / 72px 100% repeat-x;
+  /* ---- Semánticos: acción y decoración ---- */
+  --accent: var(--brand-amarillo);
+  --on-accent: var(--brand-noche);
+  --decor-1: var(--brand-fucsia);
+  --decor-2: var(--brand-cian);
+  --focus-ring: 0 0 0 3px var(--brand-noche), 0 0 0 6px var(--brand-cian);
 
   /* ---- Tipografía ---- */
   --font-display: "Lilita One", "Arial Rounded MT Bold", system-ui, sans-serif;
   --font-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  --fs-xs: 0.8rem;
-  --fs-sm: 0.95rem;
-  --fs-md: 1.08rem;
-  --fs-lg: 1.5rem;
-  --fs-xl: 2.2rem;
-  --fs-xxl: clamp(2.6rem, 6.5vw, 4.8rem);
+  --step--1: clamp(0.84rem, 0.8rem + 0.15vw, 0.92rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.12rem);
+  --step-1: clamp(1.22rem, 1.1rem + 0.5vw, 1.45rem);
+  --step-2: clamp(1.55rem, 1.3rem + 1vw, 2.05rem);
+  --step-3: clamp(2rem, 1.5rem + 2vw, 3rem);
+  --step-4: clamp(2.6rem, 1.6rem + 4.5vw, 5.2rem);
+  --step-poster: clamp(3.2rem, 1rem + 9.5vw, 9.5rem);
 
-  /* ---- Formas ---- */
-  --radius-sm: 10px;
-  --radius-md: 18px;
-  --radius-lg: 28px;
-  --radius-pill: 999px;
+  --leading-tight: 0.92;
+  --leading-heading: 1.08;
+  --leading-body: 1.62;
+  --measure: 64ch;
 
-  /* ---- Sombras en bloque (siempre fucsia sobre noche) ---- */
-  --shadow-cartel: 5px 5px 0 var(--color-fucsia);
-  --shadow-cartel-amarillo: 5px 5px 0 var(--color-amarillo);
-  --border-cartel: 3px solid var(--color-noche);
-  --letras-pico: 4px 4px 0 var(--color-fucsia);
+  /* ---- Espacio (fluido) ---- */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: clamp(1rem, 0.9rem + 0.5vw, 1.35rem);
+  --space-lg: clamp(1.5rem, 1.2rem + 1.4vw, 2.4rem);
+  --space-xl: clamp(2.5rem, 1.8rem + 3vw, 4.5rem);
+  --space-2xl: clamp(4rem, 2.8rem + 5vw, 7.5rem);
 
-  /* ---- Espaciado ---- */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 1rem;
-  --space-4: 1.5rem;
-  --space-5: 2.5rem;
-  --space-6: 4rem;
+  /* ---- Radios: la jerarquía también está en la forma ---- */
+  --radius-sm: 8px;       /* chips, entradas */
+  --radius-md: 16px;      /* superficies de contenido */
+  --radius-lg: 28px;      /* piezas destacadas (ticket, post) */
+  --radius-pill: 999px;   /* botones */
 
-  --max-width: 1100px;
+  /* ---- Sombras en bloque: la sombra de letrero pintado ---- */
+  --shadow-block: 6px 6px 0 var(--brand-fucsia);
+  --shadow-block-sm: 4px 4px 0 var(--brand-fucsia);
+  --shadow-letra: 0.06em 0.06em 0 var(--brand-fucsia);
 
-  /* ---- Alias de versiones anteriores ---- */
-  --color-rojo: var(--color-fucsia);
-  --color-verde: var(--color-cian);
-  --color-azul: var(--color-cian);
+  /* ---- Movimiento ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-swing: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 0.18s;
+  --dur-base: 0.32s;
+
+  /* ---- Adornos: la fiesta que cae (solo fucsia, amarillo, cian, hueso) ---- */
+  --adorno-banderines: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='168' height='40'%3E%3Cpath d='M0 3 H168' stroke='%23FBF6EC' stroke-width='2'/%3E%3Cpolygon points='4,3 48,3 26,34' fill='%23FFD60A'/%3E%3Cpolygon points='60,3 104,3 82,34' fill='%23FF3D8B'/%3E%3Cpolygon points='116,3 160,3 138,34' fill='%2322D3EE'/%3E%3C/svg%3E");
+  --adorno-serpentina-amarilla: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'%3E%3Cpath d='M4 40 C 18 8, 32 8, 40 30 S 62 52, 72 28 S 96 4, 116 22' fill='none' stroke='%23FFD60A' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+  --adorno-serpentina-fucsia: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'%3E%3Cpath d='M4 22 C 20 52, 34 52, 44 30 S 66 6, 78 30 S 100 54, 116 36' fill='none' stroke='%23FF3D8B' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+  --adorno-serpentina-cian: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'%3E%3Cpath d='M4 30 C 16 10, 30 10, 38 28 S 58 50, 68 30 S 90 8, 116 26' fill='none' stroke='%2322D3EE' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+  --adorno-fila-bolitas:
+    radial-gradient(circle, var(--brand-amarillo) 0 4px, transparent 5px) 0 50% / 72px 100% repeat-x,
+    radial-gradient(circle, var(--brand-fucsia) 0 4px, transparent 5px) 24px 50% / 72px 100% repeat-x,
+    radial-gradient(circle, var(--brand-cian) 0 4px, transparent 5px) 48px 50% / 72px 100% repeat-x;
+
+  --layout-max: 1240px;
+  --index-width: 13rem;
 }
