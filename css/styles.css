@@ -103,7 +103,9 @@ a {
 .menu::before {
   top: 0;
   height: calc(100% + 54px);
-  background: var(--velo), var(--baldosa);
+  background:
+    linear-gradient(rgb(13 9 25 / 0.55), rgb(13 9 25 / 0.15) 70%, transparent),
+    var(--velo), var(--baldosa);
   -webkit-mask:
     linear-gradient(#000, #000) 0 0 / 100% calc(100% - 54px) no-repeat,
     var(--falda-forma) 0 100% / 56px 54px repeat-x;
