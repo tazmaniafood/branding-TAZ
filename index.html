@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Noche de Carnaval · Guía de marca TAZ (borrador 6.4)</title>
+  <title>Noche de Carnaval · Guía de marca TAZ (borrador 6.5)</title>
   <meta name="description" content="Guía de identidad de la comida rápida costeña en San José, California, inspirada en las noches de Carnaval de la Costa. Nombre provisional: TAZ.">
   <meta name="theme-color" content="#0D0919">
-  <link rel="stylesheet" href="css/tokens.css?v=6.4">
-  <link rel="stylesheet" href="css/styles.css?v=6.4">
+  <link rel="stylesheet" href="css/tokens.css?v=6.5">
+  <link rel="stylesheet" href="css/styles.css?v=6.5">
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -15,16 +15,25 @@
   <!-- ===================== MENÚ ===================== -->
   <nav class="menu" aria-label="Secciones de la guía">
     <div class="menu__list" role="tablist" aria-label="Secciones de la guía">
-      <a class="menu__tab" href="#alma" role="tab" id="tab-alma" aria-controls="alma" aria-selected="true" tabindex="0" data-action="show-section" data-target="alma">El alma</a>
-      <a class="menu__tab" href="#valores" role="tab" id="tab-valores" aria-controls="valores" aria-selected="false" tabindex="-1" data-action="show-section" data-target="valores">Valores</a>
-      <a class="menu__tab" href="#personalidad" role="tab" id="tab-personalidad" aria-controls="personalidad" aria-selected="false" tabindex="-1" data-action="show-section" data-target="personalidad">Personalidad</a>
-      <a class="menu__tab" href="#voz" role="tab" id="tab-voz" aria-controls="voz" aria-selected="false" tabindex="-1" data-action="show-section" data-target="voz">Voz</a>
-      <a class="menu__tab" href="#publicos" role="tab" id="tab-publicos" aria-controls="publicos" aria-selected="false" tabindex="-1" data-action="show-section" data-target="publicos">Públicos</a>
-      <a class="menu__tab" href="#identidad" role="tab" id="tab-identidad" aria-controls="identidad" aria-selected="false" tabindex="-1" data-action="show-section" data-target="identidad">Identidad</a>
-      <a class="menu__tab" href="#aplicaciones" role="tab" id="tab-aplicaciones" aria-controls="aplicaciones" aria-selected="false" tabindex="-1" data-action="show-section" data-target="aplicaciones">Aplicaciones</a>
-      <a class="menu__tab" href="#redes" role="tab" id="tab-redes" aria-controls="redes" aria-selected="false" tabindex="-1" data-action="show-section" data-target="redes">Redes</a>
-      <a class="menu__tab" href="#pendientes" role="tab" id="tab-pendientes" aria-controls="pendientes" aria-selected="false" tabindex="-1" data-action="show-section" data-target="pendientes">Lo que falta</a>
+      <div class="menu__lado menu__lado--izq" role="presentation">
+        <a class="menu__tab" href="#alma" role="tab" id="tab-alma" aria-controls="alma" aria-selected="true" tabindex="0" data-action="show-section" data-target="alma">El alma</a>
+        <a class="menu__tab" href="#valores" role="tab" id="tab-valores" aria-controls="valores" aria-selected="false" tabindex="-1" data-action="show-section" data-target="valores">Valores</a>
+        <a class="menu__tab" href="#personalidad" role="tab" id="tab-personalidad" aria-controls="personalidad" aria-selected="false" tabindex="-1" data-action="show-section" data-target="personalidad">Personalidad</a>
+        <a class="menu__tab" href="#voz" role="tab" id="tab-voz" aria-controls="voz" aria-selected="false" tabindex="-1" data-action="show-section" data-target="voz">Voz</a>
+        <a class="menu__tab" href="#publicos" role="tab" id="tab-publicos" aria-controls="publicos" aria-selected="false" tabindex="-1" data-action="show-section" data-target="publicos">Públicos</a>
+      </div>
+      <span class="menu__hueco" aria-hidden="true"></span>
+      <div class="menu__lado menu__lado--der" role="presentation">
+        <a class="menu__tab" href="#identidad" role="tab" id="tab-identidad" aria-controls="identidad" aria-selected="false" tabindex="-1" data-action="show-section" data-target="identidad">Identidad</a>
+        <a class="menu__tab" href="#aplicaciones" role="tab" id="tab-aplicaciones" aria-controls="aplicaciones" aria-selected="false" tabindex="-1" data-action="show-section" data-target="aplicaciones">Aplicaciones</a>
+        <a class="menu__tab" href="#redes" role="tab" id="tab-redes" aria-controls="redes" aria-selected="false" tabindex="-1" data-action="show-section" data-target="redes">Redes</a>
+        <a class="menu__tab" href="#pendientes" role="tab" id="tab-pendientes" aria-controls="pendientes" aria-selected="false" tabindex="-1" data-action="show-section" data-target="pendientes">Lo que falta</a>
+      </div>
     </div>
+    <!-- El sello: el logo encendido en el centro de la carpa. Nombre provisional. -->
+    <a class="menu__sello" href="#alma" data-action="show-section" data-target="alma" aria-label="Ir al inicio">
+      <img src="img/logo-neon.svg?v=6.5" alt="Logo de la marca" width="860" height="460">
+    </a>
   </nav>
 
   <!-- ===================== PORTADA: el cartel ===================== -->
@@ -37,14 +46,14 @@
       </h1>
       <p class="cartel__bajada">Comida rápida costeña en San José, California. Esta es su guía de marca: cómo somos, cómo hablamos y cómo nos vemos.</p>
       <a class="btn" href="#valores" data-action="show-section" data-target="valores">Ver los valores</a>
-      <p class="cartel__nota">TAZ es un nombre provisional. Borrador 6.4.</p>
+      <p class="cartel__nota">TAZ es un nombre provisional. Borrador 6.5.</p>
     </div>
 
     <!-- Las figuras de neón se turnan. Para agregar una, otro <img class="carrusel__item">. -->
     <div class="cartel__escena carrusel" aria-hidden="true">
-      <img class="carrusel__item" src="img/sombrero-vueltiao-neon.svg?v=6.4" alt="" width="1656" height="970">
-      <img class="carrusel__item" src="img/marimonda-neon.svg?v=6.4" alt="" width="1452" height="1116">
-      <img class="carrusel__item" src="img/torito-neon.svg?v=6.4" alt="" width="1254" height="1144">
+      <img class="carrusel__item" src="img/sombrero-vueltiao-neon.svg?v=6.5" alt="" width="1656" height="970">
+      <img class="carrusel__item" src="img/marimonda-neon.svg?v=6.5" alt="" width="1452" height="1116">
+      <img class="carrusel__item" src="img/torito-neon.svg?v=6.5" alt="" width="1254" height="1144">
     </div>
   </header>
 
@@ -288,7 +297,7 @@
           </div>
         </li>
         <li class="regla">
-          <div class="regla__demo regla__demo--figuras" aria-hidden="true"><img src="img/sombrero-vueltiao-neon.svg?v=6.4" alt=""><img src="img/marimonda-neon.svg?v=6.4" alt=""><img src="img/torito-neon.svg?v=6.4" alt=""></div>
+          <div class="regla__demo regla__demo--figuras" aria-hidden="true"><img src="img/sombrero-vueltiao-neon.svg?v=6.5" alt=""><img src="img/marimonda-neon.svg?v=6.5" alt=""><img src="img/torito-neon.svg?v=6.5" alt=""></div>
           <div>
             <h3>Figuras de Carnaval</h3>
             <p>El sombrero vueltiao, la Marimonda y el torito, dibujados en neón. Son la cara de la marca mientras llega el logo.</p>
@@ -350,7 +359,7 @@
       <div class="apps">
         <figure class="app">
           <div class="poster">
-            <img class="poster__figura" src="img/torito-neon.svg?v=6.4" alt="">
+            <img class="poster__figura" src="img/torito-neon.svg?v=6.5" alt="">
             <p class="letrero poster__titulo" style="--n: var(--mango);">Perro rebosao</p>
             <p class="poster__texto">Este viernes, con harta salsa de la casa.</p>
             <span class="poster__cta">Pídelo por WhatsApp</span>
@@ -361,7 +370,7 @@
         <figure class="app">
           <div class="listing">
             <div class="listing__cover">
-              <img src="img/sombrero-vueltiao-neon.svg?v=6.4" alt="">
+              <img src="img/sombrero-vueltiao-neon.svg?v=6.5" alt="">
             </div>
             <div class="listing__info">
               <p class="listing__name">TAZ</p>
@@ -436,12 +445,12 @@
   <footer class="footer">
     <div class="footer__placa">
       <p class="letrero footer__line" style="--n: var(--mango);">¡Coma que hay más!</p>
-      <p class="footer__meta">Guía de marca, borrador 6.4. San José, California.</p>
+      <p class="footer__meta">Guía de marca, borrador 6.5. San José, California.</p>
     </div>
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="js/main.js?v=6.4" defer></script>
+  <script src="js/main.js?v=6.5" defer></script>
 </body>
 </html>

@@ -225,6 +225,14 @@
   });
 
 
+  // La carpa se compacta al bajar (en pantallas medianas y celular se guarda el sello)
+  var carpa = $(".menu");
+  if (carpa) {
+    var compactar = function () { carpa.classList.toggle("menu--compacto", window.scrollY > 60); };
+    window.addEventListener("scroll", compactar, { passive: true });
+    compactar();
+  }
+
   // Carrusel de neones: cambia de figura cada 4 s (quieto si se pide menos movimiento)
   $all(".carrusel").forEach(function (carrusel) {
     var items = $all(".carrusel__item", carrusel);
